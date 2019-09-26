@@ -1,3 +1,7 @@
+ .body{
+
+	background-color:  blue;
+ }
 h1{
 	color: orange;
 	font-family: sans-serif;
@@ -26,6 +30,6 @@ h1{
 #kotak{
 	width: 400px;
 	color: #fff;
-	background: blue;
+	background: black;
 	padding: 50px;
 }
