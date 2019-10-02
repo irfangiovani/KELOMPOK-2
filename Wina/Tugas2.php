@@ -143,7 +143,8 @@ MENGHUBUNGKAN HTML DENGAN CSS </br>
     <div id="kotak">Kotak 4</div>
     
     <?php
-    echo "POLITEKNIK JEMBER-BONDOWOSO";
+    echo "WINA POLITEKNIK JEMBER-BONDOWOSO";
+    
     ?>
 	
 </hr>
