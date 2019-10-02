@@ -1,20 +1,5 @@
- .body{
-
-	background-color:  blue;
- }
 h1{
-	color: orange;
-	font-family: sans-serif;
-	text-align: center;
-}
-h2{
-    color: brown;
-    font-family: sans-serif;
-
-
-}
-h1{
-	color: orange;
+	color: pink;
 	font-family: sans-serif;
 	text-align: center;
 }
@@ -30,6 +15,6 @@ h1{
 #kotak{
 	width: 400px;
 	color: #fff;
-	background: black;
+	background: blue;
 	padding: 50px;
 }
