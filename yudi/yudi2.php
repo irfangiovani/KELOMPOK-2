@@ -5,7 +5,6 @@
 </head>
 <body>
    
-        <div id="kotak">Kotak 4</div>
 
         <?php
          echo "selamat datang";
