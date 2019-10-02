@@ -18,8 +18,6 @@ $tempat = "petanicoding";
 
 
 echo "Today is " . date("Y/m/d") . "<br>";
-echo "Today is " . date("Y.m.d") . "<br>";
-echo "Today is " . date("Y-m-d") . "<br>";
 echo "Today is " . date("l");
 echo "<h1 style='color:red'>Selamat Belajar PHP ".$tempat."</h1>";
 ECHO "<h2 style='color:blue'>Selamat Belajar PHP</h2>";
