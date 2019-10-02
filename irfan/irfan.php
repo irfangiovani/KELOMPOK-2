@@ -5,7 +5,9 @@
 </head>
 
 <body bgcolor="cyan"></body>
-<h1><center></center></h1>
+<marquee behavior="alternate" direction="left"> <h1>KELOMPOK 2</h1></marquee>
+<h1><center> irfan giovani</center></h1>
+
 
 
 <?php
