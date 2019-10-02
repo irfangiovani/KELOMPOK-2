@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>hallo word</title>
+  <title>belajar php</title>
 </head>
 
 <body bgcolor="cyan"></body>
 <marquee behavior="alternate" direction="left"> <h1>KELOMPOK 2</h1></marquee>
 <h1><center> irfan giovani</center></h1>
-
+<h1><center></center></h1>
 
 
 <?php
