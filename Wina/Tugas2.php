@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Selamat Belajar HTML</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body bgcolor="cyan"></body>
+<h1><center>TUGAS 2 SISTEM INFORMASI BERBASIS WEB</center></h1>
+<hr>
+<marquee behavior="alternate" direction="left">wina</marquee>
+
+  
+  <h2>Azizah Wina Sriwinarsih</h2>
+  <h2>E41182254</h2>
+  <h2>politeknik negeri jember-kampus Bondowoso</h2>
+ 
+
+<h1>BELAJAR MEMBUAT PARAGRAF</h1> 
+    <p>paragraf pertama</p>
+    <p>paragraf dua</p>
+    <p>Teknik Informatika</p>
+    <p align="left">1. ini merupakan penulisan paragraf rata kiri dalam dokument HTML</p>
+    <p align="right">2. ini merupakan penulisan paragraf rata kanan dalam dokument HTML</p>
+    <p align="center">3. ini merupakan penulisan paragraf rata tengah dalam dokument HTML</p>
+    <p align="justivy">4. ini merupakan penulisan paragraf rata kiri kanan dalam dokument HTML</p>
+
+<h1>MWMBUAT TABEL PADA HTML</h1> 
+<table border="1">
+<tr>
+    <td>baris 1 / kolom 1</td>
+    <td>baris 1 / kolom 2</td>
+    <td>baris 1 / kolom 3</td>
+</tr>
+<tr>
+    <td>baris 2 / kolom 1</td>
+    <td>baris 2 / kolom 2</td>
+    <td>baris 2 / kolom 3</td>
+</tr>
+<tr>
+    <td>baris 3/ kolom 1</td>
+    <td>baris 3/ kolom 2</td>
+    <td>baris 3/ kolom 3</td>
+</tr>
+<tr>
+    <td>baris 4/ kolom 1</td>
+    <td>baris 4/ kolom 2</td>
+    <td>baris 4/ kolom 3</td>
+</tr>
+</table>
+
+<h1>BELAJAR HTML MEMBUAT HYPERLINK PADA HTML</h1> 
+ini adalah contoh alamat absolute <a href="https://www.malasngoding.com/category/html/">klik disini</a>
+ini adalah contoh alamat alternatif <a href="wina.html">klik disini</a>
+
+
+<h1>BELAJAR HTML MEMBUAT LIST</h1> 
+
+    <li>belajar HTML</li>
+    <li>belajar PHP</li>
+
+    <ol>
+        <li>belajar HTML</li>
+        <li>belajar PHP</li>	
+    </ol>
+    <!-- Menampilkan daftar list dengan huruf angka -->
+
+    <ul>
+        <li>belajar HTML</li>
+        <li>belajar PHP</li>	
+    </ul>
+    <!-- Menampilkan daftar list dengan unordered list -->
+
+
+<h1>Belajar Atribut Form pada html</h1> 
+    <form>
+        Nama Depan &nbsp; &nbsp; &nbsp;:<input type="text" value="text"><br/>
+        Nama Belakang : <input type="text">
+    </form>
+
+    <form>
+        Nama Depan &nbsp; &nbsp; &nbsp;:<input type="text" value="nama" readonly><br/>
+        Nama Belakang : <input type="text">
+    </form>
+
+    <form>
+        Nama Depan :<input type="text" value="nama" disabled><br/>
+        Nama Belakang : <input type="text">
+    </form>
+
+    <form>
+        Nama Depan :<input type="text" value="nama" size="50"><br/>
+        Nama Belakang : <input type="text">
+    </form>
+
+    <form>
+        Nama Depan :<input type="text" value="nama" maxlength="10"><br/>
+        Nama Belakang : <input type="text">
+    </form>
+
+    <form>
+        <input list="browser" name="internet">
+        <datalist id="browser">
+        <option value="chrome">
+        <option value="mozilla">
+        <option value="opera">
+        </datalist>
+    </form>
+
+    <form>
+        <input type="date" name="day" max="1979-12-31">
+        <input type="date" name="day" min="2000-01-02">
+    </form>
+
+    <form>
+        <input type="text" name="nama" placeholder="masukkan nama">
+    </form>
+
+<h1>MENAMPILKAN GAMBAR PADA HTML</h1> 
+    <h1>Menampilkan gambar pada HTML | www.malasngoding.com</h1>
+        <img src="24.jpg">
+
+    <h1>Menampilkan gambar pada HTML | www.malasngoding.com</h1>
+        <img src="24.jpg" height="300px" width="500px;">
+
+    <title>Menampilkan gambar pada HTML | www.malasngoding.com</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    <h1>Menampilkan gambar pada HTML | www.malasngoding.com</h1>
+        <img class="gambar" src="24.jpg" height="300" width="200"></br>
+
+   
+
+MENGHUBUNGKAN HTML DENGAN CSS </br>
+<h2>Belajar HTML menghubungkan html dengan css</h2>
+
+<h1>Mengenal Class dan Id pada HTML<br/>www.malasngoding.com</h1>
+	<!-- contoh penggunaan class -->
+	<div class="kotak">kotak 1</div>
+	<div class="kotak">kotak 2</div>
+	<div class="kotak">kotak 3</div>
+ 
+	<!-- contoh penggunaan id -->
+    <div id="kotak">Kotak 4</div>
+    
+    <?php
+    echo "POLITEKNIK JEMBER-BONDOWOSO";
+    ?>
+	
+</hr>
+</body>
+</html>
