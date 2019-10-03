@@ -1,97 +1,56 @@
 <!DOCTYPE html>
 <head>
-    <title>Pertemuan Kamis 26-09-2019</title>
+    <title>Pertemuan Rabu 02-10-2019</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <!-- membuat paragraf -->
-    <P align="center"> Selamat Datang Di Web saya</P>
-    <p> Saya Sedang BeLajar HTML</p>
-    HTML adalah singkatan dari Hypertext Markup Language. HTML memungkinkan seorang user untuk membuat dan menyusun bagian paragraf,</br>
-    heading, link atau tautan, dan blockquote untuk halaman web dan aplikasi.HTML bukanlah bahasa pemrograman, dan itu berarti HTML </br>
-    tidak punya kemampuan untuk membuat fungsionalitas yang dinamis. Sebagai gantinya, HTML memungkinkan user untuk mengorganisir dan </br>
-    memformat dokumen, sama seperti Microsoft Word.
+    <h1 style="color:red">Selamat Belajar Bahasa PHP</h1>
+    <h2 style="color:blue">Nama Saya: Yudi Iriyanto</h2>
+    <h3>Politeknik Negeri Jember</h3>
 
-    <!-- membuat tabel -->
-    <table border="3">
-            <tr>
-                <th>No</th>
-                <th>Judul Buku</th>
-                <th>Kode Buku</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Usaha tani</td>
-                <td>457</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Beternak Lele</td>
-                <td>547</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>bill gates</td>
-                <td>564</td>
-            </tr>
-        </table>
+    <?php
+        echo "Hello World </br></br>";
+        $tempat = "di Polije";
+        $Tempat = "di Polije Dua";
+        $TempaT = "di Polije Tiga";
 
-        <!-- membuat hyperlink di html -->
-        ingin melihat project saya yang lain ??? <a href="yudi.html">klik disini</a>
+        echo "<h1 style='color:red'>Selamat Belajar Pemrograman PHP ".$tempat."</h1>";
+        ECHO "<h2 style='color:blue'>Selamat Belajar pemrograman PHP</h2>";
+        EcHo "<h3>Selamat Belajar HTML ".$Tempat."</h3>";
+        echo $TempaT."</br></br>";
+        echo date("Y/m/d")."</br></br>";
 
-        <!-- membuat List pada HTMl -->
-          <!-- ordered List -->
-          <ol>
-                <li>Real Madrid</li>
-                <li>Barcelona</li>	
-          </ol>
-          <!-- unordered List -->
-          <ul>
-                <li>Liverpool</li>
-                <li>Arsenal</li>	
-          </ul>
+        //Penjumlahan
+        $a = 10; $b = $c = 20; $d = 2;
+        $jumlah = ($a + $b)/$d;
 
-        <!-- Atribut dalam HTML -->
-        <form>
-                Nama Depan :<input type="text" value="yudi"><br/>
-                Nama Belakang :<input type="text" value="iriyanto" readonly><br/>            
-                Prodi :<input type="text" value="Teknik Informatika" disabled><br/>
-                Jurusan :<input type="text" value="Teknologi Informasi" size="50"><br/>
-                Universitas :<input type="text" value="PoltekJember" maxlength="10"><br/>
-        </form>
-        <form>
-                <select>
-                    <option>google chrome</option>
-                    <option>mozilla firfox</option>
-                    <option>internet explore</option>
-                </select>
-        </form>
-        <form>
-                <input type="date" name="day" max="1979-12-31">
-                <input type="date" name="day" min="2000-01-02"></br>
-                <input type="text" name="nama" placeholder="masukkan nama">
-        </form>
+        echo $jumlah."</br></br>";
 
-        <!-- Menampilkan gambar pada HTML -->
-        <h1>Menampilkan gambar pada HTML</h1>
-        <img src="hack.jpg" height="300px" width="500px;">
+        for ($x = 0; $x <= 10; $x++) {
+            echo "Tempat Ke - ".$x."<br>";
+            }
 
-        <!-- menghubungkan HTML dengan CSS -->
-        <h2>Belajar HTML menghubungkan html dengan css</h2>
+        $t = date("H");
 
-        <h1>Mengenal Class dan Id pada HTML</h1>
-        <!-- contoh penggunaan class -->
-        <div class="kotak">kotak 1</div>
-        <div class="kotak">kotak 2</div>
-        <div class="kotak">kotak 3</div>
-     
-        <!-- contoh penggunaan id -->
-        <div id="kotak">Kotak 4</div>
+        if ($t < "20") {
+            echo "Selamat Pagi!";
+        }
 
-        <?php
-         echo "selamat datang";
-         ?>
+        //Konstanta
+        define("Khafid", "Selamat datang di Polije!");
+        echo "</br></br>".Khafid;
 
+        //Fungsi
+        function khafid(){
+            echo "</br></br>".Khafid." Dua";
+        }
+
+        khafid();
+
+?>
+   
+
+       
              
     
 </body>
