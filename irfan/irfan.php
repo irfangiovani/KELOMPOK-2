@@ -1,10 +1,12 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>hallo word</title>
+  <title>belajar php</title>
 </head>
 
 <body bgcolor="cyan"></body>
+<marquee behavior="alternate" direction="left"> <h1>KELOMPOK 2</h1></marquee>
+<h1><center> irfan giovani</center></h1>
 <h1><center></center></h1>
 
 
@@ -16,8 +18,6 @@ $tempat = "petanicoding";
 
 
 echo "Today is " . date("Y/m/d") . "<br>";
-echo "Today is " . date("Y.m.d") . "<br>";
-echo "Today is " . date("Y-m-d") . "<br>";
 echo "Today is " . date("l");
 echo "<h1 style='color:red'>Selamat Belajar PHP ".$tempat."</h1>";
 ECHO "<h2 style='color:blue'>Selamat Belajar PHP</h2>";
