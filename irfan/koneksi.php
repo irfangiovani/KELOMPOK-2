@@ -50,8 +50,11 @@ $nama = array('irfan','erlian','akmal','arga');
 
 //menampilkan data array dengan nomor urut 2
 echo $nama[2];
+ ?>
 
 
+
+<?php
 //penamaan isi array
 $nama['irfan'] = "kepribadiaan ganda";
 $nama['erlian'] = "introvet";
@@ -60,4 +63,4 @@ $nama['arga'] = "nggak punya kepribadiaan";
 
 //menampikan isi array yang bernama akmal
 echo $nama['akmal'];
- ?>
+?>
