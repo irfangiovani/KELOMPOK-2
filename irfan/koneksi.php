@@ -42,7 +42,7 @@ if(isset($_POST['lo'])){
 }
 ?>
  
-
+ <h2>mengenal</h2>
  <?php
 //mengenal array 
 $nama = array('irfan','erlian','akmal','arga');
@@ -53,7 +53,7 @@ echo $nama[2];
  ?>
 
 
-
+<h2>penamaan array</h2>
 <?php
 //penamaan isi array
 $nama['irfan'] = "kepribadiaan ganda";
@@ -64,7 +64,7 @@ $nama['arga'] = "nggak punya kepribadiaan";
 //menampikan isi array yang bernama akmal
 echo $nama['akmal'];
 ?>
-
+<h2>pelurlangan</h2>
 while(kondisi){
     statement
 }
@@ -78,3 +78,17 @@ while($x <= 10){
 }
 ?>
 
+
+<h2>aritmaatika</h2>
+<?php 
+$a = 4;
+$b = 19;
+//menjumlahkan variabel a dengan variabel b
+echo $a + $b;
+?>
+<?php 
+$a = 4;
+$b = 19;
+//Operator pengurangan variabel a dengan variabel b
+echo $a - $a;
+?>
