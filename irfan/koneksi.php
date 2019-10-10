@@ -64,3 +64,17 @@ $nama['arga'] = "nggak punya kepribadiaan";
 //menampikan isi array yang bernama akmal
 echo $nama['akmal'];
 ?>
+
+while(kondisi){
+    statement
+}
+<?php
+// perulangan
+$x = 1;
+
+while($x <= 10){
+    echo " Angka $x <br>";
+    $x++;
+}
+?>
+
