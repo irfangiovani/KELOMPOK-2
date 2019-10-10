@@ -41,3 +41,23 @@ if(isset($_POST['lo'])){
  }
 }
 ?>
+ 
+
+ <?php
+//mengenal array 
+$nama = array('irfan','erlian','akmal','arga');
+
+
+//menampilkan data array dengan nomor urut 2
+echo $nama[2];
+
+
+//penamaan isi array
+$nama['irfan'] = "kepribadiaan ganda";
+$nama['erlian'] = "introvet";
+$nama['akmal'] = "ekstrovet";
+$nama['arga'] = "nggak punya kepribadiaan";
+
+//menampikan isi array yang bernama akmal
+echo $nama['akmal'];
+ ?>
