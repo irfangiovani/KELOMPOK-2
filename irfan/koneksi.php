@@ -92,3 +92,19 @@ $b = 19;
 //Operator pengurangan variabel a dengan variabel b
 echo $a - $a;
 ?>
+
+
+<h2>form</h2>
+<!-- penanganan form dengan method POST -->
+<form method="post" action="tampil.php">
+	<label>Masukkan Nama</label><br/>
+	<input type="text" name="nama"><br/>
+	<label>Masukkan Usia</label><br/>
+	<input type="text" name="usia"><br/>	
+	<input type="submit" value="oke">
+</form>
+
+<?php 
+echo "<h1> ISI FILE TES.PHP </h1>";
+?>
+
