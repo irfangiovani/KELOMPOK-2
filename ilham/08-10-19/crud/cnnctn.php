@@ -1,4 +1,3 @@
-
 <?php 
 //koneksi DB
 	$host = "localhost";
@@ -14,5 +13,3 @@
 	}
 	echo "Koneksi Berhasil";
  ?>
-
- //untuk pemrosesan form login
