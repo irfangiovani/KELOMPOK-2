@@ -1,0 +1,23 @@
+.jumbotron {
+    background-image: url(img/4685.jpg);
+    background-size: cover;
+    height: 770px;
+    text-align: center;
+    margin-top: -40px;
+}
+
+.jumbotron .display-4 {
+    color: black;
+    margin-top: 200px;
+}
+
+.jumbotron p {
+    color: black;
+    font-size: 25px;
+}
+
+.jumbotron hr {
+    border-color: black;
+    width: 70px;
+    border-width: 3px;
+}
