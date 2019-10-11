@@ -38,7 +38,7 @@
 		</tr>
 		<?php 
 		include "koneksi.php";
-		$query_mysql = mysql_query("SELECT * FROM user")or die(mysql_error());
+		$query_mysql = mysqli_query("SELECT * FROM user")or die(mysqli_error());
 		$nomor = 1;
 		while($data = mysql_fetch_array($query_mysql)){
 		?>
