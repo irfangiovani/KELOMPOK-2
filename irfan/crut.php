@@ -3,9 +3,9 @@
     <head>
         <title>Halaman Data Mahasiswa</title>
 </head>
-<body>
+<body bgcolor="cyan">
     <h2>Data Mahasiswa</h2>
-    <table bolder= "1">
+    <table border= "1" cellpadding="10">
         <tr>
             <td>No</td>
             <td>nama</td>
@@ -18,11 +18,11 @@
          <?php
          include 'koneksi.php';
          $no = 1;
-         $select = mysqli_query($conn, "SELECT * FROM identitas");
-         while($hasil = mysqli_fetch_array($select)){}
+         $select = mysqli_query($koneksi, "SELECT * FROM identitas");
+         while($hasil = mysqli_fetch_array($select)){
          ?>
 <tr>
-            <td><?php echo $No++?></td>
+            <td><?php echo $no++?></td>
             <td><?php echo$hasil['nama']?></td>
             <td><?php echo$hasil['alamat']?></td>
             <td><?php echo$hasil['nim']?></td>
@@ -32,6 +32,9 @@
                 <a href="">Hapus</a>
                 
             </td>
+<?php }?>
+
+            
 </tr>
 </table>
 </body>
