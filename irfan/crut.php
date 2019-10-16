@@ -5,6 +5,8 @@
 </head>
 <body bgcolor="cyan">
     <h2>Data Mahasiswa</h2>
+    <a href="tambah.php">tambah</a>
+    
     <table border= "1" cellpadding="10">
         <tr>
             <td>No</td>
