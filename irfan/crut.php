@@ -5,7 +5,7 @@
 </head>
 <body bgcolor="cyan">
     <h2>Data Mahasiswa</h2>
-    <a href="tambah.php">tambah</a>
+    
     
     <table border= "1" cellpadding="10">
         <tr>
@@ -34,6 +34,7 @@
                 <a href="">Hapus</a>
                 
             </td>
+            <a href="tambah.php">tambah</a>
 <?php }?>
 
             
