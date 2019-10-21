@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <title>POP UP</title>
+  </head>
+  <body>
+    
+    <div class="container">
+      <h1>POP UP BOOTSTRAP</h1>
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contohModal1">HUBUNGI KAMI</button>
+
+      <div class="modal fade" id="contohModal1" role="dialog" arialabelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">HUBUNGI KAMI</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label>Nama Lengkap</label>
+                  <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label>Silahkan Tulis Pesan Anda</label>
+                  <textarea class="form-control" rows="5"></textarea>
+                </div>
+              </form>
+            </div>
+
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">SUBMIT</button>
+              <button type="reset" class="btn btn-danger">RESET</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="ajax.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

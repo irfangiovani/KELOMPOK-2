@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <title>Forms Bootstrap</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="alert alert-primary text-center mt-3">FORMULIR PENDAFTARAN SISWA BARU</h2>
+
+      <form>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-2">
+              <label for="namalengkap">Nama Lengkap</label>
+            </div>
+            <div class="col-md-10">
+              <input type="text" class="form-control" placeholder="Masukkan Nama Lengkap Anda" id="namalengkap">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-2">
+              <label for="Email">Email</label>
+            </div>
+            <div class="col-md-10">
+              <input type="Email" class="form-control" placeholder="Masukkan Email Anda" id="Email">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-2">
+              <label for="Password">Password</label>
+            </div>
+            <div class="col-md-10">
+              <input type="Password" class="form-control" placeholder="Masukkan Password Anda" id="Password">
+              <small>(Password harus terdiri dari angka dan huruf minimal 6 karakter)</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-2">
+              <label for="tempatlahir">Tempat Lahir</label>
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="Masukkan Tempat Lahir Anda" id="tempatlahir">
+            </div>
+            <div class="col-md-2">
+              <label for="tanggallahir">Tanggal Lahir</label>
+            </div>
+            <div class="col-md-4">
+              <input type="date" class="form-control" id="tanggallahir">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-2">
+              <label>Pilih Jurusan</label>
+            </div>
+            <div class="col-md-10">
+              <select class="form-control">
+                <option>1. Teknik Komputer Dan Jaringan</option>
+                <option>2. Rekayasa Perangkat Lunak</option>
+                <option>3. Teknik Elektro</option>
+                <option>4. Teknik Mesin</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group text-center">
+          <label>Alasan Memilih Sekolah Ini</label>
+          <textarea class="form-control" rows="5"></textarea>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+          <div class="col-md-2">
+          <label>Jenis Kelamin</label>
+          </div>
+          <div class="col-md-4">
+          <div class="form-check-inline">
+            <input type="radio" class="form-check-input" name="radio1" id="radio2">
+            <label>Laki-laki</label>
+          </div>
+
+          <div class="form-check-inline">
+            <input type="radio" class="form-check-input" name="radio1" id="radio2" >
+            <label>Perempuan</label>
+          </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Upload Dokumen</label>
+          <input type="file" class="form-control-file">
+          <small>(Upload File Dengan Ukuran Maksiman 2 MB)</small>
+        </div>
+        
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">SIMPAN</button>
+          <button type="reset" class="btn btn-danger">RESET</button>
+        </div>
+
+
+<br><br><br>
+      </form>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="ajax.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+  </body>
+</html>
