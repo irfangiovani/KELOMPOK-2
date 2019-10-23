@@ -56,20 +56,18 @@
 		</div>
 	</header>
 	<!-- Header section end -->
+	
+	<!--  Page top end -->
 
-
-	<!-- Page top section -->
-	<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
+<!-- Page top section -->
+<section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
 		<div class="container text-white">
 			<h3>Our Coureses</h3>
 		</div>
 	</section>
-	<!--  Page top end -->
-
-
 	<!-- 
 
-	<!--====== Javascripts & Jquery ======-->
+	<!====== Javascripts & Jquery ======-->
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
