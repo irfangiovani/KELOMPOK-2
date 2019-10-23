@@ -37,7 +37,7 @@
 		<div class="header-warp">
 			<div class="container">
 				<a href="#" class="site-logo">
-					<img src="img/smk3.jpg" alt="">
+					<img src="img/Bondowoso.jpg" alt="">
 				</a>
 				<div class="user-panel">
 					<a href="#">Login Admin</a>
