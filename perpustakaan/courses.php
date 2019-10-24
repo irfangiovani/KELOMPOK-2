@@ -65,7 +65,46 @@
 			<h3>Our Coureses</h3>
 		</div>
 	</section>
-	<!-- 
+	
+	<!-- label -->
+  <div class="row">
+  <div class="col-sm-3">
+  <div class="card" style="width: 18rem;">
+    <img src="img/fisika.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">FISIKA</h5>
+      <p class="card-text">
+Judul Buku  : FISIKA untuk Sains dan Teknik
+ 
+Penulis     : Serway Jewett
+
+Penerbit    : Salemba Teknika
+
+Kota Terbit : Jagakarsa, Jakarta 12610
+
+Tahun Terbit: 2009
+
+Tim Desaign : Deka Hasbiy
+
+Jumlah Halaman  : 3 jil, 992 halaman.
+</p>
+      <a href="#" class="btn btn-primary">Lihat detail</a>
+    </div>
+  </div>
+</div>
+
+  
+  <div class="col-sm-2">
+  <div class="card" style="width: 18rem;">
+    <img src="img/matematika.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Lihat detail</a>
+    </div>
+  </div>
+</div>
+</div>
 
 	<!====== Javascripts & Jquery ======-->
 	<script src="js/jquery-3.2.1.min.js"></script>
