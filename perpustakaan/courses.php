@@ -33,6 +33,7 @@
 	</div>
 	
 	<!-- Header section -->
+	
 	<header class="header-section">
 		<div class="header-warp">
 			<div class="container">
@@ -40,7 +41,7 @@
 					<img src="img/Bondowoso.jpg" alt="">
 				</a>
 				<div class="user-panel">
-					<a href="#">Login Admin</a>
+					<a href="#">Login</a>
 				</div>
 				<div class="nav-switch">
 					<i class="fa fa-bars"></i>
@@ -55,15 +56,39 @@
 			</div>
 		</div>
 	</header>
-	<!-- Header section end -->
-	
+	<br>
+	<!-- slider section end -->
+
 	<!--  Page top end -->
 
 <!-- Page top section -->
 <section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
-		<div class="container text-white">
-			<h3>Our Coureses</h3>
-		</div>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 	</section>
 	
 	<!-- label -->
@@ -72,22 +97,8 @@
   <div class="card" style="width: 18rem;">
     <img src="img/fisika.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">FISIKA</h5>
-      <p class="card-text">
-Judul Buku  : FISIKA untuk Sains dan Teknik
- 
-Penulis     : Serway Jewett
-
-Penerbit    : Salemba Teknika
-
-Kota Terbit : Jagakarsa, Jakarta 12610
-
-Tahun Terbit: 2009
-
-Tim Desaign : Deka Hasbiy
-
-Jumlah Halaman  : 3 jil, 992 halaman.
-</p>
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <a href="#" class="btn btn-primary">Lihat detail</a>
     </div>
   </div>
