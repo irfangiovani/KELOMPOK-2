@@ -1,0 +1,12 @@
+div .paragraf{
+            width: 130px;
+            height: 100px;
+            background-color: white;
+            overflow: auto;
+            font-size: 13px; 
+          }
+
+.card-title{
+	font-size: 100%;
+	font-weight: bold;
+}
