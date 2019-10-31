@@ -16,7 +16,7 @@
 	background-color: rgba(43,79,90,0.6);
 }
 .carousel-item p {
-	background-color: rgba(43,79,90,0.6);
+	text-shadow: 0 2px 3px black;
 	font-size: 25px;
 }
 .jumbotron hr {
@@ -42,8 +42,7 @@
 }
 .carousel-item .display-4 {
 	margin-top: -440px;
-	color: rgb(48, 48, 48);
-	background-color: rgba(43,79,90,0.6);
+	text-shadow: 0 2px 3px black;
 }
 .carousel-item hr {
 	border-color: rgb(102,102,102);
