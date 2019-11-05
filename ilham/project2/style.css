@@ -1,0 +1,59 @@
+.navbar {
+	background-color: rgba(43,79,90,0.6);
+}
+/*style jumbotron*/
+.jumbotron {
+	background-image: url(img/slider5.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 870px;
+	text-align: center;
+	margin-top: -50px;
+}
+.jumbotron .display-4 {
+	color: rgb(48, 48, 48);
+	margin-top: 250px;
+	background-color: rgba(43,79,90,0.6);
+}
+.carousel-item p {
+	text-shadow: 0 2px 3px black;
+	font-size: 25px;
+}
+.jumbotron hr {
+	border-color: rgb(102,102,102);
+	width: 70px;
+	border-width: 3px;
+}
+.jumbotron .btn {
+	background-color: rgba(43,79,90,0.8);
+	border: none;
+	border-radius: 25px;
+	padding-right: 25px;
+	padding-left: 25px;
+	margin-top: 40px;
+}
+/*style slider*/
+
+.carousel-item {
+	height: 750px;
+}
+.carousel-item img {
+	margin-top: -120px;
+}
+.carousel-item .display-4 {
+	margin-top: -440px;
+	text-shadow: 0 2px 3px black;
+}
+.carousel-item hr {
+	border-color: rgb(102,102,102);
+	width: 70px;
+	border-width: 3px;
+}
+.carousel-item .btn {
+	background-color: rgba(43,79,90,0.8);
+	border: none;
+	border-radius: 25px;
+	padding-right: 25px;
+	padding-left: 25px;
+	margin-top: 40px;
+}
