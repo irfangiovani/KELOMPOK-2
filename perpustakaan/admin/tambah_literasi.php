@@ -33,49 +33,67 @@ if( isset($_POST["submit"])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="css/css/bootstrap.min.css">
     <title>Tambah Buku Literasi Umum</title>
 </head>
 <body>
-    <h1>Tambah Buku Literasi Umum</h1>
+    <div class="container">
+    <h2 class="alert alert-success text-center mt-3">Tambah Buku Literasi Umum</h1>
     
     <form action="" method="post">
-        <ul>
-            <li>
-                <label for="kode_buku_literasi">Kode Buku Literasi : </label>
-                <input type="text" name="kode_buku_literasi" id="kode_buku_literasi">
-            </li>
-             <li>
-                <label for="judul_buku_literasi">judul Buku Literasi : </label>
-                <input type="text" name="judul_buku_literasi" id="judul_buku_literasi">
-            </li>
-            <li>
-                <label for="penerbit">Penerbit : </label>
-                <input type="text" name="penerbit" id="penerbit">
-            </li>
-            <li>
-                <label for="tahun_terbit">Tahun Terbit : </label>
-                <input type="text" name="tahun_terbit" id="tahun_terbit">
-            </li>
-            <li>
-                <label for="no_rak">No Rak : </label>
-                <input type="text" name="no_rak" id="no_rak">
-            </li>
-            <li>
-                <label for="kategori">Kategori : </label>
-                <input type="text" name="kategori" id="kategori">
-            </li>
-            <li>
-                <label for="gambar_sampul">Gambar Sampul : </label>
-                <input type="text" name="gambar_sampul" id="gambar_sampul">
-            </li>
-            <li>
-                <label for="deskripsi_buku">Deskripsi Buku : </label>
-                <input type="text" name="deskripsi_buku" id="deskripsi_buku">
-            </li>
-            <li>
-                <button type="submit" name="submit">Tambah data!</button>
-            </li>
-        </ul>
+    
+           <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="kode_buku_literasi">Kode Buku Literasi : </label>
+                  <input type="text" class="form-control" placeholder="Masukkan Kode Buku..." name="kode_buku_literasi" id="kode_buku_literasi">
+            </div>
+                <div class="form-group col-md-6">
+                  <label for="kategori">Kategori : </label>
+                  <input type="text" class="form-control" placeholder="Masukkan Kategori..." name="kategori" id="kategori">
+                </div>
+           </div>
+
+            <div class="form-group text-center">
+                  <label for="judul_buku_literasi">Judul Buku Literasi : </label>
+                  <input type="text" class="form-control" placeholder="Masukkan Judul Buku..." name="judul_buku_literasi" id="judul_buku_literasi">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="penerbit">Penerbit : </label>
+                  <input type="text" class="form-control" placeholder="Masukkan Penerbit Buku..." name="penerbit" id="penerbit">
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label for="tahun_terbit">Tahun Terbit : </label>
+                  <input type="text" class="form-control" placeholder="Masukkan Tahun Terbit..." name="tahun_terbit" id="tahun_terbit">
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label for="no_rak">No Rak : </label>
+                  <input type="text" class="form-control" placeholder="Masukkan Nomor Rak..." name="no_rak" id="no_rak">
+                </div>
+            </div>
+
+            <div class="form-group text-center">
+              <label for="deskripsi_buku">Deskripsi Buku : </label>
+              <textarea type="text" name="deskripsi_buku" id="deskripsi_buku" class="form-control" rows="5"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="gambar_sampul">Gambar Sampul : </label>
+              <input type="file" class="form-control-file" name="gambar_sampul" id="gambar_sampul">
+              <small>(Upload File Dengan Ukuran Maksiman 2 MB)</small>
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
+              <button type="reset" class="btn btn-danger">RESET</button>
+            </div>
+        <br><br>
+    </div>
                 
 </body>
 </html>
