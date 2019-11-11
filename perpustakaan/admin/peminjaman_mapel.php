@@ -1,3 +1,9 @@
+<?php
+
+require 'functions.php';
+$peminjaman_mapel = query ("SELECT * FROM peminjaman_buku_mapel"); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +17,7 @@
   <!-- css -->
   <link href="css/bootstrap.css" rel="stylesheet" />
   <link href="css/bootstrap-responsive.css" rel="stylesheet" />
+  <link href="css/prettyPhoto.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 
@@ -67,7 +74,7 @@
         <div class="row nomargin">
           <div class="span4">
             <div class="logo">
-              <h1><a href="index.html"><i class="icon-tint"></i> Remember</a></h1>
+              <h1><a href="index.html"><i class="icon-tint"></i> K-Negabon Library</a></h1>
             </div>
           </div>
           <div class="span8">
@@ -75,46 +82,40 @@
               <div class="navigation">
                 <nav>
                   <ul class="nav topnav">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                      <a href="#">Koleksi Buku<i class="icon-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="literasi.php">Buku Literasi Umum</a></li>
+                        <li><a href="mapel.php">Buku Mapel Kelas</a></li>
+                        <li><a href="tahunan.php">Buku Tahunan Siswa</a></li>
+                      </ul>
+                    </li>
                     <li class="dropdown active">
-                      <a href="#">Features <i class="icon-angle-down"></i></a>
+                      <a href="#">Peminjaman<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="typography.html">Typography</a></li>
-                        <li><a href="components.html">Components</a></li>
-                        <li><a href="icons.html">Icons</a></li>
-                        <li><a href="icon-variations.html">Icon variations</a></li>
-
+                      <li><a href="peminjaman_literasi.php">Buku Literasi Umum</a></li>
+                        <li><a href="peminjaman_mapel.php">Buku Mapel Kelas</a></li>
+                        <li><a href="peminjaman_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
-                      <a href="#">Pages <i class="icon-angle-down"></i></a>
+                      <a href="#">Pengembalian<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="pricingbox.html">Pricing boxes</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="404.html">404</a></li>
+                        <li><a href="portfolio-2cols.html">Buku Literasi Umum</a></li>
+                        <li><a href="portfolio-3cols.html">Buku Mapel Kelas</a></li>
+                        <li><a href="portfolio-4cols.html">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
-                      <a href="#">Portfolio <i class="icon-angle-down"></i></a>
+                      <a href="#">Pengunjung<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="portfolio-2cols.html">Portfolio 2 columns</a></li>
-                        <li><a href="portfolio-3cols.html">Portfolio 3 columns</a></li>
-                        <li><a href="portfolio-4cols.html">Portfolio 4 columns</a></li>
-                        <li><a href="portfolio-detail.html">Portfolio detail</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#">Blog <i class="icon-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                        <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
-                        <li><a href="post-left-sidebar.html">Post left sidebar</a></li>
-                        <li><a href="post-right-sidebar.html">Post right sidebar</a></li>
+                        <li><a href="blog-left-sidebar.html">Siswa</a></li>
+                        <li><a href="blog-right-sidebar.html">Tamu</a></li>
                       </ul>
                     </li>
                     <li>
-                      <a href="contact.html">Contact </a>
+                      <a href="contact.html">Data Member Siswa</a>
                     </li>
                   </ul>
                 </nav>
@@ -132,78 +133,57 @@
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Icon variations</h2>
+              <h2>Peminjaman Buku Mapel Kelas</h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
-              <li><a href="index.html">Home</a> <i class="icon-angle-right"></i></li>
-              <li><a href="#">Features</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Icon variations</li>
+              <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
+              <li><a href="#">Peminjaman</a> <i class="icon-angle-right"></i></li>
+              <li class="active">Buku Mapel Kelas</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="content">
-      <div class="container">
-        <div class="row">
-          <div class="span12">
+    <br>
+    
+    <a href="tambah_literasi.php">Tambah Data Peminjaman Mapel</a>
+    <br><br>
+    <form action="" method="post">
+    <table border="1" cellpadding="0" cellspacing="0">
+        <tr>
+			<th>no</th>
+            <th>ID Pinjam Mapel</th>
+            <th>Kode Judul Buku Mapel</th>
+            <th>Kode Kelas</th>
+            <th>Nama Peminjam</th>
+            <th>Waktu Pinjam</th>
+            <th>Sebanyak</th>
+            <th>Status</th>
+        </tr>
+		<?php $i = 1; ?> 
+        <?php
+            foreach( $peminjaman_mapel as $row) :
+        ?>
+        <tr>
+			<td><?=$i; ?></td>
+            <td><?php echo $row["id_pinjam_buku_mapel"]; ?></td>
+            <td><?php echo $row["id_judul_buku_mapel"];?></td>
+            <td><?php echo $row["kode_kelas"];?></td>
+            <td><?php echo $row["nama_peminjam"];?></td>
+            <td><?php echo $row["waktu_peminjaman"];?></td>
+            <td><?php echo $row["banyak_buku"];?></td>
+            <td><?php echo $row["notifikasi"];?></td>
+        </tr>
+			<?php $i++; ?>
+			<?php endforeach; ?>
+    </table>
+    </form>
 
 
-
-            <h4>Icon sizes for (circled, square, rounded - dark and light background)</h4>
-
-            <div class="row">
-              <div class="span4">
-                <p><i class="icon-circled icon-bgdark icon-beaker"></i> <i class="icon-circled icon-bglight icon-beaker"></i> Default size</p>
-                <p><i class="icon-circled icon-bgdark icon-2x icon-file"></i> <i class="icon-circled icon-bglight icon-2x icon-file"></i> Icon 2x</p>
-                <p><i class="icon-circled icon-bgdark icon-apple icon-3x"></i> <i class="icon-circled icon-bglight icon-3x icon-apple"></i> Icon 3x</p>
-                <p><i class="icon-circled icon-bgdark icon-suitcase icon-4x"></i> <i class="icon-circled icon-bglight icon-4x icon-suitcase"></i> Icon 4x</p>
-                <p><i class="icon-circled icon-bgdark icon-rocket icon-5x"></i> <i class="icon-circled icon-bglight icon-5x icon-rocket"></i> Icon 5x</p>
-              </div>
-              <div class="span4">
-                <p><i class="icon-square icon-bgdark icon-beaker"></i> <i class="icon-square icon-bglight icon-beaker"></i> Default size</p>
-                <p><i class="icon-square icon-bgdark icon-file icon-2x"></i> <i class="icon-square icon-bglight icon-file icon-2x"></i>Icon 2x</p>
-                <p><i class="icon-square icon-bgdark icon-apple icon-3x"></i> <i class="icon-square icon-bglight icon-apple icon-3x"></i> Icon 3x</p>
-                <p><i class="icon-square icon-bgdark icon-suitcase icon-4x"></i> <i class="icon-square icon-bglight icon-suitcase icon-4x"></i> Icon 4x</p>
-                <p><i class="icon-square icon-bgdark icon-rocket icon-5x"></i> <i class="icon-square icon-bglight icon-rocket icon-5x"></i> Icon 5x</p>
-              </div>
-              <div class="span4">
-                <p><i class="icon-rounded icon-bgdark icon-beaker"></i> <i class="icon-rounded icon-bglight icon-beaker"></i> Default size</p>
-                <p><i class="icon-rounded icon-bgdark icon-file icon-2x"></i> <i class="icon-rounded icon-bglight icon-file icon-2x"></i> Icon 2x</p>
-                <p><i class="icon-rounded icon-bgdark icon-apple icon-3x"></i> <i class="icon-rounded icon-bglight icon-apple icon-3x"></i> Icon 3x</p>
-                <p><i class="icon-rounded icon-bgdark icon-suitcase icon-4x"></i> <i class="icon-rounded icon-bglight icon-suitcase icon-4x"></i> Icon 4x</p>
-                <p><i class="icon-rounded icon-bgdark icon-rocket icon-5x"></i> <i class="icon-rounded icon-bglight icon-rocket icon-5x"></i> Icon 5x</p>
-              </div>
-
-              <!-- divider -->
-              <div class="span12 margintop30">
-                <div class="solidline"></div>
-                <div class="blankline30"></div>
-              </div>
-              <!-- end divider -->
-
-
-              <div class="span12 demoinline">
-                <h4>Basic icon sizes : 5 sizes</h4>
-                <p><i class="icon-beaker"></i> default</p>
-                <p><i class="icon-beaker icon-2x"></i> icon 2x, add class <code>icon-2x</code></p>
-                <p><i class="icon-beaker icon-3x"></i> icon 3x, add class <code>icon-3x</code></p>
-                <p><i class="icon-beaker icon-4x"></i> icon 4x, add class <code>icon-4x</code></p>
-                <p><i class="icon-beaker icon-5x"></i> icon 5x, add class <code>icon-5x</code></p>
-              </div>
-
-            </div>
-
-
-          </div>
-          <!-- end span12 -->
-        </div>
-      </div>
-    </section>
-
+    
     <footer>
       <div class="container">
         <div class="row">

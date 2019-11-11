@@ -1,3 +1,9 @@
+<?php
+
+require 'functions.php';
+$peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan"); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,7 +74,7 @@
         <div class="row nomargin">
           <div class="span4">
             <div class="logo">
-              <h1><a href="index.html"><i class="icon-tint"></i> Remember</a></h1>
+              <h1><a href="index.html"><i class="icon-tint"></i> K-Negabon Library</a></h1>
             </div>
           </div>
           <div class="span8">
@@ -76,45 +82,40 @@
               <div class="navigation">
                 <nav>
                   <ul class="nav topnav">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Beranda</a></li>
                     <li class="dropdown">
-                      <a href="#">Features <i class="icon-angle-down"></i></a>
+                      <a href="#">Koleksi Buku<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="typography.html">Typography</a></li>
-                        <li><a href="components.html">Components</a></li>
-                        <li><a href="icons.html">Icons</a></li>
-                        <li><a href="icon-variations.html">Icon variations</a></li>
-
-                      </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#">Pages <i class="icon-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="pricingbox.html">Pricing boxes</a></li>
-                        <li><a href="404.html">404</a></li>
+                        <li><a href="literasi.php">Buku Literasi Umum</a></li>
+                        <li><a href="mapel.php">Buku Mapel Kelas</a></li>
+                        <li><a href="tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
                     <li class="dropdown active">
-                      <a href="#">Portfolio <i class="icon-angle-down"></i></a>
+                      <a href="#">Peminjaman<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="portfolio-2cols.html">Portfolio 2 columns</a></li>
-                        <li><a href="portfolio-3cols.html">Portfolio 3 columns</a></li>
-                        <li><a href="portfolio-4cols.html">Portfolio 4 columns</a></li>
-                        <li><a href="portfolio-detail.html">Portfolio detail</a></li>
+                      <li><a href="peminjaman_literasi.php">Buku Literasi Umum</a></li>
+                        <li><a href="peminjaman_mapel.php">Buku Mapel Kelas</a></li>
+                        <li><a href="peminjaman_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
-                      <a href="#">Blog <i class="icon-angle-down"></i></a>
+                      <a href="#">Pengembalian<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                        <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
-                        <li><a href="post-left-sidebar.html">Post left sidebar</a></li>
-                        <li><a href="post-right-sidebar.html">Post right sidebar</a></li>
+                        <li><a href="portfolio-2cols.html">Buku Literasi Umum</a></li>
+                        <li><a href="portfolio-3cols.html">Buku Mapel Kelas</a></li>
+                        <li><a href="portfolio-4cols.html">Buku Tahunan Siswa</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#">Pengunjung<i class="icon-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="blog-left-sidebar.html">Siswa</a></li>
+                        <li><a href="blog-right-sidebar.html">Tamu</a></li>
                       </ul>
                     </li>
                     <li>
-                      <a href="contact.html">Contact </a>
+                      <a href="contact.html">Data Member Siswa</a>
                     </li>
                   </ul>
                 </nav>
@@ -132,135 +133,57 @@
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Portfolio detail</h2>
+              <h2>Peminjaman Buku Tahunan Siswa</h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
-              <li><a href="index.html">Home</a> <i class="icon-angle-right"></i></li>
-              <li><a href="#">Portfolio</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Portfolio detail</li>
+              <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
+              <li><a href="#">Peminjaman</a> <i class="icon-angle-right"></i></li>
+              <li class="active">Buku Tahunan Siswa</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="content">
-      <div class="container">
-        <div class="row">
-          <div class="span8">
-            <article class="noborder">
-              <div class="top-wrapper">
-                <div class="post-heading">
-                  <h3><a href="#">This is an example of portfolio detail</a></h3>
-                </div>
-                <!-- start flexslider -->
-                <div class="portfolio-detail">
-                  <img src="img/works/full/image-01-full.jpg" alt="" />
-                </div>
-                <!-- end flexslider -->
-              </div>
-
-              <p>
-                Qui ut ceteros comprehensam. Cu eos sale sanctus eligendi, id ius elitr saperet, ocurreret pertinacia pri an. No mei nibh consectetuer, semper laoreet perfecto ad qui, est rebum nulla argumentum ei. Fierent adipisci iracundia est ei, usu timeam persius
-                ea. Usu ea justo malis, pri quando everti electram ei, ex homero omittam salutatus sed.
-              </p>
-
-            </article>
-
-            <div class="row">
-              <div class="span8">
-                <h4>Related works</h4>
-              </div>
-              <div class="grid related-works cs-style-3">
-                <div class="span2">
-                  <div class="item">
-                    <figure>
-                      <div><img src="img/dummies/works/1.jpg" alt=""></div>
-                      <figcaption>
-                        <h3>Portfolio name</h3>
-                        <p>
-                          <a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                          <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                        </p>
-                      </figcaption>
-                    </figure>
-                  </div>
-                </div>
-                <div class="span2">
-                  <div class="item">
-                    <figure>
-                      <div><img src="img/dummies/works/2.jpg" alt=""></div>
-                      <figcaption>
-                        <h3>Portfolio name</h3>
-                        <p>
-                          <a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                          <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                        </p>
-                      </figcaption>
-                    </figure>
-                  </div>
-                </div>
-                <div class="span2">
-                  <div class="item">
-                    <figure>
-                      <div><img src="img/dummies/works/3.jpg" alt=""></div>
-                      <figcaption>
-                        <h3>Portfolio name</h3>
-                        <p>
-                          <a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                          <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                        </p>
-                      </figcaption>
-                    </figure>
-                  </div>
-                </div>
-                <div class="span2">
-                  <div class="item">
-                    <figure>
-                      <div><img src="img/dummies/works/4.jpg" alt=""></div>
-                      <figcaption>
-                        <h3>Portfolio name</h3>
-                        <p>
-                          <a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                          <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                        </p>
-                      </figcaption>
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="span4">
-            <aside class="right-sidebar">
-              <div class="widget">
-                <h5 class="widgetheading">Portfolio information</h5>
-                <ul class="folio-detail">
-                  <li><label>Category :</label> Web design</li>
-                  <li><label>Client :</label> ASU Company</li>
-                  <li><label>Project date :</label> 26 March, 2013</li>
-                  <li><label>Project URL :</label> <a href="#">www.projectsiteurl.com</a></li>
-                </ul>
-
-              </div>
-              <div class="widget">
-                <h5 class="widgetheading">Text widget</h5>
-                <p>
-                  Lorem ipsum dolor sit amet, unum suscipiantur te cum, vide magna ea eam. At eos wisi tractatos temporibus. Ne has omnis harum. Ei mea graece delenit nominati. Ut dolore albucius torquatos vel, choro gubergren no mel.
-                </p>
-
-              </div>
-            </aside>
-          </div>
-        </div>
-      </div>
-    </section>
+    <br>
+    
+    <a href="tambah_literasi.php">Tambah Data Peminjaman Tahunan</a>
+    <br><br>
+    <form action="" method="post">
+    <table border="1" cellpadding="0" cellspacing="0">
+        <tr>
+			<th>no</th>
+            <th>ID Pinjam Tahunan</th>
+            <th>Kode Judul Buku Tahunan</th>
+            <th>Kode Buku Tahunan</th>
+            <th>NIS Peminjam</th>
+            <th>Tanggal Peminjaman</th>
+            <th>Tanggal Harus Kembali</th>
+            <th>Notifikasi</th>
+        </tr>
+		<?php $i = 1; ?> 
+        <?php
+            foreach( $peminjaman_tahunan as $row) :
+        ?>
+        <tr>
+			<td><?=$i; ?></td>
+            <td><?php echo $row["id_pinjam_buku_tahunan"]; ?></td>
+            <td><?php echo $row["id_judul_buku_tahunan"];?></td>
+            <td><?php echo $row["kode_buku_tahunan"];?></td>
+            <td><?php echo $row["nis"];?></td>
+            <td><?php echo $row["tanggal_peminjaman"];?></td>
+            <td><?php echo $row["tanggal_hrs_kembali"];?></td>
+            <td><?php echo $row["notifikasi"];?></td>
+        </tr>
+			<?php $i++; ?>
+			<?php endforeach; ?>
+    </table>
+    </form>
 
 
+    
     <footer>
       <div class="container">
         <div class="row">

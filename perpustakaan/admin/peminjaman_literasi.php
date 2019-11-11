@@ -1,3 +1,9 @@
+<?php
+
+require 'functions.php';
+$peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi"); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,7 +74,7 @@
         <div class="row nomargin">
           <div class="span4">
             <div class="logo">
-              <h1><a href="index.html"><i class="icon-tint"></i> Remember</a></h1>
+              <h1><a href="index.html"><i class="icon-tint"></i> K-Negabon Library</a></h1>
             </div>
           </div>
           <div class="span8">
@@ -76,45 +82,40 @@
               <div class="navigation">
                 <nav>
                   <ul class="nav topnav">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Beranda</a></li>
                     <li class="dropdown">
-                      <a href="#">Features <i class="icon-angle-down"></i></a>
+                      <a href="#">Koleksi Buku<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="typography.html">Typography</a></li>
-                        <li><a href="components.html">Components</a></li>
-                        <li><a href="icons.html">Icons</a></li>
-                        <li><a href="icon-variations.html">Icon variations</a></li>
-
+                        <li><a href="literasi.php">Buku Literasi Umum</a></li>
+                        <li><a href="mapel.php">Buku Mapel Kelas</a></li>
+                        <li><a href="tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
                     <li class="dropdown active">
-                      <a href="#">Pages <i class="icon-angle-down"></i></a>
+                      <a href="#">Peminjaman<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="pricingbox.html">Pricing boxes</a></li>
-                        <li><a href="404.html">404</a></li>
+                      <li><a href="peminjaman_literasi.php">Buku Literasi Umum</a></li>
+                        <li><a href="peminjaman_mapel.php">Buku Mapel Kelas</a></li>
+                        <li><a href="peminjaman_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
-                      <a href="#">Portfolio <i class="icon-angle-down"></i></a>
+                      <a href="#">Pengembalian<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="portfolio-2cols.html">Portfolio 2 columns</a></li>
-                        <li><a href="portfolio-3cols.html">Portfolio 3 columns</a></li>
-                        <li><a href="portfolio-4cols.html">Portfolio 4 columns</a></li>
-                        <li><a href="portfolio-detail.html">Portfolio detail</a></li>
+                        <li><a href="portfolio-2cols.html">Buku Literasi Umum</a></li>
+                        <li><a href="portfolio-3cols.html">Buku Mapel Kelas</a></li>
+                        <li><a href="portfolio-4cols.html">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
-                      <a href="#">Blog <i class="icon-angle-down"></i></a>
+                      <a href="#">Pengunjung<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                        <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
-                        <li><a href="post-left-sidebar.html">Post left sidebar</a></li>
-                        <li><a href="post-right-sidebar.html">Post right sidebar</a></li>
+                        <li><a href="blog-left-sidebar.html">Siswa</a></li>
+                        <li><a href="blog-right-sidebar.html">Tamu</a></li>
                       </ul>
                     </li>
                     <li>
-                      <a href="contact.html">Contact </a>
+                      <a href="contact.html">Data Member Siswa</a>
                     </li>
                   </ul>
                 </nav>
@@ -132,40 +133,55 @@
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>404</h2>
+              <h2>Peminjaman Buku Literasi Umum</h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
-              <li><a href="index.html">Home</a> <i class="icon-angle-right"></i></li>
-              <li><a href="#">Pages</a> <i class="icon-angle-right"></i></li>
-              <li class="active">404 Error page</li>
+              <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
+              <li><a href="#">Peminjaman</a> <i class="icon-angle-right"></i></li>
+              <li class="active">Buku Literasi Umum</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="content">
-      <div class="container">
+    <br>
+    
+    <a href="tambah_literasi.php">Tambah Data Peminjaman Literasi</a>
+    <br><br>
+    <form action="" method="post">
+    <table border="1" cellpadding="0" cellspacing="0">
+        <tr>
+			<th>no</th>
+            <th>ID Pinjam Literasi</th>
+            <th>Kode Buku Literasi</th>
+            <th>NIS Peminjam</th>
+            <th>Tanggal Peminjaman</th>
+            <th>Tanggal Harus Kembali</th>
+            <th>Status</th>
+        </tr>
+		<?php $i = 1; ?> 
+        <?php
+            foreach( $peminjaman_literasi as $row) :
+        ?>
+        <tr>
+			<td><?=$i; ?></td>
+            <td><?php echo $row["id_pinjam_buku_literasi"]; ?></td>
+            <td><?php echo $row["kode_buku_literasi"];?></td>
+            <td><?php echo $row["nis"];?></td>
+            <td><?php echo $row["tanggal_peminjaman"];?></td>
+            <td><?php echo $row["tanggal_hrs_kembali"];?></td>
+            <td><?php echo $row["notifikasi"];?></td>
+        </tr>
+			<?php $i++; ?>
+			<?php endforeach; ?>
+    </table>
+    </form>
 
 
-
-        <div class="row">
-          <div class="span12">
-            <h2 class="errortitle aligncenter">404</h2>
-            <h3 class="aligncenter"><i class="icon-remove"></i> Sorry requested page not found</h3>
-            <p class="aligncenter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam non mod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-            </p>
-          </div>
-
-        </div>
-
-
-
-      </div>
-    </section>
-
+    
     <footer>
       <div class="container">
         <div class="row">

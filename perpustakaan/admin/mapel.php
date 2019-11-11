@@ -97,9 +97,9 @@ $buku_mapel_kelas = query ("SELECT * FROM buku_mapel_kelas");
                     <li class="dropdown">
                       <a href="#">Peminjaman<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="about.html">Buku Literasi Umum</a></li>
-                        <li><a href="pricingbox.html">Buku Mapel Kelas</a></li>
-                        <li><a href="404.html">Buku Tahunan Siswa</a></li>
+                      <li><a href="peminjaman_literasi.php">Buku Literasi Umum</a></li>
+                        <li><a href="peminjaman_mapel.php">Buku Mapel Kelas</a></li>
+                        <li><a href="peminjaman_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">

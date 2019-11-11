@@ -61,11 +61,11 @@ function registrasi($data) {
 }
 
 
-// function hapus($id) {
-//     global $conn;
-//     mysqli_query($conn, "DELETE FROM buku_tahunan_siswa WHERE id = $id");
-//     return mysqli_affected_rows($conn);
-// }
+function hapus($id) {
+    global $conn;
+    mysqli_query($conn, "DELETE FROM buku_tahunan_siswa WHERE id_judul_buku_tahunan = $id ");
+    return mysqli_affected_rows($conn);
+}
 
 
 
