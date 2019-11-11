@@ -154,11 +154,16 @@ $buku_tahunan_siswa = query ("SELECT * FROM buku_tahunan_siswa");
     
     <a href="tambah_tahunan.php">Tambah Buku Tahunan Siswa</a>
     <br><br>
-    <form action="" method="post">
-    <table border="1" cellpadding="0" cellspacing="0">
-        <tr>
-      <th>no</th>
-            <th>aksi</th>
+    <div class="content">
+    <div class="container-fluid">
+      <div class="box">
+<!-- <div class="row"> -->
+<div class="col-lg-7">
+    <form action=""method="post">
+      <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover ">
+            <tr>
+            <th>no</th>
             <th>Id Judul Buku Tahunan</th>
             <th>Judul Buku</th>
             <th>Penerbit</th>
@@ -166,6 +171,7 @@ $buku_tahunan_siswa = query ("SELECT * FROM buku_tahunan_siswa");
             <th>Kelas</th>
             <th>Gambar Sampul</th>
             <th>Stok</th>
+            <th>aksi</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php
@@ -173,11 +179,6 @@ $buku_tahunan_siswa = query ("SELECT * FROM buku_tahunan_siswa");
         ?>
         <tr>
 			<td><?=$i; ?></td>
-            <td>
-              <a href="">ubah</a>
-              <a href="hapus.php?id=<?= $row["id_judul_buku_tahunan"]; ?>
-              " onclick="return confirm('yakin');">hapus</a>
-            </td>
             <td><?php echo $row["id_judul_buku_tahunan"]; ?></td>
             <td><?php echo $row["judul_buku_tahunan"];?></td>
             <td><?php echo $row["penerbit"];?></td>
@@ -185,12 +186,22 @@ $buku_tahunan_siswa = query ("SELECT * FROM buku_tahunan_siswa");
             <td><?php echo $row["untuk_kelas"];?></td>
             <td><img src="img/tahunan/<?php echo $row["gambar_sampul"]; ?>" width="50"></td>
             <td><?php echo $row["stok"];?></td>
+            <td>
+              <a href="" class="btn btn-warning" title="ubah data" >ubah</a>
+
+              <a href="hapus.php?id=<?= $row["id_judul_buku_tahunan"]; ?>
+              " onclick="return confirm('yakin');"  class="btn btn-danger" title="hapus data">hapus</a>
+            </td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
     </table>
+  </div>
+</div>
+<!-- </div> -->
     </form>
-
+</div>
+</div>
 
     
     <footer>
