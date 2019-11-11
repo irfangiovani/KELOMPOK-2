@@ -24,6 +24,7 @@
 	position: absolute;
 	top: 0px;
 }
+
 </style>
 	<!--[if lt IE 9]>
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -37,7 +38,7 @@
 		<div class="loader"></div>
 	</div>
 	
-	<!-- Header section -->
+	<!-- Header navbar -->
 	
 	<header class="header-section">
 		<div class="header-warp">
@@ -282,6 +283,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/circle-progress.min.js"></script>
 	<script src="js/main.js"></script>
+	<div class="box">
 
 
 </body>
