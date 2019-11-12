@@ -174,9 +174,8 @@ $buku_tahunan_siswa = query ("SELECT * FROM buku_tahunan_siswa");
         <tr>
 			<td><?=$i; ?></td>
             <td>
-              <a href="">ubah</a>
-              <a href="hapus.php?id=<?= $row["id_judul_buku_tahunan"]; ?>
-              " onclick="return confirm('yakin');">hapus</a>
+              <a href="ubah.php?id=<?= $row["id_judul_buku_tahunan"]; ?>">ubah</a>
+              <a href="hapus.php?id=<?php echo $row['id_judul_buku_tahunan']; ?>" class="btn-danger btn">hapus</a>
             </td>
             <td><?php echo $row["id_judul_buku_tahunan"]; ?></td>
             <td><?php echo $row["judul_buku_tahunan"];?></td>
