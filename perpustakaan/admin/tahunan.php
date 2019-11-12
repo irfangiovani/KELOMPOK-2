@@ -177,19 +177,7 @@ $buku_tahunan_siswa = query ("SELECT * FROM buku_tahunan_siswa");
             foreach( $buku_tahunan_siswa as $row) :
         ?>
         <tr>
-<<<<<<< HEAD
-<<<<<<< HEAD
 			      <td><?=$i; ?></td>
-=======
-			<td><?=$i; ?></td>
-        
-
->>>>>>> 7ab2e7d38e8405f2791d329f0a9cc869b8143e18
-=======
-			<td><?=$i; ?></td>
-        
-
->>>>>>> 7ab2e7d38e8405f2791d329f0a9cc869b8143e18
             <td><?php echo $row["id_judul_buku_tahunan"]; ?></td>
             <td><?php echo $row["judul_buku_tahunan"];?></td>
             <td><?php echo $row["penerbit"];?></td>
