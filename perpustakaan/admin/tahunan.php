@@ -151,11 +151,10 @@ $buku_tahunan_siswa = query ("SELECT * FROM buku_tahunan_siswa");
     </section>
 
     <br>
-    
+    <div class="container-fluid">
     <a href="tambah_tahunan.php">Tambah Buku Tahunan Siswa</a>
     <br><br>
     <div class="content">
-    <div class="container-fluid">
       <div class="box">
 <!-- <div class="row"> -->
 <div class="offside-3 col-lg-7">
@@ -179,13 +178,8 @@ $buku_tahunan_siswa = query ("SELECT * FROM buku_tahunan_siswa");
         ?>
         <tr>
 			<td><?=$i; ?></td>
-<<<<<<< HEAD
-            <td>
-              <a href="ubah.php?id=<?= $row["id_judul_buku_tahunan"]; ?>">ubah</a>
-              <a href="hapus.php?id=<?php echo $row['id_judul_buku_tahunan']; ?>" class="btn-danger btn">hapus</a>
-            </td>
-=======
->>>>>>> 3e31901744c5e671698784bc613e366ffb17a72d
+        
+
             <td><?php echo $row["id_judul_buku_tahunan"]; ?></td>
             <td><?php echo $row["judul_buku_tahunan"];?></td>
             <td><?php echo $row["penerbit"];?></td>

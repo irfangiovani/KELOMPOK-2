@@ -158,7 +158,7 @@ $buku_literasi_umum = query ("SELECT * FROM buku_literasi_umum");
     </section>
 
     <br>
-    
+    <div class="container-fluid">
     <a href="tambah_literasi.php">Tambah Buku Literasi Umum</a>
     <br><br>
     <form action="" method="post">
@@ -199,6 +199,7 @@ $buku_literasi_umum = query ("SELECT * FROM buku_literasi_umum");
 			<?php endforeach; ?>
     </table>
     </form>
+  </div>
 
 
     
