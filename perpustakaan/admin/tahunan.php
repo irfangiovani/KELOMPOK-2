@@ -158,7 +158,7 @@ $buku_tahunan_siswa = query ("SELECT * FROM buku_tahunan_siswa");
     <div class="container-fluid">
       <div class="box">
 <!-- <div class="row"> -->
-<div class="col-lg-7">
+<div class="offside-3 col-lg-7">
     <form action=""method="post">
       <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover ">
