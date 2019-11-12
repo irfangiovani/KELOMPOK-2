@@ -151,14 +151,13 @@ $buku_tahunan_siswa = query ("SELECT * FROM buku_tahunan_siswa");
     </section>
 
     <br>
-    
+    <div class="container-fluid">
     <a href="tambah_tahunan.php">Tambah Buku Tahunan Siswa</a>
     <br><br>
     <div class="content">
-    <div class="container-fluid">
       <div class="box">
 <!-- <div class="row"> -->
-<div class="col-lg-7">
+<div class="offside-3 col-lg-7">
     <form action=""method="post">
       <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover ">
@@ -178,14 +177,13 @@ $buku_tahunan_siswa = query ("SELECT * FROM buku_tahunan_siswa");
             foreach( $buku_tahunan_siswa as $row) :
         ?>
         <tr>
-			<td><?=$i; ?></td>
 <<<<<<< HEAD
-            <td>
-              <a href="ubah.php?id=<?= $row["id_judul_buku_tahunan"]; ?>">ubah</a>
-              <a href="hapus.php?id=<?php echo $row['id_judul_buku_tahunan']; ?>" class="btn-danger btn">hapus</a>
-            </td>
+			      <td><?=$i; ?></td>
 =======
->>>>>>> 3e31901744c5e671698784bc613e366ffb17a72d
+			<td><?=$i; ?></td>
+        
+
+>>>>>>> 7ab2e7d38e8405f2791d329f0a9cc869b8143e18
             <td><?php echo $row["id_judul_buku_tahunan"]; ?></td>
             <td><?php echo $row["judul_buku_tahunan"];?></td>
             <td><?php echo $row["penerbit"];?></td>
@@ -196,7 +194,7 @@ $buku_tahunan_siswa = query ("SELECT * FROM buku_tahunan_siswa");
             <td>
               <a href="" class="btn btn-warning" title="ubah data" >ubah</a>
 
-              <a href="hapus.php?id=<?= $row["id_judul_buku_tahunan"]; ?>
+              <a href="hapus_tahunan.php?id=<?= $row["id_judul_buku_tahunan"]; ?>
               " onclick="return confirm('yakin');"  class="btn btn-danger" title="hapus data">hapus</a>
             </td>
         </tr>
