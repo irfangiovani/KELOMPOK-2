@@ -1,25 +1,18 @@
-<?php
-$conn = mysqli_connect("localhost", "root", "", "perpustakaan");
+<?php 
+require 'functions.php';
 
-// mysqli_query($conn, "DELETE FROM buku_tahunan_siswa WHERE'$_GET[id]' ");
-// return mysqli_affected_rows($conn);
-
-$id = $_GET['id'];
-$Q=mysqli_query($conn, "DELETE FROM buku_tahunan_siswa WHERE id_judul_buku_tahunan='$id'");
-
-if( $Q){
-    echo "
-        <script>
-            alert('data berhasil dihapus!');
-            document.location.href = 'tahunan.php';
-        </script>
-        ";
-}else {
-    echo "
-        <script>
-            alert('data gagal dihapus!');
-            document.location.href = 'tahunan.php';
-        </script>
-        ";
+$ambil = $conn->query("SELECT * FROM buku_tahunan_siswa WHERE id_judul_buku_tahunan='$_GET[id]'");
+$row = $ambil->fetch_assoc();
+$fotoproduk = $row['gambar_sampul'];
+if (file_exists("img/tahunan/$fotoproduk"))
+{
+	unlink("img/tahunan/$fotoproduk");
 }
-?>
+
+$conn->query("DELETE FROM buku_tahunan_siswa WHERE id_judul_buku_tahunan= '$_GET[id]'");
+
+echo "<script>alert('produk terhapus');</script>";
+echo "<script>location='tahunan.php';</script>";
+ ?>
+}
+
