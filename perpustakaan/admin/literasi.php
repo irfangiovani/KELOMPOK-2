@@ -158,14 +158,13 @@ $buku_literasi_umum = query ("SELECT * FROM buku_literasi_umum");
     </section>
 
     <br>
-    
+    <div class="container-fluid">
     <a href="tambah_literasi.php">Tambah Buku Literasi Umum</a>
     <br><br>
     <form action="" method="post">
     <table border="1" cellpadding="0" cellspacing="0">
         <tr>
 		      	<th>no</th>
-            <th>aksi</th>
             <th>Kode Buku</th>
             <th>Judul Buku</th>
             <th>Penerbit</th>
@@ -174,6 +173,7 @@ $buku_literasi_umum = query ("SELECT * FROM buku_literasi_umum");
             <th>Kategori</th>
             <th>Gambar Sampul</th>
             <th>Deskripsi Buku</th>
+            <th>aksi</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php
@@ -181,11 +181,6 @@ $buku_literasi_umum = query ("SELECT * FROM buku_literasi_umum");
         ?>
         <tr>
 			      <td><?=$i; ?></td>
-            <td>
-            <a href="ubah_literasi.php?id=<?= $row["id_judul_buku_tahunan"]; ?>">ubah</a>
-              <a href="hapus.php?id=<?= $row["id_judul_buku_tahunan"]; ?>
-              " onclick="return confirm('yakin');">hapus</a>
-            </td>
             <td><?php echo $row["kode_buku_literasi"]; ?></td>
             <td><?php echo $row["judul_buku_literasi"];?></td>
             <td><?php echo $row["penerbit"];?></td>
@@ -194,11 +189,18 @@ $buku_literasi_umum = query ("SELECT * FROM buku_literasi_umum");
             <td><?php echo $row["kategori"];?></td>
             <td><img src="img/literasi/<?php echo $row["gambar_sampul"]; ?>" width="50"></td>
             <td><?php echo $row["deskripsi_buku"];?></td>
+            <td>
+              <a href="" class="btn btn-warning" title="ubah data" >ubah</a>
+
+              <a href="hapus_literasi.php?id=<?= $row["kode_buku_literasi"]; ?>
+              " onclick="return confirm('yakin');"  class="btn btn-danger" title="hapus data">hapus</a>
+            </td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
     </table>
     </form>
+  </div>
 
 
     

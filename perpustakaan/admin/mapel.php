@@ -167,13 +167,14 @@ $buku_mapel_kelas = query ("SELECT * FROM buku_mapel_kelas");
             <th>Kelas</th>
             <th>Gambar Sampul</th>
             <th>Stok</th>
+            <th>aksi</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php
             foreach( $buku_mapel_kelas as $row) :
         ?>
         <tr>
-			<td><?=$i; ?></td>
+			      <td><?=$i; ?></td>
             <td><?php echo $row["id_judul_buku_mapel"]; ?></td>
             <td><?php echo $row["judul_buku_mapel"];?></td>
             <td><?php echo $row["penerbit"];?></td>
@@ -181,6 +182,12 @@ $buku_mapel_kelas = query ("SELECT * FROM buku_mapel_kelas");
             <td><?php echo $row["untuk_kelas"];?></td>
             <td><img src="img/mapel/<?php echo $row["gambar_sampul"]; ?>" width="50"></td>
             <td><?php echo $row["stok"];?></td>
+            <td>
+              <a href="" class="btn btn-warning" title="ubah data" >ubah</a>
+
+              <a href="hapus_mapel.php?id=<?= $row["id_judul_buku_mapel"]; ?>
+              " onclick="return confirm('yakin');"  class="btn btn-danger" title="hapus data">hapus</a>
+            </td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
