@@ -1,9 +1,12 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html>
 
     <head>
         <meta charset="utf-8">
-        <title>Form Login</title>
+        <title>Peminjaman Buku</title>
         <link rel="stylesheet" href="style.css">
     
         <style>
@@ -30,6 +33,7 @@
                 padding: 0;
                 color: #fff;
                 text-align: center;
+                font-size: 20px;
             }
             .box .inputBox {
                 position: relative;
@@ -76,10 +80,15 @@
         </style>
     </head>
 
+    <div id="frm">
+    <form action="Cekpeminjam.php" method="POST">
+
+
     <body>
         <div class="box">
             <h2>Cek Peminjaman Buku<h2><br>
-            <form>
+    <div id="frm">
+            <form action="Cekpeminjam.php" method="POST">
                 <div class="inputBox">
                     <input type="text" name="" required="">
                     <label>Nama</label>
@@ -91,6 +100,7 @@
                 <input type="submit" name="" value="Cek Peminjaman"><br>
             </form>
         </div>
+    </div>
     </body>
 
 </html>
