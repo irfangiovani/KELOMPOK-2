@@ -136,7 +136,6 @@ $buku_mapel_kelas = query ("SELECT * FROM buku_mapel_kelas");
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <div class="col-lg-7">
               <h2>Buku Mapel Kelas</h2>
             </div>
           </div>
