@@ -1,89 +1,3 @@
-<?php
-session_start();
-include "../admin/functions.php";
-//cek cookie
-if (isset($_COOKIE['id']) AND isset ($_COOKIE['key'])){
-	$id = $_COOKIE['id'];
-	$key = $_COOKIE['key'];
-
-
-
-	//ambil username berdasarkan id
-	$result = mysqli_query($conn,"SELECT username FROM pustakawan WHERE nip =$id");
-	$row = mysqli_fetch_assoc($result);
-	
-	//cek cookie dan username
-	if ($key === hash('sha256', $row['username']) ){
-		$_SESSION['login'] =true;
-	}
-
-
-}
-
-
-if (isset($_SESSION["login"])){
-header("location: index.php");
-exit;
-
-
-}
-
-if (isset($_POST["login"])){
-$username = $_POST["username"];
-$password = $_POST["password"];
- if($username =='admin' ){
-	 if ($password == 'admin'){
-		header('Location:../admin/index.html');exit;
-	
-	}
-	else{
-		echo"password salah";
-		exit;
-	}
-
- } else{
-	 echo "username tidak terddaftar";
- }
-}
-
-// $result = mysqli_query($conn, "SELECT * FROM  pustakawan WHERE username='$username' ");
-
-// if (mysqli_num_rows($result) === 1){
-// //cek password
-
-// 	$row = mysqli_fetch_assoc($result);
-// if (password_verify($password, $row['password'])){
-// //set session
-// $_SESSION["login"] = true;
-
-// //cek remember me
-
-// if (isset($_POST['remember'])){
-// //buat cookie
-
-// setcookie('id', $row['id'], time()+60);
-// setcookie('key' , hash( 'sha256', $row['username']), time()+60);
-
-
-
-// }
-
-// header('Location:../admin/index.html');
-// exit;
-//}
-
-// $error = true;
-
-
-//}
-//echo "username dan password salah";	
-
-
-//}
-//  cek username
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,6 +22,17 @@ $password = $_POST["password"];
 <!--===============================================================================================-->
 </head>
 <body>
+<?php 
+	if(isset($_GET['pesan'])){
+		if($_GET['pesan'] == "gagal"){
+			echo "Login gagal! username dan password salah!";
+		}else if($_GET['pesan'] == "logout"){
+			echo "Anda telah berhasil logout";
+		}else if($_GET['pesan'] == "belum_login"){
+			echo "Anda harus login untuk mengakses halaman admin";
+		}
+	}
+	?>
 	
 	<div class="limiter">
 		<div class="container-login100">
@@ -116,12 +41,8 @@ $password = $_POST["password"];
 					<img src="images/img-01.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" action="" method="post">
-					<span class="login100-form-title">
-						Member Login
-					</span>
-
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+				<form class="login100-form validate-form" action="cek_login.php" method="post">
+				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="username" placeholder="Username">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
@@ -138,11 +59,10 @@ $password = $_POST["password"];
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button type ="submit"class="login100-form-btn" name="login">
+						<button class="login100-form-btn" type="submit">
 							Login
 						</button>
 					</div>
-
 					<div class="text-center p-t-12">
 						<span class="txt1">
 							Forgot
@@ -158,7 +78,7 @@ $password = $_POST["password"];
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
 					</div>
-				</form>
+
 			</div>
 		</div>
 	</div>

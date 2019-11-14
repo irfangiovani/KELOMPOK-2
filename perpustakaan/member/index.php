@@ -1,37 +1,6 @@
 <?php
-$conn = mysqli_connect ("localhost" , "root","", "perpustakaan");
-//cek tombol submit ditekan atau tidak
-if( isset($_POST["submit"])){
-    // ambil data dari tiap elemen dalam form
-    $nis = $_POST["nis"];
-    $nama_siswa = $_POST["nama_siswa"];
-    $kelas = $_POST["kelas"];
-    $jurusan = $_POST["jurusan"];
-    $no_telp = $_POST["no_telp"];
-    $alamat = $_POST["alamat"];
-    $status = $_POST["status"];
-
-    //query insert data
-    mysqli_query($conn, "INSERT INTO member_perpus VALUES ('$nis', '$nama_siswa','$kelas','$jurusan', '$no_telp',  '$alamat','$status')");
-
-    
-
-    // cek keberhasilan tambah data
-    if( mysqli_affected_rows($conn) > 0 ) {
-        echo "berhasil";
-    } else {
-        echo "gagal!";
-        echo "<br>";
-        echo mysqli_error($conn);
-    }
-    }
-
+include 'koneksi.php';
 ?>
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
