@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../koneksi.php";
+include "../admin/functions.php";
 //cek cookie
 if (isset($_COOKIE['id']) AND isset ($_COOKIE['key'])){
 	$id = $_COOKIE['id'];
@@ -9,7 +9,7 @@ if (isset($_COOKIE['id']) AND isset ($_COOKIE['key'])){
 
 
 	//ambil username berdasarkan id
-	$result = mysqli_query($koneksi,"SELECT username FROM pustakawan WHERE nip =$id");
+	$result = mysqli_query($conn,"SELECT username FROM pustakawan WHERE nip =$id");
 	$row = mysqli_fetch_assoc($result);
 	
 	//cek cookie dan username
@@ -31,42 +31,55 @@ exit;
 if (isset($_POST["login"])){
 $username = $_POST["username"];
 $password = $_POST["password"];
+ if($username =='admin' ){
+	 if ($password == 'admin'){
+		header('Location:../admin/index.html');exit;
+	
+	}
+	else{
+		echo"password salah";
+		exit;
+	}
 
-
-$result = mysqli_query($koneksi, "SELECT * FROM  pustakawan WHERE username='$username' ");
-
-if (mysqli_num_rows($result) === 1){
-//cek password
-
-	$row = mysqli_fetch_assoc($result);
-if (password_verify($password, $row["password"])){
-//set session
-$_SESSION["login"] = true;
-
-//cek remember me
-
-if (isset($_POST['remember'])){
-//buat cookie
-
-setcookie('id', $row['id'], time()+60);
-setcookie('key' , hash( 'sha256', $row['username']), time()+60);
-
-
-
+ } else{
+	 echo "username tidak terddaftar";
+ }
 }
 
-header('Location:../admin/index.html');
-exit;
-}
+// $result = mysqli_query($conn, "SELECT * FROM  pustakawan WHERE username='$username' ");
+
+// if (mysqli_num_rows($result) === 1){
+// //cek password
+
+// 	$row = mysqli_fetch_assoc($result);
+// if (password_verify($password, $row['password'])){
+// //set session
+// $_SESSION["login"] = true;
+
+// //cek remember me
+
+// if (isset($_POST['remember'])){
+// //buat cookie
+
+// setcookie('id', $row['id'], time()+60);
+// setcookie('key' , hash( 'sha256', $row['username']), time()+60);
+
+
+
+// }
+
+// header('Location:../admin/index.html');
+// exit;
+//}
 
 // $error = true;
 
 
-}
-echo "username dan password salah";	
+//}
+//echo "username dan password salah";	
 
 
-}
+//}
 //  cek username
 ?>
 
@@ -74,7 +87,7 @@ echo "username dan password salah";
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V1</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	

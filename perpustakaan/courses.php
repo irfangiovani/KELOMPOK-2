@@ -47,7 +47,8 @@
 					<img src="img/yudi.png" class="bondowoso">
 				</a>
 				<div class="user-panel">
-					<a href="#">Login</a>
+					<a href="login../index.php">Login</a>
+					
 				</div>
 				<div class="nav-switch">
 					<i class="fa fa-bars"></i>
@@ -55,7 +56,7 @@
 				<ul class="main-menu">
 					<li><a href="index.html">Beranda</a></li>
 					<li><a href="about.html">Buku Mapel</a></li>
-					<li><a href="courses.html">Daftar Member</a></li>
+					<li><a href="member../index.php">Daftar Member</a></li>
 					<li><a href="blog.html">Bantuan</a></li>
 				
 				</ul>
