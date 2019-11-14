@@ -3,7 +3,7 @@
 require 'functions.php';
 
 
-$buku_tahunan_siswa = query ("SELECT * FROM buku_tahunan_siswa"); 
+$buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahunan, a.tahun_terbit, a.untuk_kelas, a.gambar_sampul, a.stok, c.nama_penerbit as id_penerbit FROM buku_tahunan_siswa a LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit ORDER BY a.id_judul_buku_tahunan ASC"); 
 ?>
 
 <!DOCTYPE html>
@@ -180,7 +180,7 @@ $buku_tahunan_siswa = query ("SELECT * FROM buku_tahunan_siswa");
 			      <td><?=$i; ?></td>
             <td><?php echo $row["id_judul_buku_tahunan"]; ?></td>
             <td><?php echo $row["judul_buku_tahunan"];?></td>
-            <td><?php echo $row["penerbit"];?></td>
+            <td><?php echo $row["id_penerbit"];?></td>
             <td><?php echo $row["tahun_terbit"];?></td>
             <td><?php echo $row["untuk_kelas"];?></td>
             <td><img src="img/tahunan/<?php echo $row["gambar_sampul"]; ?>" width="50"></td>

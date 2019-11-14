@@ -3,7 +3,7 @@
 require 'functions.php';
 
 
-$buku_mapel_kelas = query ("SELECT * FROM buku_mapel_kelas"); 
+$buku_mapel_kelas =query ("SELECT a.id_judul_buku_mapel, a.judul_buku_mapel, a.tahun_terbit, a.untuk_kelas, a.gambar_sampul, a.stok, c.nama_penerbit as id_penerbit FROM buku_mapel_kelas a LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit ORDER BY a.id_judul_buku_mapel ASC "); 
 ?>
 
 <!DOCTYPE html>
@@ -176,7 +176,7 @@ $buku_mapel_kelas = query ("SELECT * FROM buku_mapel_kelas");
 			      <td><?=$i; ?></td>
             <td><?php echo $row["id_judul_buku_mapel"]; ?></td>
             <td><?php echo $row["judul_buku_mapel"];?></td>
-            <td><?php echo $row["penerbit"];?></td>
+            <td><?php echo $row["id_penerbit"];?></td>
             <td><?php echo $row["tahun_terbit"];?></td>
             <td><?php echo $row["untuk_kelas"];?></td>
             <td><img src="img/mapel/<?php echo $row["gambar_sampul"]; ?>" width="50"></td>
