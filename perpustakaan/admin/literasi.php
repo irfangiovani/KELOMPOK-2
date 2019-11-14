@@ -1,16 +1,6 @@
 <?php
+require 'functions.php';
 
-$conn = mysqli_connect("localhost", "root", "", "perpustakaan");
-
-function query($query) {
-    global $conn;
-    $result = mysqli_query($conn, $query);
-    $rows = [];
-    while ($row = mysqli_fetch_assoc($result)){
-        $rows[] = $row;
-    }
-    return $rows;  
-}
 $buku_literasi_umum = query ("SELECT * FROM buku_literasi_umum"); 
 ?>
 
@@ -190,7 +180,7 @@ $buku_literasi_umum = query ("SELECT * FROM buku_literasi_umum");
             <td><img src="img/literasi/<?php echo $row["gambar_sampul"]; ?>" width="50"></td>
             <td><?php echo $row["deskripsi_buku"];?></td>
             <td>
-              <a href="" class="btn btn-warning" title="ubah data" >ubah</a>
+              <a href="ubah_literasi.php?id=<?php echo $row ['kode_buku_literasi']; ?>" class="btn btn-warning" title="ubah data" >ubah</a>
 
               <a href="hapus_literasi.php?id=<?= $row["kode_buku_literasi"]; ?>
               " onclick="return confirm('yakin');"  class="btn btn-danger" title="hapus data">hapus</a>
