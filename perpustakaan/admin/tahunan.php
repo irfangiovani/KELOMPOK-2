@@ -177,6 +177,9 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
             foreach( $buku_tahunan_siswa as $row) :
         ?>
         <tr>
+
+			<td><?=$i; ?></td>
+        
 			      <td><?=$i; ?></td>
             <td><?php echo $row["id_judul_buku_tahunan"]; ?></td>
             <td><?php echo $row["judul_buku_tahunan"];?></td>
