@@ -177,14 +177,10 @@ $buku_tahunan_siswa = query ("SELECT * FROM buku_tahunan_siswa");
             foreach( $buku_tahunan_siswa as $row) :
         ?>
         <tr>
-<<<<<<< HEAD
 
 			<td><?=$i; ?></td>
         
-
-=======
 			      <td><?=$i; ?></td>
->>>>>>> ca8425c43703e7254c6d4909df65812f96c9c2c0
             <td><?php echo $row["id_judul_buku_tahunan"]; ?></td>
             <td><?php echo $row["judul_buku_tahunan"];?></td>
             <td><?php echo $row["penerbit"];?></td>
