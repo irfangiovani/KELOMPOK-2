@@ -1,5 +1,5 @@
 <?php
-require 'functions.php';
+require 'admin/functions.php';
 
 if( isset($_POST["register"]) ){
     if(registrasi($_POST) > 0 ) {
