@@ -2,6 +2,11 @@
 require 'functions.php';
 
 $buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC"); 
+
+//tombol cari ditekan
+if( isset($_POST["cari"])) {
+  $buku_literasi_umum = cari($_POST["keyword"]);
+}
 ?>
 
 <!DOCTYPE html>
@@ -151,6 +156,11 @@ $buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi
     <div class="container-fluid">
     <a href="tambah_literasi.php">Tambah Buku Literasi Umum</a>
     <br><br>
+    <form action="" method="post">
+        <input type="text" name="keyword" size="40" autofocus placeholder="cari berdasarkan judul dan kategori buku" autocomplete="off">
+        <button type="submit" name="cari">cari!</button>
+	</form>
+  <br>
     <form action="" method="post">
     <table border="1" cellpadding="0" cellspacing="0">
         <tr>

@@ -22,11 +22,11 @@
            <div class="form-row">
             <div class="form-group col-md-6">
               <label for="kode_buku_literasi">Kode Buku Literasi : </label>
-                  <input type="text" class="form-control"  name="kode_buku_literasi" value ="<?php echo $data['kode_buku_literasi'] ?>" id="kode_buku_literasi">
+                  <input type="hidden" class="form-control"  name="kode_buku_literasi" value ="<?php echo $data['kode_buku_literasi'] ?>" id="kode_buku_literasi" >
             </div>
                 <div class="form-group col-md-6">
                   <label for="kategori">Kategori : </label> <a href="kategori.php" class="btn btn-warning" title="tambah_kategori" >Tambah Kategori</a>
-                  <input type="text" class="form-control" value ="<?php echo $data['kategori'] ?>" name="kategori" id="kategori">
+                  <input type="text" class="form-control" value ="<?php echo $data['id_kategori'] ?>" name="id_kategori" id="id_kategori">
                  
                 </div>
            </div>
@@ -39,7 +39,7 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                   <label for="penerbit">Penerbit : </label>
-                  <input type="text" class="form-control"value ="<?php echo $data['penerbit'] ?>" name="penerbit" id="penerbit">
+                  <input type="text" class="form-control"value ="<?php echo $data['id_penerbit'] ?>" name="id_penerbit" id="id_penerbit">
                 </div>
 
                 <div class="form-group col-md-4">
@@ -49,7 +49,7 @@
 
                 <div class="form-group col-md-4">
                   <label for="no_rak">No Rak : </label>
-                  <input type="text" class="form-control" value ="<?php echo $data['no_rak'] ?>" name="no_rak" id="no_rak">
+                  <input type="text" class="form-control" value ="<?php echo $data['id_rak'] ?>" name="id_rak" id="id_rak">
                 </div>
             </div>
 
@@ -60,7 +60,7 @@
 
             <div class="form-group">
               <label for="gambar_sampul">Gambar Sampul : <?php echo $data['gambar_sampul'] ?></label>
-              <input type="file" class="form-control-file" name="gambar_sampul" id="gambar_sampul">
+              <input type="file" class="form-control-file"value ="<?php echo $data['gambar_sampul'] ?>" name="gambar_sampul" id="gambar_sampul">
               <small>(Upload File Dengan Ukuran Maksiman 2 MB)</small>
             </div>
 
@@ -75,14 +75,14 @@
     // ambil data dari tiap elemen dalam form
     $kode_buku_literasi = $_POST["kode_buku_literasi"];
     $judul_buku_literasi = $_POST["judul_buku_literasi"];
-    $penerbit = $_POST["penerbit"];
+    $id_penerbit = $_POST["id_penerbit"];
     $tahun_terbit = $_POST["tahun_terbit"];
-    $no_rak = $_POST["no_rak"];
-    $kategori = $_POST["kategori"];
+    $id_rak = $_POST["id_rak"];
+    $id_kategori = $_POST["id_kategori"];
     $gambar_sampul = $_POST["gambar_sampul"];
     $deskripsi_buku = $_POST["deskripsi_buku"];
     $tambah = mysqli_query($conn, "UPDATE buku_literasi_umum SET kode_buku_literasi='$kode_buku_literasi', judul_buku_literasi='$judul_buku_literasi', 
-    penerbit='$penerbit', tahun_terbit='$tahun_terbit', no_rak='$no_rak', kategori='$kategori', gambar_sampul='$gambar_sampul', deskripsi_buku='$deskripsi_buku' WHERE kode_buku_literasi = '$id'");
+    id_penerbit='$id_penerbit', tahun_terbit='$tahun_terbit', id_rak='$id_rak', id_kategori='$id_kategori', gambar_sampul='$gambar_sampul', deskripsi_buku='$deskripsi_buku' WHERE kode_buku_literasi = '$id'");
 
     if($tambah){
       ?>

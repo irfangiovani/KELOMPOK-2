@@ -17,8 +17,7 @@ function query($query) {
 function cari($keyword){
     $query = "SELECT * FROM buku_literasi_umum
             WHERE
-            judul_buku_literasi LIKE '%$keyword%' OR
-            penerbit LIKE '%$keyword%'
+            judul_buku_literasi LIKE '%$keyword%' 
             ";
     return query($query);
 }

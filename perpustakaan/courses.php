@@ -112,7 +112,7 @@
 					<img src="img/yudi.png" class="bondowoso">
 				</a>
 				<div class="user-panel">
-					<a href="login../index.php">Login</a>
+					<a href="loginadmin.php">Login</a>
 					
 				</div>
 				<div class="nav-switch">
