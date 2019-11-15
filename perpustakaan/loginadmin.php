@@ -1,3 +1,4 @@
+<<<<<<< HEAD:perpustakaan/loginadmin.php
 <?php
 require 'admin/functions.php';
 
@@ -24,6 +25,8 @@ require 'admin/functions.php';
 ?>
 
 
+=======
+>>>>>>> 10e7d1ea39654d0f30ec553c6f46b8e4ee94d0ad:perpustakaan/Login/index.php
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,6 +51,17 @@ require 'admin/functions.php';
 <!--===============================================================================================-->
 </head>
 <body>
+<?php 
+	if(isset($_GET['pesan'])){
+		if($_GET['pesan'] == "gagal"){
+			echo "Login gagal! username dan password salah!";
+		}else if($_GET['pesan'] == "logout"){
+			echo "Anda telah berhasil logout";
+		}else if($_GET['pesan'] == "belum_login"){
+			echo "Anda harus login untuk mengakses halaman admin";
+		}
+	}
+	?>
 	
 	<div class="limiter">
 		<div class="container-login100">
@@ -56,6 +70,7 @@ require 'admin/functions.php';
 					<img src="img/login/img-01.png" alt="IMG">
 				</div>
 
+<<<<<<< HEAD:perpustakaan/loginadmin.php
 				<form class="login100-form validate-form" action="" method="post">
 					<span class="login100-form-title">
 						Pustakawan Login
@@ -65,6 +80,10 @@ require 'admin/functions.php';
 					<?php endif; ?>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+=======
+				<form class="login100-form validate-form" action="cek_login.php" method="post">
+				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+>>>>>>> 10e7d1ea39654d0f30ec553c6f46b8e4ee94d0ad:perpustakaan/Login/index.php
 						<input class="input100" type="text" name="username" placeholder="Username">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
@@ -81,11 +100,10 @@ require 'admin/functions.php';
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button type ="submit"class="login100-form-btn" name="login">
+						<button class="login100-form-btn" type="submit">
 							Login
 						</button>
 					</div>
-
 					<div class="text-center p-t-12">
 						<span class="txt1">
 							Forgot
@@ -101,7 +119,7 @@ require 'admin/functions.php';
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
 					</div>
-				</form>
+
 			</div>
 		</div>
 	</div>
