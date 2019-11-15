@@ -1,4 +1,3 @@
-<<<<<<< HEAD:perpustakaan/loginadmin.php
 <?php
 require 'admin/functions.php';
 
@@ -25,8 +24,6 @@ require 'admin/functions.php';
 ?>
 
 
-=======
->>>>>>> 10e7d1ea39654d0f30ec553c6f46b8e4ee94d0ad:perpustakaan/Login/index.php
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,27 +47,13 @@ require 'admin/functions.php';
 	<link rel="stylesheet" type="text/css" href="css/login/main.css">
 <!--===============================================================================================-->
 </head>
-<body>
-<?php 
-	if(isset($_GET['pesan'])){
-		if($_GET['pesan'] == "gagal"){
-			echo "Login gagal! username dan password salah!";
-		}else if($_GET['pesan'] == "logout"){
-			echo "Anda telah berhasil logout";
-		}else if($_GET['pesan'] == "belum_login"){
-			echo "Anda harus login untuk mengakses halaman admin";
-		}
-	}
-	?>
-	
+<body>	
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
 					<img src="img/login/img-01.png" alt="IMG">
 				</div>
-
-<<<<<<< HEAD:perpustakaan/loginadmin.php
 				<form class="login100-form validate-form" action="" method="post">
 					<span class="login100-form-title">
 						Pustakawan Login
@@ -80,10 +63,6 @@ require 'admin/functions.php';
 					<?php endif; ?>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-=======
-				<form class="login100-form validate-form" action="cek_login.php" method="post">
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
->>>>>>> 10e7d1ea39654d0f30ec553c6f46b8e4ee94d0ad:perpustakaan/Login/index.php
 						<input class="input100" type="text" name="username" placeholder="Username">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
@@ -100,7 +79,7 @@ require 'admin/functions.php';
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" type="submit">
+						<button class="login100-form-btn" type="submit " name="login">
 							Login
 						</button>
 					</div>
