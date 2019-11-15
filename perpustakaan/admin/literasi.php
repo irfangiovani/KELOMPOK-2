@@ -1,17 +1,6 @@
 <?php
-
-$conn = mysqli_connect("localhost", "root", "", "perpustakaan");
-
-function query($query) {
-    global $conn;
-    $result = mysqli_query($conn, $query);
-    $rows = [];
-    while ($row = mysqli_fetch_assoc($result)){
-        $rows[] = $row;
-    }
-    return $rows;  
-}
-$buku_literasi_umum = query ("SELECT * FROM buku_literasi_umum"); 
+require 'functions.php';
+$buku_literasi_umum = query("SELECT * FROM buku_literasi_umum"); 
 ?>
 
 <!DOCTYPE html>
@@ -162,7 +151,7 @@ $buku_literasi_umum = query ("SELECT * FROM buku_literasi_umum");
     <a href="tambah_literasi.php">Tambah Buku Literasi Umum</a>
     <br><br>
     <form action="" method="post">
-    <table border="1" cellpadding="0" cellspacing="0">
+    <table border="1" cellpadding="5" cellspacing="0">
         <tr>
 			<th>no</th>
             <th>Kode Buku</th>
@@ -180,14 +169,14 @@ $buku_literasi_umum = query ("SELECT * FROM buku_literasi_umum");
         ?>
         <tr>
 			<td><?=$i; ?></td>
-            <td><?php echo $row["kode_buku_literasi"]; ?></td>
-            <td><?php echo $row["judul_buku_literasi"];?></td>
-            <td><?php echo $row["penerbit"];?></td>
-            <td><?php echo $row["tahun_terbit"];?></td>
-            <td><?php echo $row["no_rak"];?></td>
-            <td><?php echo $row["kategori"];?></td>
-            <td><img src="img/literasi/<?php echo $row["gambar_sampul"]; ?>" width="50"></td>
-            <td><?php echo $row["deskripsi_buku"];?></td>
+            <td><?= $row["kode_buku_literasi"]; ?></td>
+            <td><?= $row["judul_buku_literasi"];?></td>
+            <td><?= $row["penerbit"];?></td>
+            <td><?= $row["tahun_terbit"];?></td>
+            <td><?= $row["no_rak"];?></td>
+            <td><?= $row["kategori"];?></td>
+            <td><img src="img/literasi/<?= $row["gambar_sampul"]; ?>" width="50"></td>
+            <td><?= $row["deskripsi_buku"];?></td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>

@@ -1,32 +1,27 @@
 <?php
-$conn = mysqli_connect ("localhost" , "root","", "perpustakaan");
+require 'functions.php';
+
 //cek tombol submit ditekan atau tidak
-if( isset($_POST["submit"])){
-    // ambil data dari tiap elemen dalam form
-    $kode_buku_literasi = $_POST["kode_buku_literasi"];
-    $judul_buku_literasi = $_POST["judul_buku_literasi"];
-    $penerbit = $_POST["penerbit"];
-    $tahun_terbit = $_POST["tahun_terbit"];
-    $no_rak = $_POST["no_rak"];
-    $kategori = $_POST["kategori"];
-    $gambar_sampul = $_POST["gambar_sampul"];
-    $deskripsi_buku = $_POST["deskripsi_buku"];
-
-    //query insert data
-    mysqli_query($conn, "INSERT INTO buku_literasi_umum VALUES ('$kode_buku_literasi', '$judul_buku_literasi','$penerbit','$tahun_terbit', '$no_rak', '$kategori', '$gambar_sampul','$deskripsi_buku')");
-
-    
+if( isset($_POST["submit"]) ) {
 
     // cek keberhasilan tambah data
-    if( mysqli_affected_rows($conn) > 0 ) {
-        echo "berhasil";
+    if( tambah($_POST) > 0 ) {
+      echo "
+            <script>
+              alert('data berhasil ditambahkan!');
+              document.location.href = 'literasi.php';
+            </script>
+      ";
     } else {
-        echo "gagal!";
-        echo "<br>";
-        echo mysqli_error($conn);
-    }
+      echo "
+            <script>
+              alert('data gagal ditambahkan!');
+              document.location.href = 'literasi.php';
+            </script>
+      ";
     }
 
+}
 ?>
 
 
@@ -42,7 +37,7 @@ if( isset($_POST["submit"])){
     <div class="container">
     <h2 class="alert alert-success text-center mt-3">Tambah Buku Literasi Umum</h1>
     
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
     
            <div class="form-row">
             <div class="form-group col-md-6">
@@ -85,7 +80,7 @@ if( isset($_POST["submit"])){
             <div class="form-group">
               <label for="gambar_sampul">Gambar Sampul : </label>
               <input type="file" class="form-control-file" name="gambar_sampul" id="gambar_sampul">
-              <small>(Upload File Dengan Ukuran Maksiman 2 MB)</small>
+              <small>(Upload File Dengan Ukuran Maksiman 1 MB)</small>
             </div>
 
             <div class="text-center">
