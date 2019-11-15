@@ -1,6 +1,16 @@
 <?php
 require 'functions.php';
+<<<<<<< HEAD
 $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum"); 
+=======
+
+$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC"); 
+
+//tombol cari ditekan
+if( isset($_POST["cari"])) {
+  $buku_literasi_umum = cari($_POST["keyword"]);
+}
+>>>>>>> 3aa05ce56f5591459a312c1edf1a78522e471fdd
 ?>
 
 <!DOCTYPE html>
@@ -147,13 +157,22 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
     </section>
 
     <br>
-    
+    <div class="container-fluid">
     <a href="tambah_literasi.php">Tambah Buku Literasi Umum</a>
     <br><br>
     <form action="" method="post">
+<<<<<<< HEAD
     <table border="1" cellpadding="5" cellspacing="0">
+=======
+        <input type="text" name="keyword" size="40" autofocus placeholder="cari berdasarkan judul dan kategori buku" autocomplete="off">
+        <button type="submit" name="cari">cari!</button>
+	</form>
+  <br>
+    <form action="" method="post">
+    <table border="1" cellpadding="0" cellspacing="0">
+>>>>>>> 3aa05ce56f5591459a312c1edf1a78522e471fdd
         <tr>
-			<th>no</th>
+		      	<th>no</th>
             <th>Kode Buku</th>
             <th>Judul Buku</th>
             <th>Penerbit</th>
@@ -162,12 +181,14 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
             <th>Kategori</th>
             <th>Gambar Sampul</th>
             <th>Deskripsi Buku</th>
+            <th>aksi</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php
             foreach( $buku_literasi_umum as $row) :
         ?>
         <tr>
+<<<<<<< HEAD
 			<td><?=$i; ?></td>
             <td><?= $row["kode_buku_literasi"]; ?></td>
             <td><?= $row["judul_buku_literasi"];?></td>
@@ -177,11 +198,29 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
             <td><?= $row["kategori"];?></td>
             <td><img src="img/literasi/<?= $row["gambar_sampul"]; ?>" width="50"></td>
             <td><?= $row["deskripsi_buku"];?></td>
+=======
+			      <td><?=$i; ?></td>
+            <td><?php echo $row["kode_buku_literasi"]; ?></td>
+            <td><?php echo $row["judul_buku_literasi"];?></td>
+            <td><?php echo $row["id_penerbit"];?></td>
+            <td><?php echo $row["tahun_terbit"];?></td>
+            <td><?php echo $row["id_rak"];?></td>
+            <td><?php echo $row["id_kategori"];?></td>
+            <td><img src="img/literasi/<?php echo $row["gambar_sampul"]; ?>" width="50"></td>
+            <td><?php echo $row["deskripsi_buku"];?></td>
+            <td>
+              <a href="ubah_literasi.php?id=<?php echo $row ['kode_buku_literasi']; ?>" class="btn btn-warning" title="ubah data" >ubah</a>
+
+              <a href="hapus_literasi.php?id=<?= $row["kode_buku_literasi"]; ?>
+              " onclick="return confirm('yakin');"  class="btn btn-danger" title="hapus data">hapus</a>
+            </td>
+>>>>>>> 3aa05ce56f5591459a312c1edf1a78522e471fdd
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
     </table>
     </form>
+  </div>
 
 
     

@@ -148,7 +148,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi");
     </section>
 
     <br>
-    
+     <div class="container-fluid">
     <a href="tambah_literasi.php">Tambah Data Peminjaman Literasi</a>
     <br><br>
     <form action="" method="post">
@@ -179,6 +179,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi");
 			<?php endforeach; ?>
     </table>
     </form>
+  </div>
 
 
     

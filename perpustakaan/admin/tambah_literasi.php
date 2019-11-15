@@ -45,8 +45,9 @@ if( isset($_POST["submit"]) ) {
                   <input type="text" class="form-control" placeholder="Masukkan Kode Buku..." name="kode_buku_literasi" id="kode_buku_literasi">
             </div>
                 <div class="form-group col-md-6">
-                  <label for="kategori">Kategori : </label>
+                  <label for="kategori">Kategori : </label> <a href="kategori.php" class="btn btn-warning" title="tambah_kategori" >Tambah Kategori</a>
                   <input type="text" class="form-control" placeholder="Masukkan Kategori..." name="kategori" id="kategori">
+                 
                 </div>
            </div>
 
