@@ -77,7 +77,7 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
         <div class="row nomargin">
           <div class="span3">
             <div class="logo">
-              <h1><a href="index.html"><i class="icon-tint"></i> K-Negabon Library</a></h1>
+              <h1><a href="index.php"><i class="icon-tint"></i> K-Negabon Library</a></h1>
             </div>
           </div>
           <div class="span8">

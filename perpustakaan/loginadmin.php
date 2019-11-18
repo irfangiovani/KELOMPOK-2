@@ -13,7 +13,7 @@ require 'admin/functions.php';
 	// cek password
 	$row = mysqli_fetch_assoc($result);
 	if(password_verify($password, $row["password"]) ) {
-		header("location: admin/index.html");
+		header("location: admin/index.php");
 		exit;
 	}
  
@@ -93,7 +93,7 @@ require 'admin/functions.php';
 					</div>
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="register.php">
+						<a class="txt2" href="registeradmin.php">
 							Create your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>

@@ -1,8 +1,6 @@
 <?php
 require 'functions.php';
-<<<<<<< HEAD
-$buku_literasi_umum = query("SELECT * FROM buku_literasi_umum"); 
-=======
+$buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
 
 $buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC"); 
 
@@ -10,7 +8,7 @@ $buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi
 if( isset($_POST["cari"])) {
   $buku_literasi_umum = cari($_POST["keyword"]);
 }
->>>>>>> 3aa05ce56f5591459a312c1edf1a78522e471fdd
+
 ?>
 
 <!DOCTYPE html>
@@ -91,7 +89,7 @@ if( isset($_POST["cari"])) {
               <div class="navigation">
                 <nav>
                   <ul class="nav topnav">
-                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="index.php">Beranda</a></li>
                     <li class="dropdown active">
                       <a href="#">Koleksi Buku<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
@@ -161,16 +159,14 @@ if( isset($_POST["cari"])) {
     <a href="tambah_literasi.php">Tambah Buku Literasi Umum</a>
     <br><br>
     <form action="" method="post">
-<<<<<<< HEAD
     <table border="1" cellpadding="5" cellspacing="0">
-=======
         <input type="text" name="keyword" size="40" autofocus placeholder="cari berdasarkan judul dan kategori buku" autocomplete="off">
         <button type="submit" name="cari">cari!</button>
 	</form>
   <br>
     <form action="" method="post">
     <table border="1" cellpadding="0" cellspacing="0">
->>>>>>> 3aa05ce56f5591459a312c1edf1a78522e471fdd
+
         <tr>
 		      	<th>no</th>
             <th>Kode Buku</th>
@@ -188,17 +184,6 @@ if( isset($_POST["cari"])) {
             foreach( $buku_literasi_umum as $row) :
         ?>
         <tr>
-<<<<<<< HEAD
-			<td><?=$i; ?></td>
-            <td><?= $row["kode_buku_literasi"]; ?></td>
-            <td><?= $row["judul_buku_literasi"];?></td>
-            <td><?= $row["penerbit"];?></td>
-            <td><?= $row["tahun_terbit"];?></td>
-            <td><?= $row["no_rak"];?></td>
-            <td><?= $row["kategori"];?></td>
-            <td><img src="img/literasi/<?= $row["gambar_sampul"]; ?>" width="50"></td>
-            <td><?= $row["deskripsi_buku"];?></td>
-=======
 			      <td><?=$i; ?></td>
             <td><?php echo $row["kode_buku_literasi"]; ?></td>
             <td><?php echo $row["judul_buku_literasi"];?></td>
@@ -214,7 +199,6 @@ if( isset($_POST["cari"])) {
               <a href="hapus_literasi.php?id=<?= $row["kode_buku_literasi"]; ?>
               " onclick="return confirm('yakin');"  class="btn btn-danger" title="hapus data">hapus</a>
             </td>
->>>>>>> 3aa05ce56f5591459a312c1edf1a78522e471fdd
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>

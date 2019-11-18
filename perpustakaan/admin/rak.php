@@ -3,7 +3,7 @@
 require 'functions.php';
 
 
-$kategori = query ("SELECT * FROM kategori"); 
+$rak = query ("SELECT * FROM rak"); 
 ?>
 
 <div class="container-fluid">
@@ -12,24 +12,23 @@ $kategori = query ("SELECT * FROM kategori");
     <form action="" method="post">
     <table border="1" cellpadding="0" cellspacing="0">
         <tr>
-			<th>no</th>
-            <th>Nama Kategori</th>
-            <th>Aksi</th>
+			<th>NO</th>
+            <th>NO RAK</th>
+            <th>AKSI</th>
            
         </tr>
 		<?php $i = 1; ?> 
         <?php
-            foreach( $kategori as $row) :
+            foreach( $rak as $row) :
         ?>
         <tr>
-			<td><?=$i; ?></td>
-            <td><?php echo $row["nama_kategori"]; ?></td>
+		    <td><?=$i; ?></td>
+            <td><?php echo $row["no_rak"]; ?></td>
             <td>
-            <a href="ubah_kategori.php?id=<?php echo $row ['id_kategori']; ?>" class="btn btn-warning" title="ubah data" >ubah</a>
-            <a href="hapus_kategori.php?id=<?= $row['id_kategori']; ?>
+            <a href="ubah_rak.php?id=<?php echo $row ['id_rak']; ?>" class="btn btn-warning" title="ubah data" >ubah</a>
+            <a href="hapus_rak.php?id=<?= $row['id_rak']; ?>
               " onclick="return confirm('yakin');"  class="btn btn-danger" title="hapus data">hapus</a>
             </td>
-           
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
@@ -38,15 +37,15 @@ $kategori = query ("SELECT * FROM kategori");
   </div>
 
   <?php
-$conn = mysqli_connect ("localhost" , "root","", "perpustakaan");
+
 //cek tombol submit ditekan atau tidak
 if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
-    $nama_kategori = $_POST["nama_kategori"];
+    $no_rak = $_POST["no_rak"];
    
 
     //query insert data
-    mysqli_query($conn, "INSERT INTO kategori VALUES ('', '$nama_kategori')");
+    mysqli_query($conn, "INSERT INTO rak VALUES ('', '$no_rak')");
 
     
 
@@ -69,18 +68,18 @@ if( isset($_POST["submit"])){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
-    <title>Halaman Kategori</title>
+    <title>Halaman Rak Buku</title>
 </head>
 <body>
     <div class="container">
-    <h2 class="alert alert-success text-center mt-3">Tambah kategori</h1>
+    <h2 class="alert alert-success text-center mt-3">Tambah Rak Buku</h1>
     
     <form action="" method="post">
     
            <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="nama_kategori">Kode Buku Literasi : </label>
-                  <input type="text" class="form-control" placeholder="Masukkan kategori..." name="nama_kategori" id="nama_kategori">
+              <label for="no_rak">No Rak : </label>
+                  <input type="text" class="form-control" placeholder="Masukkan No Rak..." name="no_rak" id="no_rak">
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
