@@ -37,7 +37,7 @@ if( isset($_POST["submit"]) ) {
     }
   }
 
-}
+}}
 ?>
 
 
@@ -50,13 +50,12 @@ if( isset($_POST["submit"]) ) {
     <title>Tambah Buku Literasi Umum</title>
 </head>
 <body>
-  <a href="literasi.php" class ="btn btn-success">kembali</a>
+
     <div class="container">
-    <h2 class="alert alert-success text-center mt-3">Tambah Buku Literasi Umum</h1>
+    <h2 class="alert alert-success text-center mt-3">Tambah Buku Literasi Umum</h2>
     <div class="pull-right">
     <form action="" method="post">
     <form action="" method="post" enctype="multipart/form-data">
-
     
            <div class="form-row">
             <div class="form-group col-md-6">
@@ -106,7 +105,7 @@ if( isset($_POST["submit"]) ) {
                     <?php
                     $sql_rak = mysqli_query($conn, "SELECT * FROM rak") or die (mysqli_query($conn));
                     while ($data_rak = mysqli_fetch_array($sql_rak)){
-                      echo '<option value="'.$data_rak['id_rak'].'">' .$data_rak['no_rak']. '</option>'; 
+                      echo '<option value="'.$data_rak['id_rak'].'">'. $data_rak['no_rak']. '</option>'; 
                     }
                     ?>
                 </select>
@@ -123,14 +122,24 @@ if( isset($_POST["submit"]) ) {
               <input type="file" class="form-control-file" name="gambar_sampul" id="gambar_sampul">
               <small>(Upload File Dengan Ukuran Maksiman 1 MB)</small>
             </div>
-
+           
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
+              <a href="literasi.php" class="btn btn-success">kembali</a>
             </div>
           </div>
         <br><br>
+<<<<<<< HEAD
     
+=======
+        </form>
+      
+    </form>
+    </div>
+    </div>
+
+>>>>>>> e18d08061215f1dfc9d1298d9ab50f397ecb123d
                 
 </body>
 </html>
