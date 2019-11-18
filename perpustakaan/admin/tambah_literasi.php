@@ -103,7 +103,7 @@ if( isset($_POST["submit"]) ) {
                     <?php
                     $sql_rak = mysqli_query($conn, "SELECT * FROM rak") or die (mysqli_query($conn));
                     while ($data_rak = mysqli_fetch_array($sql_rak)){
-                      echo '<option value="'.$data_rak['id_rak'].'">'. '</option>'; 
+                      echo '<option value="'.$data_rak['id_rak'].'">'. $data_rak['no_rak']. '</option>'; 
                     }
                     ?>
                 </select>
