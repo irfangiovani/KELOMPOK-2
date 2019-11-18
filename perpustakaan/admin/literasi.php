@@ -183,15 +183,6 @@ if( isset($_POST["cari"])) {
         ?>
         <tr>
 			<td><?=$i; ?></td>
-            <td><?= $row["kode_buku_literasi"]; ?></td>
-            <td><?= $row["judul_buku_literasi"];?></td>
-            <td><?= $row["penerbit"];?></td>
-            <td><?= $row["tahun_terbit"];?></td>
-            <td><?= $row["no_rak"];?></td>
-            <td><?= $row["kategori"];?></td>
-            <td><img src="img/literasi/<?= $row["gambar_sampul"]; ?>" width="50"></td>
-            <td><?= $row["deskripsi_buku"];?></td>
-			      <td><?=$i; ?></td>
             <td><?php echo $row["kode_buku_literasi"]; ?></td>
             <td><?php echo $row["judul_buku_literasi"];?></td>
             <td><?php echo $row["id_penerbit"];?></td>
