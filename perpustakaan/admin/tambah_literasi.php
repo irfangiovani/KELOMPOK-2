@@ -50,7 +50,6 @@ if( isset($_POST["submit"]) ) {
     <title>Tambah Buku Literasi Umum</title>
 </head>
 <body>
-
     <div class="container">
     <h2 class="alert alert-success text-center mt-3">Tambah Buku Literasi Umum</h2>
     <div class="pull-right">
@@ -130,16 +129,14 @@ if( isset($_POST["submit"]) ) {
             </div>
           </div>
         <br><br>
-<<<<<<< HEAD
-    
-=======
+        
         </form>
       
     </form>
     </div>
     </div>
 
->>>>>>> e18d08061215f1dfc9d1298d9ab50f397ecb123d
+
                 
 </body>
 </html>

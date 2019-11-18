@@ -149,6 +149,7 @@ $buku_mapel_kelas =query ("SELECT a.id_judul_buku_mapel, a.judul_buku_mapel, a.t
         </div>
       </div>
     </section>
+    <a href="index.php" class="btn btn-warning pull-right"><i class="icon-arrow-left"></i> kembali</a>
 
     <br>
     <div class="container-fluid">
