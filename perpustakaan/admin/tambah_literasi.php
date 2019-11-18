@@ -50,6 +50,7 @@ if( isset($_POST["submit"]) ) {
     <title>Tambah Buku Literasi Umum</title>
 </head>
 <body>
+  <a href="literasi.php" class ="btn btn-success">kembali</a>
     <div class="container">
     <h2 class="alert alert-success text-center mt-3">Tambah Buku Literasi Umum</h1>
     <div class="pull-right">
