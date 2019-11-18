@@ -74,7 +74,7 @@ $peminjaman_mapel = query ("SELECT * FROM peminjaman_buku_mapel");
         <div class="row nomargin">
           <div class="span4">
             <div class="logo">
-              <h1><a href="index.html"><i class="icon-tint"></i> K-Negabon Library</a></h1>
+              <h1><a href="index.php"><i class="icon-tint"></i> K-Negabon Library</a></h1>
             </div>
           </div>
           <div class="span8">

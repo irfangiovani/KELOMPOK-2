@@ -87,7 +87,7 @@ if( isset($_POST["cari"])) {
               <div class="navigation">
                 <nav>
                   <ul class="nav topnav">
-                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="index.php">Beranda</a></li>
                     <li class="dropdown active">
                       <a href="#">Koleksi Buku<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">

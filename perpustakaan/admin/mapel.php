@@ -85,7 +85,7 @@ $buku_mapel_kelas =query ("SELECT a.id_judul_buku_mapel, a.judul_buku_mapel, a.t
               <div class="navigation">
                 <nav>
                   <ul class="nav topnav">
-                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="index.php">Beranda</a></li>
                     <li class="dropdown active">
                       <a href="#">Koleksi Buku<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">

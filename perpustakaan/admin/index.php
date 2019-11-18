@@ -77,7 +77,7 @@
                 <nav>
                   <ul class="nav topnav">
                     <li class="active">
-                      <a href="index.html" >Beranda</a>
+                      <a href="index.php" >Beranda</a>
                     </li>
                     <li class="dropdown">
                       <a href="#">Koleksi Buku<i class="icon-angle-down"></i></a>
