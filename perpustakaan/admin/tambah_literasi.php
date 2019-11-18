@@ -49,6 +49,7 @@ if( isset($_POST["submit"]) ) {
     <title>Tambah Buku Literasi Umum</title>
 </head>
 <body>
+ 
     <div class="container">
     <h2 class="alert alert-success text-center mt-3">Tambah Buku Literasi Umum</h2>
     <div class="pull-right">
@@ -120,16 +121,19 @@ if( isset($_POST["submit"]) ) {
               <input type="file" class="form-control-file" name="gambar_sampul" id="gambar_sampul">
               <small>(Upload File Dengan Ukuran Maksiman 1 MB)</small>
             </div>
-
+           
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
+              <a href="literasi.php" class="btn btn-success">kembali</a>
             </div>
         <br><br>
         </form>
+      
     </form>
     </div>
     </div>
+
                 
 </body>
 </html>
