@@ -79,7 +79,7 @@ function tambah($data) {
 
     $query = "INSERT INTO buku_literasi_umum 
                 VALUES 
-            ('', '$kode_buku_literasi', '$judul_buku_literasi','$penerbit','$tahun_terbit', '$no_rak', '$kategori', '$gambar_sampul','$deskripsi_buku')
+            ('', '$kode_buku_literasi', '$judul_buku_literasi','$id_penerbit','$tahun_terbit', '$id_rak', '$id_kategori', '$gambar_sampul','$deskripsi_buku')
             ";
     mysqli_query($conn, $query);
 
