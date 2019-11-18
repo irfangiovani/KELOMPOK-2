@@ -119,7 +119,7 @@
 					<i class="fa fa-bars"></i>
 				</div>
 				<ul class="main-menu">
-					<li><a href="index.html">Beranda</a></li>
+					<li><a href="courses.php">Beranda</a></li>
 					<li><a href="about.html">Buku Mapel</a></li>
 					<li><a href="member../index.php">Daftar Member</a></li>
 					<li><a href="blog.html">Bantuan</a></li>
@@ -138,7 +138,7 @@
   
 	</section>
 	
-	<!-- label -->
+	<!-- tampilan buku -->
 	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
@@ -271,48 +271,22 @@
 	<footer class="footer-section spad pb-0">
 		<div class="container">
 			<div class="text-center">
-				<a href="#" class="site-btn">Enroll Now <i class="fa fa-angle-right"></i></a>
+				<a href="#" class="site-btn">Home <i class="fa fa-angle-right"></i></a>
 			</div>
 			<div class="row text-white spad">
 				<div class="col-lg-3 col-sm-6 footer-widget">
-					<h4>Engeneering</h4>
+					<h4>contak</h4>
 					<ul>
-						<li><a href="#">Applied Studies</a></li>
-						<li><a href="#">Computer Engeneering</a></li>
-						<li><a href="#">Software Engeneering</a></li>
-						<li><a href="#">Informational Engeneering</a></li>
-						<li><a href="#">System Engeneering</a></li>
+						<li><a href="#">Jl. Santawi No.96 A, Tamansari Indah, Tamansari, Kec. Bondowoso, Kabupaten Bondowoso, Jawa Timur 68216</a></li>
+						<li><a href="#">(0332) 432641</a></li>
+						<li><a href="#">smkn3bondowoso@gmail.com</a></li>
 					</ul>
 				</div>
 				<div class="col-lg-3 col-sm-6 footer-widget">
-					<h4>Business School</h4>
-					<ul>
-						<li><a href="#">Applied Studies</a></li>
-						<li><a href="#">Computer Engeneering</a></li>
-						<li><a href="#">Software Engeneering</a></li>
-						<li><a href="#">Informational Engeneering</a></li>
-						<li><a href="#">System Engeneering</a></li>
-					</ul>
-				</div>
+	
+		        </div>
 				<div class="col-lg-3 col-sm-6 footer-widget">
-					<h4>Art & Design</h4>
-					<ul>
-						<li><a href="#">Graphic Design</a></li>
-						<li><a href="#">Motion Graphics & 3D</a></li>
-						<li><a href="#">Classichal Painting</a></li>
-						<li><a href="#">Sculpture</a></li>
-						<li><a href="#">Fashion Design</a></li>
-					</ul>
-				</div>
-				<div class="col-lg-3 col-sm-6 footer-widget">
-					<h4>Higher Education</h4>
-					<ul>
-						<li><a href="#">Applied Studies</a></li>
-						<li><a href="#">Computer Engeneering</a></li>
-						<li><a href="#">Software Engeneering</a></li>
-						<li><a href="#">Informational Engeneering</a></li>
-						<li><a href="#">System Engeneering</a></li>
-					</ul>
+					
 				</div>
 			</div>
 			<div class="footer-bottom">
