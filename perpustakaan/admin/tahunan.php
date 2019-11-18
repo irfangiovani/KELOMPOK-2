@@ -141,7 +141,7 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
           </div>
           <div class="span8">
             <ul class="breadcrumb">
-              <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
+              <li><a href="index.php">Beranda</a> <i class="icon-angle-right"></i></li>
               <li><a href="#">Koleksi Buku</a> <i class="icon-angle-right"></i></li>
               <li class="active">Tahunan Siswa</li>
             </ul>
@@ -151,6 +151,7 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
     </section>
 
     <br>
+    <a href="index.php" class="btn btn-warning pull-right"><i class="icon-arrow-left"></i> kembali</a>
     <div class="container-fluid">
     <a href="tambah_tahunan.php">Tambah Buku Tahunan Siswa</a>
     <br><br>
@@ -167,7 +168,7 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
             <th>Judul Buku</th>
             <th>Penerbit</th>
             <th>Tahun Terbit</th>
-            <th>Kelas</th>
+            <th>Kel
             <th>Gambar Sampul</th>
             <th>Stok</th>
             <th>aksi</th>

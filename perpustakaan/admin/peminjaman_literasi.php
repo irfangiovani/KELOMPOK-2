@@ -271,6 +271,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi");
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
+  <a href="literasi.php" class="btn btn-success">kembali</a>
 
 </body>
 
