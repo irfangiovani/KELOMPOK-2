@@ -126,10 +126,9 @@ if( isset($_POST["submit"]) ) {
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
             </div>
+          </div>
         <br><br>
-    </div>
-    </form>
-    </form>
+    
                 
 </body>
 </html>
