@@ -169,7 +169,7 @@ function ubah($data) {
                 id_kategori = '$id_kategori',
                 gambar_sampul = '$gambar_sampul',
                 deskripsi_buku = '$deskripsi_buku'
-              WHERE id = $id
+              WHERE id = '$id'
             ";
     mysqli_query($conn, $query);
 

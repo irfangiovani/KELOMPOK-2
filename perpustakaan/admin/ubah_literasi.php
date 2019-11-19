@@ -79,10 +79,10 @@
             </div>
 
             <div class="form-group">
-              <label for="gambar_sampul">Gambar Sampul : <?php echo $data['gambar_sampul'] ?></label>
-              <img src="img/<?= $qe['gambar']; ?>">
+              <label for="gambar_sampul">Gambar Sampul : <?php echo $data['gambar_sampul'] ?></label><br>
+              <img src="img/literasi/<?= $data['gambar_sampul']; ?>" width="60">
               <input type="file" class="form-control-file" id="gambar_sampul">
-              <small>(Upload File Dengan Ukuran Maksiman 2 MB)</small>
+              <small>(Upload File Dengan Ukuran Maksiman 1 MB)</small>
             </div>
 
             <div class="text-center">
