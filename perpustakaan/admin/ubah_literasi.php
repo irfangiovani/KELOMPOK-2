@@ -1,8 +1,27 @@
 <?php
   include 'functions.php';
-  $id = $_GET['id'];
-  $qe = mysqli_query($conn, "SELECT * FROM buku_literasi_umum WHERE kode_buku_literasi = '$id'");
-  $data = mysqli_fetch_array($qe);
+  $id = $_GET["id"];
+  $data = query("SELECT * FROM buku_literasi_umum WHERE kode_buku_literasi = '$id'")[0];
+
+  if( isset($_POST["submit"]) ) {
+
+  if( ubah($_POST) > 0 ) {
+    echo "
+        <script>
+            alert('data berhasil diubah!');
+            document.location.href = 'literasi.php';
+        </script>
+    ";
+  } else {
+    echo "
+        <script>
+            alert('data gagal diubah!');
+            document.location.href = 'literasi.php';
+        </script>
+    ";
+  }
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -11,18 +30,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
-    <title>Tambah Buku Literasi Umum</title>
+    <title>Ubah Buku Literasi Umum</title>
 </head>
 <body>
     <div class="container">
-    <h2 class="alert alert-success text-center mt-3">Tambah Buku Literasi Umum</h1>
+    <h2 class="alert alert-success text-center mt-3">Ubah Buku Literasi Umum</h1>
     
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
     
            <div class="form-row">
             <div class="form-group col-md-6">
               <label for="kode_buku_literasi">Kode Buku Literasi : </label>
-                  <input type="hidden" class="form-control"  name="kode_buku_literasi" value ="<?php echo $data['kode_buku_literasi'] ?>" id="kode_buku_literasi" >
+                  <input type="hidden" class="form-control"  name="kode_buku_literasi" value ="<?php echo $data['kode_buku_literasi']; ?>" id="kode_buku_literasi">
+                  <input type="hidden" class="form-control"  name="gambarLama" value ="<?php echo $data['gambar_sampul']; ?>" id="kode_buku_literasi">
             </div>
                 <div class="form-group col-md-6">
                   <label for="kategori">Kategori : </label> <a href="kategori.php" class="btn btn-warning" title="tambah_kategori" >Tambah Kategori</a>
@@ -59,9 +79,10 @@
             </div>
 
             <div class="form-group">
-              <label for="gambar_sampul">Gambar Sampul : <?php echo $data['gambar_sampul'] ?></label>
-              <input type="file" class="form-control-file"value ="<?php echo $data['gambar_sampul'] ?>" name="gambar_sampul" id="gambar_sampul">
-              <small>(Upload File Dengan Ukuran Maksiman 2 MB)</small>
+              <label for="gambar_sampul">Gambar Sampul : <?php echo $data['gambar_sampul'] ?></label><br>
+              <img src="img/literasi/<?= $data['gambar_sampul']; ?>" width="60">
+              <input type="file" class="form-control-file" id="gambar_sampul">
+              <small>(Upload File Dengan Ukuran Maksiman 1 MB)</small>
             </div>
 
             <div class="text-center">

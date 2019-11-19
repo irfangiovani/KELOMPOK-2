@@ -62,13 +62,14 @@ function registrasi($data) {
 function tambah($data) {
     global $conn;
 
+    // ambil data dari tiap elemen dalam form
     $kode_buku_literasi = htmlspecialchars($data["kode_buku_literasi"]);
     $judul_buku_literasi = htmlspecialchars($data["judul_buku_literasi"]);
-    $penerbit = htmlspecialchars($data["penerbit"]);
+    $id_penerbit = htmlspecialchars($data["id_penerbit"]);
     $tahun_terbit = htmlspecialchars($data["tahun_terbit"]);
-    $no_rak = htmlspecialchars($data["no_rak"]);
-    $kategori = htmlspecialchars($data["kategori"]);
-
+    $id_rak = htmlspecialchars($data["id_rak"]);
+    $id_kategori = htmlspecialchars($data["id_kategori"]);
+ 
     // upload gambar
     $gambar_sampul = upload();
     if( !$gambar_sampul ) {
@@ -78,9 +79,10 @@ function tambah($data) {
     $deskripsi_buku = htmlspecialchars($data["deskripsi_buku"]);
 
     $query = "INSERT INTO buku_literasi_umum 
-                VALUES 
-            ('', '$kode_buku_literasi', '$judul_buku_literasi','$id_penerbit','$tahun_terbit', '$id_rak', '$id_kategori', '$gambar_sampul','$deskripsi_buku')
-            ";
+              VALUES
+              ('$kode_buku_literasi', '$judul_buku_literasi', '$id_penerbit', '$tahun_terbit', '$id_rak', '$id_kategori', '$gambar_sampul', '$deskripsi_buku')
+              ";
+
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
@@ -126,7 +128,8 @@ function upload() {
     $namaFileBaru .= '.';
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName , 'img/literasi/' . $namaFileBaru);
+    move_uploaded_file($tmpName, 'img/literasi/' . $namaFileBaru);
+
     return $namaFileBaru;
 
 }
@@ -135,6 +138,41 @@ function upload() {
 function hapus($id) {
     global $conn;
     mysqli_query($conn, "DELETE FROM buku_tahunan_siswa WHERE id_judul_buku_tahunan = $id ");
+    return mysqli_affected_rows($conn);
+}
+
+function ubah($data) {
+    global $conn;
+    
+    $kode_buku_literasi = htmlspecialchars($data["kode_buku_literasi"]);
+    $judul_buku_literasi = htmlspecialchars($data["judul_buku_literasi"]);
+    $id_penerbit = htmlspecialchars($data["id_penerbit"]);
+    $tahun_terbit = htmlspecialchars($data["tahun_terbit"]);
+    $id_rak = htmlspecialchars($data["id_rak"]);
+    $id_kategori = htmlspecialchars($data["id_kategori"]);
+    $gambarLama = htmlspecialchars($data["gambarLama"]);
+    $deskripsi_buku = htmlspecialchars($data["deskripsi_buku"]);
+
+    // cek apakah user pilih gambar baru atau tidak
+    if( $_FILES['gambar_sampul']['error'] === 4 ) {
+        $gambar_sampul = $gambarLama;
+    } else {
+        $gambar_sampul = upload();
+    }
+
+    $query = "UPDATE buku_literasi_umum SET
+                kode_buku_literasi = '$kode_buku_literasi',
+                judul_buku_literasi = '$judul_buku_literasi',
+                id_penerbit = '$id_penerbit',
+                tahun_terbit = '$tahun_terbit',
+                id_rak = '$id_rak'
+                id_kategori = '$id_kategori',
+                gambar_sampul = '$gambar_sampul',
+                deskripsi_buku = '$deskripsi_buku'
+              WHERE id = '$id'
+            ";
+    mysqli_query($conn, $query);
+
     return mysqli_affected_rows($conn);
 }
 
