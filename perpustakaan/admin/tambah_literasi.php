@@ -1,19 +1,4 @@
 <?php
-$conn = mysqli_connect ("localhost" , "root","", "perpustakaan");
-//cek tombol submit ditekan atau tidak
-if( isset($_POST["submit"])){
-    // ambil data dari tiap elemen dalam form
-    $kode_buku_literasi = $_POST["kode_buku_literasi"];
-    $judul_buku_literasi = $_POST["judul_buku_literasi"];
-    $id_penerbit = $_POST["id_penerbit"];
-    $tahun_terbit = $_POST["tahun_terbit"];
-    $id_rak = $_POST["id_rak"];
-    $id_kategori = $_POST["id_kategori"];
-    $gambar_sampul = $_POST["gambar_sampul"];
-    $deskripsi_buku = $_POST["deskripsi_buku"];
-
-    //query insert data
-    mysqli_query($conn, "INSERT INTO buku_literasi_umum VALUES ('$kode_buku_literasi', '$judul_buku_literasi','$id_penerbit','$tahun_terbit', '$id_rak', '$id_kategori', '$gambar_sampul','$deskripsi_buku')");
 require 'functions.php';
 
 //cek tombol submit ditekan atau tidak
@@ -35,9 +20,7 @@ if( isset($_POST["submit"]) ) {
             </script>
       ";
     }
-  }
-
-}}
+}
 ?>
 
 
@@ -53,7 +36,6 @@ if( isset($_POST["submit"]) ) {
     <div class="container">
     <h2 class="alert alert-success text-center mt-3">Tambah Buku Literasi Umum</h2>
     <div class="pull-right">
-    <form action="" method="post">
     <form action="" method="post" enctype="multipart/form-data">
     
            <div class="form-row">
@@ -130,7 +112,6 @@ if( isset($_POST["submit"]) ) {
           </div>
         <br><br>
         
-        </form>
       
     </form>
     </div>
