@@ -10,7 +10,6 @@ if( isset($_POST["cari"])) {
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +36,7 @@ if( isset($_POST["cari"])) {
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
   <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
   <link rel="shortcut icon" href="ico/favicon.png" />
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
   <!-- =======================================================
     Theme Name: Remember
     Theme URL: https://bootstrapmade.com/remember-free-multipurpose-bootstrap-template/
@@ -69,6 +68,7 @@ if( isset($_POST["cari"])) {
                 <li><a href="#" data-placement="bottom" title="Linkedin"><i class="icon-circled icon-linkedin icon-bglight"></i></a></li>
                 <li><a href="#" data-placement="bottom" title="Pinterest"><i class="icon-circled icon-pinterest  icon-bglight"></i></a></li>
                 <li><a href="#" data-placement="bottom" title="Google +"><i class="icon-circled icon-google-plus icon-bglight"></i></a></li>
+                <li><a href="#" class="btn btn-warning btn-rounded">LOGOUT</a></li>
               </ul>
 
             </div>
@@ -79,7 +79,7 @@ if( isset($_POST["cari"])) {
 
 
         <div class="row nomargin">
-          <div class="span4">
+          <div class="span3">
             <div class="logo">
               <h1><a href="index.html"><i class="icon-tint"></i> K-Negabon Library</a></h1>
             </div>
@@ -153,10 +153,12 @@ if( isset($_POST["cari"])) {
         </div>
       </div>
     </section>
-  
+    <a href="index.php" class="btn btn-warning pull-right"><i class="icon-arrow-left"></i> kembali</a>
+
+    <br>
     <div class="container-fluid">
     <a href="tambah_literasi.php">Tambah Buku Literasi Umum</a>
-    <a href="index.php" class="btn btn-warning pull-right"><i class="icon-arrow-left"></i> kembali</a>
+
     <br><br>
     <form action="" method="post">
     <table border="1" cellpadding="5" cellspacing="0">
