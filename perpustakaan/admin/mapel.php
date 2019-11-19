@@ -118,7 +118,7 @@ $buku_mapel_kelas =query ("SELECT a.id_judul_buku_mapel, a.judul_buku_mapel, a.t
                       </ul>
                     </li>
                     <li>
-                      <a href="contact.html">Data Member Siswa</a>
+                      <a href="data_member.php">Data Member Siswa</a>
                     </li>
                   </ul>
                 </nav>
