@@ -12,18 +12,18 @@ if( isset($_POST["submit"])){
     $status = $_POST["status"];
 
     //query insert data
-    mysqli_query($conn, "INSERT INTO member_perpus VALUES ('$nis', '$nama','$kelas','$jurusan', '$no_telp',  '$alamat','$status')");
+    // mysqli_query($conn, "INSERT INTO member_perpus VALUES ('$nis', '$nama','$kelas','$jurusan', '$no_telp',  '$alamat','$status')");
 
     
 
-    // cek keberhasilan tambah data
-    if( mysqli_affected_rows($conn) > 0 ) {
-        echo "berhasil";
-    } else {
-        echo "gagal!";
-        echo "<br>";
-        echo mysqli_error($conn);
-    }
+    // // cek keberhasilan tambah data
+    // if( mysqli_affected_rows($conn) > 0 ) {
+    //     echo "berhasil";
+    // } else {
+    //     echo "gagal!";
+    //     echo "<br>";
+    //     echo mysqli_error($conn);
+    // }
     }
 
 ?>
@@ -67,7 +67,7 @@ if( isset($_POST["submit"])){
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Registration Info</h2>
-                    <form method="POST">
+                    <form action = "admin/data_member.php"method="POST">
                         <div class="input-group">
                             <input class="input--style-1" type="text" placeholder="NIS" name="nis" id="nis">
                         </div>

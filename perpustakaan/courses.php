@@ -121,7 +121,7 @@
 				<ul class="main-menu">
 					<li><a href="courses.php">Beranda</a></li>
 					<li><a href="about.html">Buku Mapel</a></li>
-					<li><a href="member../index.php">Daftar Member</a></li>
+					<li><a href="registermember.php">Daftar Member</a></li>
 					<li><a href="blog.html">Bantuan</a></li>
 				
 				</ul>

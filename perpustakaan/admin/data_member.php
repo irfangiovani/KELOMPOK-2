@@ -1,7 +1,7 @@
 <?php
 
 require 'functions.php';
-$peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan"); 
+$data_member = query ("SELECT * FROM member_perpus"); 
 ?>
 
 <!DOCTYPE html>
@@ -114,7 +114,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan");
                         <li><a href="blog-right-sidebar.html">Tamu</a></li>
                       </ul>
                     </li>
-                    <li>
+                    <li class="active">
                       <a href="data_member.php">Data Member Siswa</a>
                     </li>
                   </ul>
@@ -133,15 +133,8 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan");
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Peminjaman Buku Tahunan Siswa</h2>
+              <h2>Data Member Siswa</h2>
             </div>
-          </div>
-          <div class="span8">
-            <ul class="breadcrumb">
-              <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
-              <li><a href="#">Peminjaman</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Buku Tahunan Siswa</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -149,33 +142,32 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan");
 
     <br>
      <div class="container-fluid">
-    <a href="tambah_literasi.php">Tambah Data Peminjaman Tahunan</a>
     <br><br>
     <form action="" method="post">
     <table border="1" cellpadding="0" cellspacing="0">
         <tr>
 			<th>no</th>
-            <th>ID Pinjam Tahunan</th>
-            <th>Kode Judul Buku Tahunan</th>
-            <th>Kode Buku Tahunan</th>
-            <th>NIS Peminjam</th>
-            <th>Tanggal Peminjaman</th>
-            <th>Tanggal Harus Kembali</th>
-            <th>Notifikasi</th>
+            <th>Nomor Induk Siswa (NIS)</th>
+            <th>Nama Siswa</th>
+            <th>Kelas</th>
+            <th>Jurusan</th>
+            <th>No Telepon</th>
+            <th>Alamat</th>
+            <th>Status</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php
-            foreach( $peminjaman_tahunan as $row) :
+            foreach( $data_member as $row) :
         ?>
         <tr>
 			<td><?=$i; ?></td>
-            <td><?php echo $row["id_pinjam_buku_tahunan"]; ?></td>
-            <td><?php echo $row["id_judul_buku_tahunan"];?></td>
-            <td><?php echo $row["kode_buku_tahunan"];?></td>
-            <td><?php echo $row["nis"];?></td>
-            <td><?php echo $row["tanggal_peminjaman"];?></td>
-            <td><?php echo $row["tanggal_hrs_kembali"];?></td>
-            <td><?php echo $row["notifikasi"];?></td>
+            <td><?php echo $row["nis"]; ?></td>
+            <td><?php echo $row["nama_siswa"];?></td>
+            <td><?php echo $row["kelas"];?></td>
+            <td><?php echo $row["jurusan"];?></td>
+            <td><?php echo $row["no_telp"];?></td>
+            <td><?php echo $row["alamat"];?></td>
+            <td><?php echo $row["status"];?></td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
@@ -270,9 +262,9 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan");
   <script src="js/portfolio/jquery.quicksand.js"></script>
   <script src="js/portfolio/setting.js"></script>
   <script src="js/animate.js"></script>
-
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
+  
 
 </body>
 

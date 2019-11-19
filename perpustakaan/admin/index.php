@@ -111,7 +111,7 @@
                       </ul>
                     </li>
                     <li>
-                      <a href="contact.html">Data Member Siswa</a>
+                      <a href="data_member.php">Data Member Siswa</a>
                     </li>
                   </ul>
                 </nav>
