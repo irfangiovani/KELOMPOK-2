@@ -149,8 +149,6 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
         </div>
       </div>
     </section>
-
-    <br>
     <a href="index.php" class="btn btn-warning pull-right"><i class="icon-arrow-left"></i> kembali</a>
     <div class="container-fluid">
     <a href="tambah_tahunan.php">Tambah Buku Tahunan Siswa</a>
