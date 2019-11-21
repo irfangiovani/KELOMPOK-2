@@ -275,7 +275,7 @@
 			</div>
 			<div class="row text-white spad">
 				<div class="col-lg-3 col-sm-6 footer-widget">
-					<h4>kontak</h4>
+				<li><a href="#">kontak</a></li>
 					<ul>
 						<li><a href="#">Jl. Santawi No.96 A, Tamansari Indah, Tamansari, Kec. Bondowoso, Kabupaten Bondowoso, Jawa Timur 68216</a></li>
 						<li><a href="#">(0332) 432641</a></li>
