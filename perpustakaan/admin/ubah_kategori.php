@@ -1,4 +1,9 @@
 <?php
+session_start();
+if( !isset($_SESSION["login"])){
+    header("location: loginadmin.php");
+    exit;
+}
   include 'functions.php';
   $id = $_GET['id'];
   $qe = mysqli_query($conn, "SELECT * FROM kategori WHERE id_kategori = '$id'");
