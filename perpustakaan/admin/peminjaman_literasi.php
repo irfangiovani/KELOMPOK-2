@@ -1,4 +1,9 @@
 <?php
+session_start();
+if( !isset($_SESSION["login"])){
+    header("location: loginadmin.php");
+    exit;
+}
 
 require 'functions.php';
 $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi"); 

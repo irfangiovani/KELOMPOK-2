@@ -112,7 +112,7 @@
 					<img src="img/yudi.png" class="bondowoso">
 				</a>
 				<div class="user-panel">
-					<a href="loginadmin.php">Login</a>
+					<a href="admin/loginadmin.php">Login</a>
 					
 				</div>
 				<div class="nav-switch">
@@ -275,7 +275,7 @@
 			</div>
 			<div class="row text-white spad">
 				<div class="col-lg-3 col-sm-6 footer-widget">
-					<h4>contak</h4>
+				<li><a href="#">kontak</a></li>
 					<ul>
 						<li><a href="#">Jl. Santawi No.96 A, Tamansari Indah, Tamansari, Kec. Bondowoso, Kabupaten Bondowoso, Jawa Timur 68216</a></li>
 						<li><a href="#">(0332) 432641</a></li>
