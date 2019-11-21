@@ -4,7 +4,7 @@ if( !isset($_SESSION["login"])){
     header("location: loginadmin.php");
     exit;
 }
-
+// koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
 
 function query($query) {
