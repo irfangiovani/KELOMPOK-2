@@ -159,6 +159,7 @@ $data_member = query ("SELECT * FROM member_perpus");
             <th>No Telepon</th>
             <th>Alamat</th>
             <th>Status</th>
+            <th>Aksi</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php
@@ -173,6 +174,7 @@ $data_member = query ("SELECT * FROM member_perpus");
             <td><?php echo $row["no_telp"];?></td>
             <td><?php echo $row["alamat"];?></td>
             <td><?php echo $row["status"];?></td>
+            <a href="aktif_member.php?id=<?php echo $row ['nis']; ?>" class="btn icon-check" title="aktif member" >aktif</a>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
