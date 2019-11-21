@@ -1,4 +1,10 @@
 <?php 
+session_start();
+if( !isset($_SESSION["login"])){
+	header("location: loginadmin.php");
+	exit;
+}
+
 require 'functions.php';
 
 $ambil = $conn->query("SELECT * FROM buku_literasi_umum WHERE kode_buku_literasi='$_GET[id]'");

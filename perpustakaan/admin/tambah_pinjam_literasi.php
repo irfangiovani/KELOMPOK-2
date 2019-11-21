@@ -1,5 +1,10 @@
 <?php
-$conn = mysqli_connect ("localhost" , "root","", "perpustakaan");
+session_start();
+if( !isset($_SESSION["login"])){
+    header("location: loginadmin.php");
+    exit;
+}
+require 'functions.php';
 if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
     $nama_peminjam = $_POST["nama_peminjam"];

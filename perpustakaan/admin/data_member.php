@@ -1,4 +1,9 @@
 <?php
+session_start();
+if( !isset($_SESSION["login"])){
+    header("location: loginadmin.php");
+    exit;
+}
 
 require 'functions.php';
 $data_member = query ("SELECT * FROM member_perpus"); 

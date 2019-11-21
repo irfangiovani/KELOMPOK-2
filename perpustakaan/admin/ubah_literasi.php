@@ -1,4 +1,9 @@
 <?php
+session_start();
+if( !isset($_SESSION["login"])){
+    header("location: loginadmin.php");
+    exit;
+}
   include 'functions.php';
   $id = $_GET["id"];
   $data = query("SELECT * FROM buku_literasi_umum WHERE kode_buku_literasi = '$id'")[0];
