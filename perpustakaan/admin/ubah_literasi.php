@@ -93,6 +93,7 @@ if( !isset($_SESSION["login"])){
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="edit">Edit Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
+              <a href="literasi.php" class="btn btn-success">Kembali</a>
             </div>
         <br><br>
     </div>
