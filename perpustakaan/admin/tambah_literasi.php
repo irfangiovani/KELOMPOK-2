@@ -1,4 +1,9 @@
 <?php
+session_start();
+if( !isset($_SESSION["login"])){
+    header("location: loginadmin.php");
+    exit;
+}
 require 'functions.php';
 
 //cek tombol submit ditekan atau tidak
@@ -108,7 +113,7 @@ if( isset($_POST["submit"]) ) {
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
-              <a href="literasi.php" class="btn btn-success">kembali</a>
+              <a href="literasi.php" class="btn btn-success">Kembali</a>
             </div>
           </div>
         <br><br>

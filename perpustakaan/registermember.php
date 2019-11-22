@@ -9,21 +9,21 @@ if( isset($_POST["submit"])){
     $jurusan = $_POST["jurusan"];
     $no_telp = $_POST["no_telp"];
     $alamat = $_POST["alamat"];
-    $status = $_POST["status"];
+    $status = "tidak aktif";
 
     //query insert data
-    // mysqli_query($conn, "INSERT INTO member_perpus VALUES ('$nis', '$nama','$kelas','$jurusan', '$no_telp',  '$alamat','$status')");
+    mysqli_query($conn, "INSERT INTO member_perpus VALUES ('$nis', '$nama','$kelas','$jurusan', '$no_telp',  '$alamat','$status')");
 
     
 
-    // // cek keberhasilan tambah data
-    // if( mysqli_affected_rows($conn) > 0 ) {
-    //     echo "berhasil";
-    // } else {
-    //     echo "gagal!";
-    //     echo "<br>";
-    //     echo mysqli_error($conn);
-    // }
+    // cek keberhasilan tambah data
+    if( mysqli_affected_rows($conn) > 0 ) {
+        echo "berhasil";
+    } else {
+        echo "gagal!";
+        echo "<br>";
+        echo mysqli_error($conn);
+    }
     }
 
 ?>
@@ -67,7 +67,7 @@ if( isset($_POST["submit"])){
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Registration Info</h2>
-                    <form action = "admin/data_member.php"method="POST">
+                    <form action = ""method="POST">
                         <div class="input-group">
                             <input class="input--style-1" type="text" placeholder="NIS" name="nis" id="nis">
                         </div>
@@ -91,12 +91,7 @@ if( isset($_POST["submit"])){
                         <div class="input-group">
                             <input class="input--style-1" type="text" placeholder="ALAMAT" name="alamat" id="alamat">
                         </div>
-                    <form method="POST">
-                        <div class="input-group">
-                             <input class="input--style-1" type="text" placeholder="STATUS" name="status" id="status">
-                         </div>
-                    
-                            </div>
+                        </div>
                         </div>
                         <div class="p-t-20">
                             <button class="btn btn--radius btn--green" type="submit" name="submit">SIMPAN</button>

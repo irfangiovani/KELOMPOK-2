@@ -1,5 +1,10 @@
 <?php
-require 'admin/functions.php';
+session_start();
+if( isset($_SESSION["login"])){
+	header("Location: index.php");
+	exit;
+}
+require 'functions.php';
 
 	if( isset($_POST["login"])){
 	$username = $_POST["username"];
@@ -13,7 +18,9 @@ require 'admin/functions.php';
 	// cek password
 	$row = mysqli_fetch_assoc($result);
 	if(password_verify($password, $row["password"]) ) {
-		header("location: admin/index.php");
+		//set session
+		$_SESSION["login"] = true;
+		header("location: index.php");
 		exit;
 	}
  

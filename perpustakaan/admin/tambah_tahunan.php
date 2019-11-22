@@ -1,5 +1,10 @@
 <?php
-$conn = mysqli_connect ("localhost" , "root","", "perpustakaan");
+session_start();
+if( !isset($_SESSION["login"])){
+    header("location: loginadmin.php");
+    exit;
+}
+require 'functions.php';
 //cek tombol submit ditekan atau tidak
 if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form

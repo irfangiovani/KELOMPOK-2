@@ -1,3 +1,10 @@
+<?php
+session_start();
+ if( !isset($_SESSION["login"])){
+     header("location: loginadmin.php");
+     exit;
+ }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +62,7 @@
                 <li><a href="#" data-placement="bottom" title="Linkedin"><i class="icon-circled icon-linkedin icon-bglight"></i></a></li>
                 <li><a href="#" data-placement="bottom" title="Pinterest"><i class="icon-circled icon-pinterest  icon-bglight"></i></a></li>
                 <li><a href="#" data-placement="bottom" title="Google +"><i class="icon-circled icon-google-plus icon-bglight"></i></a></li>
-                <li><a href="#" class="btn btn-warning btn-rounded">LOGOUT</a></li>
+                <li><a href="logout.php" class="btn btn-warning btn-rounded">LOGOUT</a></li>
               </ul>
             </div>
           </div>

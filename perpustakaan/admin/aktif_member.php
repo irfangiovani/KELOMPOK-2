@@ -6,22 +6,22 @@ if( !isset($_SESSION["login"])){
 }
   include 'functions.php';
   $id = $_GET["id"];
-  $data = query("SELECT * FROM buku_literasi_umum WHERE kode_buku_literasi = '$id'")[0];
+  $data = query("SELECT * FROM member_perpus WHERE nis = '$id'")[0];
 
   if( isset($_POST["submit"]) ) {
 
   if( ubah($_POST) > 0 ) {
     echo "
         <script>
-            alert('data berhasil diubah!');
-            document.location.href = 'literasi.php';
+            alert('member berhasil disetujui!');
+            document.location.href = 'data_member.php';
         </script>
     ";
   } else {
     echo "
         <script>
-            alert('data gagal diubah!');
-            document.location.href = 'literasi.php';
+            alert('member belum disetujui!');
+            document.location.href = 'data_member.php';
         </script>
     ";
   }
@@ -93,7 +93,6 @@ if( !isset($_SESSION["login"])){
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="edit">Edit Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
-              <a href="literasi.php" class="btn btn-success">Kembali</a>
             </div>
         <br><br>
     </div>
