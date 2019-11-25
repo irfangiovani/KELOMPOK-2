@@ -5,10 +5,16 @@ if( !isset($_SESSION["login"])){
     exit;
 }
 
-require 'functions.php';
-
+require 'functiontah.php';
+$buku_tahunan_siswa = query("SELECT * FROM buku_tahunan_siswa");
 
 $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahunan, a.tahun_terbit, a.untuk_kelas, a.gambar_sampul, a.stok, c.nama_penerbit as id_penerbit FROM buku_tahunan_siswa a LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit ORDER BY a.id_judul_buku_tahunan ASC"); 
+
+// tombol cari ditekan
+if( isset($_POST["cari"]) ) {
+  $buku_tahunan_siswa = cari($_POST["keyword"]);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +88,7 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
         <div class="row nomargin">
           <div class="span3">
             <div class="logo">
-              <h1><a href="index.php"><i class="icon-tint"></i> K-Negabon Library</a></h1>
+              <h1><a href="index.html"><i class="icon-tint"></i> K-Negabon Library</a></h1>
             </div>
           </div>
           <div class="span8">
@@ -90,7 +96,7 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
               <div class="navigation">
                 <nav>
                   <ul class="nav topnav">
-                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="index.php">Beranda</a></li>
                     <li class="dropdown active">
                       <a href="#">Koleksi Buku<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
@@ -170,6 +176,7 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
     <form action=""method="post">
       <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover ">
+
         <tr>
             <th>no</th>
             <th>Id Judul Buku Tahunan</th>
