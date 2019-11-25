@@ -128,12 +128,24 @@
 			</div>
 		</div>
 	</header>
+	
 	<!-- slider section end -->
 
 	<!--  Page top end -->
 
 <!-- Page top section -->
 <section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
+	<div style="margin-bottom: 20px;">
+		<form class="form-inline" action="search.php" method="post">
+			<div class="form group">
+				<input type="text" name="pencarian" class="form-contorol" placeholder="pencarian">
+			</div>
+			<div class="form-group">
+				<button type="submit" name="submit" class="btn btn-primary"><span class="fa fa-search" aria-hidden="true"></span></button>
+			</div>
+		</form>
+		
+	</div>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   
 	</section>
@@ -260,6 +272,7 @@
 	    <span class="sr-only">Next</span>
 	  </a>
 	</div>
+	
 
 <!-- tapilan buku-->
 
@@ -334,19 +347,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   
   
 	       <div class="box">
-            <h2>Cek Peminjaman Buku<h2><br>
-            <form>
+            <h2>Cek Peminjaman Buku</h2><br>
+            <form action="cekpinjaman.php" method="get">
                 <div class="inputBox">
-                    <input type="text" name="" required="">
+                    <input type="text" name="nama" required="">
                     <label>Nama</label>
                 </div>
                 <div class="inputBox">
-                    <input type="password" name="" required="">
+                    <input type="text" name="nis" required="">
                     <label>Nis</label><br>
                 </div>
-                <input type="submit" name="" value="Cek Peminjaman"><br>
+                <input type="submit" name="cek" value="Cek Peminjaman"><br>
             </form>
-        
+        </div>
 
 
 </body>
