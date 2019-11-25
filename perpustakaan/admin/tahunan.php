@@ -5,10 +5,16 @@ if( !isset($_SESSION["login"])){
     exit;
 }
 
-require 'functions.php';
-
+require 'functiontah.php';
+$buku_tahunan_siswa = query("SELECT * FROM buku_tahunan_siswa");
 
 $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahunan, a.tahun_terbit, a.untuk_kelas, a.gambar_sampul, a.stok, c.nama_penerbit as id_penerbit FROM buku_tahunan_siswa a LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit ORDER BY a.id_judul_buku_tahunan ASC"); 
+
+// tombol cari ditekan
+if( isset($_POST["cari"]) ) {
+  $buku_tahunan_siswa = cari($_POST["keyword"]);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +88,7 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
         <div class="row nomargin">
           <div class="span3">
             <div class="logo">
-              <h1><a href="index.php"><i class="icon-tint"></i> K-Negabon Library</a></h1>
+              <h1><a href="index.html"><i class="icon-tint"></i> K-Negabon Library</a></h1>
             </div>
           </div>
           <div class="span8">
@@ -90,7 +96,7 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
               <div class="navigation">
                 <nav>
                   <ul class="nav topnav">
-                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="index.php">Beranda</a></li>
                     <li class="dropdown active">
                       <a href="#">Koleksi Buku<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
@@ -155,23 +161,29 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
       </div>
     </section>
     <a href="index.php" class="btn btn-warning pull-right"><i class="icon-arrow-left"></i> kembali</a>
+    <br>
     <div class="container-fluid">
     <a href="tambah_tahunan.php">Tambah Buku Tahunan Siswa</a>
     <br><br>
+    <form action="" method="post" class="form-inline">
+    <input class="form-control mr-sm-2" type="search" name="keyword" autofocus placeholder="Search" aria-label="Search" autocomplete="off">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="cari">Cari!</button>
+  </form>
+  
     <div class="content">
       <div class="box">
-<!-- <div class="row"> -->
 <div class="offside-3 col-lg-7">
     <form action=""method="post">
       <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover ">
-            <tr>
+
+        <tr>
             <th>no</th>
             <th>Id Judul Buku Tahunan</th>
             <th>Judul Buku</th>
             <th>Penerbit</th>
             <th>Tahun Terbit</th>
-            <th>Kel
+            <th>Kel</th>
             <th>Gambar Sampul</th>
             <th>Stok</th>
             <th>aksi</th>
@@ -181,9 +193,6 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
             foreach( $buku_tahunan_siswa as $row) :
         ?>
         <tr>
-
-			<td><?=$i; ?></td>
-        
 			      <td><?=$i; ?></td>
             <td><?php echo $row["id_judul_buku_tahunan"]; ?></td>
             <td><?php echo $row["judul_buku_tahunan"];?></td>
@@ -196,16 +205,17 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
               <a href="" class="btn btn-warning" title="ubah data" >ubah</a>
 
               <a href="hapus_tahunan.php?id=<?= $row["id_judul_buku_tahunan"]; ?>
-              " onclick="return confirm('yakin');"  class="btn btn-danger" title="hapus data">hapus</a>
+              " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger" title="hapus data">hapus</a>
             </td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
     </table>
   </div>
-</div>
-<!-- </div> -->
     </form>
+</div>
+</div>
+</div>
 </div>
 </div>
 

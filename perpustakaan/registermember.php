@@ -67,7 +67,7 @@ if( isset($_POST["submit"])){
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Registration Info</h2>
-                    <form action = ""method="POST">
+                    <form action = "" method="POST">
                         <div class="input-group">
                             <input class="input--style-1" type="text" placeholder="NIS" name="nis" id="nis">
                         </div>
@@ -112,7 +112,6 @@ if( isset($_POST["submit"])){
     <!-- Main JS-->
     <script src="js/register_member/global.js"></script>
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 
 </html>
-<!-- end document-->
