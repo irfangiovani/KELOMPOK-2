@@ -1,21 +1,4 @@
-<?php
-session_start();
-if( !isset($_SESSION["login"])){
-    header("location: loginadmin.php");
-    exit;
-}
-require 'functions.php';
-$buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
-
-$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC"); 
-
-//tombol cari ditekan
-if( isset($_POST["cari"])) {
-  $buku_literasi_umum = cari($_POST["keyword"]);
-}
-
-?>
-<!DOCTYPE html>
+\<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -165,15 +148,14 @@ if( isset($_POST["cari"])) {
     <a href="tambah_literasi.php">Tambah Buku Literasi Umum</a>
 
     <br><br>
-  <form action="" method="post" class="form-inline">
-    <input class="form-control mr-sm-2" type="search" name="keyword" autofocus placeholder="Search" aria-label="Search" autocomplete="off">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="cari">Cari!</button>
-  </form>
-
-  <div class="offside-3 col-lg-7">
     <form action="" method="post">
-      <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover ">
+    <table border="1" cellpadding="5" cellspacing="0">
+        <input type="text" name="keyword" size="40" autofocus placeholder="cari berdasarkan judul dan kategori buku" autocomplete="off">
+        <button type="submit" name="cari">cari!</button>
+	</form>
+  <br>
+    <form action="" method="post">
+    <table border="1" cellpadding="0" cellspacing="0">
 
         <tr>
 		      	<th>no</th>
@@ -205,15 +187,13 @@ if( isset($_POST["cari"])) {
               <a href="ubah_literasi.php?id=<?php echo $row ['kode_buku_literasi']; ?>" class="btn btn-warning" title="ubah data" >ubah</a>
 
               <a href="hapus_literasi.php?id=<?= $row["kode_buku_literasi"]; ?>
-              " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger" title="hapus data">hapus</a>
+              " onclick="return confirm('yakin');"  class="btn btn-danger" title="hapus data">hapus</a>
             </td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
     </table>
-    </div>
     </form>
-  </div>
   </div>
 
 

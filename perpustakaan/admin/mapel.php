@@ -160,9 +160,16 @@ $buku_mapel_kelas =query ("SELECT a.id_judul_buku_mapel, a.judul_buku_mapel, a.t
     <div class="container-fluid">
     <a href="tambah_mapel.php">Tambah Buku Mapel Kelas</a>
     <br><br>
-
+    <form action="" method="post" class="form-inline">
+    <input class="form-control mr-sm-2" type="search" name="keyword" autofocus placeholder="Search" aria-label="Search" autocomplete="off">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="cari">Cari!</button>
+  </form>
+<div class="content">
+      <div class="box">
+  <div class="offside-3 col-lg-7">
     <form action="" method="post">
-    <table border="1" cellpadding="0" cellspacing="0">
+      <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover ">
         <tr>
 			<th>no</th>
             <th>Id Judul Buku Mapel</th>
@@ -191,13 +198,18 @@ $buku_mapel_kelas =query ("SELECT a.id_judul_buku_mapel, a.judul_buku_mapel, a.t
               <a href="" class="btn btn-warning" title="ubah data" >ubah</a>
 
               <a href="hapus_mapel.php?id=<?= $row["id_judul_buku_mapel"]; ?>
-              " onclick="return confirm('yakin');"  class="btn btn-danger" title="hapus data">hapus</a>
+              " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger" title="hapus data">hapus</a>
             </td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
     </table>
+  </div>
     </form>
+  </div>
+</div>
+</div>
+  </div>
   </div>
 
 

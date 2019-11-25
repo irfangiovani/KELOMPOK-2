@@ -4,33 +4,30 @@ if( !isset($_SESSION["login"])){
     header("location: loginadmin.php");
     exit;
 }
-require 'functions.php';
+require 'functionmap.php';
+
 //cek tombol submit ditekan atau tidak
 if( isset($_POST["submit"])){
-    // ambil data dari tiap elemen dalam form
-    $id_judul_buku_mapel = $_POST["id_judul_buku_mapel"];
-    $judul_buku_mapel = $_POST["judul_buku_mapel"];
-    $penerbit = $_POST["penerbit"];
-    $tahun_terbit = $_POST["tahun_terbit"];
-    $untuk_kelas = $_POST["untuk_kelas"];
-    $gambar_sampul = $_POST["gambar_sampul"];
-    $stok = $_POST["stok"];
-
-    //query insert data
-    mysqli_query($conn, "INSERT INTO buku_mapel_kelas VALUES ('$id_judul_buku_mapel', '$judul_buku_mapel','$penerbit','$tahun_terbit', '$untuk_kelas',  '$gambar_sampul','$stok')");
-
     
-
     // cek keberhasilan tambah data
-    if( mysqli_affected_rows($conn) > 0 ) {
-        echo "berhasil";
+    if( tambahmap($_POST) > 0 ) {
+      echo "
+            <script>
+              alert('data berhasil ditambahkan!');
+              document.location.href = 'mapel.php';
+            </script>
+      ";
     } else {
-        echo "gagal!";
-        echo "<br>";
-        echo mysqli_error($conn);
-    }
+      echo "
+            <script>
+              alert('data gagal ditambahkan!');
+              document.location.href = 'mapel.php';
+            </script>
+      ";
     }
 
+
+}
 ?>
 
 
@@ -40,7 +37,7 @@ if( isset($_POST["submit"])){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
-    <title>Tambah Buku Literasi Umum</title>
+    <title>Tambah Buku Mapel</title>
 </head>
 <body>
     <div class="container">
@@ -49,18 +46,9 @@ if( isset($_POST["submit"])){
     <form action="" method="post" enctype="multipart/form-data">
         <div class="form-row">
                 <div class="form-group col-md-4">
-                  <label for="id_judul_buku_mapel">Id Judul Buku Mapel : </label> <a href="penerbit.php" class="btn btn-warning" title="tambah_id_judul_buku_mapel">Tambah Penerbit</a>
-                  <select class="form-control" name="id_judul_buku_mapel" id="id_judul_buku_mapel" required >
-                  <option value="">- Pilih Id Judul -</option>
-                    <?php
-                    $sql_penerbit = mysqli_query($conn, "SELECT * FROM penerbit") or die (mysqli_query($conn));
-                    while ($data_penerbit = mysqli_fetch_array($sql_penerbit)){
-                      echo '<option value="'.$data_penerbit['id_penerbit'].'">' .$data_penerbit['nama_penerbit']. '</option>'; 
-                    }
-                    ?>
-                </select>
+                  <label for="id_judul_buku_mapel">Id Judul Buku Mapel : </label>
+                  <input type="text" class="form-control" placeholder="Masukkan Id Judul..." name="id_judul_buku_mapel" id="id_judul_buku_mapel" required>
                 </div>
-
                 <div class="form-group col-md-4">
                   <label for="untuk_kelas">Untuk Kelas : </label>
                   <input type="text" class="form-control" placeholder="Masukkan Kelas..." name="untuk_kelas" id="untuk_kelas">
@@ -85,22 +73,28 @@ if( isset($_POST["submit"])){
             </div>
             <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="kode_buku_literasi">Kode Buku Literasi : </label>
-              <input type="text" class="form-control" placeholder="Masukkan Kode Buku..." name="kode_buku_literasi" id="kode_buku_literasi">
+              <label for="tahun_terbit">Tahun Terbit : </label>
+              <input type="text" class="form-control" placeholder="Masukkan Kode Buku..." name="tahun_terbit" id="tahun_terbit">
             </div>
             <div class="form-group col-md-6">
-              <label for="id_kategori">Kategori : </label> <a href="kategori.php" class="btn btn-warning" title="tambah_kategori" >Tambah Kategori</a>
-                <select class="form-control" name="id_kategori" id="id_kategori" required >
-                  <option value="">- Pilih Kategori -</option>
-                    <?php
-                    $sql_kategori = mysqli_query($conn, "SELECT * FROM kategori") or die (mysqli_query($conn));
-                    while ($data_kategori = mysqli_fetch_array($sql_kategori)){
-                      echo '<option value="'.$data_kategori['id_kategori'].'">' .$data_kategori['nama_kategori']. '</option>'; 
-                    }
-                    ?>
-                </select>
+              <label for="stok">Stok : </label>
+              <input type="text" class="form-control" placeholder="Masukkan Stok Buku..." name="stok" id="stok">
             </div>
             </div>
+            <div class="form-group">
+              <label>Gambar Sampul : </label>
+              <input type="file" class="form-control-file" name="gambar_sampul" id="gambar_sampul">
+              <small>(Upload File Dengan Ukuran Maksiman 1 MB)</small>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
+              <button type="reset" class="btn btn-danger">RESET</button>
+              <a href="mapel.php" class="btn btn-success">Kembali</a>
+            </div>
+
+        </form>
+      </div>
+    </div>
 </body>
 </html>
 

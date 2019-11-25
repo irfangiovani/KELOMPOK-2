@@ -96,7 +96,7 @@ $data_member = query ("SELECT * FROM member_perpus");
                         <li><a href="tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                       <a href="#">Peminjaman<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                       <li><a href="peminjaman_literasi.php">Buku Literasi Umum</a></li>
@@ -174,7 +174,9 @@ $data_member = query ("SELECT * FROM member_perpus");
             <td><?php echo $row["no_telp"];?></td>
             <td><?php echo $row["alamat"];?></td>
             <td><?php echo $row["status"];?></td>
+            <td>
             <a href="aktif_member.php?id=<?php echo $row ['nis']; ?>" class="btn icon-check" title="aktif member" >aktif</a>
+            </td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
