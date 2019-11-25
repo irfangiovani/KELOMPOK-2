@@ -19,5 +19,5 @@ $conn->query("DELETE FROM buku_tahunan_siswa WHERE id_judul_buku_tahunan= '$_GET
 echo "<script>alert('produk terhapus');</script>";
 echo "<script>location='tahunan.php';</script>";
  ?>
-} 
+}
 

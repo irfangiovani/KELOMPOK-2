@@ -113,8 +113,8 @@ session_start();
                     <li class="dropdown">
                       <a href="#">Pengunjung<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="blog-left-sidebar.html">Siswa</a></li>
-                        <li><a href="blog-right-sidebar.html">Tamu</a></li>
+                        <li><a href="kelas.php">Siswa</a></li>
+                        <li><a href="tamu.php">Tamu</a></li>
                       </ul>
                     </li>
                     <li>

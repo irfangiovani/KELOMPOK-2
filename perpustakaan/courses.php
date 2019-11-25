@@ -286,7 +286,11 @@
 	<footer class="footer-section spad pb-0">
 		<div class="container">
 			<div class="text-center">
+<<<<<<< HEAD
 				<a href="#" class="site-btn">Home<i class="fa fa-angle-right"></i></a>
+=======
+				<a href="#" class="site-btn">Home <i class="fas fa-angle-right"></i></a>
+>>>>>>> e1c8c1e834f9dd7e587ad0250a4aea00824efb3e
 			</div>
 			<div class="row text-white spad">
 				<div class="col-lg-3 col-sm-6 footer-widget">

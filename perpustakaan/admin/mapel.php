@@ -5,10 +5,17 @@ if( !isset($_SESSION["login"])){
     exit;
 }
 
-require 'functions.php';
+require 'functionmap.php';
+$buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
 
 
 $buku_mapel_kelas =query ("SELECT a.id_judul_buku_mapel, a.judul_buku_mapel, a.tahun_terbit, a.untuk_kelas, a.gambar_sampul, a.stok, c.nama_penerbit as id_penerbit FROM buku_mapel_kelas a LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit ORDER BY a.id_judul_buku_mapel ASC "); 
+
+// tombol cari ditekan
+if( isset($_POST["cari"]) ) {
+  $buku_mapel_kelas = cari($_POST["keyword"]);
+}
+
 ?>
 
 <!DOCTYPE html>
