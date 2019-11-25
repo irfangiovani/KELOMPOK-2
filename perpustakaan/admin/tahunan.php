@@ -155,23 +155,28 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
       </div>
     </section>
     <a href="index.php" class="btn btn-warning pull-right"><i class="icon-arrow-left"></i> kembali</a>
+    <br>
     <div class="container-fluid">
     <a href="tambah_tahunan.php">Tambah Buku Tahunan Siswa</a>
     <br><br>
+    <form action="" method="post" class="form-inline">
+    <input class="form-control mr-sm-2" type="search" name="keyword" autofocus placeholder="Search" aria-label="Search" autocomplete="off">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="cari">Cari!</button>
+  </form>
+  
     <div class="content">
       <div class="box">
-<!-- <div class="row"> -->
 <div class="offside-3 col-lg-7">
     <form action=""method="post">
       <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover ">
-            <tr>
+        <tr>
             <th>no</th>
             <th>Id Judul Buku Tahunan</th>
             <th>Judul Buku</th>
             <th>Penerbit</th>
             <th>Tahun Terbit</th>
-            <th>Kel
+            <th>Kel</th>
             <th>Gambar Sampul</th>
             <th>Stok</th>
             <th>aksi</th>
@@ -181,9 +186,6 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
             foreach( $buku_tahunan_siswa as $row) :
         ?>
         <tr>
-
-			<td><?=$i; ?></td>
-        
 			      <td><?=$i; ?></td>
             <td><?php echo $row["id_judul_buku_tahunan"]; ?></td>
             <td><?php echo $row["judul_buku_tahunan"];?></td>
@@ -196,16 +198,15 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
               <a href="" class="btn btn-warning" title="ubah data" >ubah</a>
 
               <a href="hapus_tahunan.php?id=<?= $row["id_judul_buku_tahunan"]; ?>
-              " onclick="return confirm('yakin');"  class="btn btn-danger" title="hapus data">hapus</a>
+              " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger" title="hapus data">hapus</a>
             </td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
     </table>
   </div>
-</div>
-<!-- </div> -->
     </form>
+</div>
 </div>
 </div>
 

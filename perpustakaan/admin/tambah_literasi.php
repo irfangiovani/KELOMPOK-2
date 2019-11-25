@@ -40,7 +40,7 @@ if( isset($_POST["submit"]) ) {
 </head>
 <body>
     <div class="container">
-    <h2 class="alert alert-success text-center mt-3">Tambah Buku Literasi Umum</h2>
+    <h2 class="alert alert-info text-center mt-3">Tambah Buku Literasi Umum</h2>
     <div class="pull-right">
     <form action="" method="post" enctype="multipart/form-data">
     
@@ -105,7 +105,7 @@ if( isset($_POST["submit"]) ) {
             </div>
 
             <div class="form-group">
-              <label for="gambar_sampul">Gambar Sampul : </label>
+              <label>Gambar Sampul : </label>
               <input type="file" class="form-control-file" name="gambar_sampul" id="gambar_sampul">
               <small>(Upload File Dengan Ukuran Maksiman 1 MB)</small>
             </div>
