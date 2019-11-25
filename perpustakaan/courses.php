@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>SMKN 4 BONDOWOSO</title>
+	<title>SMKN 3 BONDOWOSO</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Academica Learning Page Template">
 	<meta name="keywords" content="academica, unica, creative, html">
@@ -122,18 +122,32 @@
 					<li><a href="courses.php">Beranda</a></li>
 					<li><a href="about.html">Buku Mapel</a></li>
 					<li><a href="registermember.php">Daftar Member</a></li>
-					<li><a href="blog.html">Bantuan</a></li>
+					<li><a href="bantuan.php">Bantuan</a></li>
 				
 				</ul>
 			</div>
 		</div>
 	</header>
+	
 	<!-- slider section end -->
 
 	<!--  Page top end -->
 
 <!-- Page top section -->
 <section class="page-top-section set-bg" data-setbg="img/page-top-bg.jpg">
+	<div style="margin-bottom: 20px;">
+		<form class="form-inline" action="search.php" method="post">
+			<div class="form group">
+				<input type="text" name="pencarian" class="form-contorol" placeholder="masukkan pencarian" autocomplete="off" required>
+			</div>
+			
+
+			<div class="form-group">
+				<button type="submit" name="submit" class="btn btn-primary"><span class="fa fa-search" aria-hidden="true"></span></button>
+			</div>
+		</form>
+		
+	</div>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   
 	</section>
@@ -260,6 +274,7 @@
 	    <span class="sr-only">Next</span>
 	  </a>
 	</div>
+	
 
 <!-- tapilan buku-->
 
@@ -271,7 +286,11 @@
 	<footer class="footer-section spad pb-0">
 		<div class="container">
 			<div class="text-center">
-				<a href="#" class="site-btn">Home <i class="fa fa-angle-right"></i></a>
+<<<<<<< HEAD
+				<a href="#" class="site-btn">Home<i class="fa fa-angle-right"></i></a>
+=======
+				<a href="#" class="site-btn">Home <i class="fas fa-angle-right"></i></a>
+>>>>>>> e1c8c1e834f9dd7e587ad0250a4aea00824efb3e
 			</div>
 			<div class="row text-white spad">
 				<div class="col-lg-3 col-sm-6 footer-widget">
@@ -334,19 +353,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   
   
 	       <div class="box">
-            <h2>Cek Peminjaman Buku<h2><br>
-            <form>
+            <h2>Cek Peminjaman Buku</h2><br>
+            <form action="cekpinjaman.php" method="get">
                 <div class="inputBox">
-                    <input type="text" name="" required="">
+                    <input type="text" name="nama" required="">
                     <label>Nama</label>
                 </div>
                 <div class="inputBox">
-                    <input type="password" name="" required="">
+                    <input type="text" name="nis" required="">
                     <label>Nis</label><br>
                 </div>
-                <input type="submit" name="" value="Cek Peminjaman"><br>
+                <input type="submit" name="cek" value="Cek Peminjaman"><br>
             </form>
-        
+        </div>
 
 
 </body>

@@ -12,6 +12,14 @@ function query($query) {
     return $rows;   
 }
 
+function cari($keyword){
+    $query = "SELECT * FROM buku_mapel_kelas
+            WHERE
+            judul_buku_mapel LIKE '%$keyword%' 
+            ";
+    return query($query);
+}
+
 function tambahmap($datamap) {
 	global $conn;
 
