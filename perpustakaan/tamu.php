@@ -3,16 +3,14 @@ $conn = mysqli_connect ("localhost" , "root","", "perpustakaan");
 //cek tombol submit ditekan atau tidak
 if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
-    $nis = $_POST["nis"];
-    $nama = $_POST["nama"];
-    $kelas = $_POST["kelas"];
-    $jurusan = $_POST["jurusan"];
-    $no_telp = $_POST["no_telp"];
-    $alamat = $_POST["alamat"];
-    $status = "tidak aktif";
+    $id_tamu = $_POST["id_tamu"];
+    $nama_tamu = $_POST["nama_tamu"];
+    $delegasi = $_POST["delegasi"];
+    $kepentingan = $_POST["kepentingan"];
+    
 
     //query insert data
-    mysqli_query($conn, "INSERT INTO member_perpus VALUES ('$nis', '$nama','$kelas','$jurusan', '$no_telp',  '$alamat','$status')");
+    mysqli_query($conn, "INSERT INTO tamu VALUES ('$id_tamu', '$nama_tamu','$delegasi','$kepentingan')");
 
     
 
@@ -67,29 +65,22 @@ if( isset($_POST["submit"])){
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Registration Info</h2>
-                    <form action = "" method="POST">
+                    <form action = ""method="POST">
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="NIS" name="nis" id="nis">
+                            <input class="input--style-1" type="text" placeholder="ID TAMU" name="id_tamu" id="id_tamu">
                         </div>
                     <form method="POST">
                         <div class="input-group">
-                             <input class="input--style-1" type="text" placeholder="NAMA" name="nama" id="nama">
+                             <input class="input--style-1" type="text" placeholder="NAMA" name="nama_tamu" id="nama_tamu">
                         </div>
                     <form method="POST">
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="KELAS" name="kelas" id="kelas">
+                            <input class="input--style-1" type="text" placeholder="DELEGASI" name="delegasi" id="delegasi">
                         </div>
                     <form method="POST">
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="JURUSAN" name="jurusan" id="jurusan">
+                            <input class="input--style-1" type="text" placeholder="KEPENTINGAN" name="kepentingan" id="kepentingan">
                         </div>
-                    <form method="POST">
-                        <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="NO TELP" name="no_telp"id="no_telp">
-                         </div>
-                    <form method="POST">
-                        <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="ALAMAT" name="alamat" id="alamat">
                         </div>
                         </div>
                         </div>
@@ -112,6 +103,7 @@ if( isset($_POST["submit"])){
     <!-- Main JS-->
     <script src="js/register_member/global.js"></script>
 
-</body>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
+<!-- end document-->

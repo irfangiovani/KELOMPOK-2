@@ -102,7 +102,7 @@
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
-	
+		
 	<!-- Header navbar -->
 	
 	<header class="header-section">
@@ -330,9 +330,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/circle-progress.min.js"></script>
 	<script src="js/main.js"></script>
-	<div class="box">
-
-	<div class="box">
+	   
+  
+  
+	       <div class="box">
             <h2>Cek Peminjaman Buku<h2><br>
             <form>
                 <div class="inputBox">
@@ -345,7 +346,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 </div>
                 <input type="submit" name="" value="Cek Peminjaman"><br>
             </form>
-        </div>
+        
 
 
 </body>

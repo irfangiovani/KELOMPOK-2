@@ -156,8 +156,13 @@ $peminjaman_mapel = query ("SELECT * FROM peminjaman_buku_mapel");
      <div class="container-fluid">
     <a href="tambah_literasi.php">Tambah Data Peminjaman Mapel</a>
     <br><br>
+
+    <div class="content">
+      <div class="box">
+<div class="offside-3 col-lg-7">
     <form action="" method="post">
-    <table border="1" cellpadding="0" cellspacing="0">
+      <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover ">
         <tr>
 			<th>no</th>
             <th>ID Pinjam Mapel</th>
@@ -185,7 +190,11 @@ $peminjaman_mapel = query ("SELECT * FROM peminjaman_buku_mapel");
 			<?php $i++; ?>
 			<?php endforeach; ?>
     </table>
+  </div>
     </form>
+  </div>
+</div>
+</div>
   </div>
 
 
