@@ -1,15 +1,4 @@
-<?php
-session_start();
-if( !isset($_SESSION["login"])){
-    header("location: loginadmin.php");
-    exit;
-}
-
-require 'functions.php';
-$peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi"); 
-?>
-
-<!DOCTYPE html>
+\<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -67,6 +56,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi");
                 <li><a href="#" data-placement="bottom" title="Linkedin"><i class="icon-circled icon-linkedin icon-bglight"></i></a></li>
                 <li><a href="#" data-placement="bottom" title="Pinterest"><i class="icon-circled icon-pinterest  icon-bglight"></i></a></li>
                 <li><a href="#" data-placement="bottom" title="Google +"><i class="icon-circled icon-google-plus icon-bglight"></i></a></li>
+                <li><a href="#" class="btn btn-warning btn-rounded">LOGOUT</a></li>
               </ul>
 
             </div>
@@ -77,7 +67,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi");
 
 
         <div class="row nomargin">
-          <div class="span4">
+          <div class="span3">
             <div class="logo">
               <h1><a href="index.html"><i class="icon-tint"></i> K-Negabon Library</a></h1>
             </div>
@@ -88,7 +78,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi");
                 <nav>
                   <ul class="nav topnav">
                     <li><a href="index.php">Beranda</a></li>
-                    <li class="dropdown">
+                    <li class="dropdown active">
                       <a href="#">Koleksi Buku<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                         <li><a href="literasi.php">Buku Literasi Umum</a></li>
@@ -96,7 +86,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi");
                         <li><a href="tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                       <a href="#">Peminjaman<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                       <li><a href="peminjaman_literasi.php">Buku Literasi Umum</a></li>
@@ -138,47 +128,67 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi");
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Peminjaman Buku Literasi Umum</h2>
+              <h2>Buku Literasi Umum</h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
-              <li><a href="#">Peminjaman</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Buku Literasi Umum</li>
+              <li><a href="#">Koleksi Buku</a> <i class="icon-angle-right"></i></li>
+              <li class="active">Literasi Umum</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
+    <a href="index.php" class="btn btn-warning pull-right"><i class="icon-arrow-left"></i> kembali</a>
 
     <br>
-     <div class="container-fluid">
-    <a href="tambah_pinjam_literasi.php">Tambah Data Peminjaman Literasi</a>
+    <div class="container-fluid">
+    <a href="tambah_literasi.php">Tambah Buku Literasi Umum</a>
+
     <br><br>
     <form action="" method="post">
+    <table border="1" cellpadding="5" cellspacing="0">
+        <input type="text" name="keyword" size="40" autofocus placeholder="cari berdasarkan judul dan kategori buku" autocomplete="off">
+        <button type="submit" name="cari">cari!</button>
+	</form>
+  <br>
+    <form action="" method="post">
     <table border="1" cellpadding="0" cellspacing="0">
+
         <tr>
-			<th>no</th>
-            <th>ID Pinjam Literasi</th>
-            <th>Kode Buku Literasi</th>
-            <th>NIS Peminjam</th>
-            <th>Tanggal Peminjaman</th>
-            <th>Tanggal Harus Kembali</th>
-            <th>Status</th>
+		      	<th>no</th>
+            <th>Kode Buku</th>
+            <th>Judul Buku</th>
+            <th>Penerbit</th>
+            <th>Tahun Terbit</th>
+            <th>No Rak</th>
+            <th>Kategori</th>
+            <th>Gambar Sampul</th>
+            <th>Deskripsi Buku</th>
+            <th>aksi</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php
-            foreach( $peminjaman_literasi as $row) :
+            foreach( $buku_literasi_umum as $row) :
         ?>
         <tr>
-			<td><?=$i; ?></td>
-            <td><?php echo $row["id_pinjam_buku_literasi"]; ?></td>
-            <td><?php echo $row["kode_buku_literasi"];?></td>
-            <td><?php echo $row["nis"];?></td>
-            <td><?php echo $row["tanggal_peminjaman"];?></td>
-            <td><?php echo $row["tanggal_hrs_kembali"];?></td>
-            <td><?php echo $row["notifikasi"];?></td>
+			      <td><?=$i; ?></td>
+            <td><?php echo $row["kode_buku_literasi"]; ?></td>
+            <td><?php echo $row["judul_buku_literasi"];?></td>
+            <td><?php echo $row["id_penerbit"];?></td>
+            <td><?php echo $row["tahun_terbit"];?></td>
+            <td><?php echo $row["id_rak"];?></td>
+            <td><?php echo $row["id_kategori"];?></td>
+            <td><img src="img/literasi/<?php echo $row["gambar_sampul"]; ?>" width="50"></td>
+            <td><?php echo $row["deskripsi_buku"];?></td>
+            <td>
+              <a href="ubah_literasi.php?id=<?php echo $row ['kode_buku_literasi']; ?>" class="btn btn-warning" title="ubah data" >ubah</a>
+
+              <a href="hapus_literasi.php?id=<?= $row["kode_buku_literasi"]; ?>
+              " onclick="return confirm('yakin');"  class="btn btn-danger" title="hapus data">hapus</a>
+            </td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
@@ -228,6 +238,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi");
                 <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
               </div>
               <div class="clear"></div>
+  
             </div>
           </div>
         </div>
@@ -276,8 +287,8 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi");
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
-  <a href="literasi.php" class="btn btn-success">kembali</a>
+
 
 </body>
 
-</html>  
+</html>

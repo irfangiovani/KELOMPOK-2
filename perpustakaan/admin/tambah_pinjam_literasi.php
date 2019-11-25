@@ -24,7 +24,7 @@ if( isset($_POST["submit"])){
 <head>
     <title>Tambah Peminjaman Buku Literasi Umum</title>
 </head>
-<body>
+<body> 
     <h1>Tambah Peminjaman Buku Literasi Umum</h1>
     
     <form action="" method="post">
@@ -62,6 +62,11 @@ if( isset($_POST["submit"])){
               <label for="notifikasi">Notifikasi : </label>
               <input type="text" name="notifikasi" id="notifikasi" class="form-control">
             </li>
+
+            <li>
+              <label for="notifikasi">NIS : </label>
+              <input type="text" name="notifikasi" id="notifikasi" class="form-control">
+
             <li>
     
                 <button type="submit" name="submit">Tambah data!</button>

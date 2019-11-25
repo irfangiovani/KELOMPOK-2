@@ -36,23 +36,23 @@ if( isset($_POST["submit"]) ) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
-    <title>Tambah Buku Literasi Umum</title>
+    <title>Tambah Peminjaman Buku Literasi Umum</title>
 </head>
 <body>
     <div class="container">
-    <h2 class="alert alert-success text-center mt-3">Tambah Buku Literasi Umum</h2>
+    <h2 class="alert alert-success text-center mt-3">Tambah Peminjaman Buku Literasi Umum</h2>
     <div class="pull-right">
     <form action="" method="post" enctype="multipart/form-data">
      
            <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="kode_buku_literasi">Kode Buku Literasi : </label>
-              <input type="text" class="form-control" placeholder="Masukkan Kode Buku..." name="kode_buku_literasi" id="kode_buku_literasi">
+              <label for="kode_buku_literasi">Nama Peminjaman : </label>
+              <input type="text" class="form-control" placeholder="Masukkan Nama..." name="Nama" id="Nama">
             </div>
             <div class="form-group col-md-6">
-              <label for="id_kategori">Kategori : </label> <a href="kategori.php" class="btn btn-warning" title="tambah_kategori" >Tambah Kategori</a>
-                <select class="form-control" name="id_kategori" id="id_kategori" required >
-                  <option value="">- Pilih Kategori -</option>
+              <label for="id_kode_buku">kode buku : </label> <a href="kode_buku.php" class="btn btn-warning" title="tambah_kode_buku" >tambah kode buku</a>
+                <select class="form-control" name="id_kode_buku" id="id_kode_buku" required >
+                  <option value="">- Pilih Kode buku -</option>
                     <?php
                     $sql_kategori = mysqli_query($conn, "SELECT * FROM kategori") or die (mysqli_query($conn));
                     while ($data_kategori = mysqli_fetch_array($sql_kategori)){
@@ -99,10 +99,6 @@ if( isset($_POST["submit"]) ) {
                 </div>
             </div>
 
-            <div class="form-group text-center">
-              <label for="deskripsi_buku">Deskripsi Buku : </label>
-              <textarea type="text" name="deskripsi_buku" id="deskripsi_buku" class="form-control" rows="5"></textarea>
-            </div>
 
             <div class="form-group">
               <label for="gambar_sampul">Gambar Sampul : </label>
