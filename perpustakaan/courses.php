@@ -284,7 +284,7 @@
 	<footer class="footer-section spad pb-0">
 		<div class="container">
 			<div class="text-center">
-				<a href="#" class="site-btn">Home <i class="fa fa-angle-right"></i></a>
+				<a href="#" class="site-btn">Home <i class="fas fa-angle-right"></i></a>
 			</div>
 			<div class="row text-white spad">
 				<div class="col-lg-3 col-sm-6 footer-widget">
