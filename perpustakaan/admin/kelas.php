@@ -3,14 +3,14 @@ $conn = mysqli_connect ("localhost" , "root","", "perpustakaan");
 //cek tombol submit ditekan atau tidak
 if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
-    $id_tamu = $_POST["id_tamu"];
-    $nama_tamu = $_POST["nama_tamu"];
-    $delegasi = $_POST["delegasi"];
-    $kepentingan = $_POST["kepentingan"];
+    $kode_kelas = $_POST["kode_kelas"];
+    $jurusan = $_POST["jurusan"];
+    $kelas = $_POST["kelas"];
+    $wali_kelas = $_POST["wali_kelas"];
     
 
     //query insert data
-    mysqli_query($conn, "INSERT INTO tamu VALUES ('$id_tamu', '$nama_tamu','$delegasi','$kepentingan')");
+    mysqli_query($conn, "INSERT INTO kelas VALUES ('$kode_kelas', '$jurusan','$kelas','$wali_kelas')");
 
     
 
@@ -42,7 +42,7 @@ if( isset($_POST["submit"])){
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>siswa</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/register_member/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -64,23 +64,22 @@ if( isset($_POST["submit"])){
             <div class="card card-1">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 class="title">Registration Info</h2>
+                    <h2 class="title">siswa</h2>
                     <form action = ""method="POST">
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="ID TAMU" name="id_tamu" id="id_tamu">
+                            <input class="input--style-1" type="text" placeholder="KODE kELAS" name="kode_kelas" id="kode_kelas">
                         </div>
                     <form method="POST">
                         <div class="input-group">
-                             <input class="input--style-1" type="text" placeholder="NAMA" name="nama_tamu" id="nama_tamu">
+                             <input class="input--style-1" type="text" placeholder="JURUSAN" name="jurusan" id="jurusan">
                         </div>
                     <form method="POST">
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="DELEGASI" name="delegasi" id="delegasi">
+                            <input class="input--style-1" type="text" placeholder="KELAS" name="kelas" id="kelas">
                         </div>
                     <form method="POST">
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="KEPENTINGAN" name="kepentingan" id="kepentingan">
-                        </div>
+                            <input class="input--style-1" type="text" placeholder="WALI KELAS" name="wali_kelas" id="wali_kelas">
                         </div>
                         </div>
                         </div>
