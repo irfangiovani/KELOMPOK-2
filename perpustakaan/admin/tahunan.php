@@ -209,6 +209,8 @@ $buku_tahunan_siswa = query ("SELECT a.id_judul_buku_tahunan, a.judul_buku_tahun
 </div>
 </div>
 </div>
+</div>
+</div>
 
     
     <footer>
