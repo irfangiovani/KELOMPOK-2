@@ -18,7 +18,7 @@ if( !isset($_SESSION["login"])){
     $status ="aktif";
     //query insert data
     $tambah = mysqli_query($conn, "UPDATE member_perpus SET nis='$nis', nama_siswa='$nama',kelas='$kelas',jurusan='$jurusan', no_telp='$no_telp',  alamat='$alamat','$status'");
-    var_dump($tambah);
+    
     if($tambah){
         ?>
         <script type="text/javascript">

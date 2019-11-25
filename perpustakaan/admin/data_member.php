@@ -7,6 +7,22 @@ if( !isset($_SESSION["login"])){
 
 require 'functions.php';
 $data_member = query ("SELECT * FROM member_perpus"); 
+
+if( isset($_GET['acc'])=='approve'){
+  $nis = $_GET['nis'];
+  $cek = mysqli_query($conn, "SELECT * FROM member_perpus WHERE nis='$nis'");
+  if(mysqli_num_rows($cek)==0){
+    echo '<div class = "alert alert-info">Data tidak ditemukan.</div>';
+  }else{
+    $update = mysqli_query($conn, "UPDATE member_perpus SET status='aktif' where nis='$nis'");
+    if($update){
+      echo "<script>alert('pengguna berhasil di setujui') ;location.replace('data_member.php')</script>";     
+      }else{
+      echo '<div class = "alert alert-info">GAGAL.</div>';
+     
+    }
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -175,7 +191,7 @@ $data_member = query ("SELECT * FROM member_perpus");
             <td><?php echo $row["alamat"];?></td>
             <td><?php echo $row["status"];?></td>
             <td>
-            <a href="aktif_member.php?id=<?php echo $row ['nis']; ?>" class="btn icon-check" title="aktif member" >aktif</a>
+            <a href="data_member.php?acc=approve&nis=<?= $row ['nis']; ?>" class="btn icon-check" title="aktif member" >aktif</a>
             </td>
         </tr>
 			<?php $i++; ?>
