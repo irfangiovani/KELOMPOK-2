@@ -192,6 +192,8 @@ if( isset($_GET['acc'])=='approve'){
             <td><?php echo $row["status"];?></td>
             <td>
             <a href="data_member.php?acc=approve&nis=<?= $row ['nis']; ?>" class="btn icon-check" title="aktif member" >aktif</a>
+            <a href="hapus_member.php?id=<?= $row["nis"]; ?>
+              " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger" title="hapus data">hapus</a>
             </td>
         </tr>
 			<?php $i++; ?>
