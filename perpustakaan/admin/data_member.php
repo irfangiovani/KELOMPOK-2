@@ -165,9 +165,10 @@ if( isset($_GET['acc'])=='approve'){
      <div class="container-fluid">
     <br><br>
     <form action="" method="post">
-    <table border="1" cellpadding="0" cellspacing="0">
+    <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
         <tr>
-			<th>no</th>
+			      <th>no</th>
             <th>Nomor Induk Siswa (NIS)</th>
             <th>Nama Siswa</th>
             <th>Kelas</th>
@@ -199,6 +200,7 @@ if( isset($_GET['acc'])=='approve'){
 			<?php $i++; ?>
 			<?php endforeach; ?>
     </table>
+    </div>
     </form>
   </div>
 
