@@ -1,6 +1,10 @@
 <?php 
 //Koneksi ke database
-mysqli_connect("localhost", "");
+$conn = mysqli_connect("localhost", "root", "", "perpustakaan");
+
+$result = mysqli_query($conn, "SELECT * FROM buku_literasi_umum, buku_mapel_kelas, buku_tahunan_siswa");
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
