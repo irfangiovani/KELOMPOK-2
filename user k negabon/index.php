@@ -2,8 +2,9 @@
 //Koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
 
-$result = mysqli_query($conn, "SELECT * FROM buku_literasi_umum, buku_mapel_kelas, buku_tahunan_siswa");
+$result = mysqli_query($conn, "SELECT * FROM buku_tahunan_siswa");
 
+mysqli_fetch_row($result);
 
 ?>
 <!DOCTYPE html>
@@ -374,17 +375,12 @@ $result = mysqli_query($conn, "SELECT * FROM buku_literasi_umum, buku_mapel_kela
           </div>
         </div>
       </div>
-      <style>
-        .card-box-a {
-          width: 330px;
-          height: 440px;
-        }
-      </style>
+
       <div id="property-carousel" class="owl-carousel owl-theme">
         <div class="carousel-item-b">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
-              <img src="img/literasi/filsafat.jpg" alt="" class="img-a img-fluid">
+              <img src="img/literasi/" alt="" class="img-a img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
@@ -431,7 +427,7 @@ $result = mysqli_query($conn, "SELECT * FROM buku_literasi_umum, buku_mapel_kela
         <div class="carousel-item-b">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
-              <img src="img/literasi/hayati.jpg" alt="" class="img-a img-fluid">
+              <img src="img/literasi/" alt="" class="img-a img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
@@ -478,7 +474,7 @@ $result = mysqli_query($conn, "SELECT * FROM buku_literasi_umum, buku_mapel_kela
         <div class="carousel-item-b">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
-              <img src="img/literasi/manusia_dan_pendidik.jpg" alt="" class="img-a img-fluid">
+              <img src="img/literasi/" alt="" class="img-a img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
