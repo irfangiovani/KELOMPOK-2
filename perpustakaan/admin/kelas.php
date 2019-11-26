@@ -72,10 +72,22 @@ if( isset($_POST["submit"])){
                     <form method="POST">
                         <div class="input-group">
                              <input class="input--style-1" type="text" placeholder="JURUSAN" name="jurusan" id="jurusan">
+                             <select>
+                                 <option value="jurusan">Teknik Bisnis Sepedah</option>
+                                 <option value="jurusan">Teknik Bisnis Otomotif</option>
+                                 <option value="jusuran">Teknik Elektronika Industri</option>
+                                 <option value="jurusan">Desain Pemodelan Iformasi</option>
+                                 <option value="jurusan">Bisnis Kontruksi & Properti</option>
+                             </select>
                         </div>
                     <form method="POST">
                         <div class="input-group">
                             <input class="input--style-1" type="text" placeholder="KELAS" name="kelas" id="kelas">
+                            <select>
+                                 <option value="kelas">10</option>
+                                 <option value="kelas">11</option>
+                                 <option value="kelas">12</option>
+                             </select>
                         </div>
                     <form method="POST">
                         <div class="input-group">
