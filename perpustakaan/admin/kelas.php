@@ -45,17 +45,17 @@ if( isset($_POST["submit"])){
     <title>siswa</title>
 
     <!-- Icons font CSS-->
-    <link href="vendor/register_member/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="vendor/register_member/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="http://localhost/KELOMPOK-2/perpustakaan/vendor/register_member/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="http://localhost/KELOMPOK-2/perpustakaan/vendor/register_member/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
     <!-- Vendor CSS-->
-    <link href="vendor/register_member/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/register_member/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <link href="http://localhost/KELOMPOK-2/perpustakaan/vendor/register_member/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="http://localhost/KELOMPOK-2/perpustakaan/vendor/register_member/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="css/main.css" rel="stylesheet" media="all">
+    <link href="http://localhost/KELOMPOK-2/perpustakaan/css/main.css" rel="stylesheet" media="all">
 </head>
 
 <body>
@@ -81,8 +81,6 @@ if( isset($_POST["submit"])){
                         <div class="input-group">
                             <input class="input--style-1" type="text" placeholder="WALI KELAS" name="wali_kelas" id="wali_kelas">
                         </div>
-                        </div>
-                        </div>
                         <div class="p-t-20">
                             <button class="btn btn--radius btn--green" type="submit" name="submit">SIMPAN</button>
                         </div>
@@ -93,14 +91,14 @@ if( isset($_POST["submit"])){
     </div>
 
     <!-- Jquery JS-->
-    <script src="vendor/register_member/jquery/jquery.min.js"></script>
+    <script src="http://localhost/KELOMPOK-2/perpustakaan/vendor/register_member/jquery/jquery.min.js"></script>
     <!-- Vendor JS-->
-    <script src="vendor/register_member/select2/select2.min.js"></script>
-    <script src="vendor/register_member/datepicker/moment.min.js"></script>
-    <script src="vendor/register_member/datepicker/daterangepicker.js"></script>
+    <script src="http://localhost/KELOMPOK-2/perpustakaan/vendor/register_member/select2/select2.min.js"></script>
+    <script src="http://localhost/KELOMPOK-2/perpustakaan/vendor/register_member/datepicker/moment.min.js"></script>
+    <script src="http://localhost/KELOMPOK-2/perpustakaan/vendor/register_member/datepicker/daterangepicker.js"></script>
 
     <!-- Main JS-->
-    <script src="js/register_member/global.js"></script>
+    <script src="http://localhost/KELOMPOK-2/perpustakaan/js/register_member/global.js"></script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
