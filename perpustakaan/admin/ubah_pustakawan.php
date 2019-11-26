@@ -1,15 +1,37 @@
 <?php
-require 'functions.php';
-
-if( isset($_POST["register"]) ){
-    if(registrasi($_POST) > 0 ) {
-            echo "<script>
-                    alert('user baru berhasil ditambahkan');
-                  </script>";
-    } else {
-        echo mysqli_error($conn);
-    }
+session_start();
+if( !isset($_SESSION["login"])){
+    header("location: loginadmin.php");
+    exit;
 }
+  include 'functions.php';
+  $id = $_GET['id'];
+  $qe = mysqli_query($conn, "SELECT * FROM pustakawan WHERE nip = '$id'");
+  $data = mysqli_fetch_array($qe);
+
+  if( isset($_POST["edit"])){
+    // ambil data dari tiap elemen dalam forms
+    $nip = $_POST["nip"];
+    $nama_pustakawan = $_POST["nama_pustakawan"];
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $password2 = $_POST["password2"];
+    
+    $tambah = mysqli_query($conn, "UPDATE pustakawan SET nip='$nip', nama_pustakawan='$nama_pustakawan',username='$username',password='$password'
+ WHERE nip = '$id'");
+
+    if($tambah){
+      ?>
+      <script type="text/javascript">
+        alert('Edit Data Berhasil');
+        document.location.href="index.php";
+      </script>
+      <?php
+    }else {
+      echo "gagal mengedit data!!!";
+    }
+
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,37 +53,33 @@ if( isset($_POST["register"]) ){
 	<div class="page-content">
 		<div class="form-v7-content">
 			<div class="form-left">
-				<img src="img/register/regadmin.jpg" alt="form">
-				<p class="text-1"></p>
+				<img src="img/register/form-v7.jpg" alt="form">
+				<p class="text-1">Sign Up</p>
 				<p class="text-2">Privaci policy & Term of service</p>
 			</div>
 			<form class="form-detail" action="" method="post" id="myform">
 				<div class="form-row">
 					<label for="nip">NIP</label>
-					<input type="text" name="nip" id="nip" class="input-text">
+					<input type="text" value ="<?php echo $data['nip'] ?>"name="nip" id="nip" class="input-text">
 				</div>
 				<div class="form-row">
 					<label for="nama_pustakawan">NAMA PUSTAKAWAN</label>
-					<input type="text" name="nama_pustakawan" id="nama_pustakawan" class="input-text">
+					<input type="text" value ="<?php echo $data['nama_pustakawan'] ?>"name="nama_pustakawan" id="nama_pustakawan" class="input-text">
 				</div>
 				<div class="form-row">
 					<label for="username">USERNAME</label>
-					<input type="text" name="username" id="username" class="input-text">
+					<input type="text" value ="<?php echo $data['username'] ?>"name="username" id="username" class="input-text">
 				</div>
-				<!-- <div class="form-row">
-					<label for="your_email">E-MAIL</label>
-					<input type="text" name="your_email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
-				</div> -->
 				<div class="form-row">
 					<label for="password">PASSWORD</label>
-					<input type="password" name="password" id="password" class="input-text" required>
+					<input type="password" value ="<?php echo $data['password'] ?>"name="password" id="password" class="input-text" required>
 				</div>
-				<div class="form-row">
+				<!-- <div class="form-row">
 					<label for="password2">CONFIRM PASSWORD</label>
 					<input type="password" name="password2" id="password2" class="input-text" required>
-				</div>
+				</div> -->
 				<div class="form-row-last">
-					<button type="submit" name="register" class="btn btn-success" >REGISTER</button>
+					<button type="submit" name="edit" class="btn btn-success" >EDIT</button>
 				</div>
 			</form>
 		</div>

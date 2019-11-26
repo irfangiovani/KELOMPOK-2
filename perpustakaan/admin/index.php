@@ -4,6 +4,9 @@ session_start();
      header("location: loginadmin.php");
      exit;
  }
+ require 'functions.php';
+$pustakawan = query("SELECT * FROM pustakawan");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -138,6 +141,41 @@ session_start();
         <h3>PERPUSTAKAAN SMK NEGERI 3 BONDOWOSO</h3>
       </div>
     </section>
+    <br><br>
+    <div class="offside-3 col-lg-7">
+    <form action="" method="post">
+      <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover ">
+
+        <tr>
+            <th>NO</th>
+		      	<th>NIP</th>
+            <th>Nama</th>
+            <th>Username</th>
+            <th>Aksi</th>
+        </tr>
+		<?php $i = 1; ?> 
+        <?php
+            foreach( $pustakawan as $row) :
+        ?>
+        <tr>
+			      <td><?=$i; ?></td>
+            <td><?php echo $row["nip"]; ?></td>
+            <td><?php echo $row["nama_pustakawan"];?></td>
+            <td><?php echo $row["username"];?></td>
+            <td>
+              <a href="ubah_pustakawan.php?id=<?php echo $row ['nip']; ?>" class="btn btn-warning" title="ubah data" >ubah</a>
+
+              <a href="hapus_pustakawan.php?id=<?= $row["nip"]; ?>
+              " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger" title="hapus data">hapus</a>
+            </td>
+        </tr>
+			<?php $i++; ?>
+			<?php endforeach; ?>
+    </table>
+    </div>
+    </form>
+  </div>
     <!-- /section intro -->
 
     <section id="content">
