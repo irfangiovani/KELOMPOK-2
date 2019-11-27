@@ -116,7 +116,7 @@ $pustakawan = query("SELECT * FROM pustakawan");
                     <li class="dropdown">
                       <a href="#">Pengunjung<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="kelas.php">Siswa</a></li>
+                        <li><a href="pengunjung_siswa.php">Siswa</a></li>
                         <li><a href="tamu.php">Tamu</a></li>
                       </ul>
                     </li>

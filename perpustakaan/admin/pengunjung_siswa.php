@@ -3,14 +3,14 @@ $conn = mysqli_connect ("localhost" , "root","", "perpustakaan");
 //cek tombol submit ditekan atau tidak
 if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
+    
+    $nama_siswa = $_POST["nama_siswa"];
     $kode_kelas = $_POST["kode_kelas"];
-    $jurusan = $_POST["jurusan"];
-    $kelas = $_POST["kelas"];
-    $wali_kelas = $_POST["wali_kelas"];
+    $keperluan = $_POST["keperluan"];
     
 
     //query insert data
-    mysqli_query($conn, "INSERT INTO kelas VALUES ('$kode_kelas', '$jurusan','$kelas','$wali_kelas')");
+    mysqli_query($conn, "INSERT INTO pengunjung_siswa VALUES ('', '$nama_siswa','$kode_kelas','$keperluan')");
 
     
 
@@ -66,33 +66,26 @@ if( isset($_POST["submit"])){
                 <div class="card-body">
                     <h2 class="title">siswa</h2>
                     <form action = ""method="POST">
-                        <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="KODE kELAS" name="kode_kelas" id="kode_kelas">
-                        </div>
+                        
                     <form method="POST">
                         <div class="input-group">
-                             <input class="input--style-1" type="text" placeholder="JURUSAN" name="jurusan" id="jurusan">
-                             <select>
-                                 <option value="jurusan">Teknik Bisnis Sepedah</option>
-                                 <option value="jurusan">Teknik Bisnis Otomotif</option>
-                                 <option value="jusuran">Teknik Elektronika Industri</option>
-                                 <option value="jurusan">Desain Pemodelan Iformasi</option>
-                                 <option value="jurusan">Bisnis Kontruksi & Properti</option>
-                             </select>
+                             <input class="input--style-1" type="text" placeholder="NAMA" name="nama_siswa" id="nama_siswa">
                         </div>
+                    <li>
+                    <label for="kode_buku">kode_kelas : </label> 
+                    <select class="form-control" name="kode_kelas" id="kode_kelas" required >
+                    <option value="">- Kode_kelas -</option>
+                    <?php
+                    $sql_kode = mysqli_query($conn, "SELECT * FROM kelas") or die (mysqli_query($conn));
+                    while ($data_kode = mysqli_fetch_array($sql_kode)){
+                      echo '<option value="'.$data_kode['kode_kelas'].'">' .$data_kode['kelas']. '</option>'; 
+                    }
+                    ?>
                     <form method="POST">
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="KELAS" name="kelas" id="kelas">
-                            <select>
-                                 <option value="kelas">10</option>
-                                 <option value="kelas">11</option>
-                                 <option value="kelas">12</option>
-                             </select>
+                             <input class="input--style-1" type="text" placeholder="KEPERLUAN" name="keperluan" id="keperluan">
                         </div>
-                    <form method="POST">
-                        <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="WALI KELAS" name="wali_kelas" id="wali_kelas">
-                        </div>
+
                         <div class="p-t-20">
                             <button class="btn btn--radius btn--green" type="submit" name="submit">SIMPAN</button>
                         </div>
