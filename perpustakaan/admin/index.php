@@ -4,16 +4,23 @@ session_start();
      header("location: loginadmin.php");
      exit;
  }
+<<<<<<< HEAD
+=======
  require 'functions.php';
 $pustakawan = query("SELECT * FROM pustakawan");
 
+>>>>>>> f8085086e78071f4074843397e90cff617debb2b
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
+<<<<<<< HEAD
+  <title>Remember - Multipurpose bootstrap site template</title>
+=======
   <title>Perpustakaan SMKN 3 Bondowoso</title>
+>>>>>>> f8085086e78071f4074843397e90cff617debb2b
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -116,8 +123,13 @@ $pustakawan = query("SELECT * FROM pustakawan");
                     <li class="dropdown">
                       <a href="#">Pengunjung<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
+<<<<<<< HEAD
+                        <li><a href="blog-left-sidebar.html">Siswa</a></li>
+                        <li><a href="blog-right-sidebar.html">Tamu</a></li>
+=======
                         <li><a href="pengunjung_siswa.php">Siswa</a></li>
                         <li><a href="tamu.php">Tamu</a></li>
+>>>>>>> f8085086e78071f4074843397e90cff617debb2b
                       </ul>
                     </li>
                     <li>
@@ -141,6 +153,8 @@ $pustakawan = query("SELECT * FROM pustakawan");
         <h3>PERPUSTAKAAN SMK NEGERI 3 BONDOWOSO</h3>
       </div>
     </section>
+<<<<<<< HEAD
+=======
     <br><br>
     <div class="offside-3 col-lg-7">
     <form action="" method="post">
@@ -176,6 +190,7 @@ $pustakawan = query("SELECT * FROM pustakawan");
     </div>
     </form>
   </div>
+>>>>>>> f8085086e78071f4074843397e90cff617debb2b
     <!-- /section intro -->
 
     <section id="content">

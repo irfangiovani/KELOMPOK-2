@@ -5,8 +5,13 @@ if( !isset($_SESSION["login"])){
     exit;
 }
 
+<<<<<<< HEAD
 require 'functions.php';
 $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan"); 
+=======
+require 'functiontah.php';
+$peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifikasi='masa pinjam'"); 
+>>>>>>> f8085086e78071f4074843397e90cff617debb2b
 ?>
 
 <!DOCTYPE html>
@@ -172,6 +177,10 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan");
             <th>Tanggal Peminjaman</th>
             <th>Tanggal Harus Kembali</th>
             <th>Notifikasi</th>
+<<<<<<< HEAD
+=======
+            <th>Terlambat</th>
+>>>>>>> f8085086e78071f4074843397e90cff617debb2b
         </tr>
 		<?php $i = 1; ?> 
         <?php
@@ -186,6 +195,30 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan");
             <td><?php echo $row["tanggal_peminjaman"];?></td>
             <td><?php echo $row["tanggal_hrs_kembali"];?></td>
             <td><?php echo $row["notifikasi"];?></td>
+<<<<<<< HEAD
+=======
+            <td>
+              <?php 
+              $denda = 1000;
+
+              $tgl_dateline = $row['tanggal_hrs_kembali'];
+              $tgl_kembali = date('Y-m-d');
+
+              $lambat = terlambattah($tgl_dateline, $tgl_kembali);
+              $denda1 = $lambat*$denda;
+
+              if ($lambat>0) {
+                echo "
+                
+                        <font color='red'>$lambat Hari (Rp $denda1)</font>
+
+                      ";
+              } else {
+                echo $lambat ."Hari";
+              }
+              ?>
+            </td>
+>>>>>>> f8085086e78071f4074843397e90cff617debb2b
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>

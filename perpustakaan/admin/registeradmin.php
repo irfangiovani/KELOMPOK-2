@@ -15,7 +15,11 @@ if( isset($_POST["register"]) ){
 <html>
 <head>
 	<meta charset="utf-8">
+<<<<<<< HEAD
+	<title>Form-v7 by Colorlib</title>
+=======
 	<title>Form Register Admin</title>
+>>>>>>> f8085086e78071f4074843397e90cff617debb2b
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!-- Font-->
@@ -31,8 +35,13 @@ if( isset($_POST["register"]) ){
 	<div class="page-content">
 		<div class="form-v7-content">
 			<div class="form-left">
+<<<<<<< HEAD
+				<img src="img/register/form-v7.jpg" alt="form">
+				<p class="text-1">Sign Up</p>
+=======
 				<img src="img/register/regadmin.jpg" alt="form">
 				<p class="text-1"></p>
+>>>>>>> f8085086e78071f4074843397e90cff617debb2b
 				<p class="text-2">Privaci policy & Term of service</p>
 			</div>
 			<form class="form-detail" action="" method="post" id="myform">

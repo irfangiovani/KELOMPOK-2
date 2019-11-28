@@ -6,7 +6,11 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
+<<<<<<< HEAD
 $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi"); 
+=======
+$peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE notifikasi='masa pinjam'"); 
+>>>>>>> f8085086e78071f4074843397e90cff617debb2b
 ?>
 
 <!DOCTYPE html>
@@ -164,26 +168,64 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi");
       <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover ">
         <tr>
+<<<<<<< HEAD
 			<th>no</th>
+=======
+			      <th>no</th>
+>>>>>>> f8085086e78071f4074843397e90cff617debb2b
             <th>ID Pinjam Literasi</th>
             <th>Kode Buku Literasi</th>
             <th>NIS Peminjam</th>
             <th>Tanggal Peminjaman</th>
             <th>Tanggal Harus Kembali</th>
             <th>Status</th>
+<<<<<<< HEAD
+=======
+            <th>Terlambat</th>
+>>>>>>> f8085086e78071f4074843397e90cff617debb2b
         </tr>
 		<?php $i = 1; ?> 
         <?php
             foreach( $peminjaman_literasi as $row) :
         ?>
         <tr>
+<<<<<<< HEAD
 			<td><?=$i; ?></td>
+=======
+			      <td><?=$i; ?></td>
+>>>>>>> f8085086e78071f4074843397e90cff617debb2b
             <td><?php echo $row["id_pinjam_buku_literasi"]; ?></td>
             <td><?php echo $row["kode_buku_literasi"];?></td>
             <td><?php echo $row["nis"];?></td>
             <td><?php echo $row["tanggal_peminjaman"];?></td>
             <td><?php echo $row["tanggal_hrs_kembali"];?></td>
             <td><?php echo $row["notifikasi"];?></td>
+<<<<<<< HEAD
+=======
+            <td>
+            
+              <?php 
+              $denda = 1000;
+
+              $tgl_dateline = $row['tanggal_hrs_kembali'];
+              $tgl_kembali = date('Y-m-d');
+
+              $lambat = terlambat($tgl_dateline, $tgl_kembali);
+              $denda1 = $lambat*$denda;
+
+              if ($lambat>0) {
+                echo "
+                
+                        <font color='red'>$lambat Hari (Rp $denda1)</font>
+
+                      ";
+              } else {
+                echo $lambat ."Hari";
+              }
+              ?>
+            
+            </td>
+>>>>>>> f8085086e78071f4074843397e90cff617debb2b
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
