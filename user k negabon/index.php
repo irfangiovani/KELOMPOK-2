@@ -2,9 +2,11 @@
 //Koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
 
-$result = mysqli_query($conn, "SELECT * FROM buku_tahunan_siswa");
+$result = mysqli_query($conn, "SELECT * FROM buku_literasi_umum");
 
-mysqli_fetch_row($result);
+// while( $buku = mysqli_fetch_assoc($result) ) {
+//     var_dump($buku);
+// }
 
 ?>
 <!DOCTYPE html>
@@ -365,7 +367,7 @@ mysqli_fetch_row($result);
         <div class="col-md-12">
           <div class="title-wrap d-flex justify-content-between">
             <div class="title-box">
-              <h2 class="title-a">Buku Terbaru</h2>
+              <h2 class="title-a">Buku</h2>
             </div>
             <div class="title-link">
               <a href="property-grid.html">Semua Buku
@@ -375,12 +377,12 @@ mysqli_fetch_row($result);
           </div>
         </div>
       </div>
-
+      <?php while( $row = mysqli_fetch_assoc($result) ) : ?>
       <div id="property-carousel" class="owl-carousel owl-theme">
         <div class="carousel-item-b">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
-              <img src="img/literasi/" alt="" class="img-a img-fluid">
+              <img src="http://localhost/KELOMPOK-2/perpustakaan/admin/img/literasi/<?php echo $row["gambar_sampul"]; ?>" alt="" class="img-a img-fluid" width="300">
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
@@ -566,6 +568,7 @@ mysqli_fetch_row($result);
           </div>
         </div>
       </div>
+      <?php endwhile; ?>
     </div>
   </section>
   <!--/ Property End /-->
