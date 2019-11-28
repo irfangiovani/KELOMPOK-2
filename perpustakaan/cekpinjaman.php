@@ -184,6 +184,7 @@ if (mysqli_num_rows($cek) > 0) {
 	  </div>
 	</div>
 	<!-- tutup konten -->
+	
 
 	<!-- Footer section -->
 	<footer class="footer-section spad pb-0">
