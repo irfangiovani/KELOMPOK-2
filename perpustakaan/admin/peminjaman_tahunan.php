@@ -5,13 +5,8 @@ if( !isset($_SESSION["login"])){
     exit;
 }
 
-<<<<<<< HEAD
-require 'functions.php';
-$peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan"); 
-=======
 require 'functiontah.php';
 $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifikasi='masa pinjam'"); 
->>>>>>> f8085086e78071f4074843397e90cff617debb2b
 ?>
 
 <!DOCTYPE html>
@@ -177,10 +172,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
             <th>Tanggal Peminjaman</th>
             <th>Tanggal Harus Kembali</th>
             <th>Notifikasi</th>
-<<<<<<< HEAD
-=======
             <th>Terlambat</th>
->>>>>>> f8085086e78071f4074843397e90cff617debb2b
         </tr>
 		<?php $i = 1; ?> 
         <?php
@@ -195,8 +187,6 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
             <td><?php echo $row["tanggal_peminjaman"];?></td>
             <td><?php echo $row["tanggal_hrs_kembali"];?></td>
             <td><?php echo $row["notifikasi"];?></td>
-<<<<<<< HEAD
-=======
             <td>
               <?php 
               $denda = 1000;
@@ -218,7 +208,6 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
               }
               ?>
             </td>
->>>>>>> f8085086e78071f4074843397e90cff617debb2b
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>

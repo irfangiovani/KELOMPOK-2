@@ -176,8 +176,6 @@ function ubah($data) {
     return mysqli_affected_rows($conn);
 }
 
-<<<<<<< HEAD
-=======
 function terlambat($tgl_dateline, $tgl_kembali ){
 
 $tgl_dateline_pecah = explode("-", $tgl_dateline);
@@ -197,7 +195,6 @@ if ($selisih>=1) {
 }
 return $hasil_tgl;
 }
->>>>>>> f8085086e78071f4074843397e90cff617debb2b
 
 
 

@@ -7,8 +7,6 @@ if( !isset($_SESSION["login"])){
 
 require 'functions.php';
 $data_member = query ("SELECT * FROM member_perpus"); 
-<<<<<<< HEAD
-=======
 
 if( isset($_GET['acc'])=='approve'){
   $nis = $_GET['nis'];
@@ -25,7 +23,6 @@ if( isset($_GET['acc'])=='approve'){
     }
   }
 }
->>>>>>> f8085086e78071f4074843397e90cff617debb2b
 ?>
 
 <!DOCTYPE html>
@@ -168,16 +165,10 @@ if( isset($_GET['acc'])=='approve'){
      <div class="container-fluid">
     <br><br>
     <form action="" method="post">
-<<<<<<< HEAD
-    <table border="1" cellpadding="0" cellspacing="0">
-        <tr>
-			<th>no</th>
-=======
     <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover">
         <tr>
 			      <th>no</th>
->>>>>>> f8085086e78071f4074843397e90cff617debb2b
             <th>Nomor Induk Siswa (NIS)</th>
             <th>Nama Siswa</th>
             <th>Kelas</th>
@@ -201,22 +192,15 @@ if( isset($_GET['acc'])=='approve'){
             <td><?php echo $row["alamat"];?></td>
             <td><?php echo $row["status"];?></td>
             <td>
-<<<<<<< HEAD
-            <a href="aktif_member.php?id=<?php echo $row ['nis']; ?>" class="btn icon-check" title="aktif member" >aktif</a>
-=======
             <a href="data_member.php?acc=approve&nis=<?= $row ['nis']; ?>" class="btn icon-check" title="aktif member" >aktif</a>
             <a href="hapus_member.php?id=<?= $row["nis"]; ?>
               " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger" title="hapus data">hapus</a>
->>>>>>> f8085086e78071f4074843397e90cff617debb2b
             </td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
     </table>
-<<<<<<< HEAD
-=======
     </div>
->>>>>>> f8085086e78071f4074843397e90cff617debb2b
     </form>
   </div>
 

@@ -19,54 +19,75 @@ if( isset($_POST["submit"])){
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Tambah Peminjaman Buku Literasi Umum</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="css/css/bootstrap.min.css">
+    <title>Tambah Peminjaman Literasi</title>
 </head>
 <body>
-    <h1>Tambah Peminjaman Buku Literasi Umum</h1>
+    <div class="container">
+    <h2 class="alert alert-info text-center mt-3">Tambah Data Peminjaman Buku Literasi Umum</h2>
+    <div class="pull-right">
+    <form action="" method="post" enctype="multipart/form-data">
     
-    <form action="" method="post">
-        <ul>
-            <li>
-                <td>Nama</td>
-                <td>:</td>
-                <td>
-                    <label for="nama_peminjam">Nama Peminjam : </label> 
-                    <select class="form-control" name="nama_peminjam" id="nama_peminjam" required >
-                    <option value="">- Nama Peminjam -</option>
-                    <?php
-                    $sql_member = mysqli_query($conn, "SELECT * FROM member_perpus") or die (mysqli_query($conn));
-                    while ($data_member = mysqli_fetch_array($sql_member)){
-                      echo '<option value="'.$data_member['nis'].'">' .$data_member['nama_siswa']. '</option>'; 
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="nama_peminjam"> Nama Peminjam : </label>
+              <input type="text" class="form-control" placeholder="masukan nama" name="nama_peminjam" id="nama_peminjam">
+        </div>
+
+            <div class="form-group col-md-6">
+              <label for="id_kode_buku"> NIS : </label> <a href="nis.php" class="btn btn-warning" title="tambah_nis" >Tambah NIS</a>
+                <select class="form-control" name="id_kategori" id="id_kategori" required >
+                  <option value="">- Pilih NIS -</option>
+                  <?php
+                    $sql_kode = mysqli_query($conn, "SELECT * FROM peminjaman_buku_literasi") or die (mysqli_query($conn));
+                    while ($data_kode = mysqli_fetch_array($sql_kode)){
+                      echo '<option value="'.$data_nis['nis'].'">' .$data_nis['nis']. '</option>'; 
                     }
-                    ?>
+                  ?>
                 </select>
-                </td>
-            </li>
-             <li>
-                    <label for="kode_buku">Kode_buku : </label> 
-                    <select class="form-control" name="kode_buku" id="kode_buku" required >
-                    <option value="">- Kode_buku -</option>
-                    <?php
+            </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="id_kode_buku">Kode Buku Literasi : </label> <a href="kode_buku_literasi.php" class="btn btn-warning" title="tambah_kode_buku_literasi" >Tambah Kode Buku Literasi</a>
+                <select class="form-control" name="id_kategori" id="id_kategori" required >
+                  <option value="">- Pilih Kode Buku -</option>
+                  <?php
                     $sql_kode = mysqli_query($conn, "SELECT * FROM buku_literasi_umum") or die (mysqli_query($conn));
                     while ($data_kode = mysqli_fetch_array($sql_kode)){
                       echo '<option value="'.$data_kode['kode_buku_literasi'].'">' .$data_kode['kode_buku_literasi']. '</option>'; 
                     }
-                    ?>
+                  ?>
                 </select>
-            
-            </li>
-            <li>
-              <label for="notifikasi">Notifikasi : </label>
-              <input type="text" name="notifikasi" id="notifikasi" class="form-control">
-            </li>
-            <li>
-    
-                <button type="submit" name="submit">Tambah data!</button>
-            </li>
-        </ul>
+            </div>
+            </div>
+
+            <div class="form-group">
+              <label>Gambar Sampul : </label>
+              <input type="file" class="form-control-file" name="gambar_sampul" id="gambar_sampul">
+              <small>(Upload File Dengan Ukuran Maksiman 1 MB)</small>
+            </div>
+           
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
+              <button type="reset" class="btn btn-danger">RESET</button>
+              <a href="literasi.php" class="btn btn-success">Kembali</a>
+            </div>
+          </div>
+        <br><br>
+        
+      
+    </form>
+    </div>
+    </div>
+
+
                 
 </body>
 </html>
