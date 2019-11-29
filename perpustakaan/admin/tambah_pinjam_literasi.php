@@ -74,13 +74,18 @@ if( isset($_POST["submit"])){
             </div>
             </div>
           
-            <div class="form-row">
+          <div class="form-row">
             <div class="form-group col-md-6">
               <label for="tanggal_peminjaman"> Tanggal Peminjaman : </label>
               <input type="date" class="form-control" placeholder="masukan tanggal peminjaman" name="tanggal_peminjaman" id="tanggal_peminjaman">
-        </div>
+          </div>
 
-            
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="tanggal_hrs_kembali"> Tanggal Harus Kembali : </label>
+              <input type="date" class="form-control" placeholder="tanggal harus kembali" name="tanggal_hrs_kembali" id="tanggal_hrs_kembali">
+        </div>
+  
 
 
             <div class="text-center">
