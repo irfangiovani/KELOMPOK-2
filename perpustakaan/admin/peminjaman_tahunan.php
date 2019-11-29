@@ -5,7 +5,7 @@ if( !isset($_SESSION["login"])){
     exit;
 }
 
-require 'functiontah.php';
+require 'functions.php';
 $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifikasi='masa pinjam'"); 
 ?>
 
@@ -194,7 +194,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
               $tgl_dateline = $row['tanggal_hrs_kembali'];
               $tgl_kembali = date('Y-m-d');
 
-              $lambat = terlambattah($tgl_dateline, $tgl_kembali);
+              $lambat = terlambattahunan($tgl_dateline, $tgl_kembali);
               $denda1 = $lambat*$denda;
 
               if ($lambat>0) {
