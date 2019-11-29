@@ -10,14 +10,30 @@ if( isset($_POST["submit"])){
     $nama_peminjam = $_POST["id_nis"];
     $kode_buku = $_POST["id_kode_literasi"];
     $tgl_pinjam = Date('l, Y-m-d');
-    $tgl_kembali =Date('l, Y-m-d', time()+604800);
+    $tgl_kembali =Date('l, Y-m-d', time()+518400);
     
    
     //query insert data
-    mysqli_query($conn, "INSERT INTO peminjaman_buku_literasi VALUES (NULL, '$kode_buku', '$nama_peminjam', '$tgl_pinjam', '$tgl_kembali', 'masa pinjam')");
-
+    $tambah = mysqli_query($conn, "INSERT INTO peminjaman_buku_literasi VALUES (NULL, '$kode_buku', '$nama_peminjam', '$tgl_pinjam', '$tgl_kembali', 'masa pinjam')");
+    if($tambah){
+    echo "
+        <script>
+            alert('data berhasil ditambahkan');
+            document.location.href = 'peminjaman_literasi.php';
+        </script>
+    ";
+  } else {
+    echo "
+        <script>
+            alert('gagal menambahkan data');
+            document.location.href = 'peminjaman_literasi.php';
+        </script>
+    ";
+  }
 }
+
 echo Date('l, Y-m-d');
+
 ?>
 
 
@@ -56,7 +72,7 @@ echo Date('l, Y-m-d');
                   <?php
                     $sql_kode = mysqli_query($conn, "SELECT * FROM buku_literasi_umum") or die (mysqli_query($conn));
                     while ($data_kode = mysqli_fetch_array($sql_kode)){
-                      echo '<option value="'.$data_kode['kode_buku_literasi'].'">' .$data_kode['kode_buku_literasi']. '</option>'; 
+                      echo '<option value="'.$data_kode['kode_buku_literasi'].'">' .$data_kode['judul_buku_literasi']. '</option>'; 
                     }
                   ?>
             </select>
