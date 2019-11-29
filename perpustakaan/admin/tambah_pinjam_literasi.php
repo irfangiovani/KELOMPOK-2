@@ -60,7 +60,19 @@ if( isset($_POST["submit"])){
               <input type="text" class="form-control" placeholder="masukan judul buku literasi" name="judul_buku_literasi" id="judul_buku_literasi">
         </div>
 
-            
+            <div class="form-group col-md-6">
+              <label for="id_kode_buku_literasi"> Kode Buku Literasi : </label> <a href="kode_literasi.php" class="btn btn-warning" title="tambah_kode_literasi" >Tambah Kode Literasi</a>
+                <select class="form-control" name="id_kode_literasi" id="id_kode_literasi" required >
+                  <option value="">- Pilih Kode Literasi -</option>
+                  <?php
+                    $sql_kode = mysqli_query($conn, "SELECT * FROM peminjaman_buku_literasi") or die (mysqli_query($conn));
+                    while ($data_kode = mysqli_fetch_array($sql_kode)){
+                      echo '<option value="'.$data_kode['kode_buku_literasi'].'">' .$data_kode['kode_buku_literasi']. '</option>'; 
+                    }
+                    ?>
+                </select>
+            </div>
+            </div>
             
 
 
