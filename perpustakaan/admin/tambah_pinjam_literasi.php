@@ -41,8 +41,8 @@ if( isset($_POST["submit"])){
         </div>
 
             <div class="form-group col-md-6">
-              <label for="id_kode_buku"> NIS : </label> <a href="nis.php" class="btn btn-warning" title="tambah_nis" >Tambah NIS</a>
-                <select class="form-control" name="id_kategori" id="id_kategori" required >
+              <label for="id_kode_nis"> NIS : </label> <a href="nis.php" class="btn btn-warning" title="tambah_nis" >Tambah NIS</a>
+                <select class="form-control" name="id_nis" id="id_nis" required >
                   <option value="">- Pilih NIS -</option>
                   <?php
                     $sql_kode = mysqli_query($conn, "SELECT * FROM peminjaman_buku_literasi") or die (mysqli_query($conn));
@@ -56,10 +56,10 @@ if( isset($_POST["submit"])){
 
             <div class="form-group col-md-6">
               <label for="id_kode_buku">Kode Buku Literasi : </label> <a href="kode_buku_literasi.php" class="btn btn-warning" title="tambah_kode_buku_literasi" >Tambah Kode Buku Literasi</a>
-                <select class="form-control" name="id_kategori" id="id_kategori" required >
+                <select class="form-control" name="id_kode_buku" id="id_kode_buku" required >
                   <option value="">- Pilih Kode Buku -</option>
                   <?php
-                    $sql_kode = mysqli_query($conn, "SELECT * FROM buku_literasi_umum") or die (mysqli_query($conn));
+                    $sql_kode = mysqli_query($conn, "SELECT * FROM peminjaman_buku_literasi") or die (mysqli_query($conn));
                     while ($data_kode = mysqli_fetch_array($sql_kode)){
                       echo '<option value="'.$data_kode['kode_buku_literasi'].'">' .$data_kode['kode_buku_literasi']. '</option>'; 
                     }
@@ -68,11 +68,6 @@ if( isset($_POST["submit"])){
             </div>
             </div>
 
-            <div class="form-group">
-              <label>Gambar Sampul : </label>
-              <input type="file" class="form-control-file" name="gambar_sampul" id="gambar_sampul">
-              <small>(Upload File Dengan Ukuran Maksiman 1 MB)</small>
-            </div>
            
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
