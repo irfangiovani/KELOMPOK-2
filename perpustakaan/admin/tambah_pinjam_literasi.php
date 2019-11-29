@@ -9,14 +9,15 @@ if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
     $nama_peminjam = $_POST["nama_peminjam"];
     $kode_buku = $_POST["kode_buku"];
-    $tgl_pinjam = Date('Y-m-d');
-    $tgl_kembali = Date('Y-m-d');
-    $notifikasi = $_POST["notifikasi"];
+    $tgl_pinjam = Date('l, Y-m-d');
+    $tgl_kembali =Date('l, Y-m-d', time()+604800);
+    
    
     //query insert data
-    mysqli_query($conn, "INSERT INTO peminjaman_buku_literasi VALUES (null,'$nama_peminjam', '$kode_buku','$tgl_pinjam','$tgl_kembali', '$notifikasi')");
+    mysqli_query($conn, "INSERT INTO peminjaman_buku_literasi VALUES (NULL, '$kode_buku', '$nama_peminjam', '$tgl_pinjam', '$tgl_kembali', 'masa pinjam')");
 
 }
+echo Date('l, Y-m-d', time()+518400);
 ?>
 
 <!DOCTYPE html>
@@ -58,11 +59,6 @@ if( isset($_POST["submit"])){
                 </select>
             
             </li>
-            <li>
-              <label for="notifikasi">Notifikasi : </label>
-              <input type="text" name="notifikasi" id="notifikasi" class="form-control">
-            </li>
-            <li>
     
                 <button type="submit" name="submit">Tambah data!</button>
             </li>
