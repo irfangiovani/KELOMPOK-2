@@ -7,26 +7,27 @@ if( !isset($_SESSION["login"])){
 require 'functions.php';
 if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
+    $kode_judul = $_POST["id_judul_tahunan"];
+    $kode_buku = $_POST["kode_buku_tahunan"];
     $nama_peminjam = $_POST["id_nis"];
-    $kode_buku = $_POST["id_kode_literasi"];
     $tgl_pinjam = Date('l, Y-m-d');
-    $tgl_kembali =Date('l, Y-m-d', time()+518400);
+    $tgl_kembali =Date('l, Y-m-d', time()+31536000);
     
    
     //query insert data
-    $tambah = mysqli_query($conn, "INSERT INTO peminjaman_buku_literasi VALUES (NULL, '$kode_buku', '$nama_peminjam', '$tgl_pinjam', '$tgl_kembali', 'masa pinjam')");
+    $tambah = mysqli_query($conn, "INSERT INTO peminjaman_buku_tahunan VALUES (NULL, '$kode_judul', '$kode_buku', '$nama_peminjam', '$tgl_pinjam', '$tgl_kembali', 'masa pinjam')");
     if($tambah){
     echo "
         <script>
             alert('data berhasil ditambahkan');
-            document.location.href = 'peminjaman_literasi.php';
+            document.location.href = 'peminjaman_tahunan.php';
         </script>
     ";
   } else {
     echo "
         <script>
             alert('gagal menambahkan data');
-            document.location.href = 'peminjaman_literasi.php';
+            document.location.href = 'peminjaman_tahunan.php';
         </script>
     ";
   }
