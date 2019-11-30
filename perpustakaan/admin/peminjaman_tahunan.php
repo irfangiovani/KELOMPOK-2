@@ -154,7 +154,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
 
     <br>
      <div class="container-fluid">
-    <a href="tambah_literasi.php">Tambah Data Peminjaman Tahunan</a>
+    <a href="tambah_pinjam_tahunan.php">Tambah Data Peminjaman Tahunan</a>
     <br><br>
 
     <div class="content">
