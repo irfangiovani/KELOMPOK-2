@@ -193,7 +193,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE noti
               $tgl_dateline = $row['tanggal_hrs_kembali'];
               $tgl_kembali = date('Y-m-d');
 
-              $lambat = terlambat($tgl_dateline, $tgl_kembali);
+              $lambat = terlambatliterasi($tgl_dateline, $tgl_kembali);
               $denda1 = $lambat*$denda;
 
               if ($lambat>0) {

@@ -10,7 +10,7 @@ require 'functions.php';
 if( isset($_POST["submit"]) ) {
 
     // cek keberhasilan tambah data
-    if( tambah($_POST) > 0 ) {
+    if( tambahliterasi($_POST) > 0 ) {
       echo "
             <script>
               alert('data berhasil ditambahkan!');
