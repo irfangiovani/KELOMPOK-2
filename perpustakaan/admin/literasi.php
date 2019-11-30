@@ -296,6 +296,7 @@ if( isset($_POST["cariliterasi"])) {
   <!-- javascript
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
+  <script src="js/dist/weetalert2.all.min.js"></script>
   <script src="js/jquery.js"></script>
   <script src="js/jquery.easing.1.3.js"></script>
   <script src="js/bootstrap.js"></script>
