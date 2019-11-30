@@ -58,7 +58,7 @@ echo Date('l, Y-m-d');
                   <?php
                     $sql_member = mysqli_query($conn, "SELECT * FROM member_perpus") or die (mysqli_query($conn));
                     while ($data_member = mysqli_fetch_array($sql_member)){
-                      echo '<option value="'.$data_member['nis'].'">' .$data_member['nis']. '</option>'; 
+                      echo '<option value="'.$data_member['nis'].'">' .$data_member['nama_siswa']. '</option>'; 
                     }
                   ?>
             </select>
@@ -66,16 +66,20 @@ echo Date('l, Y-m-d');
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="id_kode_buku_literasi"> Kode Buku Literasi : </label>
-            <select class="form-control" name="id_kode_literasi" id="id_kode_literasi" required >
-              <option value="">- Pilih Kode Literasi -</option>
+          <label for="id_judul_tahunan"> Judul Buku Tahunan : </label>
+            <select class="form-control" name="id_judul_tahunan" id="id_judul_tahunan" required >
+              <option value="">- Pilih Judul Buku Tahunan -</option>
                   <?php
-                    $sql_kode = mysqli_query($conn, "SELECT * FROM buku_literasi_umum") or die (mysqli_query($conn));
+                    $sql_kode = mysqli_query($conn, "SELECT * FROM buku_tahunan_siswa") or die (mysqli_query($conn));
                     while ($data_kode = mysqli_fetch_array($sql_kode)){
-                      echo '<option value="'.$data_kode['kode_buku_literasi'].'">' .$data_kode['judul_buku_literasi']. '</option>'; 
+                      echo '<option value="'.$data_kode['id_judul_buku_tahunan'].'">'.$data_kode['judul_buku_tahunan'].' '.$data_kode['untuk_kelas'].'</option>';
                     }
-                  ?>
+                  ?> 
             </select>
+        </div>
+        <div class="form-group col-md-6">
+              <label for="kode_buku_tahunan"> Kode Buku Tahunan : </label>
+              <input type="text" class="form-control" placeholder="kode buku tahunan" name="kode_buku_tahunan" id="kode_buku_tahunan">
         </div>
       </div> 
       <div class="form-row">
@@ -87,7 +91,7 @@ echo Date('l, Y-m-d');
       <div class="form-row">
         <div class="form-group col-md-6">
               <label for="tanggal_hrs_kembali"> Tanggal Harus Kembali : </label>
-              <input type="text" class="form-control" placeholder="<?php echo Date('l, Y-m-d', time()+518400); ?>" name="tanggal_hrs_kembali" id="tanggal_hrs_kembali" readonly>
+              <input type="text" class="form-control" placeholder="<?php echo Date('l, Y-m-d', time()+31536000); ?>" name="tanggal_hrs_kembali" id="tanggal_hrs_kembali" readonly>
         </div>
       </div>
       <div class="text-center">
