@@ -135,11 +135,28 @@ function uploadliterasi() {
 }
 
 
-function hapus($id) {
-    global $conn;
-    mysqli_query($conn, "DELETE FROM buku_tahunan_siswa WHERE id_judul_buku_tahunan = $id ");
-    return mysqli_affected_rows($conn);
+function cek_stok($conn,$id_judul_buku_tahunan )
+{
+    $q = "SELECT stok FROM buku_tahunan_siswa WHERE id_judul_buku_tahunan = '$id_judul_buku_tahunan'";
+    $hasil = mysqli_query($conn, $q);
+    $hasil = mysqli_fetch_assoc($hasil);
+    $stok = $hasil['stok'];
+
+    return $stok;
 }
+
+function kurangi_stok($conn, $id_judul_buku_tahunan)
+{
+    $q = "UPDATE buku_tahunan_siswa SET stok = stok - 1 WHERE id_judul_buku_tahunan = '$id_judul_buku_tahunan'";
+    mysqli_query($conn, $q);
+}
+
+function tambah_stok($conn, $id_judul_buku_tahunan)
+{
+    $q = "UPDATE buku_tahunan_siswa SET stok = stok + 1 WHERE id_judul_buku_tahunan = '$id_judul_buku_tahunan'";
+    mysqli_query($conn, $q);
+}
+
 
 function ubah($data) {
     global $conn;
