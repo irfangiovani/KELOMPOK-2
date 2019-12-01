@@ -100,16 +100,9 @@ echo Date('l, Y-m-d');
                 </select>
             </div>   
             <div class="form-group col-md-6">
-              <label for="id_kode_kelas">Kode Kelas : </label> <a href="kode_kelas.php" class="btn btn-warning" title="tambah_kode" >Tambah Kode Kelas</a>
-                <select class="form-control" name="id_kode_kelas" id="id_kode_kelas" required >
-                  <option value="">- Pilih Kode Kelas -</option>
-                  <?php
-                    $sql_kode = mysqli_query($conn, "SELECT * FROM buku_literasi_umum") or die (mysqli_query($conn));
-                    while ($data_kode = mysqli_fetch_array($sql_kode)){
-                      echo '<option value="'.$data_kode['kode_buku_literasi'].'">' .$data_kode['kode_buku_literasi']. '</option>'; 
-                    }
-                    ?>
-                </select>
+            <label for="waktu_peminjaman"> Waktu Peminjaman : </label>
+              <input type="text" class="form-control" placeholder = "<?php  echo Date('l, d-m-Y  h:i:s a');?>" name="tanggal_peminjaman" id="waktu_peminjaman" readonly>
+                
             </div>
             </div>
 
