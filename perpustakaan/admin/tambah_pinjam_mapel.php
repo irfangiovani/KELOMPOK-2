@@ -20,7 +20,7 @@ if( isset($_POST["submit"])){
     echo "
         <script>
             alert('stok buku habis, proses peminjaman gagal');
-            document.location.href = 'tambah_pinjam_tahunan.php';
+            document.location.href = 'tambah_pinjam_mapel.php';
         </script>
     ";
     exit();
@@ -34,14 +34,14 @@ if( isset($_POST["submit"])){
     echo "
         <script>
             alert('data berhasil ditambahkan');
-            document.location.href = 'peminjaman_tahunan.php';
+            document.location.href = 'peminjaman_mapel.php';
         </script>
     ";
   } else {
     echo "
         <script>
             alert('gagal menambahkan data');
-            document.location.href = 'peminjaman_tahunan.php';
+            document.location.href = 'peminjaman_mapel.php';
         </script>
     ";
   }
@@ -65,20 +65,26 @@ echo Date('l, Y-m-d');
     <h2 class="alert alert-info text-center mt-3">Tambah Data Peminjaman Buku mapel</h2>
     <div class="pull-right">
     <form action="" method="post" enctype="multipart/form-data">
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="id_kode_nis"> NIS : </label> 
-            <select class="form-control" name="id_nis" id="id_nis" required >
-              <option value="">- Pilih NIS -</option>
-                  <?php
-                    $sql_member = mysqli_query($conn, "SELECT * FROM member_perpus") or die (mysqli_query($conn));
-                    while ($data_member = mysqli_fetch_array($sql_member)){
-                      echo '<option value="'.$data_member['nis'].'">' .$data_member['nama_siswa']. '</option>'; 
+      
+    <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="judul_buku_mapel">Kode Judul Buku Mapel : </label>
+              <input type="text" class="form-control" placeholder="Masukkan Kode Judul Mapel" name="judul_buku_mapel" id="judul_buku_mapel">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="id_kategori">Kategori : </label> <a href="kategori.php" class="btn btn-warning" title="tambah_kategori" >Tambah Kategori</a>
+                <select class="form-control" name="id_kategori" id="id_kategori" required >
+                  <option value="">- Pilih Kategori -</option>
+                    <?php
+                    $sql_kategori = mysqli_query($conn, "SELECT * FROM kategori") or die (mysqli_query($conn));
+                    while ($data_kategori = mysqli_fetch_array($sql_kategori)){
+                      echo '<option value="'.$data_kategori['id_kategori'].'">' .$data_kategori['nama_kategori']. '</option>'; 
                     }
-                  ?>
-            </select>
-        </div>
-      </div>
+                    ?>
+                </select>
+            </div>
+            </div>
+
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="id_judul_tahunan"> Judul Buku Tahunan : </label>
