@@ -81,7 +81,7 @@ if( isset($_POST["submit"])){
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-8">
               <label for="tanggal_hrs_kembali"> Tanggal Harus Kembali : </label>
               <input type="date" class="form-control" placeholder="tanggal harus kembali" name="tanggal_hrs_kembali" id="tanggal_hrs_kembali">
         </div>
