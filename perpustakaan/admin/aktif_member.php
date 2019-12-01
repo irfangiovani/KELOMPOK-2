@@ -6,24 +6,20 @@ if( !isset($_SESSION["login"])){
 }
   include 'functions.php';
   $id = $_GET["id"];
-  $data = query("SELECT * FROM member_perpus WHERE nis = '$id'")[0];
+  $data = query("SELECT * FROM tamu WHERE id_tamu = '$id'")[0];
 
   if( isset($_POST["submit"])){
-    $nis = $_POST["nis"];
-    $nama = $_POST["nama"];
-    $kelas = $_POST["kelas"];
-    $jurusan = $_POST["jurusan"];
-    $no_telp = $_POST["no_telp"];
-    $alamat = $_POST["alamat"];
-    $status ="aktif";
+    $nama = $_POST["nama_tamu"];
+    $delegasi = $_POST["delegasi"];
+    $kepentingan = $_POST["kepentingan"];
     //query insert data
-    $tambah = mysqli_query($conn, "UPDATE member_perpus SET nis='$nis', nama_siswa='$nama',kelas='$kelas',jurusan='$jurusan', no_telp='$no_telp',  alamat='$alamat','$status'");
+    $tambah = mysqli_query($conn, "UPDATE tamu SET nama='$nama_tamu', delegasi='$delegasi',kepentingan='$kepentingan'");
     var_dump($tambah);
     if($tambah){
         ?>
         <script type="text/javascript">
           alert('member berhasil disetujui!');
-          document.location.href="data_member.php";
+          document.location.href="data_tamu.php";
         </script>
         <?php
       }else {
@@ -70,33 +66,18 @@ if( !isset($_SESSION["login"])){
                     <h2 class="title">Registration Info</h2>
                     <form action = "" method="POST">
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="NIS" name="nis" id="nis"
-                            value ="<?php echo $data['nis']; ?>">
+                            <input class="input--style-1" type="text" placeholder="NAMA" name="nama" id="nama"
+                            value ="<?php echo $data['nama_tamu']; ?>">
                         </div>
                     <form method="POST">
                         <div class="input-group">
-                             <input class="input--style-1" type="text" placeholder="NAMA" name="nama" id="nama"
-                             value ="<?php echo $data['nama_siswa']; ?>">
+                             <input class="input--style-1" type="text" placeholder="DELEGASI" name="nama" id="delegasi"
+                             value ="<?php echo $data['delegasi']; ?>">
                         </div>
                     <form method="POST">
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="KELAS" name="kelas" id="kelas"
-                            value ="<?php echo $data['kelas']; ?>">
-                        </div>
-                    <form method="POST">
-                        <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="JURUSAN" name="jurusan" id="jurusan"
-                            value ="<?php echo $data['jurusan']; ?>">
-                        </div>
-                    <form method="POST">
-                        <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="NO TELP" name="no_telp"id="no_telp"
-                            value ="<?php echo $data['no_telp']; ?>">
-                         </div>
-                    <form method="POST">
-                        <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="ALAMAT" name="alamat" id="alamat"
-                            value ="<?php echo $data['alamat']; ?>">
+                            <input class="input--style-1" type="text" placeholder="KEPENTINGAN" name="kepentingan" id="kepentingan"
+                            value ="<?php echo $data['kepentingan']; ?>">
                         </div>
                         </div>
                         </div>
