@@ -26,7 +26,7 @@ if( isset($_POST["submit"])){
       ";
     }
 
-
+ 
 }
 ?>
 
@@ -37,7 +37,7 @@ if( isset($_POST["submit"])){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
-    <title>Tambah Buku Mapel</title>
+    <title>Tambah Peminjaman Buku Mapel</title>
 </head>
 <body>
     <div class="container">
