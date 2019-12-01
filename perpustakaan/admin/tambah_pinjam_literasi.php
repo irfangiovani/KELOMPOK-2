@@ -11,10 +11,10 @@ if( isset($_POST["submit"])){
     $kode_buku = $_POST["id_kode_literasi"];
     $tgl_pinjam = Date('l, Y-m-d');
     $tgl_kembali =Date('l, Y-m-d', time()+518400);
-    
+      
    
     //query insert data
-    $tambah = mysqli_query($conn, "INSERT INTO peminjaman_buku_literasi VALUES (NULL, '$kode_buku', '$nama_peminjam', '$tgl_pinjam', '$tgl_kembali', 'masa pinjam')");
+    $tambah = mysqli_query($conn, "INSERT INTO peminjaman_buku_mapel VALUES (NULL, '$kode_buku', '$nama_peminjam', '$tgl_pinjam', '$tgl_kembali', 'masa pinjam')");
     if($tambah){
     echo "
         <script>
@@ -47,7 +47,7 @@ echo Date('l, Y-m-d');
 </head>
 <body>
     <div class="container">
-    <h2 class="alert alert-info text-center mt-3">Tambah Data Peminjaman Buku Literasi Umum</h2>
+    <h2 class="alert alert-info text-center mt-3">Tambah Data Peminjaman Buku Mapel</h2>
     <div class="pull-right">
     <form action="" method="post" enctype="multipart/form-data">
      

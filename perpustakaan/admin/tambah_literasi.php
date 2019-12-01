@@ -8,7 +8,7 @@ require 'functions.php';
 
 //cek tombol submit ditekan atau tidak
 if( isset($_POST["submit"]) ) {
-
+ 
     // cek keberhasilan tambah data
     if( tambahliterasi($_POST) > 0 ) {
       echo "
@@ -29,7 +29,7 @@ if( isset($_POST["submit"]) ) {
 }
 ?>
 
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>

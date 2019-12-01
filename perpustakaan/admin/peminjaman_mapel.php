@@ -154,7 +154,7 @@ $peminjaman_mapel = query ("SELECT * FROM peminjaman_buku_mapel");
 
     <br>
      <div class="container-fluid">
-    <a href="tambah_literasi.php">Tambah Data Peminjaman Mapel</a>
+    <a href="tambah_pinjam_mapel.php">Tambah Data Peminjaman Mapel</a>
     <br><br>
 
     <div class="content">
