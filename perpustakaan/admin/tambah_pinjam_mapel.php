@@ -103,18 +103,35 @@ echo Date('l, Y-m-d');
                     while ($data_nama = mysqli_fetch_array($sql_member)){
                       echo '<option value="'.$data_nama['nama_peminjam'].'">' .$data_nama['nama_peminjam']. '</option>'; 
                     }
-                    ?>
+                   ?>
                 </select>
             </div>   
             <div class="form-group col-md-6">
             <label for="waktu_peminjaman"> Waktu Peminjaman : </label>
               <input type="text" class="form-control" placeholder = "<?php  echo Date('l, d-m-Y  h:i:s a');?>" name="tanggal_peminjaman" id="waktu_peminjaman" readonly>
-                
             </div>
             </div>
 
-          
+            <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="banyak_buku"> Stok Buku : </label>
+              <input type="text" class="form-control" placeholder="Masukkan Stok Buku" name="kode_buku_literasi" id="banyak_buku">
+            </div>
            
+            <div class="form-group col-md-6">
+              <label for="notifikasi">Notifikasi : </label> <a href="notifikasi.php" class="btn btn-warning" title="notifikasi" >Notifikasi</a>
+                <select class="form-control" name="id_notifikasi" id="id_notifikasi" required >
+                  <option value="">- Pilih Notifikasi -</option>
+                  <?php
+                    $sql_notif = mysqli_query($conn, "SELECT * FROM peminjaman_buku_mapel") or die (mysqli_query($conn));
+                    while ($data_notif = mysqli_fetch_array($sql_notif)){
+                      echo '<option value="'.$data_notif['notifikasi'].'">' .$data_notif['notifikasi']. '</option>'; 
+                    }
+                    ?>
+                </select>
+            </div>
+            </div>
+
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
