@@ -84,15 +84,14 @@ echo Date('l, Y-m-d');
                 <select class="form-control" name="id_kode_kelas" id="id_kode_kelas" required >
                   <option value="">- Pilih Kode Kelas -</option>
                   <?php
-                    $sql_kode = mysqli_query($conn, "SELECT * FROM buku_literasi_umum") or die (mysqli_query($conn));
+                    $sql_kode = mysqli_query($conn, "SELECT * FROM peminjaman_buku_mapel") or die (mysqli_query($conn));
                     while ($data_kode = mysqli_fetch_array($sql_kode)){
-                      echo '<option value="'.$data_kode['kode_buku_literasi'].'">' .$data_kode['kode_buku_literasi']. '</option>'; 
+                      echo '<option value="'.$data_kode['kode_kelas'].'">' .$data_kode['kode_kelas']. '</option>'; 
                     }
                     ?>
                 </select>
             </div>
             </div>
-           
            
             <div class="form-row">
             <div class="form-group col-md-6">
@@ -100,9 +99,9 @@ echo Date('l, Y-m-d');
               <select class="form-control" name="nama_peminjam" id="nama_peminjam" required >
                     <option value="">- Nama Peminjam -</option>
                     <?php
-                    $sql_member = mysqli_query($conn, "SELECT * FROM member_perpus") or die (mysqli_query($conn));
-                    while ($data_member = mysqli_fetch_array($sql_member)){
-                      echo '<option value="'.$data_member['nis'].'">' .$data_member['nama_siswa']. '</option>'; 
+                    $sql_member = mysqli_query($conn, "SELECT * FROM peminjaman_buku_mapel") or die (mysqli_query($conn));
+                    while ($data_nama = mysqli_fetch_array($sql_member)){
+                      echo '<option value="'.$data_nama['nama_peminjam'].'">' .$data_nama['nama_peminjam']. '</option>'; 
                     }
                     ?>
                 </select>
