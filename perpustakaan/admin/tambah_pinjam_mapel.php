@@ -68,8 +68,16 @@ echo Date('l, Y-m-d');
       
     <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="kode_judul_buku_mapel">Kode Judul Buku Mapel : </label>
-              <input type="text" class="form-control" placeholder="Masukkan Kode Judul Buku Mapel" name="kode_judul_mapel" id="judul_buku_mapel">
+              <label for="kode_judul_buku_mapel">Kode Judul Buku Mapel : </label> <a href="kode_judul.php" class="btn btn-warning" title="tambah_kode_judul" >Tambah Kode Judul</a>
+              <select class="form-control" name="kode_judul" id="kode_judul" required >
+                    <option value="">- Kode Judul Buku -</option>
+                    <?php
+                    $sql_kode = mysqli_query($conn, "SELECT * FROM peminjaman_buku_mapel") or die (mysqli_query($conn));
+                    while ($data_kode = mysqli_fetch_array($sql_kode)){
+                      echo '<option value="'.$data_kode['id_judul_buku_mapel'].'">' .$data_kode['id_judul_buku_mapel']. '</option>'; 
+                    }
+                    ?>
+                </select>
             </div>
             <div class="form-group col-md-6">
               <label for="id_kode_kelas">Kode Kelas : </label> <a href="kode_kelas.php" class="btn btn-warning" title="tambah_kode" >Tambah Kode Kelas</a>
