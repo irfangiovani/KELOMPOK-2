@@ -4,12 +4,12 @@ if( !isset($_SESSION["login"])){
     header("location: loginadmin.php");
     exit;
 }
-require 'functiontah.php';
+require 'functions.php';
 //cek tombol submit ditekan atau tidak
 if( isset($_POST["submit"])){
 
     // cek keberhasilan tambah data
-    if( tambahtah($_POST) > 0 ) {
+    if( tambahtahunan($_POST) > 0 ) {
       echo "
             <script>
               alert('data berhasil ditambahkan!');
