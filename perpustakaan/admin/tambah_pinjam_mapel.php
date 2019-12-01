@@ -58,7 +58,7 @@ echo Date('l, Y-m-d');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
-    <title>Tambah Peminjaman Tahunan</title>
+    <title>Tambah Peminjaman Mapel Kelas</title>
 </head>
 <body>
     <div class="container">
@@ -68,59 +68,59 @@ echo Date('l, Y-m-d');
       
     <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="judul_buku_mapel">Kode Judul Buku Mapel : </label>
-              <input type="text" class="form-control" placeholder="Masukkan Kode Judul Mapel" name="judul_buku_mapel" id="judul_buku_mapel">
+              <label for="kode_judul_buku_mapel">Kode Judul Buku Mapel : </label>
+              <input type="text" class="form-control" placeholder="Masukkan Kode Judul Buku Mapel" name="kode_judul_mapel" id="judul_buku_mapel">
             </div>
             <div class="form-group col-md-6">
-              <label for="id_kategori">Kategori : </label> <a href="kategori.php" class="btn btn-warning" title="tambah_kategori" >Tambah Kategori</a>
-                <select class="form-control" name="id_kategori" id="id_kategori" required >
-                  <option value="">- Pilih Kategori -</option>
+              <label for="id_kode_kelas">Kode Kelas : </label> <a href="kode_kelas.php" class="btn btn-warning" title="tambah_kode" >Tambah Kode Kelas</a>
+                <select class="form-control" name="id_kode_kelas" id="id_kode_kelas" required >
+                  <option value="">- Pilih Kode Kelas -</option>
+                  <?php
+                    $sql_kode = mysqli_query($conn, "SELECT * FROM buku_literasi_umum") or die (mysqli_query($conn));
+                    while ($data_kode = mysqli_fetch_array($sql_kode)){
+                      echo '<option value="'.$data_kode['kode_buku_literasi'].'">' .$data_kode['kode_buku_literasi']. '</option>'; 
+                    }
+                    ?>
+                </select>
+            </div>
+            </div>
+           
+           
+            <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="nama_peminjam">Nama Peminjam : </label> <a href="nama_peminjam.php" class="btn btn-warning" title="tambah_nama" >Tambah Nama</a>
+              <select class="form-control" name="nama_peminjam" id="nama_peminjam" required >
+                    <option value="">- Nama Peminjam -</option>
                     <?php
-                    $sql_kategori = mysqli_query($conn, "SELECT * FROM kategori") or die (mysqli_query($conn));
-                    while ($data_kategori = mysqli_fetch_array($sql_kategori)){
-                      echo '<option value="'.$data_kategori['id_kategori'].'">' .$data_kategori['nama_kategori']. '</option>'; 
+                    $sql_member = mysqli_query($conn, "SELECT * FROM member_perpus") or die (mysqli_query($conn));
+                    while ($data_member = mysqli_fetch_array($sql_member)){
+                      echo '<option value="'.$data_member['nis'].'">' .$data_member['nama_siswa']. '</option>'; 
+                    }
+                    ?>
+                </select>
+            </div>   
+            <div class="form-group col-md-6">
+              <label for="id_kode_kelas">Kode Kelas : </label> <a href="kode_kelas.php" class="btn btn-warning" title="tambah_kode" >Tambah Kode Kelas</a>
+                <select class="form-control" name="id_kode_kelas" id="id_kode_kelas" required >
+                  <option value="">- Pilih Kode Kelas -</option>
+                  <?php
+                    $sql_kode = mysqli_query($conn, "SELECT * FROM buku_literasi_umum") or die (mysqli_query($conn));
+                    while ($data_kode = mysqli_fetch_array($sql_kode)){
+                      echo '<option value="'.$data_kode['kode_buku_literasi'].'">' .$data_kode['kode_buku_literasi']. '</option>'; 
                     }
                     ?>
                 </select>
             </div>
             </div>
 
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="id_judul_tahunan"> Judul Buku Tahunan : </label>
-            <select class="form-control" name="id_judul_tahunan" id="id_judul_tahunan" required >
-              <option value="">- Pilih Judul Buku Tahunan -</option>
-                  <?php
-                    $sql_kode = mysqli_query($conn, "SELECT * FROM buku_tahunan_siswa") or die (mysqli_query($conn));
-                    while ($data_kode = mysqli_fetch_array($sql_kode)){
-                      echo '<option value="'.$data_kode['id_judul_buku_tahunan'].'">'.$data_kode['judul_buku_tahunan'].' '.$data_kode['untuk_kelas'].'</option>';
-                    }
-                  ?> 
-            </select>
-        </div>
-        <div class="form-group col-md-6">
-              <label for="kode_buku_tahunan"> Kode Buku Tahunan : </label>
-              <input type="text" class="form-control" placeholder="kode buku tahunan" name="kode_buku_tahunan" id="kode_buku_tahunan">
-        </div>
-      </div> 
-      <div class="form-row">
-        <div class="form-group col-md-6">
-              <label for="tanggal_peminjaman"> Tanggal Peminjaman : </label>
-              <input type="text" class="form-control" placeholder = "<?php  echo Date('l, Y-m-d');?>" name="tanggal_peminjaman" id="tanggal_peminjaman" readonly>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-              <label for="tanggal_hrs_kembali"> Tanggal Harus Kembali : </label>
-              <input type="text" class="form-control" placeholder="<?php echo Date('l, Y-m-d', time()+31536000); ?>" name="tanggal_hrs_kembali" id="tanggal_hrs_kembali" readonly>
-        </div>
-      </div>
-      <div class="text-center">
+          
+           
+            <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
-              <a href="peminjaman_literasi.php" class="btn btn-success">Kembali</a>
-      </div>
-  
+              <a href="literasi.php" class="btn btn-success">Kembali</a>
+            </div>
+          </div>
         <br><br>
         
       
