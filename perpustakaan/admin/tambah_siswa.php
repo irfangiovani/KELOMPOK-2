@@ -55,14 +55,38 @@ if( isset($_POST["submit"]) ) {
             </div>
             </div>
 
+            <div class="form-row">
+            <div class="form-group col-md-6">
+            <label for="id_kode_kelas">Kode Kelas : </label> 
+                <select class="form-control" name="id_kode_kelas" id="id_kode_kelas" required >
+                  <option value="">- Pilih Kode Kelas -</option>
+                  <?php
+                    $sql_kode = mysqli_query($conn, "SELECT * FROM peminjaman_buku_mapel") or die (mysqli_query($conn));
+                    while ($data_kode = mysqli_fetch_array($sql_kode)){
+                      echo '<option value="'.$data_kode['kode_kelas'].'">' .$data_kode['kode_kelas']. '</option>'; 
+                    }
+                    ?>
+                </select>
+            </div>
+            </div>
+
+            <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="keperluan">Keperluan : </label> 
+              <input type="text" class="form-control" placeholder="Masukkan Keperluan" name="keperluan" id="keperluan">
+            </div>
+            </div>
+
+
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
               <a href="literasi.php" class="btn btn-success">Kembali</a>
             </div>
           </div>
+          
         <br><br>
-        
+         
       
     </form>
     </div>
