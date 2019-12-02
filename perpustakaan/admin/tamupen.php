@@ -6,7 +6,7 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$tamu = query ("SELECT * FROM tamu"); 
+$tamupen = query ("SELECT * FROM tamu "); 
 ?>
 
 <!DOCTYPE html>
@@ -145,7 +145,7 @@ $tamu = query ("SELECT * FROM tamu");
             <ul class="breadcrumb">
               <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
               <li><a href="#">Pengunjung</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Tamu</li>
+              <li class="active">Data Tamu</li>
             </ul>
           </div>
         </div>
@@ -154,7 +154,7 @@ $tamu = query ("SELECT * FROM tamu");
 
     <br>
      <div class="container-fluid">
-    <a href="tamupen.php">Data Tamu</a>
+    <a href="tamupen.php">Tambah Data Tamu</a>
     <br><br>
 
     <div class="content">
@@ -170,16 +170,17 @@ $tamu = query ("SELECT * FROM tamu");
             <th>Delegasi</th>
             <th>Kepentingan</th>
         </tr>
-		
+		<?php $i = 1; ?> 
+        <?php
+            foreach( $tamupen as $row) :
+        ?>
         <tr>
 			      <td><?=$i; ?></td>
             <td><?php echo $row["id_tamu"]; ?></td>
             <td><?php echo $row["nama_tamu"];?></td>
             <td><?php echo $row["delegasi"];?></td>
             <td><?php echo $row["kepentingan"];?></td>
-            <td>
             
-            </td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
