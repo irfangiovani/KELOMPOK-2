@@ -7,13 +7,41 @@ if( !isset($_SESSION["login"])){
   include 'functions.php';
   $id = $_GET["id"];
   $data = query("SELECT * FROM peminjaman_buku_literasi WHERE id_pinjam_buku_literasi = '$id'")[0];
+
+  //ketika tombol selesai ditekan
+  if( isset($_POST["submit"])){
+    $tambah = mysqli_query($conn,  "UPDATE peminjaman_buku_literasi SET
+    notifikasi = 'kembali' WHERE id_pinjam_buku_literasi = '$id'");
+
+    //post ke tabel pengembalian buku literasi
+    $id_pinjam_literasi = $_POST["id_pinjam_literasi"];
+    $tanggal_pengembalian = $_POST["tanggal_kembali"];
+    $terlambat = $_POST["terlambat"];
+    $denda = $_POST["denda"];
+
+    $tambah2 = mysqli_query($conn, "INSERT INTO pengembalian_buku_literasi VALUES (NULL, '$id_pinjam_literasi', '$tanggal_pengembalian', '$terlambat','$denda')");
+     if($tambah2 == true ){
+      echo "
+          <script>
+              alert('Proses Pengembalian Buku Berhasil');
+              document.location.href = 'pengembalian_literasi.php';
+          </script>
+      ";
+    } else {
+      echo "
+          <script>
+              alert('Proses Pengembalian Buku Berhasil');
+              document.location.href = 'pengembalian_literasi.php';
+          </script>
+      ";
+    }
+  }
+
   $denda = 1000;
-
-              $tgl_dateline = $data['tanggal_hrs_kembali'];
-              $tgl_kembali = date('Y-m-d');
-
-              $lambat = terlambatliterasi($tgl_dateline, $tgl_kembali);
-              $denda1 = $lambat*$denda;
+  $tgl_dateline = $data['tanggal_hrs_kembali'];
+  $tgl_kembali = date('Y-m-d');
+  $lambat = terlambatliterasi($tgl_dateline, $tgl_kembali);
+  $denda1 = $lambat*$denda;
 
               if ($lambat>0) {
                 echo "
@@ -34,7 +62,7 @@ if( !isset($_SESSION["login"])){
 
                 //       ";
               } else {
-                // echo $lambat ."Hari";
+                //  
               }
   
 ?>

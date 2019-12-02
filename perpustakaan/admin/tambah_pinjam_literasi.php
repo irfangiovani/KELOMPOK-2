@@ -9,8 +9,8 @@ if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
     $nama_peminjam = $_POST["id_nis"];
     $kode_buku = $_POST["id_kode_literasi"];
-    $tgl_pinjam = Date('l, Y-m-d');
-    $tgl_kembali =Date('l, Y-m-d', time()+604800);
+    $tgl_pinjam = Date('Y-m-d');
+    $tgl_kembali =Date('Y-m-d', time()+604800);
       
    
     //query insert data
@@ -83,14 +83,14 @@ echo Date('l, Y-m-d');
       <div class="form-row">
         <div class="form-group col-md-6">
               <label for="tanggal_peminjaman"> Tanggal Peminjaman : </label>
-              <input type="text" class="form-control" placeholder = "<?php  echo Date('l, Y-m-d');?>" name="tanggal_peminjaman" id="tanggal_peminjaman" readonly>
+              <input type="text" class="form-control" placeholder = "<?php  echo Date('Y-m-d');?>" name="tanggal_peminjaman" id="tanggal_peminjaman" readonly>
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group col-md-6">
               <label for="tanggal_hrs_kembali"> Tanggal Harus Kembali : </label>
-              <input type="text" class="form-control" placeholder="<?php echo Date('l, Y-m-d', time()+604800); ?>" name="tanggal_hrs_kembali" id="tanggal_hrs_kembali" readonly>
+              <input type="text" class="form-control" placeholder="<?php echo Date('Y-m-d', time()+604800); ?>" name="tanggal_hrs_kembali" id="tanggal_hrs_kembali" readonly>
         </div>
       </div>
 
