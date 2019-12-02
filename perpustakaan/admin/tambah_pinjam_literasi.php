@@ -10,11 +10,11 @@ if( isset($_POST["submit"])){
     $nama_peminjam = $_POST["id_nis"];
     $kode_buku = $_POST["id_kode_literasi"];
     $tgl_pinjam = Date('l, Y-m-d');
-    $tgl_kembali =Date('l, Y-m-d', time()+518400);
+    $tgl_kembali =Date('l, Y-m-d', time()+604800);
       
    
     //query insert data
-    $tambah = mysqli_query($conn, "INSERT INTO peminjaman_buku_mapel VALUES (NULL, '$kode_buku', '$nama_peminjam', '$tgl_pinjam', '$tgl_kembali', 'masa pinjam')");
+    $tambah = mysqli_query($conn, "INSERT INTO peminjaman_buku_literasi VALUES (NULL, '$kode_buku', '$nama_peminjam', '$tgl_pinjam', '$tgl_kembali', 'masa pinjam')");
     if($tambah){
     echo "
         <script>
@@ -53,13 +53,13 @@ echo Date('l, Y-m-d');
      
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="id_kode_nis"> NIS : </label> 
+          <label for="id_kode_nis"> Nama Siswa : </label> 
             <select class="form-control" name="id_nis" id="id_nis" required >
-              <option value="">- Pilih NIS -</option>
+              <option value="">- Pilih Siswa -</option>
                   <?php
                     $sql_member = mysqli_query($conn, "SELECT * FROM member_perpus") or die (mysqli_query($conn));
                     while ($data_member = mysqli_fetch_array($sql_member)){
-                      echo '<option value="'.$data_member['nis'].'">' .$data_member['nis']. '</option>'; 
+                      echo '<option value="'.$data_member['nis'].'">' .$data_member['nama_siswa']. '</option>'; 
                     }
                     
                   ?>
@@ -68,9 +68,9 @@ echo Date('l, Y-m-d');
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="id_kode_buku_literasi"> Kode Buku Literasi : </label>
+          <label for="id_kode_buku_literasi"> Judul Buku Literasi : </label>
             <select class="form-control" name="id_kode_literasi" id="id_kode_literasi" required >
-              <option value="">- Pilih Kode Literasi -</option>
+              <option value="">- Pilih Judul Kode Literasi -</option>
                   <?php
                     $sql_kode = mysqli_query($conn, "SELECT * FROM buku_literasi_umum") or die (mysqli_query($conn));
                     while ($data_kode = mysqli_fetch_array($sql_kode)){

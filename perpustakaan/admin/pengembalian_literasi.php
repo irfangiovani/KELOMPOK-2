@@ -6,7 +6,7 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$pengembalian_literasi = query ("SELECT * FROM pengembalian_buku_literasi"); 
+$peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi"); 
 ?>
 
 <!DOCTYPE html>
@@ -154,7 +154,7 @@ $pengembalian_literasi = query ("SELECT * FROM pengembalian_buku_literasi");
 
     <br>
      <div class="container-fluid">
-    <a href="tambah_pinjam_literasi.php">Tambah Data Pengembalian Literasi</a>
+     <a href="pengembalian_literasi_selesai.php" class="btn btn-success">Data Pengembalian</a>
     <br><br>
 
     <div class="content">
@@ -164,26 +164,33 @@ $pengembalian_literasi = query ("SELECT * FROM pengembalian_buku_literasi");
       <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover ">
         <tr>
-			<th>no</th>
-            <th>ID Kembali Literasi</th>
-            <th>ID Pinjam Buku Literasi</th>
-            <th>Tanggal Pengembalian</th>
-            <th>Terlambat</th>
-            <th>Denda</th>
+			      <th>no</th>
+            <th>ID Pinjam Literasi</th>
+            <th>Kode Buku Literasi</th>
+            <th>NIS peminjam</th>
+            <th>Tanggal Pemnjaman</th>
+            <th>Tanggal Harus Kembali</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php
-            foreach( $pengembalian_literasi as $row) :
+            foreach( $peminjaman_literasi as $row) :
         ?>
         <tr>
-			<td><?=$i; ?></td>
-            <td><?php echo $row["id_kembali_literasi"]; ?></td>
-            <td><?php echo $row["id_pinjam_buku_literasi"];?></td>
-            <td><?php echo $row["tanggal_pengembalian"];?></td>
+			      <td><?=$i; ?></td>
+            <td><?php echo $row["id_pinjam_buku_literasi"]; ?></td>
+            <td><?php echo $row["kode_buku_literasi"];?></td>
+            <td><?php echo $row["nis"];?></td>
+            <td><?php echo $row["tanggal_peminjaman"];?></td>
+            <td><?php echo $row["tanggal_hrs_kembali"];?></td>
+            <td><?php echo $row["notifikasi"];?></td>
+            <td>
+            <a href="proses_pengembalian_literasi.php?id=<?php echo $row ['id_pinjam_buku_literasi']; ?>" class="btn btn-warning" title="ubah data" >Kembali</a>
+
+            </td>
             <td><?php 
               $denda = 1000;
 
-              $tgl_dateline = $row['tanggal_pengembalian'];
+              $tgl_dateline = $row['tanggal_hrs_kembali'];
               $tgl_kembali = date('Y-m-d');
 
               $lambat = terlambatliterasi($tgl_dateline, $tgl_kembali);
@@ -311,7 +318,6 @@ $pengembalian_literasi = query ("SELECT * FROM pengembalian_buku_literasi");
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
-  <a href="literasi.php" class="btn btn-success">kembali</a>
 
 </body>
 
