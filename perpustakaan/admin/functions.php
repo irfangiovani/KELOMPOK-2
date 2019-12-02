@@ -429,4 +429,23 @@ function tambahtamu($datatamu) {
 
     return mysqli_affected_rows($conn);
 }
+
+function tambahsiswa($datasiswa) {
+    global $conn;
+
+    // ambil data dari tiap elemen dalam form
+    $tanggal_absensi =  Date('l, d-m-Y');
+    $nama_siswa = htmlspecialchars($datasiswa["nama_siswa"]);
+    $kode_kelas = htmlspecialchars($datasiswa["kode_kelas"]);
+    $keperluan = htmlspecialchars($datasiswa["keperluan"]);
+
+    $query = "INSERT INTO pengunjung_siswa 
+              VALUES
+              (null, '$tanggal_absensi', '$nama_siswa', '$kode_kelas', '$keperluan')
+              ";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
 ?>
