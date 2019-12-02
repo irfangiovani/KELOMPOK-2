@@ -6,7 +6,9 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifikasi='masa pinjam'"); 
+$peminjaman_tahunan = query ("SELECT a.id_pinjam_buku_tahunan, a.kode_buku_tahunan, a.tanggal_peminjaman, a.tanggal_hrs_kembali, a.notifikasi, b.judul_buku_tahunan as id_judul_buku_tahunan, c.nama_siswa as nis
+FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku_tahunan = a.id_judul_buku_tahunan LEFT JOIN member_perpus c on c.nis = a.nis ORDER BY a.id_pinjam_buku_tahunan ASC"); 
+
 ?>
 
 <!DOCTYPE html>
@@ -172,7 +174,6 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
             <th>Tanggal Peminjaman</th>
             <th>Tanggal Harus Kembali</th>
             <th>Notifikasi</th>
-            <th>Terlambat</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php
@@ -187,27 +188,6 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
             <td><?php echo $row["tanggal_peminjaman"];?></td>
             <td><?php echo $row["tanggal_hrs_kembali"];?></td>
             <td><?php echo $row["notifikasi"];?></td>
-            <td>
-              <?php 
-              $denda = 1000;
-
-              $tgl_dateline = $row['tanggal_hrs_kembali'];
-              $tgl_kembali = date('Y-m-d');
-
-              $lambat = terlambattahunan($tgl_dateline, $tgl_kembali);
-              $denda1 = $lambat*$denda;
-
-              if ($lambat>0) {
-                echo "
-                
-                        <font color='red'>$lambat Hari (Rp $denda1)</font>
-
-                      ";
-              } else {
-                echo $lambat ."Hari";
-              }
-              ?>
-            </td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
