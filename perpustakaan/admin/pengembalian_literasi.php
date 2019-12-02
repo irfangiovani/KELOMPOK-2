@@ -6,7 +6,7 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE notifikasi='masa pinjam'"); 
+$pengembalian_literasi = query ("SELECT * FROM pengembalian_buku_literasi"); 
 ?>
 
 <!DOCTYPE html>
@@ -96,7 +96,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE noti
                         <li><a href="tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                       <a href="#">Peminjaman<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                       <li><a href="peminjaman_literasi.php">Buku Literasi Umum</a></li>
@@ -104,12 +104,12 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE noti
                         <li><a href="peminjaman_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown active">
                       <a href="#">Pengembalian<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                         <li><a href="pengembalian_literasi.php">Buku Literasi Umum</a></li>
-                        <li><a href="portfolio-3cols.html">Buku Mapel Kelas</a></li>
-                        <li><a href="portfolio-4cols.html">Buku Tahunan Siswa</a></li>
+                        <li><a href="pengembalian_mapel.php">Buku Mapel Kelas</a></li>
+                        <li><a href="pengembalian_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
@@ -138,13 +138,13 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE noti
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Peminjaman Buku Literasi Umum</h2>
+              <h2>Pengembalian Buku Literasi Umum</h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
-              <li><a href="#">Peminjaman</a> <i class="icon-angle-right"></i></li>
+              <li><a href="#">Pengembalian</a> <i class="icon-angle-right"></i></li>
               <li class="active">Buku Literasi Umum</li>
             </ul>
           </div>
@@ -154,7 +154,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE noti
 
     <br>
      <div class="container-fluid">
-    <a href="tambah_pinjam_literasi.php">Tambah Data Peminjaman Literasi</a>
+    <a href="tambah_pinjam_literasi.php">Tambah Data Pengembalian Literasi</a>
     <br><br>
 
     <div class="content">
@@ -164,34 +164,27 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE noti
       <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover ">
         <tr>
-			      <th>no</th>
-            <th>ID Pinjam Literasi</th>
-            <th>Kode Buku Literasi</th>
-            <th>NIS Peminjam</th>
-            <th>Tanggal Peminjaman</th>
-            <th>Tanggal Harus Kembali</th>
-            <th>Status</th>
+			<th>no</th>
+            <th>ID Kembali Literasi</th>
+            <th>ID Pinjam Buku Literasi</th>
+            <th>Tanggal Pengembalian</th>
             <th>Terlambat</th>
+            <th>Denda</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php
-            foreach( $peminjaman_literasi as $row) :
+            foreach( $pengembalian_literasi as $row) :
         ?>
         <tr>
-			      <td><?=$i; ?></td>
-            <td><?php echo $row["id_pinjam_buku_literasi"]; ?></td>
-            <td><?php echo $row["kode_buku_literasi"];?></td>
-            <td><?php echo $row["nis"];?></td>
-            <td><?php echo $row["tanggal_peminjaman"];?></td>
-            <td><?php echo $row["tanggal_hrs_kembali"];?></td>
-            <td><?php echo $row["notifikasi"];?></td>
-            <td>
-            
-              <?php 
+			<td><?=$i; ?></td>
+            <td><?php echo $row["id_kembali_literasi"]; ?></td>
+            <td><?php echo $row["id_pinjam_buku_literasi"];?></td>
+            <td><?php echo $row["tanggal_pengembalian"];?></td>
+            <td><?php 
               $denda = 1000;
 
-              $tgl_dateline = $row['tanggal_hrs_kembali'];
-              $tgl_kembali = date('d-M-Y');
+              $tgl_dateline = $row['tanggal_pengembalian'];
+              $tgl_kembali = date('Y-m-d');
 
               $lambat = terlambatliterasi($tgl_dateline, $tgl_kembali);
               $denda1 = $lambat*$denda;
@@ -199,15 +192,24 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE noti
               if ($lambat>0) {
                 echo "
                 
-                        <font color='red'>$lambat Hari (Rp $denda1)</font>
+                        <font color='red'>$lambat Hari</font>
 
                       ";
               } else {
                 echo $lambat ."Hari";
               }
-              ?>
-            
-            </td>
+              ?></td>
+            <td><?php 
+            if ($lambat>0) {
+                echo "
+                
+                        <font color='red'>(Rp $denda1)</font>
+
+                      ";
+              } else {
+                echo $lambat ."Hari";
+              }
+            ?></td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>

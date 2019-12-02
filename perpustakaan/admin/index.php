@@ -108,7 +108,7 @@ $pustakawan = query("SELECT * FROM pustakawan");
                     <li class="dropdown">
                       <a href="#">Pengembalian<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="portfolio-2cols.html">Buku Literasi Umum</a></li>
+                        <li><a href="pengembalian_literasi.php">Buku Literasi Umum</a></li>
                         <li><a href="portfolio-3cols.html">Buku Mapel Kelas</a></li>
                         <li><a href="portfolio-4cols.html">Buku Tahunan Siswa</a></li>
                       </ul>
