@@ -116,7 +116,7 @@ $peminjaman_mapel = query ("SELECT * FROM peminjaman_buku_mapel");
                       <a href="#">Pengunjung<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                         <li><a href="blog-left-sidebar.html">Siswa</a></li>
-                        <li><a href="blog-right-sidebar.html">Tamu</a></li>
+                        <li><a href="tamupen.php">Tamu</a></li>
                       </ul>
                     </li>
                     <li>
