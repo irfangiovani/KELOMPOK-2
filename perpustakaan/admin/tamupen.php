@@ -154,7 +154,7 @@ $tamupen = query ("SELECT * FROM tamu ");
 
     <br>
      <div class="container-fluid">
-    <a href="tamupen.php">Tambah Data Tamu</a>
+    <a href="tambah_tamu.php">Tambah Data Tamu</a>
     <br><br>
 
     <div class="content">

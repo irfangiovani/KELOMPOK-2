@@ -43,7 +43,7 @@ if( isset($_POST["submit"]) ) {
     <h2 class="alert alert-info text-center mt-3">Tambah Buku Literasi Umum</h2>
     <div class="pull-right">
     <form action="" method="post" enctype="multipart/form-data">
-     
+      
            <div class="form-row">
             <div class="form-group col-md-6">
               <label for="kode_buku_literasi">Kode Buku Literasi : </label>

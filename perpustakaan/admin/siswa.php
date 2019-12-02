@@ -154,7 +154,7 @@ $siswa = query ("SELECT * FROM pengunjung_siswa");
 
     <br>
      <div class="container-fluid">
-    <a href="tamupen.php">Tambah Data Pengunjung Siswa</a>
+    <a href="tambah_siswa.php">Tambah Data Pengunjung Siswa</a>
     <br><br>
 
     <div class="content">

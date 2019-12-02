@@ -8,20 +8,20 @@ require 'functions.php';
 
 //cek tombol submit ditekan atau tidak
 if( isset($_POST["submit"]) ) {
- 
+  
     // cek keberhasilan tambah data
     if( tambahtamu($_POST) > 0 ) {
       echo "
             <script>
               alert('data berhasil ditambahkan!');
-              document.location.href = 'siswa.php';
+              document.location.href = 'tamupen.php';
             </script>
       ";
     } else {
       echo "
             <script>
               alert('data gagal ditambahkan!');
-              document.location.href = 'siswa.php';
+              document.location.href = 'tamupen.php';
             </script>
       ";
     }
@@ -46,39 +46,23 @@ if( isset($_POST["submit"]) ) {
      
            <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="id_pengunjung">id_pengunjung: </label>
-              <input type="text" class="form-control" placeholder="Masukkan Id Pengunjung." name="id_pengunjung" id="id_pengunjung">
+              <label for="id_pengunjung">id_tamu: </label>
+              <input type="text" class="form-control" placeholder="Masukkan Id Tamu." name="id_tamu" id="id_tamu">
             </div>
             <div class="form-group col-md-6">
-              <label for="nama_siswa">Nama Siswa : </label> <a href="tambah_namasiswa.php" class="btn btn-warning" title="tambah_nama_siswa" >Tambah Nama Siswa</a>
-                <select class="form-control" name="id_nama_siswa" id="id_nama_sswa" required >
-                  <option value="">- Pilih Nama -</option>
-                    <?php
-                    $sql_nama = mysqli_query($conn, "SELECT * FROM pengunjung_siswa") or die (mysqli_query($conn));
-                    while ($data_nama = mysqli_fetch_array($sql_nama)){
-                      echo '<option value="'.$data_nama['id_nama_siswa'].'">' .$data_nama['nama_siswa']. '</option>'; 
-                    }
-                    ?>
-                </select>
+              <label for="nama_tamu">Nama Tamu : </label> 
+              <input type="text" class="form-control" placeholder="Masukkan nama" name="nama_tamu" id="nama_tamu">
             </div>
             </div>
             
             <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="kode_kelas">Kode Kelas : </label> <a href="kode_kelas.php" class="btn btn-warning" title="tambah_kodekelas" >Tambah Kode Kelas</a>
-              <select class="form-control" name="kode_kelas" id="kode_kelas" required >
-                    <option value="">- Kode Kelas -</option>
-                    <?php
-                    $sql_kode = mysqli_query($conn, "SELECT * FROM pengunjung_siswa") or die (mysqli_query($conn));
-                    while ($data_kode = mysqli_fetch_array($sql_kode)){
-                      echo '<option value="'.$data_nama['kode_kelas'].'">' .$data_kode['kode_kelas']. '</option>'; 
-                    }
-                   ?>
-                </select>
+              <label for="delegasi">Delegasi : </label> 
+              <input type="text" class="form-control" placeholder="Masukkan Delegasi." name="delegasi" id="delegasi">
             </div>   
             <div class="form-group col-md-6">
-            <label for="Keperluan"> Keperluan : </label>
-            <input type="text" class="form-control" placeholder="Masukkan Keperluan." name="id_keperluan" id="id_keperluan">
+            <label for="Kepentingan"> Kepentingan : </label>
+            <input type="text" class="form-control" placeholder="Masukkan Kepeentingan" name="kepentingan" id="kepentingan">
             </div>
             </div>
                
