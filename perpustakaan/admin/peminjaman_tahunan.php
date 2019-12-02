@@ -109,7 +109,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
                       <ul class="dropdown-menu">
                         <li><a href="portfolio-2cols.html">Buku Literasi Umum</a></li>
                         <li><a href="portfolio-3cols.html">Buku Mapel Kelas</a></li>
-                        <li><a href="portfolio-4cols.html">Buku Tahunan Siswa</a></li>
+                        <li><a href="pengembalian_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
@@ -154,7 +154,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
 
     <br>
      <div class="container-fluid">
-    <a href="tambah_literasi.php">Tambah Data Peminjaman Tahunan</a>
+    <a href="tambah_pinjam_tahunan.php">Tambah Data Peminjaman Tahunan</a>
     <br><br>
 
     <div class="content">

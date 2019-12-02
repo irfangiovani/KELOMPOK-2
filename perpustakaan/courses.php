@@ -120,7 +120,7 @@
 				</div>
 				<ul class="main-menu">
 					<li><a href="courses.php">Beranda</a></li>
-					<li><a href="about.html">Buku Mapel</a></li>
+					<li><a href="buku_mapel.php">Buku Mapel</a></li>
 					<li><a href="registermember.php">Daftar Member</a></li>
 					<li><a href="bantuan.php">Bantuan</a></li>
 				

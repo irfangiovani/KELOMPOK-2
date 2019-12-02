@@ -7,7 +7,9 @@ if( !isset($_SESSION["login"])){
 require 'functions.php';
 $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
 
-$buku_literasi_umum = query("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC"); 
+
+$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak 
+FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC"); 
 
 //tombol cari ditekan
 if( isset($_POST["cariliterasi"])) {
@@ -116,7 +118,7 @@ if( isset($_POST["cariliterasi"])) {
                       <ul class="dropdown-menu">
                         <li><a href="portfolio-2cols.html">Buku Literasi Umum</a></li>
                         <li><a href="portfolio-3cols.html">Buku Mapel Kelas</a></li>
-                        <li><a href="portfolio-4cols.html">Buku Tahunan Siswa</a></li>
+                        <li><a href="pengembalian_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
@@ -294,6 +296,7 @@ if( isset($_POST["cariliterasi"])) {
   <!-- javascript
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
+  <script src="js/dist/weetalert2.all.min.js"></script>
   <script src="js/jquery.js"></script>
   <script src="js/jquery.easing.1.3.js"></script>
   <script src="js/bootstrap.js"></script>
