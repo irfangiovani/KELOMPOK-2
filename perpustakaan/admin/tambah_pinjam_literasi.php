@@ -83,20 +83,14 @@ echo Date('l, Y-m-d');
       <div class="form-row">
         <div class="form-group col-md-6">
               <label for="tanggal_peminjaman"> Tanggal Peminjaman : </label>
-
-              <input type="date" class="form-control" placeholder="masukan tanggal peminjaman" name="tanggal_peminjaman" id="tanggal_peminjaman">
-          </div>
- 
-          <div class="form-row">
-            <div class="form-group col-md-6">
               <input type="text" class="form-control" placeholder = "<?php  echo Date('l, Y-m-d');?>" name="tanggal_peminjaman" id="tanggal_peminjaman" readonly>
         </div>
       </div>
 
       <div class="form-row">
-        <div class="form-group col-md-14">
+        <div class="form-group col-md-6">
               <label for="tanggal_hrs_kembali"> Tanggal Harus Kembali : </label>
-              <input type="text" class="form-control" placeholder="<?php echo Date('l, Y-m-d', time()+31536000); ?>" name="tanggal_hrs_kembali" id="tanggal_hrs_kembali" readonly>
+              <input type="text" class="form-control" placeholder="<?php echo Date('l, Y-m-d', time()+604800); ?>" name="tanggal_hrs_kembali" id="tanggal_hrs_kembali" readonly>
         </div>
       </div>
 
