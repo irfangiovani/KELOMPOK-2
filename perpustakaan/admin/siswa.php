@@ -6,8 +6,7 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan "); 
-
+$siswa = query ("SELECT * FROM pengunjung_siswa"); 
 ?>
 
 <!DOCTYPE html>
@@ -97,7 +96,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan ");
                         <li><a href="tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown active">
                       <a href="#">Peminjaman<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                       <li><a href="peminjaman_literasi.php">Buku Literasi Umum</a></li>
@@ -105,19 +104,19 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan ");
                         <li><a href="peminjaman_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                       <a href="#">Pengembalian<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="pengembalian_literasi.php">Buku Literasi Umum</a></li>
-                        <li><a href="pengembalian_mapel.php">Buku Mapel Kelas</a></li>
+                        <li><a href="portfolio-2cols.html">Buku Literasi Umum</a></li>
+                        <li><a href="portfolio-3cols.html">Buku Mapel Kelas</a></li>
                         <li><a href="pengembalian_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
                       <a href="#">Pengunjung<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="blog-left-sidebar.html">Siswa</a></li>
-                        <li><a href="blog-right-sidebar.html">Tamu</a></li>
+                        <li><a href="siswa.php">Siswa</a></li>
+                        <li><a href="tamupen.php">Tamu</a></li>
                       </ul>
                     </li>
                     <li>
@@ -139,14 +138,14 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan ");
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Pengembalian Buku Tahunan Siswa</h2>
+              <h2>Data Pengunjung siswa</h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
-              <li><a href="#">Pengembalian</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Buku Literasi Umum</li>
+              <li><a href="#">Pengunjung</a> <i class="icon-angle-right"></i></li>
+              <li class="active">Data Siswa</li>
             </ul>
           </div>
         </div>
@@ -155,7 +154,9 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan ");
 
     <br>
      <div class="container-fluid">
-    <a href="#">Tambah Data Pengembalian Tahunan</a>
+    <a href="tamupen.php">Tambah Data Pengunjung Siswa</a>
+    <br><br>
+
     <div class="content">
       <div class="box">
 <div class="offside-3 col-lg-7">
@@ -164,52 +165,22 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan ");
     <table class="table table-striped table-bordered table-hover ">
         <tr>
 			      <th>no</th>
-            <th>Kode Judul Buku Tahunan</th>
-            <th>Kode Buku Tahunan</th>
-            <th>NIS Peminjam</th>
-            <th>Tanggal Peminjaman</th>
-            <th>Tanggal Harus Kembali</th>
-            <th>Notifikasi</th>
-            <th>Terlambat</th>
+            <th>ID Pengunjung</th>
+            <th>Nama Siswa</th>
+            <th>Kode Kelas</th>
+             <th>Keperluan</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php
-            foreach( $peminjaman_tahunan as $row) :
+            foreach( $siswa as $row) :
         ?>
         <tr>
-			<td><?=$i; ?></td>
-            <td><?php echo $row["id_pinjam_buku_tahunan"]; ?></td>
-            <td><?php echo $row["id_judul_buku_tahunan"];?></td>
-            <td><?php echo $row["kode_buku_tahunan"];?></td>
-            <td><?php echo $row["nis"];?></td>
-            <td><?php echo $row["tanggal_peminjaman"];?></td>
-            <td><?php echo $row["tanggal_hrs_kembali"];?></td>
-            <td><?php echo $row["notifikasi"];?></td>
-            <td>
-              <?php 
-              $denda = 1000;
-
-              $tgl_dateline = $row['tanggal_hrs_kembali'];
-              $tgl_kembali = date('Y-m-d');
-
-              $lambat = terlambattahunan($tgl_dateline, $tgl_kembali);
-              $denda1 = $lambat*$denda;
-
-              if ($lambat>0) {
-                echo "
-                
-                        <font color='red'>$lambat Hari (Rp $denda1)</font>
-
-                      ";
-              } else {
-                echo $lambat ."Hari";
-              }
-              ?>
-            </td>
-            <td>
-            <a href="proses_pengembalian_tahunan.php?id=<?php echo $row ['id_pinjam_buku_tahunan']; ?>" class="btn btn-warning" title="ubah data" >Kembali</a>
-
-            </td>
+			      <td><?=$i; ?></td>
+            <td><?php echo $row["id_pengunjung"]; ?></td>
+            <td><?php echo $row["nama_siswa"];?></td>
+            <td><?php echo $row["kode_kelas"];?></td>
+            <td><?php echo $row["keperluan"];?></td>
+            
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
@@ -311,10 +282,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan ");
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
-<<<<<<< HEAD
-=======
-  <a href="mapel.php" class="btn btn-success">kembali</a>
->>>>>>> 94b02c2fa836ea7f00de35e6e7b80410a0ce4f5a
+  <a href="literasi.php" class="btn btn-success">kembali</a>
 
 </body>
 
