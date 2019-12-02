@@ -171,7 +171,6 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE noti
             <th>Tanggal Peminjaman</th>
             <th>Tanggal Harus Kembali</th>
             <th>Status</th>
-            <th>Terlambat</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php
@@ -185,29 +184,6 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE noti
             <td><?php echo $row["tanggal_peminjaman"];?></td>
             <td><?php echo $row["tanggal_hrs_kembali"];?></td>
             <td><?php echo $row["notifikasi"];?></td>
-            <td>
-            
-              <?php 
-              $denda = 1000;
-
-              $tgl_dateline = $row['tanggal_hrs_kembali'];
-              $tgl_kembali = date('d-M-Y');
-
-              $lambat = terlambatliterasi($tgl_dateline, $tgl_kembali);
-              $denda1 = $lambat*$denda;
-
-              if ($lambat>0) {
-                echo "
-                
-                        <font color='red'>$lambat Hari (Rp $denda1)</font>
-
-                      ";
-              } else {
-                echo $lambat ."Hari";
-              }
-              ?>
-            
-            </td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
