@@ -166,6 +166,7 @@ $siswa = query ("SELECT * FROM pengunjung_siswa");
         <tr>
 			      <th>no</th>
             <th>ID Pengunjung</th>
+            <th>tanggal_absensi</th>
             <th>Nama Siswa</th>
             <th>Kode Kelas</th>
              <th>Keperluan</th>
@@ -176,6 +177,7 @@ $siswa = query ("SELECT * FROM pengunjung_siswa");
         ?>
         <tr>
 			      <td><?=$i; ?></td>
+            <td><?php echo $row["id_pengunjung"]; ?></td>
             <td><?php echo $row["id_pengunjung"]; ?></td>
             <td><?php echo $row["nama_siswa"];?></td>
             <td><?php echo $row["kode_kelas"];?></td>
@@ -247,7 +249,7 @@ $siswa = query ("SELECT * FROM pengunjung_siswa");
               </div>
 
             </div>
-
+ 
             <div class="span6">
               <div class="credits">
                 <!--
