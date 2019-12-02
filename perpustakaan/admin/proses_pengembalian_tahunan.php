@@ -7,9 +7,16 @@ if( !isset($_SESSION["login"])){
   include 'functions.php';
   $id = $_GET["id"];
   $data = query("SELECT * FROM peminjaman_buku_tahunan WHERE id_pinjam_buku_tahunan = '$id'")[0];
-  $tgl_kembali = Date('l, Y-m-d');
-   
-
+  $tgl_kembali = Date('Y-m-d');
+  $tanggal_hrs_kembali = $data['tanggal_hrs_kembali'];
+  
+  $denda = hitung_denda($tgl_kembali, $data['tanggal_hrs_kembali']);
+  $tanggal1 = new DateTime($data['tanggal_hrs_kembali']);
+  $tanggal2 = new DateTime();
+ 
+$perbedaan = $tanggal1->diff($tanggal2)->format("%a");
+ 
+echo $perbedaan;
 ?>
 
 
@@ -61,13 +68,13 @@ if( !isset($_SESSION["login"])){
       <div class="form-row">
         <div class="form-group col-md-6">
               <label for="terlambat"> Terlambat : </label>
-              <input type="text" class="form-control" placeholder = "Terlambat" name="terlambat" id="terlambat" >
+              <input type="text" class="form-control"  value="<?php echo $perbedaan ?>" name="terlambat" id="terlambat" >
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
               <label for="denda"> Denda : </label>
-              <input type="text" class="form-control" placeholder = "Denda" name="denda" id="denda" >
+              <input type="text" class="form-control" value="<?php echo $denda ?>" name="denda" id="denda" >
         </div>
       </div>
       <div class="text-center">

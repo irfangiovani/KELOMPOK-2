@@ -156,8 +156,22 @@ function tambah_stok($conn, $id_judul_buku_tahunan)
     $q = "UPDATE buku_tahunan_siswa SET stok = stok + 1 WHERE id_judul_buku_tahunan = '$id_judul_buku_tahunan'";
     mysqli_query($conn, $q);
 }
+function hitung_denda($tgl_kembali, $tanggal_hrs_kembali)
+{
+    if (strtotime( $tgl_kembali ) > strtotime($tanggal_hrs_kembali)) {
+        $kembali = new DateTime($tgl_kembali); 
+        $jatuh_tempo   = new DateTime($tanggal_hrs_kembali); 
 
+        $selisih = $kembali->diff($jatuh_tempo);
+        $selisih = $selisih->format('%d');
 
+        $denda = 2000 * $selisih;
+    } else {
+        $denda = 0;
+    }
+
+    return $denda;
+}
 function ubah($data) {
     global $conn;
     
@@ -212,6 +226,7 @@ if ($selisih>=1) {
 }
 return $hasil_tgl;
 }
+
 
 // untuk mapel
 function carimapel($keywordmapel){
