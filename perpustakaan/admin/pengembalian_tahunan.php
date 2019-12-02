@@ -109,11 +109,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan ");
                       <a href="#">Pengembalian<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                         <li><a href="pengembalian_literasi.php">Buku Literasi Umum</a></li>
-<<<<<<< HEAD
                         <li><a href="pengembalian_mapel.php">Buku Mapel Kelas</a></li>
-=======
-                        <li><a href="portfolio-3cols.html">Buku Mapel Kelas</a></li>
->>>>>>> 8bc6690dad9a880ec3f3dacef54f6b4d8d1b1f87
                         <li><a href="pengembalian_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
