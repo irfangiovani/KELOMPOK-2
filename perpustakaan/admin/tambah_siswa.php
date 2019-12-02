@@ -10,7 +10,7 @@ require 'functions.php';
 if( isset($_POST["submit"]) ) {
   
     // cek keberhasilan tambah data
-    if( tambahtamu($_POST) > 0 ) {
+    if( tambahsiswa($_POST) > 0 ) {
       echo "
             <script>
               alert('data berhasil ditambahkan!');
@@ -28,7 +28,7 @@ if( isset($_POST["submit"]) ) {
 
 }
 ?>
- 
+   
  
 <!DOCTYPE html>
 <html lang="en">
