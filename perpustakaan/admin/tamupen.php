@@ -154,7 +154,7 @@ $tamupen = query ("SELECT * FROM tamu ");
 
     <br>
      <div class="container-fluid">
-    <a href="tamupen.php">Tambah Data Tamu</a>
+    <a href="tambah_tamu.php">Tambah Data Tamu</a>
     <br><br>
 
     <div class="content">
@@ -169,6 +169,7 @@ $tamupen = query ("SELECT * FROM tamu ");
             <th>Nama Tamu</th>
             <th>Delegasi</th>
              <th>Kepentingan</th>
+             <th>Tanggal Kedatangan</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php
@@ -180,7 +181,7 @@ $tamupen = query ("SELECT * FROM tamu ");
             <td><?php echo $row["nama_tamu"];?></td>
             <td><?php echo $row["delegasi"];?></td>
             <td><?php echo $row["kepentingan"];?></td>
-            
+            <td><?php echo $row["Tanggal_Kedatangan"];?></td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>

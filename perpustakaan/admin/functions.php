@@ -394,8 +394,24 @@ if ($selisih>=1) {
     $hasil_tgl = 0;
 }
 return $hasil_tgl;
+} 
+
+function tambahtamu($datatamu) {
+    global $conn;
+
+    // ambil data dari tiap elemen dalam form
+    $nama_tamu = htmlspecialchars($datatamu["nama_tamu"]);
+    $delegasi = htmlspecialchars($datatamu["delegasi"]);
+    $kepentingan = htmlspecialchars($datatamu["kepentingan"]);
+    $Tanggal_Kedatangan = Date('l, d-m-Y');
+
+    $query = "INSERT INTO tamu 
+              VALUES
+              (null, '$nama_tamu', '$delegasi', '$kepentingan', '$Tanggal_Kedatangan')
+              ";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
 }
-
-
-
 ?>
