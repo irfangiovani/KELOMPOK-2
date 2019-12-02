@@ -44,14 +44,9 @@ if( isset($_POST["submit"]) ) {
     <div class="pull-right">
     <form action="" method="post" enctype="multipart/form-data">
      
-           <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="id_pengunjung">id_tamu: </label>
-              <input type="text" class="form-control" placeholder="Masukkan Id Tamu." name="id_tamu" id="id_tamu">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="nama_tamu">Nama Tamu : </label> 
-              <input type="text" class="form-control" placeholder="Masukkan nama" name="nama_tamu" id="nama_tamu">
+            <div class="form-group text-center">
+                  <label for="nama_tanu">Nama Tamu : </label>
+                  <input type="text" class="form-control" placeholder="Masukkan Nama Tamu" name="nama_tamu" id="nama_tamu">
             </div>
             </div>
              
