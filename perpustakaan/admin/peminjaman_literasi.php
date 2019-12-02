@@ -107,7 +107,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE noti
                     <li class="dropdown">
                       <a href="#">Pengembalian<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="portfolio-2cols.html">Buku Literasi Umum</a></li>
+                        <li><a href="pengembalian_literasi.php">Buku Literasi Umum</a></li>
                         <li><a href="portfolio-3cols.html">Buku Mapel Kelas</a></li>
                         <li><a href="pengembalian_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
@@ -191,7 +191,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE noti
               $denda = 1000;
 
               $tgl_dateline = $row['tanggal_hrs_kembali'];
-              $tgl_kembali = date('Y-m-d');
+              $tgl_kembali = date('d-M-Y');
 
               $lambat = terlambatliterasi($tgl_dateline, $tgl_kembali);
               $denda1 = $lambat*$denda;
