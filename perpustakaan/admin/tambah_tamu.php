@@ -54,7 +54,7 @@ if( isset($_POST["submit"]) ) {
               <input type="text" class="form-control" placeholder="Masukkan nama" name="nama_tamu" id="nama_tamu">
             </div>
             </div>
-            
+             
             <div class="form-row">
             <div class="form-group col-md-6">
               <label for="delegasi">Delegasi : </label> 
@@ -66,6 +66,13 @@ if( isset($_POST["submit"]) ) {
             </div>
             </div>
                
+            <div class="form-row">
+        <div class="form-group col-md-6">
+              <label for="Tanggal_Kedatangan">Tanggal_Kedatangan : </label>
+              <input type="text" class="form-control" placeholder = "<?php  echo Date('l, d-m-Y');?>" name="Tanggal_Kedatangan" readonly>
+        </div>
+      </div>
+
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>

@@ -400,14 +400,14 @@ function tambahtamu($datatamu) {
     global $conn;
 
     // ambil data dari tiap elemen dalam form
-    $id_tamu = htmlspecialchars($datatamu["id_tamu"]);
     $nama_tamu = htmlspecialchars($datatamu["nama_tamu"]);
     $delegasi = htmlspecialchars($datatamu["delegasi"]);
     $kepentingan = htmlspecialchars($datatamu["kepentingan"]);
+    $Tanggal_Kedatangan = Date('l, d-m-Y');
 
     $query = "INSERT INTO tamu 
               VALUES
-              (null, '$nama_tamu', '$delegasi', '$kepentingan')
+              (null, '$nama_tamu', '$delegasi', '$kepentingan', '$Tanggal_Kedatangan')
               ";
 
     mysqli_query($conn, $query);
