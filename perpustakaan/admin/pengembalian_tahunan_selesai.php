@@ -6,7 +6,7 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan "); 
+$peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan a RIGHT JOIN pengembalian_buku_tahunan b ON a.id_pinjam_buku_tahunan = b.id_pinjam_buku_tahunan "); 
 
 ?>
 
@@ -109,7 +109,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan ");
                       <a href="#">Pengembalian<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                         <li><a href="pengembalian_literasi.php">Buku Literasi Umum</a></li>
-                        <li><a href="portfolio-3cols.html">Buku Mapel Kelas</a></li>
+                        <li><a href="pengembalian_mapel.php">Buku Mapel Kelas</a></li>
                         <li><a href="pengembalian_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
@@ -155,9 +155,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan ");
 
     <br>
      <div class="container-fluid">
-      <a href="pengembalian_tahunan_selesai.php" class="btn btn-success">Data Pengembalian</a>
-    </div>
-    <br><br>
+    <a href="#">Tambah Data Pengembalian Tahunan</a>
     <div class="content">
       <div class="box">
 <div class="offside-3 col-lg-7">
@@ -166,13 +164,15 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan ");
     <table class="table table-striped table-bordered table-hover ">
         <tr>
 			      <th>no</th>
-            <th>ID Pinjam Tahunan</th>
-            <th>Kode Judul Buku Tahunan</th>
+            <th>ID Judul Buku Tahunan</th>
             <th>Kode Buku Tahunan</th>
             <th>NIS Peminjam</th>
             <th>Tanggal Peminjaman</th>
-            <th>Tanggal Harus Kembali</th>
+            <th>Tanggal Jatuh Tempo Kembali</th>
             <th>Notifikasi</th>
+            <th>Tanggal Kembali</th>
+            <th>Terlambat</th>
+            <th>Denda</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php
@@ -180,13 +180,15 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan ");
         ?>
         <tr>
 			<td><?=$i; ?></td>
-            <td><?php echo $row["id_pinjam_buku_tahunan"]; ?></td>
             <td><?php echo $row["id_judul_buku_tahunan"];?></td>
             <td><?php echo $row["kode_buku_tahunan"];?></td>
             <td><?php echo $row["nis"];?></td>
             <td><?php echo $row["tanggal_peminjaman"];?></td>
             <td><?php echo $row["tanggal_hrs_kembali"];?></td>
             <td><?php echo $row["notifikasi"];?></td>
+            <td><?php echo $row["tanggal_pengembalian"];?></td>
+            <td><?php echo $row["terlambat"];?></td>
+            <td><?php echo $row["denda"];?></td>
             <td>
             <a href="proses_pengembalian_tahunan.php?id=<?php echo $row ['id_pinjam_buku_tahunan']; ?>" class="btn btn-warning" title="ubah data" >Kembali</a>
 
