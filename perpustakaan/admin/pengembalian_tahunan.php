@@ -6,7 +6,8 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$pengembalian_tahunan = query ("SELECT * FROM pengembalian_buku_tahunan"); 
+$peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan "); 
+
 ?>
 
 <!DOCTYPE html>
@@ -108,8 +109,6 @@ $pengembalian_tahunan = query ("SELECT * FROM pengembalian_buku_tahunan");
                       <a href="#">Pengembalian<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                         <li><a href="pengembalian_literasi.php">Buku Literasi Umum</a></li>
-                        <li><a href="pengembalian_mapel.php">Buku Mapel Kelas</a></li>
-                        <li><a href="portfolio-2cols.html">Buku Literasi Umum</a></li>
                         <li><a href="portfolio-3cols.html">Buku Mapel Kelas</a></li>
                         <li><a href="pengembalian_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
@@ -141,7 +140,6 @@ $pengembalian_tahunan = query ("SELECT * FROM pengembalian_buku_tahunan");
           <div class="span4">
             <div class="inner-heading">
               <h2>Pengembalian Buku Tahunan Siswa</h2>
-              <h2>Peminjaman Buku Tahunan Siswa</h2>
             </div>
           </div>
           <div class="span8">
@@ -149,8 +147,6 @@ $pengembalian_tahunan = query ("SELECT * FROM pengembalian_buku_tahunan");
               <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
               <li><a href="#">Pengembalian</a> <i class="icon-angle-right"></i></li>
               <li class="active">Buku Literasi Umum</li>
-              <li><a href="#">Peminjaman</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Buku Tahunan Siswa</li>
             </ul>
           </div>
         </div>
@@ -159,10 +155,7 @@ $pengembalian_tahunan = query ("SELECT * FROM pengembalian_buku_tahunan");
 
     <br>
      <div class="container-fluid">
-    <a href="tambah_pinjam_literasi.php">Tambah Data Pengembalian Tahunan</a>
-    <a href="tambah_pinjam_tahunan.php">Tambah Data Peminjaman Tahunan</a>
-    <br><br>
-
+    <a href="#">Tambah Data Pengembalian Tahunan</a>
     <div class="content">
       <div class="box">
 <div class="offside-3 col-lg-7">
@@ -170,8 +163,7 @@ $pengembalian_tahunan = query ("SELECT * FROM pengembalian_buku_tahunan");
       <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover ">
         <tr>
-			<td><?=$i; ?></td>
-            <th>ID Pinjam Tahunan</th>
+			      <th>no</th>
             <th>Kode Judul Buku Tahunan</th>
             <th>Kode Buku Tahunan</th>
             <th>NIS Peminjam</th>
@@ -319,7 +311,10 @@ $pengembalian_tahunan = query ("SELECT * FROM pengembalian_buku_tahunan");
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
+<<<<<<< HEAD
+=======
   <a href="mapel.php" class="btn btn-success">kembali</a>
+>>>>>>> 94b02c2fa836ea7f00de35e6e7b80410a0ce4f5a
 
 </body>
 
