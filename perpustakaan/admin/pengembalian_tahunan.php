@@ -6,11 +6,7 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-<<<<<<< HEAD
-$pengembalian_tahunan = query ("SELECT * FROM pengembalian_buku_tahunan"); 
-=======
-$peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifikasi='masa pinjam'"); 
->>>>>>> 72a87b9a76ae1bd4bf0f022278f41f0c5451e56a
+$peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan "); 
 ?>
 
 <!DOCTYPE html>
@@ -111,13 +107,8 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
                     <li class="dropdown active">
                       <a href="#">Pengembalian<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-<<<<<<< HEAD
                         <li><a href="pengembalian_literasi.php">Buku Literasi Umum</a></li>
-                        <li><a href="pengembalian_mapel.php">Buku Mapel Kelas</a></li>
-=======
-                        <li><a href="portfolio-2cols.html">Buku Literasi Umum</a></li>
                         <li><a href="portfolio-3cols.html">Buku Mapel Kelas</a></li>
->>>>>>> 72a87b9a76ae1bd4bf0f022278f41f0c5451e56a
                         <li><a href="pengembalian_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
@@ -147,23 +138,14 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-<<<<<<< HEAD
               <h2>Pengembalian Buku Tahunan Siswa</h2>
-=======
-              <h2>Peminjaman Buku Tahunan Siswa</h2>
->>>>>>> 72a87b9a76ae1bd4bf0f022278f41f0c5451e56a
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
-<<<<<<< HEAD
               <li><a href="#">Pengembalian</a> <i class="icon-angle-right"></i></li>
               <li class="active">Buku Literasi Umum</li>
-=======
-              <li><a href="#">Peminjaman</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Buku Tahunan Siswa</li>
->>>>>>> 72a87b9a76ae1bd4bf0f022278f41f0c5451e56a
             </ul>
           </div>
         </div>
@@ -172,11 +154,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
 
     <br>
      <div class="container-fluid">
-<<<<<<< HEAD
-    <a href="tambah_pinjam_literasi.php">Tambah Data Pengembalian Tahunan</a>
-=======
-    <a href="tambah_pinjam_tahunan.php">Tambah Data Peminjaman Tahunan</a>
->>>>>>> 72a87b9a76ae1bd4bf0f022278f41f0c5451e56a
+    <a href="#">Tambah Data Pengembalian Tahunan</a>
     <br><br>
 
     <div class="content">
@@ -186,26 +164,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
       <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover ">
         <tr>
-			<th>no</th>
-<<<<<<< HEAD
-            <th>ID Kembali Tahunan</th>
-            <th>ID Pinjam Buku Tahunan</th>
-            <th>Tanggal Pengembalian</th>
-            <th>Terlambat</th>
-            <th>Denda</th>
-        </tr>
-		<?php $i = 1; ?> 
-        <?php
-            foreach( $pengembalian_tahunan as $row) :
-        ?>
-        <tr>
-			<td><?=$i; ?></td>
-            <td><?php echo $row["id_pengembalian_tahunan"]; ?></td>
-            <td><?php echo $row["id_pinjam_buku_tahunan"];?></td>
-            <td><?php echo $row["tanggal_pengembalian"];?></td>
-            <td><?php echo $row["terlambat"] ?></td>
-            <td><?php echo $row["denda"] ?></td>
-=======
+			      <th>no</th>
             <th>ID Pinjam Tahunan</th>
             <th>Kode Judul Buku Tahunan</th>
             <th>Kode Buku Tahunan</th>
@@ -253,7 +212,6 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
             <a href="proses_pengembalian_tahunan.php?id=<?php echo $row ['id_pinjam_buku_tahunan']; ?>" class="btn btn-warning" title="ubah data" >Kembali</a>
 
             </td>
->>>>>>> 72a87b9a76ae1bd4bf0f022278f41f0c5451e56a
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
@@ -355,10 +313,6 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
-<<<<<<< HEAD
-  <a href="mapel.php" class="btn btn-success">kembali</a>
-=======
->>>>>>> 72a87b9a76ae1bd4bf0f022278f41f0c5451e56a
 
 </body>
 
