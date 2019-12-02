@@ -7,6 +7,7 @@ if( !isset($_SESSION["login"])){
   include 'functions.php';
   $id = $_GET["id"];
   $data = query("SELECT * FROM peminjaman_buku_tahunan WHERE id_pinjam_buku_tahunan = '$id'")[0];
+  $tgl_kembali = Date('l, Y-m-d');
    
 
 ?>
@@ -44,17 +45,17 @@ if( !isset($_SESSION["login"])){
       <div class="form-row">
         <div class="form-group col-md-6">
               <label for="tanggal_peminjaman"> Tanggal Peminjaman : </label>
-              <input type="text" class="form-control" placeholder = "<?php  echo Date('l, Y-m-d');?>" name="tanggal_peminjaman" id="tanggal_peminjaman" readonly>
+              <input type="text" class="form-control"  value ="<?php echo $data['tanggal_peminjaman'] ?>"name="tanggal_peminjaman" id="tanggal_peminjaman" readonly>
         </div>
         <div class="form-group col-md-6">
               <label for="tanggal_hrs_kembali"> Tanggal Jatuh Tempo : </label>
-              <input type="text" class="form-control" placeholder="<?php echo Date('l, Y-m-d', time()+31536000); ?>" name="tanggal_hrs_kembali" id="tanggal_hrs_kembali" readonly>
+              <input type="text" class="form-control" value ="<?php echo $data['tanggal_hrs_kembali'] ?>" name="tanggal_hrs_kembali" id="tanggal_hrs_kembali" readonly>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
               <label for="tanggal_kembali"> Tanggal Pengembalian : </label>
-              <input type="date" class="form-control" placeholder = "Tanggal Pengembalian" name="tanggal_kembali" id="tanggal_kembali" >
+              <input type="text" class="form-control" value="<?php echo $tgl_kembali ?>" name="tanggal_kembali" id="tanggal_kembali" >
         </div>
       </div>
       <div class="form-row">
