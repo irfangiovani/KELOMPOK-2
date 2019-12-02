@@ -115,8 +115,8 @@ $tamupen = query ("SELECT * FROM tamu ");
                     <li class="dropdown">
                       <a href="#">Pengunjung<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="blog-left-sidebar.html">Siswa</a></li>
-                        <li><a href="blog-right-sidebar.html">Tamu</a></li>
+                        <li><a href="siswa.php">Siswa</a></li>
+                        <li><a href="tamupen.php">Tamu</a></li>
                       </ul>
                     </li>
                     <li>
@@ -168,7 +168,7 @@ $tamupen = query ("SELECT * FROM tamu ");
             <th>ID Tamu</th>
             <th>Nama Tamu</th>
             <th>Delegasi</th>
-            <th>Kepentingan</th>
+             <th>Kepentingan</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php

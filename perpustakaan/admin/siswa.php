@@ -6,7 +6,7 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifikasi='masa pinjam'"); 
+$siswa = query ("SELECT * FROM pengunjung_siswa"); 
 ?>
 
 <!DOCTYPE html>
@@ -138,14 +138,14 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Peminjaman Buku Tahunan Siswa</h2>
+              <h2>Data Pengunjung siswa</h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
-              <li><a href="#">Peminjaman</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Buku Tahunan Siswa</li>
+              <li><a href="#">Pengunjung</a> <i class="icon-angle-right"></i></li>
+              <li class="active">Data Siswa</li>
             </ul>
           </div>
         </div>
@@ -154,7 +154,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
 
     <br>
      <div class="container-fluid">
-    <a href="tambah_pinjam_tahunan.php">Tambah Data Peminjaman Tahunan</a>
+    <a href="tamupen.php">Tambah Data Pengunjung Siswa</a>
     <br><br>
 
     <div class="content">
@@ -164,50 +164,23 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
       <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover ">
         <tr>
-			<th>no</th>
-            <th>ID Pinjam Tahunan</th>
-            <th>Kode Judul Buku Tahunan</th>
-            <th>Kode Buku Tahunan</th>
-            <th>NIS Peminjam</th>
-            <th>Tanggal Peminjaman</th>
-            <th>Tanggal Harus Kembali</th>
-            <th>Notifikasi</th>
-            <th>Terlambat</th>
+			      <th>no</th>
+            <th>ID Pengunjung</th>
+            <th>Nama Siswa</th>
+            <th>Kode Kelas</th>
+             <th>Keperluan</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php
-            foreach( $peminjaman_tahunan as $row) :
+            foreach( $siswa as $row) :
         ?>
         <tr>
-			<td><?=$i; ?></td>
-            <td><?php echo $row["id_pinjam_buku_tahunan"]; ?></td>
-            <td><?php echo $row["id_judul_buku_tahunan"];?></td>
-            <td><?php echo $row["kode_buku_tahunan"];?></td>
-            <td><?php echo $row["nis"];?></td>
-            <td><?php echo $row["tanggal_peminjaman"];?></td>
-            <td><?php echo $row["tanggal_hrs_kembali"];?></td>
-            <td><?php echo $row["notifikasi"];?></td>
-            <td>
-              <?php 
-              $denda = 1000;
-
-              $tgl_dateline = $row['tanggal_hrs_kembali'];
-              $tgl_kembali = date('Y-m-d');
-
-              $lambat = terlambattahunan($tgl_dateline, $tgl_kembali);
-              $denda1 = $lambat*$denda;
-
-              if ($lambat>0) {
-                echo "
-                
-                        <font color='red'>$lambat Hari (Rp $denda1)</font>
-
-                      ";
-              } else {
-                echo $lambat ."Hari";
-              }
-              ?>
-            </td>
+			      <td><?=$i; ?></td>
+            <td><?php echo $row["id_pengunjung"]; ?></td>
+            <td><?php echo $row["nama_siswa"];?></td>
+            <td><?php echo $row["kode_kelas"];?></td>
+            <td><?php echo $row["keperluan"];?></td>
+            
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
@@ -309,6 +282,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
+  <a href="literasi.php" class="btn btn-success">kembali</a>
 
 </body>
 
