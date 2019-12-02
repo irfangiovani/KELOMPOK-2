@@ -6,7 +6,7 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_tahunan = query ("SELECT a.id_pinjam_buku_tahunan, a.kode_buku_tahunan, a.tanggal_peminjaman, a.tanggal_hrs_kembali, a.notifikasi, b.judul_buku_tahunan as id_judul_buku_tahunan, c.nama_siswa as nis
+$peminjaman_tahunan = query ("SELECT a.id_pinjam_buku_tahunan, a.kode_buku_tahunan, a.tanggal_peminjaman, a.tanggal_hrs_kembali, a.notifikasi, b.judul_buku_tahunan as id_judul_buku_tahunan,  c.nama_siswa as nis
 FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku_tahunan = a.id_judul_buku_tahunan LEFT JOIN member_perpus c on c.nis = a.nis ORDER BY a.id_pinjam_buku_tahunan ASC"); 
 
 ?>
