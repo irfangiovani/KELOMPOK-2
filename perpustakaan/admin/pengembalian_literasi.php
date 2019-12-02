@@ -4,25 +4,17 @@ if( !isset($_SESSION["login"])){
     header("location: loginadmin.php");
     exit;
 }
+
 require 'functions.php';
-$buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
-
-
-$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak 
-FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC"); 
-
-//tombol cari ditekan
-if( isset($_POST["cariliterasi"])) {
-  $buku_literasi_umum = cariliterasi($_POST["keywordliterasi"]);
-}
-
+$pengembalian_literasi = query ("SELECT * FROM pengembalian_buku_literasi"); 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title>Perpustakaan SMKN 3 Bondowoso</title>
+  <title>Remember - Multipurpose bootstrap site template</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -42,7 +34,7 @@ if( isset($_POST["cariliterasi"])) {
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
   <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
-  <link rel="shortcut icon" href="ico/logosmk3.jpg" />
+  <link rel="shortcut icon" href="ico/favicon.png" />
 
   <!-- =======================================================
     Theme Name: Remember
@@ -75,7 +67,6 @@ if( isset($_POST["cariliterasi"])) {
                 <li><a href="#" data-placement="bottom" title="Linkedin"><i class="icon-circled icon-linkedin icon-bglight"></i></a></li>
                 <li><a href="#" data-placement="bottom" title="Pinterest"><i class="icon-circled icon-pinterest  icon-bglight"></i></a></li>
                 <li><a href="#" data-placement="bottom" title="Google +"><i class="icon-circled icon-google-plus icon-bglight"></i></a></li>
-                <li><a href="logout.php" class="btn btn-warning btn-rounded">LOGOUT</a></li>
               </ul>
 
             </div>
@@ -86,7 +77,7 @@ if( isset($_POST["cariliterasi"])) {
 
 
         <div class="row nomargin">
-          <div class="span3">
+          <div class="span4">
             <div class="logo">
               <h1><a href="index.html"><i class="icon-tint"></i> K-Negabon Library</a></h1>
             </div>
@@ -97,7 +88,7 @@ if( isset($_POST["cariliterasi"])) {
                 <nav>
                   <ul class="nav topnav">
                     <li><a href="index.php">Beranda</a></li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                       <a href="#">Koleksi Buku<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                         <li><a href="literasi.php">Buku Literasi Umum</a></li>
@@ -113,11 +104,11 @@ if( isset($_POST["cariliterasi"])) {
                         <li><a href="peminjaman_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown active">
                       <a href="#">Pengembalian<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="portfolio-2cols.html">Buku Literasi Umum</a></li>
-                        <li><a href="portfolio-3cols.html">Buku Mapel Kelas</a></li>
+                        <li><a href="pengembalian_literasi.php">Buku Literasi Umum</a></li>
+                        <li><a href="pengembalian_mapel.php">Buku Mapel Kelas</a></li>
                         <li><a href="pengembalian_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
@@ -147,75 +138,87 @@ if( isset($_POST["cariliterasi"])) {
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Buku Literasi Umum</h2>
+              <h2>Pengembalian Buku Literasi Umum</h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
-              <li><a href="#">Koleksi Buku</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Literasi Umum</li>
+              <li><a href="#">Pengembalian</a> <i class="icon-angle-right"></i></li>
+              <li class="active">Buku Literasi Umum</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
-    <a href="index.php" class="btn btn-warning pull-right"><i class="icon-arrow-left"></i> kembali</a>
 
     <br>
-    <div class="container-fluid">
-    <a href="tambah_literasi.php">Tambah Buku Literasi Umum</a>
-
+     <div class="container-fluid">
+    <a href="tambah_pinjam_literasi.php">Tambah Data Pengembalian Literasi</a>
     <br><br>
-  <form action="" method="post" class="form-inline">
-    <input class="form-control mr-sm-2" type="search" name="keywordliterasi" autofocus placeholder="Search" aria-label="Search" autocomplete="off">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="cariliterasi">Cari!</button>
-  </form>
 
-  <div class="offside-3 col-lg-7">
+    <div class="content">
+      <div class="box">
+<div class="offside-3 col-lg-7">
     <form action="" method="post">
       <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover ">
-
         <tr>
-		      	<th>no</th>
-            <th>Kode Buku</th>
-            <th>Judul Buku</th>
-            <th>Penerbit</th>
-            <th>Tahun Terbit</th>
-            <th>No Rak</th>
-            <th>Kategori</th>
-            <th>Gambar Sampul</th>
-            <th>Deskripsi Buku</th>
-            <th>aksi</th>
+			<th>no</th>
+            <th>ID Kembali Literasi</th>
+            <th>ID Pinjam Buku Literasi</th>
+            <th>Tanggal Pengembalian</th>
+            <th>Terlambat</th>
+            <th>Denda</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php
-            foreach( $buku_literasi_umum as $row) :
+            foreach( $pengembalian_literasi as $row) :
         ?>
         <tr>
-			      <td><?=$i; ?></td>
-            <td><?php echo $row["kode_buku_literasi"]; ?></td>
-            <td><?php echo $row["judul_buku_literasi"];?></td>
-            <td><?php echo $row["id_penerbit"];?></td>
-            <td><?php echo $row["tahun_terbit"];?></td>
-            <td><?php echo $row["id_rak"];?></td>
-            <td><?php echo $row["id_kategori"];?></td>
-            <td><img src="img/literasi/<?php echo $row["gambar_sampul"]; ?>" width="50"></td>
-            <td><?php echo $row["deskripsi_buku"];?></td>
-            <td>
-              <a href="ubah_literasi.php?id=<?php echo $row ['kode_buku_literasi']; ?>" class="btn btn-warning" title="ubah data" >ubah</a>
+			<td><?=$i; ?></td>
+            <td><?php echo $row["id_kembali_literasi"]; ?></td>
+            <td><?php echo $row["id_pinjam_buku_literasi"];?></td>
+            <td><?php echo $row["tanggal_pengembalian"];?></td>
+            <td><?php 
+              $denda = 1000;
 
-              <a href="hapus_literasi.php?id=<?= $row["kode_buku_literasi"]; ?>
-              " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger" title="hapus data">hapus</a>
-            </td>
+              $tgl_dateline = $row['tanggal_pengembalian'];
+              $tgl_kembali = date('Y-m-d');
+
+              $lambat = terlambatliterasi($tgl_dateline, $tgl_kembali);
+              $denda1 = $lambat*$denda;
+
+              if ($lambat>0) {
+                echo "
+                
+                        <font color='red'>$lambat Hari</font>
+
+                      ";
+              } else {
+                echo $lambat ."Hari";
+              }
+              ?></td>
+            <td><?php 
+            if ($lambat>0) {
+                echo "
+                
+                        <font color='red'>(Rp $denda1)</font>
+
+                      ";
+              } else {
+                echo $lambat ."Hari";
+              }
+            ?></td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
     </table>
-    </div>
+  </div>
     </form>
   </div>
+</div>
+</div>
   </div>
 
 
@@ -260,7 +263,6 @@ if( isset($_POST["cariliterasi"])) {
                 <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
               </div>
               <div class="clear"></div>
-  
             </div>
           </div>
         </div>
@@ -296,7 +298,6 @@ if( isset($_POST["cariliterasi"])) {
   <!-- javascript
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="js/dist/weetalert2.all.min.js"></script>
   <script src="js/jquery.js"></script>
   <script src="js/jquery.easing.1.3.js"></script>
   <script src="js/bootstrap.js"></script>
@@ -310,7 +311,7 @@ if( isset($_POST["cariliterasi"])) {
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
-
+  <a href="literasi.php" class="btn btn-success">kembali</a>
 
 </body>
 

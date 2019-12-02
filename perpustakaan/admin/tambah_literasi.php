@@ -8,9 +8,9 @@ require 'functions.php';
 
 //cek tombol submit ditekan atau tidak
 if( isset($_POST["submit"]) ) {
-
+ 
     // cek keberhasilan tambah data
-    if( tambah($_POST) > 0 ) {
+    if( tambahliterasi($_POST) > 0 ) {
       echo "
             <script>
               alert('data berhasil ditambahkan!');
@@ -29,7 +29,7 @@ if( isset($_POST["submit"]) ) {
 }
 ?>
 
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +43,7 @@ if( isset($_POST["submit"]) ) {
     <h2 class="alert alert-info text-center mt-3">Tambah Buku Literasi Umum</h2>
     <div class="pull-right">
     <form action="" method="post" enctype="multipart/form-data">
-    
+     
            <div class="form-row">
             <div class="form-group col-md-6">
               <label for="kode_buku_literasi">Kode Buku Literasi : </label>

@@ -5,15 +5,15 @@ if( !isset($_SESSION["login"])){
     exit;
 }
 
-require 'functionmap.php';
+require 'functions.php';
 $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
 
 
 $buku_mapel_kelas =query ("SELECT a.id_judul_buku_mapel, a.judul_buku_mapel, a.tahun_terbit, a.untuk_kelas, a.gambar_sampul, a.stok, c.nama_penerbit as id_penerbit FROM buku_mapel_kelas a LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit ORDER BY a.id_judul_buku_mapel ASC "); 
 
 // tombol cari ditekan
-if( isset($_POST["cari"]) ) {
-  $buku_mapel_kelas = cari($_POST["keyword"]);
+if( isset($_POST["carimapel"]) ) {
+  $buku_mapel_kelas = carimapel($_POST["keywordmapel"]);
 }
 
 ?>
@@ -119,7 +119,7 @@ if( isset($_POST["cari"]) ) {
                       <ul class="dropdown-menu">
                         <li><a href="portfolio-2cols.html">Buku Literasi Umum</a></li>
                         <li><a href="portfolio-3cols.html">Buku Mapel Kelas</a></li>
-                        <li><a href="portfolio-4cols.html">Buku Tahunan Siswa</a></li>
+                        <li><a href="pengembalian_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
@@ -168,8 +168,8 @@ if( isset($_POST["cari"]) ) {
     <a href="tambah_mapel.php">Tambah Buku Mapel Kelas</a>
     <br><br>
     <form action="" method="post" class="form-inline">
-    <input class="form-control mr-sm-2" type="search" name="keyword" autofocus placeholder="Search" aria-label="Search" autocomplete="off">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="cari">Cari!</button>
+    <input class="form-control mr-sm-2" type="search" name="keywordmapel" autofocus placeholder="Search" aria-label="Search" autocomplete="off">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="carimapel">Cari!</button>
   </form>
 <div class="content">
       <div class="box">

@@ -4,13 +4,13 @@ if( !isset($_SESSION["login"])){
     header("location: loginadmin.php");
     exit;
 }
-require 'functionmap.php';
+require 'functions.php';
 
 //cek tombol submit ditekan atau tidak
 if( isset($_POST["submit"])){
     
     // cek keberhasilan tambah data
-    if( tambahmap($_POST) > 0 ) {
+    if( tambahmapel($_POST) > 0 ) {
       echo "
             <script>
               alert('data berhasil ditambahkan!');
@@ -26,7 +26,7 @@ if( isset($_POST["submit"])){
       ";
     }
 
-
+ 
 }
 ?>
 
@@ -37,7 +37,7 @@ if( isset($_POST["submit"])){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
-    <title>Tambah Buku Mapel</title>
+    <title>Tambah Peminjaman Buku Mapel</title>
 </head>
 <body>
     <div class="container">
