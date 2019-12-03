@@ -21,8 +21,7 @@ if( isset($_POST["submit"]) ) {
       echo "
             <script>
               alert('data gagal ditambahkan!');
-              document.location.href = 'siswa.php';
-            </script>
+              
       ";
     }
 
@@ -58,7 +57,7 @@ if( isset($_POST["submit"]) ) {
             <div class="form-row">
             <div class="form-group col-md-6">
             <label for="id_kode_kelas">Kode Kelas : </label> 
-                <select class="form-control" name="id_kode_kelas" id="id_kode_kelas" required >
+                <select class="form-control" name="kode_kelas" id="kode_kelas" required >
                   <option value="">- Pilih Kode Kelas -</option>
                   <?php
                     $sql_kode = mysqli_query($conn, "SELECT * FROM peminjaman_buku_mapel") or die (mysqli_query($conn));

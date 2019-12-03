@@ -3,7 +3,7 @@ session_start();
 if( !isset($_SESSION["login"])){
     header("location: loginadmin.php");
     exit;
-}
+}  
 require 'functions.php';
 if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
@@ -50,7 +50,7 @@ if( isset($_POST["submit"])){
 echo Date('l, Y-m-d');
 
 ?>
-
+ 
 
 <!DOCTYPE html>
 <html lang="en">
