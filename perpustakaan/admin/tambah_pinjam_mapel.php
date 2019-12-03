@@ -95,16 +95,8 @@ echo Date('l, Y-m-d');
            
             <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="nama_peminjam">Nama Peminjam : </label> <a href="nama_peminjam.php" class="btn btn-warning" title="tambah_nama" >Tambah Nama</a>
-              <select class="form-control" name="nama_peminjam" id="nama_peminjam" required >
-                    <option value="">- Nama Peminjam -</option>
-                    <?php
-                    $sql_member = mysqli_query($conn, "SELECT * FROM peminjaman_buku_mapel") or die (mysqli_query($conn));
-                    while ($data_nama = mysqli_fetch_array($sql_member)){
-                      echo '<option value="'.$data_nama['nama_peminjam'].'">' .$data_nama['nama_peminjam']. '</option>'; 
-                    }
-                   ?>
-                </select>
+              <label for="nama_peminjam">Nama Peminjam : </label> 
+              <input type="text" class="form-control" placeholder="Masukkan Nama Peminjam" name="nama_peminjam" id="nama_peminjam">
             </div>   
             <div class="form-group col-md-6">
             <label for="waktu_peminjaman"> Waktu Peminjaman : </label>
