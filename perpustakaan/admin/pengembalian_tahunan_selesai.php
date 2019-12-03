@@ -155,7 +155,6 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan a RIGHT JOIN
 
     <br>
      <div class="container-fluid">
-    <a href="#">Tambah Data Pengembalian Tahunan</a>
     <div class="content">
       <div class="box">
 <div class="offside-3 col-lg-7">

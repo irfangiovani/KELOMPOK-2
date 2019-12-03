@@ -6,7 +6,7 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan "); 
+$peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifikasi = 'masa pinjam'"); 
 
 ?>
 

@@ -10,8 +10,8 @@ if( isset($_POST["submit"])){
     $kode_judul = $_POST["id_judul_tahunan"];
     $kode_buku = $_POST["kode_buku_tahunan"];
     $nama_peminjam = $_POST["id_nis"];
-    $tgl_pinjam = Date('l, Y-m-d');
-    $tgl_kembali =Date('l, Y-m-d', time()+31536000);
+    $tgl_pinjam = Date('Y-m-d');
+    $tgl_kembali =Date('Y-m-d', time()+31536000);
     
     //cek stok buku
     $stok_buku = cek_stok($conn, $kode_judul);
@@ -100,13 +100,13 @@ echo Date('l, Y-m-d');
       <div class="form-row">
         <div class="form-group col-md-6">
               <label for="tanggal_peminjaman"> Tanggal Peminjaman : </label>
-              <input type="text" class="form-control" placeholder = "<?php  echo Date('l, Y-m-d');?>" name="tanggal_peminjaman" id="tanggal_peminjaman" readonly>
+              <input type="text" class="form-control" placeholder = "<?php  echo Date('Y-m-d');?>" name="tanggal_peminjaman" id="tanggal_peminjaman" readonly>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
               <label for="tanggal_hrs_kembali"> Tanggal Harus Kembali : </label>
-              <input type="text" class="form-control" placeholder="<?php echo Date('l, Y-m-d', time()+31536000); ?>" name="tanggal_hrs_kembali" id="tanggal_hrs_kembali" readonly>
+              <input type="text" class="form-control" placeholder="<?php echo Date('Y-m-d', time()+31536000); ?>" name="tanggal_hrs_kembali" id="tanggal_hrs_kembali" readonly>
         </div>
       </div>
       <div class="text-center">
