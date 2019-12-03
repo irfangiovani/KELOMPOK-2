@@ -47,7 +47,7 @@ echo Date('l, Y-m-d');
 </head>
 <body>
     <div class="container">
-    <h2 class="alert alert-info text-center mt-3">Tambah Data Peminjaman Buku Mapel</h2>
+    <h2 class="alert alert-info text-center mt-3">Tambah Data Peminjaman Buku Literasi Umum</h2>
     <div class="pull-right">
     <form action="" method="post" enctype="multipart/form-data">
      
