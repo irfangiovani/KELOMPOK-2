@@ -134,6 +134,24 @@ function uploadliterasi() {
 
 }
 
+function cek_stok_mapel($conn,$kode_judul)
+{
+    $q = "SELECT stok FROM buku_mapel_kelas WHERE id_judul_buku_mapel = '$kode_judul'";
+    $hasil = mysqli_query($conn, $q);
+    $hasil = mysqli_fetch_assoc($hasil);
+    $stok = $hasil['stok'];
+
+    return $stok;
+}
+
+function kurangi_stok_mapel($conn, $kode_judul)
+{
+    $banyak_buku = $_POST["banyak_buku"];
+    $q = "UPDATE buku_mapel_kelas SET stok = stok - $banyak_buku WHERE id_judul_buku_mapel = '$kode_judul'";
+    mysqli_query($conn, $q);
+}
+
+
 
 function cek_stok($conn,$id_judul_buku_tahunan )
 {
