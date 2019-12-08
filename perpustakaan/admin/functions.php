@@ -22,6 +22,14 @@ function cariliterasi($keywordliterasi){
     return query($query);
 }
 
+//cari peminjaman literasi berdasarkan tangggal
+function caripeminjamanliterasi($keywordliterasi){
+    $query = "SELECT * FROM peminjaman_buku_literasi
+            WHERE
+            tanggal_peminjaman LIKE '%$keywordliterasi%' 
+            ";
+    return query($query);
+}
 //halaman register.php
 function registrasiliterasi($dataliterasi) {
     global $conn;

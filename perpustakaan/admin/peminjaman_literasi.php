@@ -7,6 +7,10 @@ if( !isset($_SESSION["login"])){
 
 require 'functions.php';
 $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE notifikasi='masa pinjam'"); 
+
+if( isset($_POST["cariliterasi"])) {
+  $peminjaman_literasi = caripeminjamanliterasi($_POST["keywordliterasi"]);
+}
 ?>
 
 <!DOCTYPE html>
@@ -156,6 +160,12 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE noti
      <div class="container-fluid">
     <a href="tambah_pinjam_literasi.php">Tambah Data Peminjaman Literasi</a>
     <br><br>
+    <form action="" method="post" class="form-inline">
+    <input class="form-control mr-sm-2" type="search" name="keywordliterasi" autofocus placeholder="Search" aria-label="Search" autocomplete="off">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="cariliterasi">Cari!</button>
+  </form>
+    
+
 
     <div class="content">
       <div class="box">
@@ -234,7 +244,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE noti
             <div class="widget">
               <h5 class="widgetheading">From flickr</h5>
               <div class="flickr_badge">
-                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
+                <script type="text/javascript" src="js/admin/gambarfooter.js"></script>
               </div>
               <div class="clear"></div>
             </div>
@@ -285,7 +295,6 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE noti
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
-  <a href="literasi.php" class="btn btn-success">kembali</a>
 
 </body>
 
