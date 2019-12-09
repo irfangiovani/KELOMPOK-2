@@ -192,11 +192,11 @@ $pustakawan = query("SELECT * FROM pustakawan");
                     <i class="ico icon-dropbox icon-5x"></i>
                   </div>
                   <div class="text">
-                    <h4><strong>Out of the box</strong></h4>
+                    <h4><strong>Azizah Wina S</strong></h4>
                     <p>
                       Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am anumat lib persum sea facilisis.
                     </p>
-                    <a href="#">Learn More</a>
+                    <a href="biopustakayudi.php">Learn More</a>
                   </div>
                 </div>
               </div>
@@ -208,7 +208,7 @@ $pustakawan = query("SELECT * FROM pustakawan");
                     <i class="ico icon-bitbucket icon-5x"></i>
                   </div>
                   <div class="text">
-                    <h4><strong>New taste</strong></h4>
+                    <h4><strong>Yudi Irianto</strong></h4>
                     <p>
                       Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
                     </p>
@@ -223,7 +223,7 @@ $pustakawan = query("SELECT * FROM pustakawan");
                     <i class="ico icon-rocket icon-5x"></i>
                   </div>
                   <div class="text">
-                    <h4><strong>Faster load</strong></h4>
+                    <h4><strong>Irfan Geovani</strong></h4>
                     <p>
                       Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
                     </p>
@@ -238,7 +238,7 @@ $pustakawan = query("SELECT * FROM pustakawan");
                     <i class="ico icon-cut icon-5x"></i>
                   </div>
                   <div class="text">
-                    <h4><strong>Cut your times</strong></h4>
+                    <h4><strong>Ilham Robby S</strong></h4>
                     <p>
                       Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
                     </p>
@@ -258,38 +258,41 @@ $pustakawan = query("SELECT * FROM pustakawan");
           <div class="span4">
             <div class="widget">
               <div class="footer_logo">
-                <h3><a href="index.html"><i class="icon-tint"></i> Remember</a></h3>
+                <h3><a href="index.html"><i class="icon-tint"></i> School Address</a></h3>
               </div>
               <address>
-							  <strong>Remember company Inc.</strong><br>
-  							Somestreet KW 101, Park Village W.01<br>
-  							Jakarta 13426 Indonesia
+							  <strong>K-Negabon Library</strong><br>
+  							Jl. Santawi No.96 A, Tamansari Indah, Kec. Bondowoso<br>
+  							Kabupaten Bondowoso, Jawa Timur 68216 Indonesia.
   						</address>
               <p>
-                <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-                <i class="icon-envelope-alt"></i> email@domainname.com
+                <i class="icon-phone"></i> (123) 454-441 <br>
+                <i class="icon-envelope-alt"></i> anitadwisalasari@gmail.com
               </p>
             </div>
           </div>
           <div class="span4">
             <div class="widget">
-              <h5 class="widgetheading">Browse pages</h5>
+              <h5 class="widgetheading">Developer</h5>
               <ul class="link-list">
-                <li><a href="#">Our company</a></li>
-                <li><a href="#">Terms and conditions</a></li>
-                <li><a href="#">Privacy policy</a></li>
-                <li><a href="#">Press release</a></li>
-                <li><a href="#">What we have done</a></li>
-                <li><a href="#">Our support forum</a></li>
+                <li><a href="#">Yudi Irianto</a></li>
+                <li><a href="#">Irfan Geovani</a></li>
+                <li><a href="#">Ilham Robby Sanjaya</a></li>
+                <li><a href="#">Azizah Wina Sriwinarsih</a></li>
+                <li><a href="#">Muhammad Ansori</a></li>
+
               </ul>
 
             </div>
           </div>
           <div class="span4">
             <div class="widget">
-              <h5 class="widgetheading">From flickr</h5>
-              <div class="flickr_badge">
-                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
+              <h5 class="widgetheading">Developer Identity</h5>
+              <strong>Data Developer</strong><br>
+              <i class="icon-phone"></i> +62 853-3075-0875 <br>
+              <i class="icon-envelope-alt"></i> teamprogresslibrarybondowoso@gmail.com
+              <div class="gambar">
+              <img class="gambar" src="img/.jpg">
               </div>
               <div class="clear"></div>
             </div>
