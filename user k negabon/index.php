@@ -164,10 +164,7 @@ $result = mysqli_query($conn, "SELECT * FROM buku_literasi_umum");
             <a class="nav-link" href="about.html">Daftar Member</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="property-grid.html">Buku</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="blog-grid.html">Blog</a>
+            <a class="nav-link" href="property-grid.html">Buku</a> 
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -182,7 +179,7 @@ $result = mysqli_query($conn, "SELECT * FROM buku_literasi_umum");
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Bantuan</a>
+            <a class="nav-link" href="bantuanpen.php">Bantuan</a>
           </li>
         </ul>
       </div>

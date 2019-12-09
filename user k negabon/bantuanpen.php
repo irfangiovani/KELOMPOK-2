@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>alur_pendaftaran</title>
+    <title>alurpendaftar</title>
 
     <style>
         .gambar{
@@ -14,6 +14,6 @@
     </style>
 </head>
 <body>
-    <img class="gambar" src="img/alur_pendaftaran.jpg">
+    <img class="gambar" src="img/alurpendaftar.jpg">
 </body>
 </html>
