@@ -163,20 +163,11 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
           <li class="nav-item">
             <a class="nav-link" href="property-grid.html">Buku</a> 
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Pustakawan
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="property-single.html">Buku Mapel</a>
-              <a class="dropdown-item" href="blog-single.html">Buku Iterasi</a>
-              <a class="dropdown-item" href="agents-grid.html">Buku Tahunan</a>
-              <a class="dropdown-item" href="agent-single.html">Buku Lainnya</a>
-            </div>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="bantuanpen.php">Bantuan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../admin/loginadmin.php">Login</a>
           </li>
         </ul>
       </div>
@@ -202,10 +193,10 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
                     <p class="intro-title-top">Selamat Datang, User
                       <br> NIS</p>
                     <h1 class="intro-title mb-4">
-                      <span class="color-b">204 </span> Mount
-                      <br> Olive Road Two</h1>
+                      <span class="color-b"> </span> Mount
+                      <br></h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">rent | $ 12.000</span></a>
+                      <a href="#"><span class="price-a"></span></a>
                     </p>
                   </div>
                 </div>
@@ -511,9 +502,9 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
                 </p>
                 <div class="info-agents color-a">
                   <p>
-                    <strong>Phone: </strong> +54 356 945234</p>
+                    <strong>Phone: </strong></p>
                   <p>
-                    <strong>Email: </strong> agents@example.com</p>
+                    <strong>Email: </strong> anitadwisalsari.com</p>
                 </div>
               </div>
               <div class="card-footer-d">
@@ -808,20 +799,20 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
         <div class="col-sm-12 col-md-4">
           <div class="widget-a">
             <div class="w-header-a">
-              <h3 class="w-title-a text-brand">EstateAgency</h3>
+              <h3 class="w-title-a text-brand">School Address </h3>
             </div>
             <div class="w-body-a">
               <p class="w-text-a color-text-a">
-                Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
-                sed aute irure.
+              Jl. Santawi No.96 A, Tamansari Indah, Kec. Bondowoso
+              Kabupaten Bondowoso, Jawa Timur 68216 Indonesia.
               </p>
             </div>
             <div class="w-footer-a">
               <ul class="list-unstyled">
                 <li class="color-a">
-                  <span class="color-text-a">Phone .</span> contact@example.com</li>
+                  <span class="color-text-a">Phone .</span> (123)454-441</li>
                 <li class="color-a">
-                  <span class="color-text-a">Email .</span> +54 356 945234</li>
+                  <span class="color-text-a">Email .</span> anitadwisalasari@gmail.com</li>
               </ul>
             </div>
           </div>
@@ -829,29 +820,15 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
         <div class="col-sm-12 col-md-4 section-md-t3">
           <div class="widget-a">
             <div class="w-header-a">
-              <h3 class="w-title-a text-brand">The Company</h3>
+              <h3 class="w-title-a text-brand">Developer Identity</h3>
             </div>
             <div class="w-body-a">
               <div class="w-body-a">
                 <ul class="list-unstyled">
-                  <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Site Map</a>
-                  </li>
-                  <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Legal</a>
-                  </li>
-                  <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Agent Admin</a>
-                  </li>
-                  <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Careers</a>
-                  </li>
-                  <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Affiliate</a>
-                  </li>
-                  <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Privacy Policy</a>
-                  </li>
+                <li class="color-a">
+                  <span class="color-text-a">Phone .</span> +62 853-3075-0875</li>
+                <li class="color-a">
+                  <span class="color-text-a">Email .</span> teamprogresslibrarybondowoso@gmail.com</li>
                 </ul>
               </div>
             </div>
@@ -860,27 +837,24 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
         <div class="col-sm-12 col-md-4 section-md-t3">
           <div class="widget-a">
             <div class="w-header-a">
-              <h3 class="w-title-a text-brand">International sites</h3>
+              <h3 class="w-title-a text-brand">Developer</h3>
             </div>
             <div class="w-body-a">
               <ul class="list-unstyled">
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Venezuela</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Yudi Irianto</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">China</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Irfan giovani</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Hong Kong</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Ilham Robby Sanjaya</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Argentina</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Azizah Wina Sriwinarsih</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Singapore</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Philippines</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Muhammad Ansori</a>
                 </li>
               </ul>
             </div>
