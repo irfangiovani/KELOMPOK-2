@@ -158,52 +158,49 @@ if( isset($_POST["cariliterasi"])) {
 
     <br>
      <div class="container-fluid">
-    <a href="tambah_pinjam_literasi.php">Tambah Data Peminjaman Literasi</a>
-    <br><br>
-    <form action="" method="post" class="form-inline">
-    <input class="form-control mr-sm-2" type="search" name="keywordliterasi" autofocus placeholder="Search" aria-label="Search" autocomplete="off">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="cariliterasi">Cari!</button>
-  </form>
-    
-
-
-    <div class="content">
-      <div class="box">
-<div class="offside-3 col-lg-7">
-    <form action="" method="post">
-      <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover ">
-        <tr>
-			      <th>no</th>
-            <th>ID Pinjam Literasi</th>
-            <th>Kode Buku Literasi</th>
-            <th>NIS Peminjam</th>
-            <th>Tanggal Peminjaman</th>
-            <th>Tanggal Harus Kembali</th>
-            <th>Status</th>
-        </tr>
-		<?php $i = 1; ?> 
-        <?php
-            foreach( $peminjaman_literasi as $row) :
-        ?>
-        <tr>
-			      <td><?=$i; ?></td>
-            <td><?php echo $row["id_pinjam_buku_literasi"]; ?></td>
-            <td><?php echo $row["kode_buku_literasi"];?></td>
-            <td><?php echo $row["nis"];?></td>
-            <td><?php echo $row["tanggal_peminjaman"];?></td>
-            <td><?php echo $row["tanggal_hrs_kembali"];?></td>
-            <td><?php echo $row["notifikasi"];?></td>
-        </tr>
-			<?php $i++; ?>
-			<?php endforeach; ?>
-    </table>
-  </div>
-    </form>
-  </div>
-</div>
-</div>
-  </div>
+     <div class="col-lg-12">
+        <a href="tambah_pinjam_literasi.php">Tambah Data Peminjaman Literasi</a>
+          <div class="content">
+            <div class="box">
+              <div class="col-lg-6">
+                <div class="table-responsive">
+                  <table class="table table-striped table-bordered table-hover " id="tabel">
+                    <thead>
+                        <tr>
+                            <th>no</th>
+                            <th>ID Pinjam Literasi</th>
+                            <th>Kode Buku Literasi</th>
+                            <th>NIS Peminjam</th>
+                            <th>Tanggal Peminjaman</th>
+                            <th>Tanggal Harus Kembali</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php $i = 1; ?> 
+                        <?php
+                            foreach( $peminjaman_literasi as $row) :
+                        ?>
+                        <tr>
+                            <td><?=$i; ?></td>
+                            <td><?php echo $row["id_pinjam_buku_literasi"]; ?></td>
+                            <td><?php echo $row["kode_buku_literasi"];?></td>
+                            <td><?php echo $row["nis"];?></td>
+                            <td><?php echo $row["tanggal_peminjaman"];?></td>
+                            <td><?php echo $row["tanggal_hrs_kembali"];?></td>
+                            <td><?php echo $row["notifikasi"];?></td>
+                        </tr>
+                      <?php $i++; ?>
+                      <?php endforeach; ?>
+                      </tbody>
+                    </table>
+                  </div>
+                </form>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
 
 
     
@@ -292,10 +289,17 @@ if( isset($_POST["cariliterasi"])) {
   <script src="js/portfolio/jquery.quicksand.js"></script>
   <script src="js/portfolio/setting.js"></script>
   <script src="js/animate.js"></script>
+   <!-- Template Custom JavaScript File -->
+   <script src="js/custom.js"></script>
+  <script src="js/dataTables/dataTables.bootstrap.js"></script>
+  <script src="js/dataTables/jquery.dataTables.js"></script>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabel').DataTable();
+        });
+    </script>
 
-  <!-- Template Custom JavaScript File -->
-  <script src="js/custom.js"></script>
-
+ 
 </body>
 
 </html>
