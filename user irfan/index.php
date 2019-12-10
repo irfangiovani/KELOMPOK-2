@@ -3,7 +3,7 @@
 $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
 include 'functions.php';
 $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
-$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
+ //$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
 
 ?>
 <!DOCTYPE html>
@@ -158,13 +158,10 @@ $buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi
             <a class="nav-link active" href="index.html">Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">Daftar Member</a>
+            <a class="nav-link" href="about.html">Daftar Member</a> 
           </li>
           <li class="nav-item">
             <a class="nav-link" href="property-grid.html">Buku</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="blog-grid.html">Blog</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -208,7 +205,7 @@ $buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi
                       <span class="color-b">204 </span> Mount
                       <br> Olive Road Two</h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">rent | $ 12.000</span></a>
+                      <a href="#"><span class="price-a"></span></a>
                     </p>
                   </div>
                 </div>
@@ -231,7 +228,7 @@ $buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi
                       <span class="color-b">204 </span> Rino
                       <br> Venda Road Five</h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">rent | $ 12.000</span></a>
+                      <a href="#"><span class="price-a"></span></a>
                     </p>
                   </div>
                 </div>
@@ -254,7 +251,7 @@ $buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi
                       <span class="color-b">204 </span> Alira
                       <br> Roan Road One</h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">rent | $ 12.000</span></a>
+                      <a href="#"><span class="price-a"></span></a>
                     </p>
                   </div>
                 </div>
@@ -356,8 +353,7 @@ $buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi
     </div>
   </section>
   <!--/ Services End /-->
-
-  <!--/ Property Star /-->
+          <!--/ Property Star /-->
   <section class="section-property section-t8">
     <div class="container">
       <div class="row">
@@ -367,7 +363,7 @@ $buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi
               <h2 class="title-a">Buku Terbaru</h2>
             </div>
             <div class="title-link">
-              <a href="property-grid.html">Semua Buku
+              <a href="">Semua Buku
                 <span class="ion-ios-arrow-forward"></span>
               </a>
             </div>
@@ -408,9 +404,9 @@ $buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi
                 </div>
               </div>
             </div>
-            
+            <?php endforeach ; ?>
           </div>
-                 <?php endforeach ; ?>
+               
         </div>
         </div>
   </section>
@@ -426,7 +422,7 @@ $buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi
               <h2 class="title-a">Best Agents</h2>
             </div>
             <div class="title-link">
-              <a href="agents-grid.html">All Agents
+              <a href="">All Agents
                 <span class="ion-ios-arrow-forward"></span>
               </a>
             </div>
@@ -502,7 +498,7 @@ $buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi
               <div class="card-header-d">
                 <div class="card-title-d align-self-center">
                   <h3 class="title-d">
-                    <a href="agent-single.html" class="link-two">Stiven Spilver
+                    <a href="" class="link-two">Stiven Spilver
                       <br> Darw</a>
                   </h3>
                 </div>
