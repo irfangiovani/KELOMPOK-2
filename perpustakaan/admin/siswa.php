@@ -165,7 +165,7 @@ $siswa = query ("SELECT * FROM pengunjung_siswa");
     <table class="table table-striped table-bordered table-hover ">
         <tr>
 			      <th>no</th>
-            <th>tanggal_absensi</th>
+            <th>tanggal absensi</th>
             <th>Nama Siswa</th>
             <th>Kode Kelas</th>
              <th>Keperluan</th>
