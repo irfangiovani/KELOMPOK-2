@@ -387,8 +387,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
               <img src="img/literasi/<?php echo $row["gambar_sampul"]; ?>" alt="" class="img-a img-fluid">
             </div>
             <div class="card-overlay">
-              <div class="card-overlay-a-content">
-                <div class="card-header-a">
+              <div class="card-overlay-a-content">                <div class="card-header-a">
                   <h2 class="card-title-a">
                     <a href="property-single.html"><?php echo $row["judul_buku_literasi"];?>
                       </a>

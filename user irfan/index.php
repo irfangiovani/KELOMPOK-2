@@ -158,13 +158,10 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
             <a class="nav-link active" href="index.html">Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">Daftar Member</a>
+            <a class="nav-link" href="about.html">Daftar Member</a> 
           </li>
           <li class="nav-item">
             <a class="nav-link" href="property-grid.html">Buku</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="blog-grid.html">Blog</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -356,27 +353,63 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
     </div>
   </section>
   <!--/ Services End /-->
-          <section class="konten">
-            <div class="container">
-            <h1>produk terbaru</h1>
-            
-             <div class="row">
-              <?php $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum"; ?>
-              <?php while($buku_literasi_umum =$ambil)
-
-              <div class="col-md-3">
-               <div class="thumbnail">
-               <img src="img/about-1.jpg" alt="">
-               <div class="caption">
-               <h3>buku</h3>
-               <h5>Rp. 100</h5>
-               <a href="" class="">Detail</a>
+          <!--/ Property Star /-->
+  <section class="section-property section-t8">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-wrap d-flex justify-content-between">
+            <div class="title-box">
+              <h2 class="title-a">Buku Terbaru</h2>
+            </div>
+            <div class="title-link">
+              <a href="">Semua Buku
+                <span class="ion-ios-arrow-forward"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <style>
+        .card-box-a {
+          width: 330px;
+          height: 440px;
+        }
+      </style>
+      <div id="property-carousel" class="owl-carousel owl-theme">
+        <div class="carousel-item-b">
+        <div class="row">
+        <?php foreach ( $buku_literasi_umum as $row) : ?>
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <img src="img/literasi/<?php echo $row["gambar_sampul"]; ?>" alt="" class="img-a img-fluid">
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="property-single.html"><?php echo $row["judul_buku_literasi"];?>
+                      </a>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <span class="price-a"></span>
+                  </div>
+                  <a href="#" class="link-a">Click here to view
+                    <span class="ion-ios-arrow-forward"></span>
+                  </a>
+                </div>
+                <div class="card-footer-a">
                 </div>
               </div>
-              </div>
-             </div>
             </div>
-          </section>
+            <?php endforeach ; ?>
+          </div>
+               
+        </div>
+        </div>
+  </section>
   <!--/ Property End /-->
 
   <!--/ Agents Star /-->
