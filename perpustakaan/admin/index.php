@@ -120,8 +120,12 @@ $pustakawan = query("SELECT * FROM pustakawan");
                         <li><a href="tamu.php">Tamu</a></li>
                       </ul>
                     </li>
-                    <li>
-                      <a href="data_member.php">Data Member Siswa</a>
+                    <li class="dropdown">
+                      <a href="#">Data<i class="icon-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="data_member.php">Member Siswa</a></li>
+                        <li><a href="data_kelas.php">Kelas</a></li>
+                      </ul>
                     </li>
                   </ul>
                 </nav>

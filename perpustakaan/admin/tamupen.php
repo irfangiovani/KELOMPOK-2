@@ -96,7 +96,7 @@ $tamupen = query ("SELECT * FROM tamu ");
                         <li><a href="tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                       <a href="#">Peminjaman<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                       <li><a href="peminjaman_literasi.php">Buku Literasi Umum</a></li>
@@ -112,7 +112,7 @@ $tamupen = query ("SELECT * FROM tamu ");
                         <li><a href="pengembalian_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown active">
                       <a href="#">Pengunjung<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                         <li><a href="siswa.php">Siswa</a></li>
@@ -181,7 +181,7 @@ $tamupen = query ("SELECT * FROM tamu ");
             <td><?php echo $row["nama_tamu"];?></td>
             <td><?php echo $row["delegasi"];?></td>
             <td><?php echo $row["kepentingan"];?></td>
-            <td><?php echo $row["Tanggal_Kedatangan"];?></td>
+            <td><?php echo $row["tanggal_kedatangan"];?></td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
