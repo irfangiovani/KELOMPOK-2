@@ -154,7 +154,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" href="index.php">Beranda</a>
+            <a class="nav-link" href="index.php">Beranda</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="daftarmember/registrasi.php">Daftar Member</a>
@@ -190,9 +190,9 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                 <div class="col-lg-8">
                   <div class="intro-body">
                     <p class="intro-title-top">Selamat Datang, User
-                      <br> NIS</p>
+                      <br></p>
                     <h1 class="intro-title mb-4">
-                      <span class="color-b"> </span> Mount
+                      <span class="color-b"> </span>
                       <br></h1>
                     <p class="intro-subtitle intro-price">
                       <a href="#"><span class="price-a"></span></a>
@@ -213,12 +213,12 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                 <div class="col-lg-8">
                   <div class="intro-body">
                     <p class="intro-title-top">Selamat Datang, User
-                      <br> NIS</p>
+                      <br></p>
                     <h1 class="intro-title mb-4">
-                      <span class="color-b">204 </span> Rino
-                      <br> Venda Road Five</h1>
+                      <span class="color-b"> </span>
+                      <br></h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">rent | $ 12.000</span></a>
+                      <a href="#"><span class="price-a"></span></a>
                     </p>
                   </div>
                 </div>
@@ -236,12 +236,12 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                 <div class="col-lg-8">
                   <div class="intro-body">
                     <p class="intro-title-top">Selamat Datang, User
-                      <br> NIS</p>
+                      <br></p>
                     <h1 class="intro-title mb-4">
-                      <span class="color-b">204 </span> Alira
-                      <br> Roan Road One</h1>
+                      <span class="color-b"></span>
+                      <br></h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">rent | $ 12.000</span></a>
+                      <a href="#"><span class="price-a"></span></a>
                     </p>
                   </div>
                 </div>
@@ -423,7 +423,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="col-md-12">
           <div class="title-wrap d-flex justify-content-between">
             <div class="title-box">
-              <h2 class="title-a">Best Agents</h2>
+              <h2 class="title-a">Galeri</h2>
             </div>
             <div class="title-link">
               <a href="agents-grid.html">All Agents
@@ -437,26 +437,26 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="col-md-4">
           <div class="card-box-d">
             <div class="card-img-d">
-              <img src="img/agent-4.jpg" alt="" class="img-d img-fluid">
+              <img src="img/baca.jpg" alt="" class="img-d img-fluid">
             </div>
             <div class="card-overlay card-overlay-hover">
               <div class="card-header-d">
                 <div class="card-title-d align-self-center">
                   <h3 class="title-d">
-                    <a href="agent-single.html" class="link-two">Margaret Sotillo
-                      <br> Escala</a>
+                    <a href="agent-single.html" class="link-two">
+                      <br></a>
                   </h3>
                 </div>
               </div>
               <div class="card-body-d">
                 <p class="content-d color-text-a">
-                  Sed porttitor lectus nibh, Cras ultricies ligula sed magna dictum porta two.
+                  
                 </p>
                 <div class="info-agents color-a">
                   <p>
-                    <strong>Phone: </strong> +54 356 945234</p>
+                    <strong></strong></p>
                   <p>
-                    <strong>Email: </strong> agents@example.com</p>
+                    <strong></strong></p>
                 </div>
               </div>
               <div class="card-footer-d">
@@ -496,26 +496,26 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="col-md-4">
           <div class="card-box-d">
             <div class="card-img-d">
-              <img src="img/agent-1.jpg" alt="" class="img-d img-fluid">
+              <img src="img/buku baca.jpg" alt="" class="img-d img-fluid">
             </div>
             <div class="card-overlay card-overlay-hover">
               <div class="card-header-d">
                 <div class="card-title-d align-self-center">
                   <h3 class="title-d">
-                    <a href="agent-single.html" class="link-two">Stiven Spilver
-                      <br> Darw</a>
+                    <a href="agent-single.html" class="link-two">
+                      <br> </a>
                   </h3>
                 </div>
               </div>
               <div class="card-body-d">
                 <p class="content-d color-text-a">
-                  Sed porttitor lectus nibh, Cras ultricies ligula sed magna dictum porta two.
+                  
                 </p>
                 <div class="info-agents color-a">
                   <p>
-                    <strong>Phone: </strong></p>
+                    <strong> </strong></p>
                   <p>
-                    <strong>Email: </strong> anitadwisalsari.com</p>
+                    <strong> </strong> </p>
                 </div>
               </div>
               <div class="card-footer-d">
@@ -555,26 +555,26 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="col-md-4">
           <div class="card-box-d">
             <div class="card-img-d">
-              <img src="img/agent-5.jpg" alt="" class="img-d img-fluid">
+              <img src="img/membaca-buku.jpg" alt="" class="img-d img-fluid">
             </div>
             <div class="card-overlay card-overlay-hover">
               <div class="card-header-d">
                 <div class="card-title-d align-self-center">
                   <h3 class="title-d">
-                    <a href="agent-single.html" class="link-two">Emma Toledo
-                      <br> Cascada</a>
+                    <a href="agent-single.html" class="link-two">
+                      <br></a>
                   </h3>
                 </div>
               </div>
               <div class="card-body-d">
                 <p class="content-d color-text-a">
-                  Sed porttitor lectus nibh, Cras ultricies ligula sed magna dictum porta two.
+                  
                 </p>
                 <div class="info-agents color-a">
                   <p>
-                    <strong>Phone: </strong> +54 356 945234</p>
+                    <strong></strong></p>
                   <p>
-                    <strong>Email: </strong> agents@example.com</p>
+                    <strong></strong></p>
                 </div>
               </div>
               <div class="card-footer-d">
@@ -623,7 +623,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="col-md-12">
           <div class="title-wrap d-flex justify-content-between">
             <div class="title-box">
-              <h2 class="title-a">Latest News</h2>
+              <h2 class="title-a">Galeri</h2>
             </div>
             <div class="title-link">
               <a href="blog-grid.html">All News
@@ -637,21 +637,21 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="carousel-item-c">
           <div class="card-box-b card-shadow news-box">
             <div class="img-box-b">
-              <img src="img/post-2.jpg" alt="" class="img-b img-fluid">
+              <img src="img/ruangan2.jpg" alt="" class="img-b img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-header-b">
                 <div class="card-category-b">
-                  <a href="#" class="category-b">House</a>
+                  <a href="#" class="category-b"></a>
                 </div>
                 <div class="card-title-b">
                   <h2 class="title-2">
-                    <a href="blog-single.html">House is comming
-                      <br> new</a>
+                    <a href="blog-single.html">
+                      <br></a>
                   </h2>
                 </div>
                 <div class="card-date">
-                  <span class="date-b">18 Sep. 2017</span>
+                  <span class="date-b"></span>
                 </div>
               </div>
             </div>
@@ -660,21 +660,21 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="carousel-item-c">
           <div class="card-box-b card-shadow news-box">
             <div class="img-box-b">
-              <img src="img/post-5.jpg" alt="" class="img-b img-fluid">
+              <img src="img/ruangan3.jpg" alt="" class="img-b img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-header-b">
                 <div class="card-category-b">
-                  <a href="#" class="category-b">Travel</a>
+                  <a href="#" class="category-b"></a>
                 </div>
                 <div class="card-title-b">
                   <h2 class="title-2">
-                    <a href="blog-single.html">Travel is comming
-                      <br> new</a>
+                    <a href="blog-single.html">
+                      <br></a>
                   </h2>
                 </div>
                 <div class="card-date">
-                  <span class="date-b">18 Sep. 2017</span>
+                  <span class="date-b"></span>
                 </div>
               </div>
             </div>
@@ -683,21 +683,21 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="carousel-item-c">
           <div class="card-box-b card-shadow news-box">
             <div class="img-box-b">
-              <img src="img/post-7.jpg" alt="" class="img-b img-fluid">
+              <img src="img/ruangan.jpg" alt="" class="img-b img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-header-b">
                 <div class="card-category-b">
-                  <a href="#" class="category-b">Park</a>
+                  <a href="#" class="category-b"></a>
                 </div>
                 <div class="card-title-b">
                   <h2 class="title-2">
-                    <a href="blog-single.html">Park is comming
-                      <br> new</a>
+                    <a href="blog-single.html">
+                      <br></a>
                   </h2>
                 </div>
                 <div class="card-date">
-                  <span class="date-b">18 Sep. 2017</span>
+                  <span class="date-b"></span>
                 </div>
               </div>
             </div>
@@ -706,21 +706,21 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="carousel-item-c">
           <div class="card-box-b card-shadow news-box">
             <div class="img-box-b">
-              <img src="img/post-3.jpg" alt="" class="img-b img-fluid">
+              <img src="img/slider5.jpg" alt="" class="img-b img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-header-b">
                 <div class="card-category-b">
-                  <a href="#" class="category-b">Travel</a>
+                  <a href="#" class="category-b"></a>
                 </div>
                 <div class="card-title-b">
                   <h2 class="title-2">
-                    <a href="#">Travel is comming
-                      <br> new</a>
+                    <a href="#">
+                      <br></a>
                   </h2>
                 </div>
                 <div class="card-date">
-                  <span class="date-b">18 Sep. 2017</span>
+                  <span class="date-b"></span>
                 </div>
               </div>
             </div>
