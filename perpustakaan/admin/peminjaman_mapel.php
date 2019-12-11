@@ -6,7 +6,8 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_mapel = query ("SELECT * FROM peminjaman_buku_mapel"); 
+$peminjaman_mapel = query ("SELECT a.id_pinjam_buku_mapel, a.nama_peminjam, a.waktu_peminjaman, a.banyak_buku, a.notifikasi, b.judul_buku_mapel as id_judul_buku_mapel, c.jurusan as kode_kelas
+                          FROM peminjaman_buku_mapel a LEFT JOIN buku_mapel_kelas b on b.id_judul_buku_mapel = a.id_judul_buku_mapel LEFT JOIN kelas c on c.kode_kelas = a.kode_kelas  WHERE a.notifikasi='masa pinjam' ORDER BY a.id_pinjam_buku_mapel DESC"); 
 ?>
 
 <!DOCTYPE html>
@@ -157,45 +158,49 @@ $peminjaman_mapel = query ("SELECT * FROM peminjaman_buku_mapel");
     <a href="tambah_pinjam_mapel.php">Tambah Data Peminjaman Mapel</a>
     <br><br>
 
-    <div class="content">
-      <div class="box">
-<div class="offside-3 col-lg-7">
-    <form action="" method="post">
-      <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover ">
-        <tr>
-			<th>no</th>
-            <th>ID Pinjam Mapel</th>
-            <th>Kode Judul Buku Mapel</th>
-            <th>Kode Kelas</th>
-            <th>Nama Peminjam</th>
-            <th>Waktu Pinjam</th>
-            <th>Sebanyak</th>
-            <th>Status</th>
-        </tr>
-		<?php $i = 1; ?> 
-        <?php
-            foreach( $peminjaman_mapel as $row) :
-        ?>
-        <tr>
-			<td><?=$i; ?></td>
-            <td><?php echo $row["id_pinjam_buku_mapel"]; ?></td>
-            <td><?php echo $row["id_judul_buku_mapel"];?></td>
-            <td><?php echo $row["kode_kelas"];?></td>
-            <td><?php echo $row["nama_peminjam"];?></td>
-            <td><?php echo $row["waktu_peminjaman"];?></td>
-            <td><?php echo $row["banyak_buku"];?></td>
-            <td><?php echo $row["notifikasi"];?></td>
-        </tr>
-			<?php $i++; ?>
-			<?php endforeach; ?>
-    </table>
-  </div>
-    </form>
-  </div>
-</div>
-</div>
-  </div>
+      <div class="content">
+        <div class="box">
+          <div class="offside-3 col-lg-7">
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover" id="tabel">
+                </div>
+                  <thead>
+                  <tr>
+                  <th>no</th>
+                        <th>ID Pinjam Mapel</th>
+                        <th>Judul Buku Mapel</th>
+                        <th>Kelas</th>
+                        <th>Nama Peminjam</th>
+                        <th>Waktu Pinjam</th>
+                        <th>Sebanyak</th>
+                        <th>Status</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <?php $i = 1; ?> 
+                  <?php
+                  foreach( $peminjaman_mapel as $row) :
+                  ?>
+                  <tr>
+                  <td><?=$i; ?></td>
+                        <td><?php echo $row["id_pinjam_buku_mapel"]; ?></td>
+                        <td><?php echo $row["id_judul_buku_mapel"];?></td>
+                        <td><?php echo $row["kode_kelas"];?></td>
+                        <td><?php echo $row["nama_peminjam"];?></td>
+                        <td><?php echo $row["waktu_peminjaman"];?></td>
+                        <td><?php echo $row["banyak_buku"];?></td>
+                        <td><?php echo $row["notifikasi"];?></td>
+                  </tr>
+                  <?php $i++; ?>
+                  <?php endforeach; ?>
+                  </tbody>
+                </table>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     
@@ -287,6 +292,13 @@ $peminjaman_mapel = query ("SELECT * FROM peminjaman_buku_mapel");
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
+  <script src="js/dataTables/dataTables.bootstrap.js"></script>
+  <script src="js/dataTables/jquery.dataTables.js"></script>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabel').DataTable();
+        });
+    </script>
 
 </body>
 

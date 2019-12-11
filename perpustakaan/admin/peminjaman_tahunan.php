@@ -7,7 +7,7 @@ if( !isset($_SESSION["login"])){
 
 require 'functions.php';
 $peminjaman_tahunan = query ("SELECT a.id_pinjam_buku_tahunan, a.kode_buku_tahunan, a.tanggal_peminjaman, a.tanggal_hrs_kembali, a.notifikasi, b.judul_buku_tahunan as id_judul_buku_tahunan,  c.nama_siswa as nis
-FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku_tahunan = a.id_judul_buku_tahunan LEFT JOIN member_perpus c on c.nis = a.nis ORDER BY a.id_pinjam_buku_tahunan ASC"); 
+FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku_tahunan = a.id_judul_buku_tahunan LEFT JOIN member_perpus c on c.nis = a.nis WHERE a.notifikasi='masa pinjam' ORDER BY a.id_pinjam_buku_tahunan DESC"); 
 
 ?>
 
@@ -164,9 +164,10 @@ FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku
 <div class="offside-3 col-lg-7">
     <form action="" method="post">
       <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover ">
+    <table class="table table-striped table-bordered table-hover" id="tabel">
+    <thead>
         <tr>
-			<th>no</th>
+			      <th>no</th>
             <th>ID Pinjam Tahunan</th>
             <th>Kode Judul Buku Tahunan</th>
             <th>Kode Buku Tahunan</th>
@@ -175,6 +176,8 @@ FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku
             <th>Tanggal Harus Kembali</th>
             <th>Notifikasi</th>
         </tr>
+    </thead>
+    <tbody>
 		<?php $i = 1; ?> 
         <?php
             foreach( $peminjaman_tahunan as $row) :
@@ -191,6 +194,7 @@ FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
+    </tbody>
     </table>
   </div>
     </form>
@@ -289,6 +293,13 @@ FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
+  <script src="js/dataTables/dataTables.bootstrap.js"></script>
+  <script src="js/dataTables/jquery.dataTables.js"></script>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabel').DataTable();
+        });
+    </script>
 
 </body>
 
