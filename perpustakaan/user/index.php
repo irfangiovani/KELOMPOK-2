@@ -155,7 +155,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Beranda</a>
+            <a class="nav-link active" href="index.php">Beranda</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.html">Daftar Member</a>
