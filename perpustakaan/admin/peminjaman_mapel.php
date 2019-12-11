@@ -6,7 +6,8 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_mapel = query ("SELECT * FROM peminjaman_buku_mapel"); 
+$peminjaman_mapel = query ("SELECT a.id_pinjam_buku_mapel, a.nama_peminjam, a.waktu_peminjaman, a.banyak_buku, a.notifikasi, b.judul_buku_mapel as id_judul_buku_mapel, c.jurusan as kode_kelas
+                          FROM peminjaman_buku_mapel a LEFT JOIN buku_mapel_kelas b on b.id_judul_buku_mapel = a.id_judul_buku_mapel LEFT JOIN kelas c on c.kode_kelas = a.kode_kelas  WHERE a.notifikasi='masa pinjam' ORDER BY a.id_pinjam_buku_mapel DESC"); 
 ?>
 
 <!DOCTYPE html>
@@ -167,8 +168,8 @@ $peminjaman_mapel = query ("SELECT * FROM peminjaman_buku_mapel");
                   <tr>
                   <th>no</th>
                         <th>ID Pinjam Mapel</th>
-                        <th>Kode Judul Buku Mapel</th>
-                        <th>Kode Kelas</th>
+                        <th>Judul Buku Mapel</th>
+                        <th>Kelas</th>
                         <th>Nama Peminjam</th>
                         <th>Waktu Pinjam</th>
                         <th>Sebanyak</th>
