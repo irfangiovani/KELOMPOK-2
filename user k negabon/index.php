@@ -1,11 +1,14 @@
 <?php 
 //Koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
-require 'functions.php';
-$buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
- //$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
 
-?>
+$result = mysqli_query($conn, "SELECT * FROM buku_literasi_umum");
+
+// while( $buku = mysqli_fetch_assoc($result) ) {
+//     var_dump($buku);
+// }
+
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,6 +46,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
 </head>
 
 <body>
+
   <div class="click-closed"></div>
   <!--/ Form Search Star /-->
   <div class="box-collapse">
@@ -154,19 +158,28 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" href="index.php">Beranda</a>
+            <a class="nav-link active" href="index.html">Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="daftarmember/registrasi.php">Daftar Member</a>
+            <a class="nav-link" href="daftarmember.php">Daftar Member</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="property-grid.html">Buku</a> 
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="bantuan.php">Bantuan</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Pustakawan
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="property-single.html">Buku Mapel</a>
+              <a class="dropdown-item" href="blog-single.html">Buku Iterasi</a>
+              <a class="dropdown-item" href="agents-grid.html">Buku Tahunan</a>
+              <a class="dropdown-item" href="agent-single.html">Buku Lainnya</a>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../admin/loginadmin.php">Login</a>
+            <a class="nav-link" href="bantuanpen.php">Bantuan</a>
           </li>
         </ul>
       </div>
@@ -192,10 +205,10 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                     <p class="intro-title-top">Selamat Datang, User
                       <br> NIS</p>
                     <h1 class="intro-title mb-4">
-                      <span class="color-b"> </span> Mount
-                      <br></h1>
+                      <span class="color-b">204 </span> Mount
+                      <br> Olive Road Two</h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a"></span></a>
+                      <a href="#"><span class="price-a">rent | $ 12.000</span></a>
                     </p>
                   </div>
                 </div>
@@ -351,7 +364,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="col-md-12">
           <div class="title-wrap d-flex justify-content-between">
             <div class="title-box">
-              <h2 class="title-a">Buku-Buku</h2>
+              <h2 class="title-a">Buku</h2>
             </div>
             <div class="title-link">
               <a href="property-grid.html">Semua Buku
@@ -361,19 +374,19 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
           </div>
         </div>
       </div>
+      <?php while( $row = mysqli_fetch_assoc($result) ) : ?>
       <div id="property-carousel" class="owl-carousel owl-theme">
         <div class="carousel-item-b">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
-            <?php foreach ( $buku_mapel_kelas as $row) : ?>
-              <img src="img/mapel/<?php echo $row["gambar_sampul"]; ?>" alt="" class="img-a img-fluid">
+              <img src="http://localhost/KELOMPOK-2/perpustakaan/admin/img/literasi/<?php echo $row["gambar_sampul"]; ?>" alt="" class="img-a img-fluid" width="300">
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
                 <div class="card-header-a">
                   <h2 class="card-title-a">
-                  <?php echo $row["judul_buku_mapel"];?>
-                    <a href="property-single.html"></a>
+                    <a href="property-single.html">206 Mount
+                      <br /> Olive Road Two</a>
                   </h2>
                 </div>
                 <div class="card-body-a">
@@ -407,11 +420,152 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                   </ul>
                 </div>
               </div>
-              <?php endforeach ; ?>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item-b">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <img src="img/literasi/" alt="" class="img-a img-fluid">
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="property-single.html">157 West
+                      <br /> Central Park</a>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <span class="price-a">rent | $ 12.000</span>
+                  </div>
+                  <a href="property-single.html" class="link-a">Click here to view
+                    <span class="ion-ios-arrow-forward"></span>
+                  </a>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Area</h4>
+                      <span>340m
+                        <sup>2</sup>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Beds</h4>
+                      <span>2</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Baths</h4>
+                      <span>4</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Garages</h4>
+                      <span>1</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item-b">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <img src="img/literasi/" alt="" class="img-a img-fluid">
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="property-single.html">245 Azabu
+                      <br /> Nishi Park let</a>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <span class="price-a">rent | $ 12.000</span>
+                  </div>
+                  <a href="property-single.html" class="link-a">Click here to view
+                    <span class="ion-ios-arrow-forward"></span>
+                  </a>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Area</h4>
+                      <span>340m
+                        <sup>2</sup>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Beds</h4>
+                      <span>2</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Baths</h4>
+                      <span>4</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Garages</h4>
+                      <span>1</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item-b">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <img src="img/property-10.jpg" alt="" class="img-a img-fluid">
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="property-single.html">204 Montal
+                      <br /> South Bela Two</a>
+                  </h2>
+                </div>
+                <div class="card-body-a">
+                  <div class="price-box d-flex">
+                    <span class="price-a">rent | $ 12.000</span>
+                  </div>
+                  <a href="property-single.html" class="link-a">Click here to view
+                    <span class="ion-ios-arrow-forward"></span>
+                  </a>
+                </div>
+                <div class="card-footer-a">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Area</h4>
+                      <span>340m
+                        <sup>2</sup>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Beds</h4>
+                      <span>2</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Baths</h4>
+                      <span>4</span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Garages</h4>
+                      <span>1</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <?php endwhile; ?>
     </div>
   </section>
   <!--/ Property End /-->
@@ -513,9 +667,9 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                 </p>
                 <div class="info-agents color-a">
                   <p>
-                    <strong>Phone: </strong></p>
+                    <strong>Phone: </strong> +54 356 945234</p>
                   <p>
-                    <strong>Email: </strong> anitadwisalsari.com</p>
+                    <strong>Email: </strong> agents@example.com</p>
                 </div>
               </div>
               <div class="card-footer-d">
@@ -810,20 +964,20 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="col-sm-12 col-md-4">
           <div class="widget-a">
             <div class="w-header-a">
-              <h3 class="w-title-a text-brand">School Address </h3>
+              <h3 class="w-title-a text-brand">EstateAgency</h3>
             </div>
             <div class="w-body-a">
               <p class="w-text-a color-text-a">
-              Jl. Santawi No.96 A, Tamansari Indah, Kec. Bondowoso
-              Kabupaten Bondowoso, Jawa Timur 68216 Indonesia.
+                Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
+                sed aute irure.
               </p>
             </div>
             <div class="w-footer-a">
               <ul class="list-unstyled">
                 <li class="color-a">
-                  <span class="color-text-a">Phone .</span> (123)454-441</li>
+                  <span class="color-text-a">Phone .</span> contact@example.com</li>
                 <li class="color-a">
-                  <span class="color-text-a">Email .</span> anitadwisalasari@gmail.com</li>
+                  <span class="color-text-a">Email .</span> +54 356 945234</li>
               </ul>
             </div>
           </div>
@@ -831,16 +985,30 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="col-sm-12 col-md-4 section-md-t3">
           <div class="widget-a">
             <div class="w-header-a">
-              <h3 class="w-title-a text-brand">Developer Identity</h3>
+              <h3 class="w-title-a text-brand">The Company</h3>
             </div>
             <div class="w-body-a">
               <div class="w-body-a">
                 <ul class="list-unstyled">
-                <li class="color-a">
-                  <span class="color-text-a">Phone .</span> +62 853-3075-0875</li>
-                <li class="color-a">
-                  <span class="color-text-a">Email .</span> teamprogresslibrarybondowoso@gmail.com</li>
-                </ul>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="#">Site Map</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="#">Legal</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="#">Agent Admin</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="#">Careers</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="#">Affiliate</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="#">Privacy Policy</a>
+                  </li>
+                </ul>    
               </div>
             </div>
           </div>
@@ -848,24 +1016,27 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="col-sm-12 col-md-4 section-md-t3">
           <div class="widget-a">
             <div class="w-header-a">
-              <h3 class="w-title-a text-brand">Developer</h3>
+              <h3 class="w-title-a text-brand">International sites</h3>
             </div>
             <div class="w-body-a">
               <ul class="list-unstyled">
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Yudi Irianto</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Venezuela</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Irfan giovani</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">China</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Ilham Robby Sanjaya</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Hong Kong</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Azizah Wina Sriwinarsih</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Argentina</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Muhammad Ansori</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Singapore</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="fa fa-angle-right"></i> <a href="#">Philippines</a>
                 </li>
               </ul>
             </div>
