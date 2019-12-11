@@ -147,7 +147,7 @@
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.php">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.html">About</a>
@@ -190,7 +190,7 @@
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
             <h1 class="title-single">Alur Peminjaman</h1>
-            <span class="color-text-a">Aut voluptas consequatur unde sed omnis ex placeat quis eos. Aut natus officia corrupti qui autem fugit consectetur quo. Et ipsum eveniet laboriosam voluptas beatae possimus qui ducimus. Et voluptatem deleniti. Voluptatum voluptatibus amet. Et esse sed omnis inventore hic culpa.</span>
+            <span class="color-text-a">Disini adalah alur peminjaman buku di perpustakaan K-NEGABON ikuti prosedur di bawah ini untuk peminjaman buku di perpustakaan</span>
           </div>
         </div>
         <div class="col-md-12 col-lg-4">
@@ -217,48 +217,18 @@
         <div class="col-sm-12">
           <div class="contact-map box">
             <div id="map" class="contact-map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1ses-419!2sve!4v1510329142834"
-                width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+              <style>
+                .gambar {
+                  width: 1090px;
+                  height: 600px;
+                }
+              </style>
+              <img class="gambar" src="img/alurpendaftar.jpg">
             </div>
           </div>
         </div>
         <div class="col-sm-12 section-t8">
           <div class="row">
-            <div class="col-md-7">
-              <form class="form-a contactForm" action="" method="post" role="form">
-                <div id="sendmessage">Your message has been sent. Thank you!</div>
-                <div id="errormessage"></div>
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <div class="form-group">
-                      <input type="text" name="name" class="form-control form-control-lg form-control-a" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                      <div class="validation"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <div class="form-group">
-                      <input name="email" type="email" class="form-control form-control-lg form-control-a" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
-                      <div class="validation"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-12 mb-3">
-                    <div class="form-group">
-                      <input type="text" name="subject" class="form-control form-control-lg form-control-a" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
-                      <div class="validation"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-12 mb-3">
-                    <div class="form-group">
-                      <textarea name="message" class="form-control" name="message" cols="45" rows="8" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                      <div class="validation"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <button type="submit" class="btn btn-a">Send Message</button>
-                  </div>
-                </div>
-              </form>
-            </div>
             <div class="col-md-5 section-md-t3">
               <div class="icon-box section-b2">
                 <div class="icon-box-icon">
@@ -350,20 +320,20 @@
         <div class="col-sm-12 col-md-4">
           <div class="widget-a">
             <div class="w-header-a">
-              <h3 class="w-title-a text-brand">EstateAgency</h3>
+              <h3 class="w-title-a text-brand">School Address </h3>
             </div>
             <div class="w-body-a">
               <p class="w-text-a color-text-a">
-                Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
-                sed aute irure.
+              Jl. Santawi No.96 A, Tamansari Indah, Kec. Bondowoso
+              Kabupaten Bondowoso, Jawa Timur 68216 Indonesia.
               </p>
             </div>
             <div class="w-footer-a">
               <ul class="list-unstyled">
                 <li class="color-a">
-                  <span class="color-text-a">Phone .</span> contact@example.com</li>
+                  <span class="color-text-a">Phone .</span> (123)454-441</li>
                 <li class="color-a">
-                  <span class="color-text-a">Email .</span> +54 356 945234</li>
+                  <span class="color-text-a">Email .</span> anitadwisalasari@gmail.com</li>
               </ul>
             </div>
           </div>
@@ -371,29 +341,15 @@
         <div class="col-sm-12 col-md-4 section-md-t3">
           <div class="widget-a">
             <div class="w-header-a">
-              <h3 class="w-title-a text-brand">The Company</h3>
+              <h3 class="w-title-a text-brand">Developer Identity</h3>
             </div>
             <div class="w-body-a">
               <div class="w-body-a">
                 <ul class="list-unstyled">
-                  <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Site Map</a>
-                  </li>
-                  <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Legal</a>
-                  </li>
-                  <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Agent Admin</a>
-                  </li>
-                  <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Careers</a>
-                  </li>
-                  <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Affiliate</a>
-                  </li>
-                  <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Privacy Policy</a>
-                  </li>
+                <li class="color-a">
+                  <span class="color-text-a">Phone .</span> +62 853-3075-0875</li>
+                <li class="color-a">
+                  <span class="color-text-a">Email .</span> teamprogresslibrarybondowoso@gmail.com</li>
                 </ul>
               </div>
             </div>
@@ -402,27 +358,24 @@
         <div class="col-sm-12 col-md-4 section-md-t3">
           <div class="widget-a">
             <div class="w-header-a">
-              <h3 class="w-title-a text-brand">International sites</h3>
+              <h3 class="w-title-a text-brand">Developer</h3>
             </div>
             <div class="w-body-a">
               <ul class="list-unstyled">
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Venezuela</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Yudi Irianto</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">China</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Irfan giovani</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Hong Kong</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Ilham Robby Sanjaya</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Argentina</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Azizah Wina Sriwinarsih</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Singapore</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Philippines</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Muhammad Ansori</a>
                 </li>
               </ul>
             </div>

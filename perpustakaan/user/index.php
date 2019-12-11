@@ -43,7 +43,6 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
 </head>
 
 <body>
-
   <div class="click-closed"></div>
   <!--/ Form Search Star /-->
   <div class="box-collapse">
@@ -155,7 +154,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Beranda</a>
+            <a class="nav-link active" href="index.php">Beranda</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="daftarmember/registrasi.php">Daftar Member</a>
@@ -164,7 +163,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
             <a class="nav-link" href="property-grid.html">Buku</a> 
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="bantuanpen.php">Bantuan</a>
+            <a class="nav-link" href="bantuan.php">Bantuan</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../admin/loginadmin.php">Login</a>
