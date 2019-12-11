@@ -6,7 +6,8 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifikasi = 'masa pinjam'"); 
+$peminjaman_tahunan = query ("SELECT a.id_pinjam_buku_tahunan, a.kode_buku_tahunan, a.tanggal_peminjaman, a.tanggal_hrs_kembali, a.notifikasi, b.judul_buku_tahunan as id_judul_buku_tahunan,  c.nama_siswa as nis
+FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku_tahunan = a.id_judul_buku_tahunan LEFT JOIN member_perpus c on c.nis = a.nis WHERE a.notifikasi='masa pinjam' ORDER BY a.id_pinjam_buku_tahunan DESC"); 
 
 ?>
 
@@ -26,7 +27,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
   <link href="css/prettyPhoto.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-
+  <link href="js/dataTables/dataTables.bootstrap.css" rel="stylesheet">
   <!-- Theme skin -->
   <link id="t-colors" href="color/default.css" rel="stylesheet" />
 
@@ -139,14 +140,14 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Pengembalian Buku Tahunan Siswa</h2>
+              <h2>Peminjaman Buku Tahunan Siswa</h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
-              <li><a href="#">Pengembalian</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Buku Literasi Umum</li>
+              <li><a href="#">Peminjaman</a> <i class="icon-angle-right"></i></li>
+              <li class="active">Buku Tahunan Siswa</li>
             </ul>
           </div>
         </div>
@@ -155,15 +156,16 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
 
     <br>
      <div class="container-fluid">
-      <a href="pengembalian_tahunan_selesai.php" class="btn btn-success">Data Pengembalian</a>
-    </div>
-    <br><br>
+     <a href="pengembalian_tahunan_selesai.php" class="btn btn-success">Data Pengembalian</a>
+     <br><br>
+
     <div class="content">
       <div class="box">
 <div class="offside-3 col-lg-7">
     <form action="" method="post">
       <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover ">
+    <table class="table table-striped table-bordered table-hover" id="tabel">
+    <thead>
         <tr>
 			      <th>no</th>
             <th>ID Pinjam Tahunan</th>
@@ -173,7 +175,10 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
             <th>Tanggal Peminjaman</th>
             <th>Tanggal Harus Kembali</th>
             <th>Notifikasi</th>
+            <th>Aksi</th>
         </tr>
+    </thead>
+    <tbody>
 		<?php $i = 1; ?> 
         <?php
             foreach( $peminjaman_tahunan as $row) :
@@ -187,13 +192,11 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
             <td><?php echo $row["tanggal_peminjaman"];?></td>
             <td><?php echo $row["tanggal_hrs_kembali"];?></td>
             <td><?php echo $row["notifikasi"];?></td>
-            <td>
-            <a href="proses_pengembalian_tahunan.php?id=<?php echo $row ['id_pinjam_buku_tahunan']; ?>" class="btn btn-warning" title="ubah data" >Kembali</a>
-
-            </td>
+            <td><a href="proses_pengembalian_tahunan.php?id=<?php echo $row ['id_pinjam_buku_tahunan']; ?>" class="btn btn-warning" title="ubah data" >kembali</a></td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
+    </tbody>
     </table>
   </div>
     </form>
@@ -292,6 +295,13 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan WHERE notifi
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
+  <script src="js/dataTables/dataTables.bootstrap.js"></script>
+  <script src="js/dataTables/jquery.dataTables.js"></script>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabel').DataTable();
+        });
+    </script>
 
 </body>
 
