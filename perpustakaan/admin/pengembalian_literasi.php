@@ -7,7 +7,11 @@ if( !isset($_SESSION["login"])){
 
 require 'functions.php';
 $peminjaman_literasi = query ("SELECT a.id_pinjam_buku_literasi, a.tanggal_peminjaman, a.tanggal_hrs_kembali, a.notifikasi, b.judul_buku_literasi as kode_buku_literasi,  c.nama_siswa as nis
-FROM peminjaman_buku_literasi a LEFT JOIN buku_literasi_umum b on b.kode_buku_literasi = a.kode_buku_literasi LEFT JOIN member_perpus c on c.nis = a.nis WHERE a.notifikasi='masa pinjam' ORDER BY a.id_pinjam_buku_literasi DESC");
+FROM peminjaman_buku_literasi a LEFT JOIN buku_literasi_umum b on b.kode_buku_literasi = a.kode_buku_literasi LEFT JOIN member_perpus c on c.nis = a.nis WHERE a.notifikasi='masa pinjam' ORDER BY a.id_pinjam_buku_literasi DESC"); 
+
+if( isset($_POST["cariliterasi"])) {
+  $peminjaman_literasi = caripeminjamanliterasi($_POST["keywordliterasi"]);
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +31,7 @@ FROM peminjaman_buku_literasi a LEFT JOIN buku_literasi_umum b on b.kode_buku_li
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <link href="js/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+
   <!-- Theme skin -->
   <link id="t-colors" href="color/default.css" rel="stylesheet" />
 
@@ -97,7 +102,7 @@ FROM peminjaman_buku_literasi a LEFT JOIN buku_literasi_umum b on b.kode_buku_li
                         <li><a href="tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown active">
                       <a href="#">Peminjaman<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                       <li><a href="peminjaman_literasi.php">Buku Literasi Umum</a></li>
@@ -105,7 +110,7 @@ FROM peminjaman_buku_literasi a LEFT JOIN buku_literasi_umum b on b.kode_buku_li
                         <li><a href="peminjaman_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                       <a href="#">Pengembalian<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                         <li><a href="pengembalian_literasi.php">Buku Literasi Umum</a></li>
@@ -139,55 +144,54 @@ FROM peminjaman_buku_literasi a LEFT JOIN buku_literasi_umum b on b.kode_buku_li
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Pengembalian Buku Literasi Umum</h2>
+              <h2>Peminjaman Buku Literasi Umum</h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
-              <li><a href="#">Pengembalian</a> <i class="icon-angle-right"></i></li>
+              <li><a href="#">Peminjaman</a> <i class="icon-angle-right"></i></li>
               <li class="active">Buku Literasi Umum</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
-
-    <br>
-     <div class="container-fluid">
-     <a href="pengembalian_literasi_selesai.php" class="btn btn-success">Data Pengembalian</a>
     <br><br>
-
-            <div class="content">
-              <div class="box">
-                <div class="offside-3 col-lg-7">
-                  <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover" id="tabel">
-                        <thead>
+     <div class="container-fluid">
+     <div class="col-lg-12">
+     <a href="pengembalian_literasi_selesai.php" class="btn btn-success">Data Pengembalian</a>
+     <br><br>
+          <div class="content">
+            <div class="box">
+              <div class="col-lg-6">
+                <div class="table-responsive">
+                  <table class="table table-striped table-bordered table-hover " id="tabel">
+                    <thead>
                         <tr>
-                          <th>no</th>
-                          <th>ID Pinjam Literasi</th>
-                          <th>Judul Buku Literasi</th>
-                          <th>Peminjam</th>
-                          <th>Tanggal Pemnjaman</th>
-                          <th>Tanggal Harus Kembali</th>
-                          <th>Status</th>
+                            <th>no</th>
+                            <th>ID Pinjam Literasi</th>
+                            <th>Judul Buku Literasi</th>
+                            <th>Peminjam</th>
+                            <th>Tanggal Peminjaman</th>
+                            <th>Tanggal Harus Kembali</th>
+                            <th>Status</th>
                         </tr>
-                      </thead>
-                      <tbody>
-                          <?php $i = 1; ?> 
-                          <?php
-                          foreach( $peminjaman_literasi as $row) :
-                          ?>
+                        </thead>
+                        <tbody>
+                        <?php $i = 1; ?> 
+                        <?php
+                            foreach( $peminjaman_literasi as $row) :
+                        ?>
                         <tr>
-                          <td><?=$i; ?></td>
-                          <td><?php echo $row["id_pinjam_buku_literasi"]; ?></td>
-                          <td><?php echo $row["kode_buku_literasi"];?></td>
-                          <td><?php echo $row["nis"];?></td>
-                          <td><?php echo $row["tanggal_peminjaman"];?></td>
-                          <td><?php echo $row["tanggal_hrs_kembali"];?></td>
-                          <td><?php echo $row["notifikasi"];?>
-                          <?php 
+                            <td><?=$i; ?></td>
+                            <td><?php echo $row["id_pinjam_buku_literasi"]; ?></td>
+                            <td><?php echo $row["kode_buku_literasi"];?></td>
+                            <td><?php echo $row["nis"];?></td>
+                            <td><?php echo $row["tanggal_peminjaman"];?></td>
+                            <td><?php echo $row["tanggal_hrs_kembali"];?></td>
+                            <td><?php echo $row["notifikasi"];?>
+                            <?php 
 
                             $tgl_dateline = $row['tanggal_hrs_kembali'];
                             $tgl_kembali = date('Y-m-d');
@@ -201,16 +205,14 @@ FROM peminjaman_buku_literasi a LEFT JOIN buku_literasi_umum b on b.kode_buku_li
                                     ";
                             }
                             ?></td>
-                            <td>
-                          <a href="proses_pengembalian_literasi.php?id=<?php echo $row ['id_pinjam_buku_literasi']; ?>" class="btn btn-warning" title="ubah data" >Kembali</a>
-                          </td>
-                      </tr>
-                    <?php $i++; ?>
-                    <?php endforeach; ?>
-                    </tbody>
-                  </table>
-                </div>
+                        </tr>
+                      <?php $i++; ?>
+                      <?php endforeach; ?>
+                      </tbody>
+                    </table>
+                  </div>
               </div>
+            </div>
             </div>
           </div>
         </div>
@@ -254,7 +256,7 @@ FROM peminjaman_buku_literasi a LEFT JOIN buku_literasi_umum b on b.kode_buku_li
             <div class="widget">
               <h5 class="widgetheading">From flickr</h5>
               <div class="flickr_badge">
-                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
+                <script type="text/javascript" src="js/admin/gambarfooter.js"></script>
               </div>
               <div class="clear"></div>
             </div>
@@ -302,9 +304,8 @@ FROM peminjaman_buku_literasi a LEFT JOIN buku_literasi_umum b on b.kode_buku_li
   <script src="js/portfolio/jquery.quicksand.js"></script>
   <script src="js/portfolio/setting.js"></script>
   <script src="js/animate.js"></script>
-
-  <!-- Template Custom JavaScript File -->
-  <script src="js/custom.js"></script>
+   <!-- Template Custom JavaScript File -->
+   <script src="js/custom.js"></script>
   <script src="js/dataTables/dataTables.bootstrap.js"></script>
   <script src="js/dataTables/jquery.dataTables.js"></script>
   <script type="text/javascript">
@@ -313,6 +314,7 @@ FROM peminjaman_buku_literasi a LEFT JOIN buku_literasi_umum b on b.kode_buku_li
         });
     </script>
 
+ 
 </body>
 
 </html>
