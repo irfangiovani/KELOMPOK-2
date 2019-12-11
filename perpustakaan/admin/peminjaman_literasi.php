@@ -155,8 +155,7 @@ if( isset($_POST["cariliterasi"])) {
         </div>
       </div>
     </section>
-
-    <br>
+    <br><br>
      <div class="container-fluid">
      <div class="col-lg-12">
         <a href="tambah_pinjam_literasi.php">Tambah Data Peminjaman Literasi</a>
@@ -195,7 +194,6 @@ if( isset($_POST["cariliterasi"])) {
                       </tbody>
                     </table>
                   </div>
-                </form>
               </div>
             </div>
             </div>
