@@ -160,7 +160,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
             <a class="nav-link" href="daftarmember/registrasi.php">Daftar Member</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="property-grid.html">Buku</a> 
+            <a class="nav-link" href="buku_literasi.php">Buku</a> 
           </li>
           <li class="nav-item">
             <a class="nav-link" href="bantuan.php">Bantuan</a>
@@ -354,7 +354,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
               <h2 class="title-a">Buku-Buku</h2>
             </div>
             <div class="title-link">
-              <a href="property-grid.html">Semua Buku
+              <a href="buku_literasi.php">Semua Buku
                 <span class="ion-ios-arrow-forward"></span>
               </a>
             </div>
@@ -882,18 +882,6 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
             <ul class="list-inline">
               <li class="list-inline-item">
                 <a href="#">Home</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">About</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Property</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Blog</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Contact</a>
               </li>
             </ul>
           </nav>
