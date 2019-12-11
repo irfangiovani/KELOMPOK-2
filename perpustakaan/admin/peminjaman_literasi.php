@@ -6,7 +6,8 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE notifikasi='masa pinjam'"); 
+$peminjaman_literasi = query ("SELECT a.id_pinjam_buku_literasi, a.tanggal_peminjaman, a.tanggal_hrs_kembali, a.notifikasi, b.judul_buku_literasi as kode_buku_literasi,  c.nama_siswa as nis
+FROM peminjaman_buku_literasi a LEFT JOIN buku_literasi_umum b on b.kode_buku_literasi = a.kode_buku_literasi LEFT JOIN member_perpus c on c.nis = a.nis WHERE a.notifikasi='masa pinjam' ORDER BY a.id_pinjam_buku_literasi DESC"); 
 
 if( isset($_POST["cariliterasi"])) {
   $peminjaman_literasi = caripeminjamanliterasi($_POST["keywordliterasi"]);
@@ -29,6 +30,7 @@ if( isset($_POST["cariliterasi"])) {
   <link href="css/prettyPhoto.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  <link href="js/dataTables/dataTables.bootstrap.css" rel="stylesheet">
 
   <!-- Theme skin -->
   <link id="t-colors" href="color/default.css" rel="stylesheet" />
@@ -168,8 +170,8 @@ if( isset($_POST["cariliterasi"])) {
                         <tr>
                             <th>no</th>
                             <th>ID Pinjam Literasi</th>
-                            <th>Kode Buku Literasi</th>
-                            <th>NIS Peminjam</th>
+                            <th>Judul Buku Literasi</th>
+                            <th>Peminjam</th>
                             <th>Tanggal Peminjaman</th>
                             <th>Tanggal Harus Kembali</th>
                             <th>Status</th>

@@ -6,7 +6,8 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE notifikasi='masa pinjam'"); 
+$peminjaman_literasi = query ("SELECT a.id_pinjam_buku_literasi, a.tanggal_peminjaman, a.tanggal_hrs_kembali, a.notifikasi, b.judul_buku_literasi as kode_buku_literasi,  c.nama_siswa as nis
+FROM peminjaman_buku_literasi a LEFT JOIN buku_literasi_umum b on b.kode_buku_literasi = a.kode_buku_literasi LEFT JOIN member_perpus c on c.nis = a.nis WHERE a.notifikasi='masa pinjam' ORDER BY a.id_pinjam_buku_literasi DESC");
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +26,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE noti
   <link href="css/prettyPhoto.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-
+  <link href="js/dataTables/dataTables.bootstrap.css" rel="stylesheet">
   <!-- Theme skin -->
   <link id="t-colors" href="color/default.css" rel="stylesheet" />
 
@@ -157,76 +158,62 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE noti
      <a href="pengembalian_literasi_selesai.php" class="btn btn-success">Data Pengembalian</a>
     <br><br>
 
-    <div class="content">
-      <div class="box">
-<div class="offside-3 col-lg-7">
-    <form action="" method="post">
-      <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover ">
-        <tr>
-			      <th>no</th>
-            <th>ID Pinjam Literasi</th>
-            <th>Kode Buku Literasi</th>
-            <th>NIS peminjam</th>
-            <th>Tanggal Pemnjaman</th>
-            <th>Tanggal Harus Kembali</th>
-        </tr>
-		<?php $i = 1; ?> 
-        <?php
-            foreach( $peminjaman_literasi as $row) :
-        ?>
-        <tr>
-			      <td><?=$i; ?></td>
-            <td><?php echo $row["id_pinjam_buku_literasi"]; ?></td>
-            <td><?php echo $row["kode_buku_literasi"];?></td>
-            <td><?php echo $row["nis"];?></td>
-            <td><?php echo $row["tanggal_peminjaman"];?></td>
-            <td><?php echo $row["tanggal_hrs_kembali"];?></td>
-            <td><?php echo $row["notifikasi"];?></td>
-            <td>
-            <a href="proses_pengembalian_literasi.php?id=<?php echo $row ['id_pinjam_buku_literasi']; ?>" class="btn btn-warning" title="ubah data" >Kembali</a>
+            <div class="content">
+              <div class="box">
+                <div class="offside-3 col-lg-7">
+                  <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover" id="tabel">
+                        <thead>
+                        <tr>
+                          <th>no</th>
+                          <th>ID Pinjam Literasi</th>
+                          <th>Judul Buku Literasi</th>
+                          <th>Peminjam</th>
+                          <th>Tanggal Pemnjaman</th>
+                          <th>Tanggal Harus Kembali</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <?php $i = 1; ?> 
+                          <?php
+                          foreach( $peminjaman_literasi as $row) :
+                          ?>
+                        <tr>
+                          <td><?=$i; ?></td>
+                          <td><?php echo $row["id_pinjam_buku_literasi"]; ?></td>
+                          <td><?php echo $row["kode_buku_literasi"];?></td>
+                          <td><?php echo $row["nis"];?></td>
+                          <td><?php echo $row["tanggal_peminjaman"];?></td>
+                          <td><?php echo $row["tanggal_hrs_kembali"];?></td>
+                          <td><?php echo $row["notifikasi"];?>
+                          <?php 
 
-            </td>
-            <td><?php 
-              $denda = 1000;
+                            $tgl_dateline = $row['tanggal_hrs_kembali'];
+                            $tgl_kembali = date('Y-m-d');
 
-              $tgl_dateline = $row['tanggal_hrs_kembali'];
-              $tgl_kembali = date('Y-m-d');
+                            $lambat = terlambatliterasi($tgl_dateline, $tgl_kembali);
+                            if ($lambat>0) {
+                              echo "
+                              
+                                      <font color='red'> terlewat</font>
 
-              $lambat = terlambatliterasi($tgl_dateline, $tgl_kembali);
-              $denda1 = $lambat*$denda;
-
-              if ($lambat>0) {
-                echo "
-                
-                        <font color='red'>$lambat Hari</font>
-
-                      ";
-              } else {
-                echo $lambat ."Hari";
-              }
-              ?></td>
-            <td><?php 
-            if ($lambat>0) {
-                echo "
-                
-                        <font color='red'>(Rp $denda1)</font>
-
-                      ";
-              } else {
-                echo $lambat ."Hari";
-              }
-            ?></td>
-        </tr>
-			<?php $i++; ?>
-			<?php endforeach; ?>
-    </table>
-  </div>
-    </form>
-  </div>
-</div>
-</div>
-  </div>
+                                    ";
+                            }
+                            ?></td>
+                            <td>
+                          <a href="proses_pengembalian_literasi.php?id=<?php echo $row ['id_pinjam_buku_literasi']; ?>" class="btn btn-warning" title="ubah data" >Kembali</a>
+                          </td>
+                      </tr>
+                    <?php $i++; ?>
+                    <?php endforeach; ?>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
     
@@ -318,6 +305,13 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi WHERE noti
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
+  <script src="js/dataTables/dataTables.bootstrap.js"></script>
+  <script src="js/dataTables/jquery.dataTables.js"></script>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabel').DataTable();
+        });
+    </script>
 
 </body>
 

@@ -27,7 +27,7 @@ FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku
   <link href="css/prettyPhoto.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-
+  <link href="js/dataTables/dataTables.bootstrap.css" rel="stylesheet">
   <!-- Theme skin -->
   <link id="t-colors" href="color/default.css" rel="stylesheet" />
 

@@ -26,7 +26,7 @@ $peminjaman_mapel = query ("SELECT a.id_pinjam_buku_mapel, a.nama_peminjam, a.wa
   <link href="css/prettyPhoto.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-
+  <link href="js/dataTables/dataTables.bootstrap.css" rel="stylesheet">
   <!-- Theme skin -->
   <link id="t-colors" href="color/default.css" rel="stylesheet" />
 
@@ -166,7 +166,7 @@ $peminjaman_mapel = query ("SELECT a.id_pinjam_buku_mapel, a.nama_peminjam, a.wa
                 </div>
                   <thead>
                   <tr>
-                  <th>no</th>
+                        <th>no</th>
                         <th>ID Pinjam Mapel</th>
                         <th>Judul Buku Mapel</th>
                         <th>Kelas</th>
@@ -195,7 +195,6 @@ $peminjaman_mapel = query ("SELECT a.id_pinjam_buku_mapel, a.nama_peminjam, a.wa
                   <?php endforeach; ?>
                   </tbody>
                 </table>
-              
             </div>
           </div>
         </div>
