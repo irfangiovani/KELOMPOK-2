@@ -304,6 +304,14 @@ $data_kelas = query ("SELECT * FROM kelas ");
         });
     </script>
 
+  <script src="js/custom.js"></script>
+  <script src="js/dataTables/dataTables.bootstrap.js"></script>
+  <script src="js/dataTables/jquery.dataTables.js"></script>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabel').DataTable();
+        });
+    </script>
 </body>
 
 </html>
