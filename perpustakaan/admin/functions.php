@@ -474,4 +474,41 @@ function tambahsiswa($datasiswa) {
 
     return mysqli_affected_rows($conn);
 }
+
+function tambahkelas($data){
+    global $conn;
+    $kode_kelas = htmlspecialchars($data["kode_kelas"]);
+    $jurusan = htmlspecialchars($data["jurusan"]);
+    $kelas = htmlspecialchars($data["kelas"]);
+    $wali_kelas = htmlspecialchars($data["wali_kelas"]);
+
+    $query = "INSERT INTO kelas (kode_kelas, jurusan, kelas, wali_kelas) VALUES ('$kode_kelas', '$jurusan', '$kelas', '$wali_kelas') ";
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
+
+function hapuskelas($id){
+    global $conn;
+    mysqli_query ($conn, "DELETE FROM kelas WHERE kode_kelas = '$id'");
+
+    return mysqli_affected_rows($conn);
+}
+
+function ubahkelas($data){
+    global $conn;
+    $kode_kelas = htmlspecialchars($data["kode_kelas"]);
+    $jurusan = htmlspecialchars($data["jurusan"]);
+    $kelas = htmlspecialchars($data["kelas"]);
+    $wali_kelas = htmlspecialchars($data["wali_kelas"]);
+
+    $query = "UPDATE  kelas SET
+                    kode_kelas = '$kode_kelas',
+                    jurusan = '$jurusan',
+                    kelas = '$kelas',
+                    wali_kelas ='$wali_kelas'
+                WHERE kode_kelas = '$_GET[id]'";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
 ?>
