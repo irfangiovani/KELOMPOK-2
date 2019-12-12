@@ -760,7 +760,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                   </p>
                 </div>
                 <div class="testimonial-author-box">
-                  <img src="img/kelompok.jpg" alt="" class="testimonial-avatar">
+                  <img src="img/mini-testimonial-1.jpg" alt="" class="testimonial-avatar">
                   <h5 class="testimonial-author">PAH</h5>
                 </div>
               </div>
