@@ -190,7 +190,6 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
           </div>
         </div>
       </div>
-<<<<<<< HEAD
     </div>
   </section>
   <!--/ Intro Single End /-->
@@ -217,21 +216,11 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
               <img src="img/mapel/<?php echo $perbuku['gambar_sampul']; ?>" alt="" class="img-a img-fluid">
-=======
-      <div id="property-carousel" class="owl-carousel owl-theme">
-      <?php foreach ( $buku_mapel_kelas as $row) : ?>
-        <div class="carousel-item-b">
-          <div class="card-box-a card-shadow">
-            <div class="img-box-a">
-            
-              <img src="img/mapel/<?php echo $row["gambar_sampul"]; ?>" alt="" class="img-a img-fluid">
->>>>>>> 4045e54021653aa5fdb3993f75e391a1a3ab129c
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
                 <div class="card-header-a">
                   <h2 class="card-title-a">
-<<<<<<< HEAD
                     <a href="#"><?= $perbuku['judul_buku_mapel']; ?></a>
                   </h2>
                 </div>
@@ -260,22 +249,12 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                     </li>
                   </ul>
                 </div>
-=======
-                  <?php echo $row["judul_buku_mapel"];?>
-                  </h2>
-                </div>
->>>>>>> 4045e54021653aa5fdb3993f75e391a1a3ab129c
               </div>
             </div>
           </div>
         </div>
-<<<<<<< HEAD
         <?php } ?>
       </div> 
-=======
-        <?php endforeach ; ?>
-      </div>
->>>>>>> 4045e54021653aa5fdb3993f75e391a1a3ab129c
     </div>
   </section>
   <!--/ Intro Single End /-->
