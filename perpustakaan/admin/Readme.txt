@@ -13,5 +13,9 @@ Tema : Perpustakaan SMKN 3 Bondowoso
 		-menambahi tombol hapus,edit dan tampil buku literasi,mapel,tahunan
 		-cek pinjaman pada user,nama,nis,kode buku,batas pengembali
 		-membuat serching pada admin dan pencarian buku 
-		
+3. Irfan Giovani :
+		-mengubah tampilan user
+		-cut view tampilan buku tahunan literasi
+		-menampilkan galery di user
+		-mendesain tampilan login admin		
 		
