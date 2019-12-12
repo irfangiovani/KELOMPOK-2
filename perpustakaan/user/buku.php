@@ -1,3 +1,11 @@
+<?php 
+//Koneksi ke database
+$conn = mysqli_connect("localhost", "root", "", "perpustakaan");
+require 'functions.php';
+$buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
+ //$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +48,7 @@
   <!--/ Form Search Star /-->
   <div class="box-collapse">
     <div class="title-box-d">
-      <h3 class="title-d">Search Property</h3>
+      <h3 class="title-d">Pencarian Buku</h3>
     </div>
     <span class="close-box-collapse right-boxed ion-ios-close"></span>
     <div class="box-collapse-wrap form">
@@ -122,7 +130,7 @@
             </div>
           </div>
           <div class="col-md-12">
-            <button type="submit" class="btn btn-b">Search Property</button>
+            <button type="submit" class="btn btn-b">Cari Buku!</button>
           </div>
         </div>
       </form>
@@ -150,7 +158,7 @@
             <a class="nav-link" href="index.php">Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="registrasi.php">Daftar Member</a>
+            <a class="nav-link" href="daftarmember/registrasi.php">Daftar Member</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="buku.php">Buku</a> 
@@ -177,130 +185,81 @@
       <div class="row">
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
-            <h1 class="title-single">Alur Peminjaman</h1>
-            <span class="color-text-a">Disini adalah alur peminjaman buku di perpustakaan K-NEGABON ikuti prosedur di bawah ini untuk peminjaman buku di perpustakaan</span>
+            <h1 class="title-single">Kumpulan Buku</h1>
+            <span class="color-text-a">Literasi, Mapel, Tahunan</span>
           </div>
-        </div>
-        <div class="col-md-12 col-lg-4">
-          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="index.html">Home</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                Contact
-              </li>
-            </ol>
-          </nav>
         </div>
       </div>
     </div>
   </section>
   <!--/ Intro Single End /-->
 
-  <!--/ Contact Star /-->
-  <section class="contact">
+  <!--/ Property Grid Star /-->
+  <section class="property-grid grid">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <div class="contact-map box">
-            <div id="map" class="contact-map">
-              <style>
-                .gambar {
-                  width: 1090px;
-                  height: 600px;
-                }
-              </style>
-              <img class="gambar" src="img/alurpendaftar.jpg">
-            </div>
+          <div class="grid-option">
+            <form>
+              <select class="custom-select">
+                <option selected>Semua</option>
+                <option value="1">Literasi</option>
+                <option value="2">Mapel</option>
+                <option value="3">Tahunan</option>
+              </select>
+            </form>
           </div>
         </div>
-        <div class="col-sm-12 section-t8">
-          <div class="row">
-            <div class="col-md-5 section-md-t3">
-              <div class="icon-box section-b2">
-                <div class="icon-box-icon">
-                  <span class="ion-ios-paper-plane"></span>
+        <?php $ambil=$conn->query("SELECT * FROM buku_mapel_kelas"); ?>
+        <?php while($perbuku=$ambil->fetch_assoc()){ ?>
+        <div class="col-md-4">
+          <div class="card-box-a card-shadow">
+            <div class="img-box-a">
+              <img src="img/mapel/<?php echo $perbuku['gambar_sampul']; ?>" alt="" class="img-a img-fluid">
+            </div>
+            <div class="card-overlay">
+              <div class="card-overlay-a-content">
+                <div class="card-header-a">
+                  <h2 class="card-title-a">
+                    <a href="#"><?= $perbuku['judul_buku_mapel']; ?></a>
+                  </h2>
                 </div>
-                <div class="icon-box-content table-cell">
-                  <div class="icon-box-title">
-                    <h4 class="icon-title">Say Hello</h4>
-                  </div>
-                  <div class="icon-box-content">
-                    <p class="mb-1">Email.
-                      <span class="color-a">contact@example.com</span>
-                    </p>
-                    <p class="mb-1">Phone.
-                      <span class="color-a">+54 356 945234</span>
-                    </p>
-                  </div>
+                <div class="card-body-a">
+                  
+                  <a href="property-single.html" class="link-a">Lihat Detail Buku
+                    <span class="ion-ios-arrow-forward"></span>
+                  </a>
                 </div>
-              </div>
-              <div class="icon-box section-b2">
-                <div class="icon-box-icon">
-                  <span class="ion-ios-pin"></span>
-                </div>
-                <div class="icon-box-content table-cell">
-                  <div class="icon-box-title">
-                    <h4 class="icon-title">Alamat Sekolah</h4>
-                  </div>
-                  <div class="icon-box-content">
-                    <p class="mb-1">
-                      Jl. Santawi No.96 A Tamansari Indah Kec. Bondowoso 
-                      <br>Kabupaten Bondowoso Jawa Timur 68216 Indonesia.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="icon-box">
-                <div class="icon-box-icon">
-                  <span class="ion-ios-redo"></span>
-                </div>
-                <div class="icon-box-content table-cell">
-                  <div class="icon-box-title">
-                    <h4 class="icon-title">Social networks</h4>
-                  </div>
-                  <div class="icon-box-content">
-                    <div class="socials-footer">
-                      <ul class="list-inline">
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-dribbble" aria-hidden="true"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                <div class="card-footer-a text-center">
+                  <ul class="card-info d-flex justify-content-around">
+                    <li>
+                      <h4 class="card-info-title">Terbit</h4>
+                      <span><?= $perbuku['tahun_terbit']; ?>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Kelas</h4>
+                      <span><?= $perbuku['untuk_kelas']; ?>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Stok</h4>
+                      <span><?= $perbuku['stok']; ?>
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        <?php } ?>
+      </div> 
     </div>
   </section>
-  <!--/ Contact End /-->
+  <!--/ Intro Single End /-->
 
+  
   <!--/ footer Star /-->
   <section class="section-footer">
     <div class="container">
@@ -308,20 +267,20 @@
         <div class="col-sm-12 col-md-4">
           <div class="widget-a">
             <div class="w-header-a">
-              <h3 class="w-title-a text-brand">School Address </h3>
+              <h3 class="w-title-a text-brand">EstateAgency</h3>
             </div>
             <div class="w-body-a">
               <p class="w-text-a color-text-a">
-              Jl. Santawi No.96 A, Tamansari Indah, Kec. Bondowoso
-              Kabupaten Bondowoso, Jawa Timur 68216 Indonesia.
+                Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
+                sed aute irure.
               </p>
             </div>
             <div class="w-footer-a">
               <ul class="list-unstyled">
                 <li class="color-a">
-                  <span class="color-text-a">Phone .</span> (123)454-441</li>
+                  <span class="color-text-a">Phone .</span> contact@example.com</li>
                 <li class="color-a">
-                  <span class="color-text-a">Email .</span> anitadwisalasari@gmail.com</li>
+                  <span class="color-text-a">Email .</span> +54 356 945234</li>
               </ul>
             </div>
           </div>
@@ -329,15 +288,29 @@
         <div class="col-sm-12 col-md-4 section-md-t3">
           <div class="widget-a">
             <div class="w-header-a">
-              <h3 class="w-title-a text-brand">Developer Identity</h3>
+              <h3 class="w-title-a text-brand">The Company</h3>
             </div>
             <div class="w-body-a">
               <div class="w-body-a">
                 <ul class="list-unstyled">
-                <li class="color-a">
-                  <span class="color-text-a">Phone .</span> +62 853-3075-0875</li>
-                <li class="color-a">
-                  <span class="color-text-a">Email .</span> teamprogresslibrarybondowoso@gmail.com</li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="#">Site Map</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="#">Legal</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="#">Agent Admin</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="#">Careers</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="#">Affiliate</a>
+                  </li>
+                  <li class="item-list-a">
+                    <i class="fa fa-angle-right"></i> <a href="#">Privacy Policy</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -346,24 +319,27 @@
         <div class="col-sm-12 col-md-4 section-md-t3">
           <div class="widget-a">
             <div class="w-header-a">
-              <h3 class="w-title-a text-brand">Developer</h3>
+              <h3 class="w-title-a text-brand">International sites</h3>
             </div>
             <div class="w-body-a">
               <ul class="list-unstyled">
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Yudi Irianto</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Venezuela</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Irfan giovani</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">China</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Ilham Robby Sanjaya</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Hong Kong</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Azizah Wina Sriwinarsih</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Argentina</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Muhammad Ansori</a>
+                  <i class="fa fa-angle-right"></i> <a href="#">Singapore</a>
+                </li>
+                <li class="item-list-a">
+                  <i class="fa fa-angle-right"></i> <a href="#">Philippines</a>
                 </li>
               </ul>
             </div>

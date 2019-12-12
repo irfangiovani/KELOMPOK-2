@@ -1,14 +1,43 @@
+<?php
+$conn = mysqli_connect ("localhost" , "root","", "perpustakaan");
+//cek tombol submit ditekan atau tidak
+if( isset($_POST["submit"])){
+    // ambil data dari tiap elemen dalam form
+    $nis = $_POST["nis"];
+    $nama = $_POST["nama"];
+    $kelas = $_POST["kelas"];
+    $jurusan = $_POST["jurusan"];
+    $no_telp = $_POST["no_telp"];
+    $alamat = $_POST["alamat"];
+    $status = "tidak aktif";
+
+    //query insert data
+    mysqli_query($conn, "INSERT INTO member_perpus VALUES ('$nis', '$nama','$kelas','$jurusan', '$no_telp',  '$alamat','$status')");
+
+    
+
+    // cek keberhasilan tambah data
+    if( mysqli_affected_rows($conn) > 0 ) {
+        echo "berhasil";
+    } else {
+        echo "gagal!";
+        echo "<br>";
+        echo mysqli_error($conn);
+    }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>EstateAgency Bootstrap Template</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register Member</title>
 
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
+    <!-- Favicons -->
+  <link href="img/logosmk3.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -26,17 +55,15 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-    Theme Name: EstateAgency
-    Theme URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
-</head>
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
+    <!-- Main css -->
+    <link rel="stylesheet" href="cssregis/style.css">
+</head>
 <body>
 
-  <div class="click-closed"></div>
+<div class="click-closed"></div>
   <!--/ Form Search Star /-->
   <div class="box-collapse">
     <div class="title-box-d">
@@ -171,137 +198,57 @@
   </nav>
   <!--/ Nav End /-->
 
-  <!--/ Intro Single star /-->
-  <section class="intro-single">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-lg-8">
-          <div class="title-single-box">
-            <h1 class="title-single">Alur Peminjaman</h1>
-            <span class="color-text-a">Disini adalah alur peminjaman buku di perpustakaan K-NEGABON ikuti prosedur di bawah ini untuk peminjaman buku di perpustakaan</span>
-          </div>
-        </div>
-        <div class="col-md-12 col-lg-4">
-          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="index.html">Home</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                Contact
-              </li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--/ Intro Single End /-->
+    <div class="main">
 
-  <!--/ Contact Star /-->
-  <section class="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="contact-map box">
-            <div id="map" class="contact-map">
-              <style>
-                .gambar {
-                  width: 1090px;
-                  height: 600px;
-                }
-              </style>
-              <img class="gambar" src="img/alurpendaftar.jpg">
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 section-t8">
-          <div class="row">
-            <div class="col-md-5 section-md-t3">
-              <div class="icon-box section-b2">
-                <div class="icon-box-icon">
-                  <span class="ion-ios-paper-plane"></span>
-                </div>
-                <div class="icon-box-content table-cell">
-                  <div class="icon-box-title">
-                    <h4 class="icon-title">Say Hello</h4>
-                  </div>
-                  <div class="icon-box-content">
-                    <p class="mb-1">Email.
-                      <span class="color-a">contact@example.com</span>
-                    </p>
-                    <p class="mb-1">Phone.
-                      <span class="color-a">+54 356 945234</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="icon-box section-b2">
-                <div class="icon-box-icon">
-                  <span class="ion-ios-pin"></span>
-                </div>
-                <div class="icon-box-content table-cell">
-                  <div class="icon-box-title">
-                    <h4 class="icon-title">Alamat Sekolah</h4>
-                  </div>
-                  <div class="icon-box-content">
-                    <p class="mb-1">
-                      Jl. Santawi No.96 A Tamansari Indah Kec. Bondowoso 
-                      <br>Kabupaten Bondowoso Jawa Timur 68216 Indonesia.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="icon-box">
-                <div class="icon-box-icon">
-                  <span class="ion-ios-redo"></span>
-                </div>
-                <div class="icon-box-content table-cell">
-                  <div class="icon-box-title">
-                    <h4 class="icon-title">Social networks</h4>
-                  </div>
-                  <div class="icon-box-content">
-                    <div class="socials-footer">
-                      <ul class="list-inline">
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a href="#" class="link-one">
-                            <i class="fa fa-dribbble" aria-hidden="true"></i>
-                          </a>
-                        </li>
-                      </ul>
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Daftar Member</h2>
+                        <form method="POST" class="register-form" id="register-form">
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="nis" id="nis" placeholder="NIS"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="text" name="nama" id="nama" placeholder="Nama"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="text" name="kelas" id="kelas" placeholder="Kelas"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="text" name="jurusan" id="jurusan" placeholder="Jurusan"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="text" name="no_telp" id="no_telp" placeholder="No Telpon"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="text" name="alamat" id="alamat" placeholder="Alamat"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                            </div> 
+                        </form>
                     </div>
-                  </div>
+                    <div class="signup-image">
+                        <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>
+                        <a href="#" class="signup-image-link">I am already member</a>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--/ Contact End /-->
+        </section>
 
-  <!--/ footer Star /-->
+        <!--/ footer Star /-->
   <section class="section-footer">
     <div class="container">
       <div class="row">
@@ -381,18 +328,6 @@
               <li class="list-inline-item">
                 <a href="#">Home</a>
               </li>
-              <li class="list-inline-item">
-                <a href="#">About</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Property</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Blog</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Contact</a>
-              </li>
             </ul>
           </nav>
           <div class="socials-a">
@@ -445,22 +380,9 @@
   </footer>
   <!--/ Footer End /-->
 
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <div id="preloader"></div>
-
-  <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/popper/popper.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/scrollreveal/scrollreveal.min.js"></script>
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
-
-  <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
-
-</body>
+        
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="jsregis/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
