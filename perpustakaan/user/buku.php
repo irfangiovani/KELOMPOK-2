@@ -1,11 +1,3 @@
-<?php 
-//Koneksi ke database
-$conn = mysqli_connect("localhost", "root", "", "perpustakaan");
-require 'functions.php';
-$buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
- //$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +40,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
   <!--/ Form Search Star /-->
   <div class="box-collapse">
     <div class="title-box-d">
-      <h3 class="title-d">Search Property</h3>
+      <h3 class="title-d">Pencarian Buku</h3>
     </div>
     <span class="close-box-collapse right-boxed ion-ios-close"></span>
     <div class="box-collapse-wrap form">
@@ -130,7 +122,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
             </div>
           </div>
           <div class="col-md-12">
-            <button type="submit" class="btn btn-b">Search Property</button>
+            <button type="submit" class="btn btn-b">Cari Buku!</button>
           </div>
         </div>
       </form>
@@ -138,60 +130,55 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
   </div>
   <!--/ Form Search End /-->
 
- <!--/ Nav Star /-->
- <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
-  <div class="container">
-    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
-      aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <a class="navbar-brand text-brand" href="index.html"><span class="color-b">K-NEGABON </span>Library</a>
-    <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse"
-      data-target="#navbarTogglerDemo01" aria-expanded="false">
-      <span class="fa fa-search" aria-hidden="true"></span>
-    </button>
-    <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="index.php">Beranda</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="daftarmember/registrasi.php">Daftar Member</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="property-grid.html">Buku</a> 
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="bantuan.php">Bantuan</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../admin/loginadmin.php">Login</a>
-        </li>
-      </ul>
+  <!--/ Nav Star /-->
+  <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+    <div class="container">
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a class="navbar-brand text-brand" href="index.html"><span class="color-b">K-NEGABON </span>Library</a>
+      <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse"
+        data-target="#navbarTogglerDemo01" aria-expanded="false">
+        <span class="fa fa-search" aria-hidden="true"></span>
+      </button>
+      <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.php">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="daftarmember/registrasi.php">Daftar Member</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="buku.php">Buku</a> 
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bantuan.php">Bantuan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../admin/loginadmin.php">Login</a>
+          </li>
+        </ul>
+      </div>
+      <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse"
+        data-target="#navbarTogglerDemo01" aria-expanded="false">
+        <span class="fa fa-search" aria-hidden="true"></span>
+      </button>
     </div>
-    <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse"
-      data-target="#navbarTogglerDemo01" aria-expanded="false">
-      <span class="fa fa-search" aria-hidden="true"></span>
-    </button>
-  </div>
-</nav>
-<!--/ Nav End /-->
+  </nav>
+  <!--/ Nav End /-->
 
-   <!--/ tampilkan buku /-->
-   <section class="section-property section-t8">
+  <!--/ Intro Single star /-->
+  <section class="intro-single">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <div class="title-wrap d-flex justify-content-between">
-            <div class="title-box">
-              <h2 class="title-a">Buku-Buku</h2>
-            </div>
-            <div class="title-link">
-                <span class="ion-ios-arrow-forward"></span>
-              </a>
-            </div>
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">Our Amazing Properties</h1>
+            <span class="color-text-a">Grid Properties</span>
           </div>
         </div>
       </div>
@@ -218,8 +205,6 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
       </div>
     </div>
   </section>
-  <!--/ tampilkan buku End /-->
-
   <!--/ Intro Single End /-->
 
   

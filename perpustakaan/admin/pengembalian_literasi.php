@@ -102,7 +102,7 @@ if( isset($_POST["cariliterasi"])) {
                         <li><a href="tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                       <a href="#">Peminjaman<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                       <li><a href="peminjaman_literasi.php">Buku Literasi Umum</a></li>
@@ -110,7 +110,7 @@ if( isset($_POST["cariliterasi"])) {
                         <li><a href="peminjaman_tahunan.php">Buku Tahunan Siswa</a></li>
                       </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown active">
                       <a href="#">Pengembalian<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                         <li><a href="pengembalian_literasi.php">Buku Literasi Umum</a></li>
@@ -176,6 +176,7 @@ if( isset($_POST["cariliterasi"])) {
                             <th>Tanggal Peminjaman</th>
                             <th>Tanggal Harus Kembali</th>
                             <th>Status</th>
+                            <th>Aksi</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -191,6 +192,7 @@ if( isset($_POST["cariliterasi"])) {
                             <td><?php echo $row["tanggal_peminjaman"];?></td>
                             <td><?php echo $row["tanggal_hrs_kembali"];?></td>
                             <td><?php echo $row["notifikasi"];?>
+                            
                             <?php 
 
                             $tgl_dateline = $row['tanggal_hrs_kembali'];
@@ -205,6 +207,7 @@ if( isset($_POST["cariliterasi"])) {
                                     ";
                             }
                             ?></td>
+                            <td><a href="proses_pengembalian_literasi.php?id=<?php echo $row ['id_pinjam_buku_tahunan']; ?>" class="btn btn-warning" title="ubah data" >kembali</a></td>
                         </tr>
                       <?php $i++; ?>
                       <?php endforeach; ?>
