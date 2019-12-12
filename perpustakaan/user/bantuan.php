@@ -139,7 +139,7 @@
         <span></span>
         <span></span>
       </button>
-      <a class="navbar-brand text-brand" href="index.html">Estate<span class="color-b">Agency</span></a>
+      <a class="navbar-brand text-brand" href="index.html"><span class="color-b">K-NEGABON </span>Library</a>
       <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse"
         data-target="#navbarTogglerDemo01" aria-expanded="false">
         <span class="fa fa-search" aria-hidden="true"></span>
@@ -147,31 +147,19 @@
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Home</a>
+            <a class="nav-link" href="index.php">Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="registrasi.php">Daftar Member</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="property-grid.html">Property</a>
+            <a class="nav-link" href="buku.php">Buku</a> 
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="blog-grid.html">Blog</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Pages
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="property-single.html">Property Single</a>
-              <a class="dropdown-item" href="blog-single.html">Blog Single</a>
-              <a class="dropdown-item" href="agents-grid.html">Agents Grid</a>
-              <a class="dropdown-item" href="agent-single.html">Agent Single</a>
-            </div>
+            <a class="nav-link" href="bantuan.php">Bantuan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="contact.html">Contact</a>
+            <a class="nav-link" href="../admin/loginadmin.php">Login</a>
           </li>
         </ul>
       </div>
@@ -254,12 +242,12 @@
                 </div>
                 <div class="icon-box-content table-cell">
                   <div class="icon-box-title">
-                    <h4 class="icon-title">Find us in</h4>
+                    <h4 class="icon-title">Alamat Sekolah</h4>
                   </div>
                   <div class="icon-box-content">
                     <p class="mb-1">
-                      Manhattan, Nueva York 10036,
-                      <br> EE. UU.
+                      Jl. Santawi No.96 A Tamansari Indah Kec. Bondowoso 
+                      <br>Kabupaten Bondowoso Jawa Timur 68216 Indonesia.
                     </p>
                   </div>
                 </div>
