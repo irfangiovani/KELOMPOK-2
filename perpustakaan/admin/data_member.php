@@ -41,6 +41,7 @@ if( isset($_GET['acc'])=='approve'){
   <link href="css/prettyPhoto.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  <link href="js/dataTables/dataTables.bootstrap.css" rel="stylesheet">
 
   <!-- Theme skin -->
   <link id="t-colors" href="color/default.css" rel="stylesheet" />
@@ -170,7 +171,8 @@ if( isset($_GET['acc'])=='approve'){
     <br><br>
     <form action="" method="post">
     <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover">
+    <table class="table table-striped table-bordered table-hover" id="tabel">
+    <thead>
         <tr>
 			      <th>no</th>
             <th>Nomor Induk Siswa (NIS)</th>
@@ -182,6 +184,8 @@ if( isset($_GET['acc'])=='approve'){
             <th>Status</th>
             <th>Aksi</th>
         </tr>
+        </thead>
+        <tbody>
 		<?php $i = 1; ?> 
         <?php
             foreach( $data_member as $row) :
@@ -203,6 +207,7 @@ if( isset($_GET['acc'])=='approve'){
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
+      </tbody>
     </table>
     </div>
     </form>
@@ -297,6 +302,13 @@ if( isset($_GET['acc'])=='approve'){
   <script src="js/animate.js"></script>
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
+  <script src="js/dataTables/dataTables.bootstrap.js"></script>
+  <script src="js/dataTables/jquery.dataTables.js"></script>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabel').DataTable();
+        });
+    </script>
   
 
 </body>

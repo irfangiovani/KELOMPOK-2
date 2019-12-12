@@ -26,6 +26,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan a RIGHT JOIN
   <link href="css/prettyPhoto.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  <link href="js/dataTables/dataTables.bootstrap.css" rel="stylesheet">
 
   <!-- Theme skin -->
   <link id="t-colors" href="color/default.css" rel="stylesheet" />
@@ -164,7 +165,8 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan a RIGHT JOIN
 <div class="offside-3 col-lg-7">
     <form action="" method="post">
       <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover ">
+    <table class="table table-striped table-bordered table-hover " id="tabel">
+    <thead>
         <tr>
 			      <th>no</th>
             <th>ID Judul Buku Tahunan</th>
@@ -177,6 +179,8 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan a RIGHT JOIN
             <th>Terlambat</th>
             <th>Denda</th>
         </tr>
+        </thead>
+        <tbody>
 		<?php $i = 1; ?> 
         <?php
             foreach( $peminjaman_tahunan as $row) :
@@ -192,13 +196,10 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan a RIGHT JOIN
             <td><?php echo $row["tanggal_pengembalian"];?></td>
             <td><?php echo $row["terlambat"];?></td>
             <td><?php echo $row["denda"];?></td>
-            <td>
-            <a href="proses_pengembalian_tahunan.php?id=<?php echo $row ['id_pinjam_buku_tahunan']; ?>" class="btn btn-warning" title="ubah data" >Kembali</a>
-
-            </td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
+      </tbody>
     </table>
   </div>
     </form>
@@ -297,6 +298,13 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan a RIGHT JOIN
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
+  <script src="js/dataTables/dataTables.bootstrap.js"></script>
+  <script src="js/dataTables/jquery.dataTables.js"></script>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabel').DataTable();
+        });
+    </script>
 
 </body>
 

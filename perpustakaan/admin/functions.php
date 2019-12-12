@@ -22,14 +22,7 @@ function cariliterasi($keywordliterasi){
     return query($query);
 }
 
-//cari peminjaman literasi berdasarkan tangggal
-function caripeminjamanliterasi($keywordliterasi){
-    $query = "SELECT * FROM peminjaman_buku_literasi
-            WHERE
-            tanggal_peminjaman LIKE '%$keywordliterasi%' 
-            ";
-    return query($query);
-}
+
 //halaman register.php
 function registrasiliterasi($dataliterasi) {
     global $conn;
@@ -254,15 +247,6 @@ return $hasil_tgl;
 }
 
 
-// untuk mapel
-function carimapel($keywordmapel){
-    $query = "SELECT * FROM buku_mapel_kelas
-            WHERE
-            judul_buku_mapel LIKE '%$keywordmapel%' 
-            ";
-    return query($query);
-}
-
 function tambahmapel($datamapel) {
 	global $conn;
 
@@ -334,15 +318,7 @@ function uploadmapel() {
 
 }
 
-// untuk tahunan
-// pencarian untuk tambah tahunan
-function caritahunan($keywordtahunan){
-    $query = "SELECT * FROM buku_tahunan_siswa
-            WHERE
-            judul_buku_tahunan LIKE '%$keywordtahunan%' 
-            ";
-    return query($query);
-}
+
 
 // tambah data tahunan
 function tambahtahunan($datatahunan) {
