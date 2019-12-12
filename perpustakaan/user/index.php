@@ -343,9 +343,8 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
     </div>
   </section>
   <!--/ Services End /-->
-
-  <!--/ Property Star /-->
-  <section class="section-property section-t8">
+ <!--/ tampilkan buku /-->
+ <section class="section-property section-t8">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -354,7 +353,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
               <h2 class="title-a">Buku-Buku</h2>
             </div>
             <div class="title-link">
-              <a href="buku_literasi.php">Semua Buku
+            <a href="buku_literasi.php">Semua Buku
                 <span class="ion-ios-arrow-forward"></span>
               </a>
             </div>
@@ -362,10 +361,11 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         </div>
       </div>
       <div id="property-carousel" class="owl-carousel owl-theme">
+      <?php foreach ( $buku_mapel_kelas as $row) : ?>
         <div class="carousel-item-b">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
-            <?php foreach ( $buku_mapel_kelas as $row) : ?>
+            
               <img src="img/mapel/<?php echo $row["gambar_sampul"]; ?>" alt="" class="img-a img-fluid">
             </div>
             <div class="card-overlay">
@@ -373,48 +373,17 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                 <div class="card-header-a">
                   <h2 class="card-title-a">
                   <?php echo $row["judul_buku_mapel"];?>
-                    <a href="property-single.html"></a>
                   </h2>
                 </div>
-                <div class="card-body-a">
-                  <div class="price-box d-flex">
-                    <span class="price-a">rent | $ 12.000</span>
-                  </div>
-                  <a href="#" class="link-a">Click here to view
-                    <span class="ion-ios-arrow-forward"></span>
-                  </a>
-                </div>
-                <div class="card-footer-a">
-                  <ul class="card-info d-flex justify-content-around">
-                    <li>
-                      <h4 class="card-info-title">Area</h4>
-                      <span>340m
-                        <sup>2</sup>
-                      </span>
-                    </li>
-                    <li>
-                      <h4 class="card-info-title">Beds</h4>
-                      <span>2</span>
-                    </li>
-                    <li>
-                      <h4 class="card-info-title">Baths</h4>
-                      <span>4</span>
-                    </li>
-                    <li>
-                      <h4 class="card-info-title">Garages</h4>
-                      <span>1</span>
-                    </li>
-                  </ul>
-                </div>
               </div>
-              <?php endforeach ; ?>
             </div>
           </div>
         </div>
+        <?php endforeach ; ?>
       </div>
     </div>
   </section>
-  <!--/ Property End /-->
+  <!--/ tampilkan buku End /-->
 
   <!--/ Agents Star /-->
   <section class="section-agents section-t8">
