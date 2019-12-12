@@ -353,7 +353,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
               <h2 class="title-a">Buku-Buku</h2>
             </div>
             <div class="title-link">
-            <a href="buku_literasi.php">Semua Buku
+            <a href="buku.php">Semua Buku
                 <span class="ion-ios-arrow-forward"></span>
               </a>
             </div>

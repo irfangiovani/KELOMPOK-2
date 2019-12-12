@@ -2,7 +2,7 @@
 //Koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
 require 'functions.php';
-$buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
+$buku_mapel_kelas = query("SELECT * FROM buku_tahunan_siswa");
  //$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
 
 ?>
@@ -205,23 +205,23 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                 <option selected>Semua</option>
                 <option value="1">Literasi</option>
                 <option value="2">Mapel</option>
-                <option   <a class="nav-link" href="tahunan.php">Tahunan </a></option>
+                <option value="tahunan.php">Tahunan</option>
               </select>
             </form>
           </div>
         </div>
-        <?php $ambil=$conn->query("SELECT * FROM buku_mapel_kelas"); ?>
+        <?php $ambil=$conn->query("SELECT * FROM buku_tahunan_siswa"); ?>
         <?php while($perbuku=$ambil->fetch_assoc()){ ?>
         <div class="col-md-4">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
-              <img src="img/mapel/<?php echo $perbuku['gambar_sampul']; ?>" alt="" class="img-a img-fluid">
+              <img src="img/tahunan/<?php echo $perbuku['gambar_sampul']; ?>" alt="" class="img-a img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
                 <div class="card-header-a">
                   <h2 class="card-title-a">
-                    <a href="#"><?= $perbuku['judul_buku_mapel']; ?></a>
+                    <a href="#"><?= $perbuku['judul_buku_tahunan']; ?></a>
                   </h2>
                 </div>
                 <div class="card-body-a">
