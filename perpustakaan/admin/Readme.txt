@@ -9,3 +9,4 @@ Tema : Perpustakaan SMKN 3 Bondowoso
 	      -CRUD pengembalian literasi,mapel,tahunan
 	      -CRUD member siswa dan approval/ konfirmasi oleh admin
 	      -CRUD data kelas
+		  -Searching semua tabel
