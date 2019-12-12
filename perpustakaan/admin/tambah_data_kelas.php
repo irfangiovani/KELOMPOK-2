@@ -7,21 +7,21 @@ if( !isset($_SESSION["login"])){
 require 'functions.php';
 
 //cek tombol submit ditekan atau tidak
-if( isset($_POST["submit"]) ) {
+if( isset($_POST['submit']) ) {
   
     // cek keberhasilan tambah data
-    if( tambahtamu($_POST) > 0 ) {
+    if( tambahkelas($_POST) > 0 ) {
       echo "
             <script>
               alert('data berhasil ditambahkan!');
-              document.location.href = 'tamupen.php';
+              document.location.href = 'data_kelas.php';
             </script>
       ";
     } else {
       echo "
             <script>
               alert('data gagal ditambahkan!');
-              document.location.href = 'tamupen.php';
+              document.location.href = 'data_kelas.php';
             </script>
       ";
     }
@@ -36,42 +36,43 @@ if( isset($_POST["submit"]) ) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
-    <title>Tambah Data Tamu</title>
+    <title>Tambah Data Kelas</title>
 </head>
 <body>
     <div class="container">
-    <h2 class="alert alert-info text-center mt-3">Tambah Data Tamu</h2>
+    <h2 class="alert alert-info text-center mt-3">Tambah Data Kelas</h2>
     <div class="pull-right">
     <form action="" method="post" enctype="multipart/form-data">
-     
-            <div class="form-group text-center">
-                  <label for="nama_tamu">Nama Tamu : </label>
-                  <input type="text" class="form-control" placeholder="Masukkan Nama Tamu" name="nama_tamu" id="nama_tamu">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="kode_kelas">Kode_kelas : </label>
+              <input type="text" class="form-control" placeholder ="masukkan kode kelas" name="kode_kelas" id="kode_kelas" required>
             </div>
-            </div>
-             
+        </div>
             <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="delegasi">Delegasi : </label> 
-              <input type="text" class="form-control" placeholder="Masukkan Delegasi." name="delegasi" id="delegasi">
+              <label for="jurusan">Jurusan : </label> 
+              <input type="text" class="form-control" placeholder="Masukkan jurusan" name="jurusan" id="jurusan" required>
             </div>   
+            </div>
+            <div class="form-row">
             <div class="form-group col-md-6">
-            <label for="kepentingan"> Kepentingan : </label>
-            <input type="text" class="form-control" placeholder="Masukkan Kepeentingan" name="kepentingan" id="kepentingan">
+            <label for="kelas"> Kelas : </label>
+            <input type="text" class="form-control" placeholder="Masukkan tingkat kelas" name="kelas" id="kelas" required>
             </div>
             </div>
                
             <div class="form-row">
         <div class="form-group col-md-6">
-              <label for="Tanggal_Kedatangan">Tanggal_Kedatangan : </label>
-              <input type="text" class="form-control" placeholder = "<?php  echo Date('l, d-m-Y');?>" name="Tanggal_Kedatangan" readonly>
+              <label for="wali_kelas">Wali Kelas : </label>
+              <input type="text" class="form-control" placeholder ="masukkan nama wali kelas"name="wali_kelas" id="wali_kelas" required>
         </div>
       </div>
 
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
-              <a href="literasi.php" class="btn btn-success">Kembali</a>
+              <a href="data_kelas.php" class="btn btn-success">Kembali</a>
             </div>
           </div>
         <br><br>

@@ -158,7 +158,7 @@ $data_kelas = query ("SELECT * FROM kelas ");
 
     <br>
      <div class="container-fluid">
-    <a href="tambah_tamu.php">Tambah Data Kelas</a>
+    <a href="tambah_data_kelas.php">Tambah Data Kelas</a>
     <br><br>
 
     <div class="content">
@@ -187,7 +187,7 @@ $data_kelas = query ("SELECT * FROM kelas ");
             <td><?php echo $row["wali_kelas"];?></td>
             <td>
             <a href="ubah_kelas.php?id=<?php echo $row ["kode_kelas"]; ?>"class="btn btn-default" ><i class="icon-edit" title="ubah data" ></i>ubah</a>
-            <a href="hapus_kelas_.php?id=<?= $row["kode_kelas"]; ?>
+            <a href="hapus_kelas.php?id=<?= $row["kode_kelas"]; ?>
             " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');" class="btn btn-default" ><i class="icon-trash" title="hapus data"></i>hapus</a>
             </td>
         </tr>
