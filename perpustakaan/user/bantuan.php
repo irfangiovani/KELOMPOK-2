@@ -185,10 +185,10 @@
           <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <a href="index.html">Home</a>
+                <a href="index.php">Beranda</a>
               </li>
               <li class="breadcrumb-item active" aria-current="page">
-                Contact
+                Bantuan
               </li>
             </ol>
           </nav>
@@ -379,19 +379,19 @@
           <nav class="nav-footer">
             <ul class="list-inline">
               <li class="list-inline-item">
-                <a href="#">Home</a>
+                <a href="index.php">Beranda</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">About</a>
+                <a href="registrasi.php">Daftar Member</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Property</a>
+                <a href="buku.php">Buku</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Blog</a>
+                <a href="bantuan.php">Bantuan</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Contact</a>
+                <a href="../admin/loginadmin.php">Login</a>
               </li>
             </ul>
           </nav>
@@ -427,7 +427,7 @@
           <div class="copyright-footer">
             <p class="copyright color-text-a">
               &copy; Copyright
-              <span class="color-a">EstateAgency</span> All Rights Reserved.
+              <span class="color-a">K-NegabonTeam</span> All Rights Reserved.
             </p>
           </div>
           <div class="credits">
@@ -437,7 +437,7 @@
               Licensing information: https://bootstrapmade.com/license/
               Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=EstateAgency
             -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Designed by <a href="https://bootstrapmade.com/">Dev.TeamK-Negabon</a>
           </div>
         </div>
       </div>
