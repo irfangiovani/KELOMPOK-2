@@ -2,7 +2,7 @@
 //Koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
 require 'functions.php';
-$buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
+$buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
  //$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
 
 ?>
@@ -284,11 +284,6 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                 nec, egestas non nisi.
               </p>
             </div>
-            <div class="card-footer-c">
-              <a href="#" class="link-c link-icon">Read more
-                <span class="ion-ios-arrow-forward"></span>
-              </a>
-            </div>
           </div>
         </div>
         <div class="col-md-4">
@@ -308,11 +303,6 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                 nibh pulvinar a.
               </p>
             </div>
-            <div class="card-footer-c">
-              <a href="#" class="link-c link-icon">Read more
-                <span class="ion-ios-arrow-forward"></span>
-              </a>
-            </div>
           </div>
         </div>
         <div class="col-md-4">
@@ -331,11 +321,6 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                 convallis a pellentesque
                 nec, egestas non nisi.
               </p>
-            </div>
-            <div class="card-footer-c">
-              <a href="#" class="link-c link-icon">Read more
-                <span class="ion-ios-arrow-forward"></span>
-              </a>
             </div>
           </div>
         </div>
@@ -361,18 +346,18 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         </div>
       </div>
       <div id="property-carousel" class="owl-carousel owl-theme">
-      <?php foreach ( $buku_mapel_kelas as $row) : ?>
+      <?php foreach ( $buku_literasi_umum as $row) : ?>
         <div class="carousel-item-b">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
             
-              <img src="img/mapel/<?php echo $row["gambar_sampul"]; ?>" alt="" class="img-a img-fluid">
+              <img src="img/literasi/<?php echo $row["gambar_sampul"]; ?>" alt="" class="img-a img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
                 <div class="card-header-a">
                   <h2 class="card-title-a">
-                  <?php echo $row["judul_buku_mapel"];?>
+                  <?php echo $row["judul_buku_literasi"];?>
                   </h2>
                 </div>
               </div>

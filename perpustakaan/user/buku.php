@@ -2,7 +2,7 @@
 //Koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
 require 'functions.php';
-$buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
+$buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
  //$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
 
 ?>
@@ -186,7 +186,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
             <h1 class="title-single">Kumpulan Buku</h1>
-            <span class="color-text-a">Literasi, Mapel, Tahunan</span>
+            <span class="color-text-a">Buku Literasi Umum</span>
           </div>
         </div>
         <div class="col-md-12 col-lg-4">
@@ -222,18 +222,18 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
             </form>
           </div>
         </div>
-        <?php $ambil=$conn->query("SELECT * FROM buku_mapel_kelas"); ?>
+        <?php $ambil=$conn->query("SELECT * FROM buku_literasi_umum"); ?>
         <?php while($perbuku=$ambil->fetch_assoc()){ ?>
         <div class="col-md-4">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
-              <img src="img/mapel/<?php echo $perbuku['gambar_sampul']; ?>" alt="" class="img-a img-fluid">
+              <img src="img/literasi/<?php echo $perbuku['gambar_sampul']; ?>" alt="" class="img-a img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
                 <div class="card-header-a">
                   <h2 class="card-title-a">
-                    <a href="#"><?= $perbuku['judul_buku_mapel']; ?></a>
+                    <a href="#"><?= $perbuku['judul_buku_literasi']; ?></a>
                   </h2>
                 </div>
                 <div class="card-body-a">
@@ -244,19 +244,19 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                 </div>
                 <div class="card-footer-a text-center">
                   <ul class="card-info d-flex justify-content-around">
+                  <li>
+                      <h4 class="card-info-title">Kode Buku</h4>
+                      <span><?= $perbuku['kode_buku_literasi']; ?>
+                      </span>
+                    </li>
                     <li>
                       <h4 class="card-info-title">Terbit</h4>
                       <span><?= $perbuku['tahun_terbit']; ?>
                       </span>
                     </li>
                     <li>
-                      <h4 class="card-info-title">Kelas</h4>
-                      <span><?= $perbuku['untuk_kelas']; ?>
-                      </span>
-                    </li>
-                    <li>
-                      <h4 class="card-info-title">Stok</h4>
-                      <span><?= $perbuku['stok']; ?>
+                      <h4 class="card-info-title">Rak</h4>
+                      <span><?= $perbuku['id_rak']; ?>
                       </span>
                     </li>
                   </ul>
