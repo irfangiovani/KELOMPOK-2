@@ -2,7 +2,7 @@
 //Koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
 require 'functions.php';
-$buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
+$buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas ORDER BY  RAND() LIMIT 4 ");
  //$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
 
 ?>
