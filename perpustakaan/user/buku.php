@@ -2,7 +2,7 @@
 //Koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
 require 'functions.php';
-$buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
+$buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
  //$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
 
 ?>
@@ -186,8 +186,20 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
             <h1 class="title-single">Kumpulan Buku</h1>
-            <span class="color-text-a">Literasi, Mapel, Tahunan</span>
+            <span class="color-text-a">Buku Literasi Umum</span>
           </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="index.php">Beranda</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Buku
+              </li>
+            </ol>
+          </nav>
         </div>
       </div>
     </div>
@@ -195,6 +207,12 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
   <!--/ Intro Single End /-->
 
   <!--/ Property Grid Star /-->
+  <style>
+ .img-box-a {
+   width : 350px;
+   height : 450px;
+ }
+ </style>
   <section class="property-grid grid">
     <div class="container">
       <div class="row">
@@ -210,18 +228,17 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
             </form>
           </div>
         </div>
-        <?php $ambil=$conn->query("SELECT * FROM buku_mapel_kelas"); ?>
-        <?php while($perbuku=$ambil->fetch_assoc()){ ?>
+        <?php foreach ( $buku_literasi_umum as $row) : ?>
         <div class="col-md-4">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
-              <img src="img/mapel/<?php echo $perbuku['gambar_sampul']; ?>" alt="" class="img-a img-fluid">
+              <img src="img/literasi/<?= $row['gambar_sampul']; ?>" alt="" class="img-a img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
                 <div class="card-header-a">
                   <h2 class="card-title-a">
-                    <a href="#"><?= $perbuku['judul_buku_mapel']; ?></a>
+                    <a href="#"><?= $row['judul_buku_literasi']; ?></a>
                   </h2>
                 </div>
                 <div class="card-body-a">
@@ -232,19 +249,19 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                 </div>
                 <div class="card-footer-a text-center">
                   <ul class="card-info d-flex justify-content-around">
+                  <li>
+                      <h4 class="card-info-title">Kode Buku</h4>
+                      <span><?= $row['kode_buku_literasi']; ?>
+                      </span>
+                    </li>
                     <li>
                       <h4 class="card-info-title">Terbit</h4>
-                      <span><?= $perbuku['tahun_terbit']; ?>
+                      <span><?= $row['tahun_terbit']; ?>
                       </span>
                     </li>
                     <li>
-                      <h4 class="card-info-title">Kelas</h4>
-                      <span><?= $perbuku['untuk_kelas']; ?>
-                      </span>
-                    </li>
-                    <li>
-                      <h4 class="card-info-title">Stok</h4>
-                      <span><?= $perbuku['stok']; ?>
+                      <h4 class="card-info-title">Rak</h4>
+                      <span><?= $row['id_rak']; ?>
                       </span>
                     </li>
                   </ul>
@@ -253,7 +270,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
             </div>
           </div>
         </div>
-        <?php } ?>
+        <?php endforeach ; ?>
       </div> 
     </div>
   </section>
@@ -337,7 +354,19 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
           <nav class="nav-footer">
             <ul class="list-inline">
               <li class="list-inline-item">
-                <a href="index.php">Home</a>
+                <a href="index.php">Beranda</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="registrasi.php">Daftar Member</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="buku.php">Buku</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="bantuan.php">Bantuan</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="../admin/loginadmin.php">Login</a>
               </li>
             </ul>
           </nav>
@@ -373,7 +402,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
           <div class="copyright-footer">
             <p class="copyright color-text-a">
               &copy; Copyright
-              <span class="color-a">EstateAgency</span> All Rights Reserved.
+              <span class="color-a">K-NegabonTeam</span> All Rights Reserved.
             </p>
           </div>
           <div class="credits">
@@ -383,7 +412,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
               Licensing information: https://bootstrapmade.com/license/
               Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=EstateAgency
             -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Designed by <a href="https://bootstrapmade.com/">Dev.TeamK-Negabon</a>
           </div>
         </div>
       </div>

@@ -2,7 +2,9 @@
 //Koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
 require 'functions.php';
-$buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
+
+$buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() LIMIT 4");
+
  //$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
 
 ?>
@@ -47,7 +49,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
   <!--/ Form Search Star /-->
   <div class="box-collapse">
     <div class="title-box-d">
-      <h3 class="title-d">Search Property</h3>
+      <h3 class="title-d">Cari Peminjaman Siswa</h3>
     </div>
     <span class="close-box-collapse right-boxed ion-ios-close"></span>
     <div class="box-collapse-wrap form">
@@ -55,81 +57,18 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="row">
           <div class="col-md-12 mb-2">
             <div class="form-group">
-              <label for="Type">Keyword</label>
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
+              <label for="Type">Nama Siswa</label>
+              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Masukkan nama anda">
             </div>
           </div>
-          <div class="col-md-6 mb-2">
+          <div class="col-md-12 mb-2">
             <div class="form-group">
-              <label for="Type">Type</label>
-              <select class="form-control form-control-lg form-control-a" id="Type">
-                <option>All Type</option>
-                <option>For Rent</option>
-                <option>For Sale</option>
-                <option>Open House</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="city">City</label>
-              <select class="form-control form-control-lg form-control-a" id="city">
-                <option>All City</option>
-                <option>Alabama</option>
-                <option>Arizona</option>
-                <option>California</option>
-                <option>Colorado</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="bedrooms">Bedrooms</label>
-              <select class="form-control form-control-lg form-control-a" id="bedrooms">
-                <option>Any</option>
-                <option>01</option>
-                <option>02</option>
-                <option>03</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="garages">Garages</label>
-              <select class="form-control form-control-lg form-control-a" id="garages">
-                <option>Any</option>
-                <option>01</option>
-                <option>02</option>
-                <option>03</option>
-                <option>04</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="bathrooms">Bathrooms</label>
-              <select class="form-control form-control-lg form-control-a" id="bathrooms">
-                <option>Any</option>
-                <option>01</option>
-                <option>02</option>
-                <option>03</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="price">Min Price</label>
-              <select class="form-control form-control-lg form-control-a" id="price">
-                <option>Unlimite</option>
-                <option>$50,000</option>
-                <option>$100,000</option>
-                <option>$150,000</option>
-                <option>$200,000</option>
-              </select>
+              <label for="Type">Nomor Induk Siswa</label>
+              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Masukkkan NIS anda">
             </div>
           </div>
           <div class="col-md-12">
-            <button type="submit" class="btn btn-b">Search Property</button>
+            <button type="submit" class="btn btn-b">Cari</button>
           </div>
         </div>
       </form>
@@ -138,7 +77,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
   <!--/ Form Search End /-->
 
   <!--/ Nav Star /-->
-  <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+  <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top bg-primary">
     <div class="container">
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
         aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -151,7 +90,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         data-target="#navbarTogglerDemo01" aria-expanded="false">
         <span class="fa fa-search" aria-hidden="true"></span>
       </button>
-      <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+      <div class="navbar-collapse collapse justify-content-center"  id="navbarDefault">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="index.php">Beranda</a>
@@ -172,7 +111,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
       </div>
       <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse"
         data-target="#navbarTogglerDemo01" aria-expanded="false">
-        <span class="fa fa-search" aria-hidden="true"></span>
+        <span class="fa fa-search" aria-hidden="true"> Cek Peminjaman Siswa</span>
       </button>
     </div>
   </nav>
@@ -284,11 +223,6 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                 nec, egestas non nisi.
               </p>
             </div>
-            <div class="card-footer-c">
-              <a href="#" class="link-c link-icon">Read more
-                <span class="ion-ios-arrow-forward"></span>
-              </a>
-            </div>
           </div>
         </div>
         <div class="col-md-4">
@@ -307,11 +241,6 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                 aliquet elit, eget tincidunt
                 nibh pulvinar a.
               </p>
-            </div>
-            <div class="card-footer-c">
-              <a href="#" class="link-c link-icon">Read more
-                <span class="ion-ios-arrow-forward"></span>
-              </a>
             </div>
           </div>
         </div>
@@ -332,11 +261,6 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                 nec, egestas non nisi.
               </p>
             </div>
-            <div class="card-footer-c">
-              <a href="#" class="link-c link-icon">Read more
-                <span class="ion-ios-arrow-forward"></span>
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -344,6 +268,12 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
   </section>
   <!--/ Services End /-->
  <!--/ tampilkan buku /-->
+ <style>
+ .img-box-a {
+   width : 350px;
+   height : 450px;
+ }
+ </style>
  <section class="section-property section-t8">
     <div class="container">
       <div class="row">
@@ -361,18 +291,17 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         </div>
       </div>
       <div id="property-carousel" class="owl-carousel owl-theme">
-      <?php foreach ( $buku_mapel_kelas as $row) : ?>
+      <?php foreach ( $buku_literasi_umum as $row) : ?>
         <div class="carousel-item-b">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
-            
-              <img src="img/mapel/<?php echo $row["gambar_sampul"]; ?>" alt="" class="img-a img-fluid">
+              <img src="img/literasi/<?php echo $row["gambar_sampul"]; ?>" alt="" class="img-a img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
                 <div class="card-header-a">
                   <h2 class="card-title-a">
-                  <?php echo $row["judul_buku_mapel"];?>
+                  <?php echo $row["judul_buku_literasi"];?>
                   </h2>
                 </div>
               </div>
@@ -406,7 +335,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="col-md-4">
           <div class="card-box-d">
             <div class="card-img-d">
-              <img src="img/baca.jpg" alt="" class="img-d img-fluid">
+              <img src="img/baca2.jpg" alt="" class="img-d img-fluid">
             </div>
             <div class="card-overlay card-overlay-hover">
               <div class="card-header-d">
@@ -465,7 +394,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="col-md-4">
           <div class="card-box-d">
             <div class="card-img-d">
-              <img src="img/buku baca.jpg" alt="" class="img-d img-fluid">
+              <img src="img/buku baca2.jpg" alt="" class="img-d img-fluid">
             </div>
             <div class="card-overlay card-overlay-hover">
               <div class="card-header-d">
@@ -652,7 +581,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
         <div class="carousel-item-c">
           <div class="card-box-b card-shadow news-box">
             <div class="img-box-b">
-              <img src="img/ruangan.jpg" alt="" class="img-b img-fluid">
+              <img src="img/ruangan1.jpg" alt="" class="img-b img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-header-b">
@@ -718,7 +647,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
             <div class="row">
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-img">
-                  <img src="img/testimonial-1.jpg" alt="" class="img-fluid">
+                  <img src="img/kelompokno.jpg" alt="" class="img-fluid">
                 </div>
               </div>
               <div class="col-sm-12 col-md-6">
@@ -745,7 +674,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
             <div class="row">
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-img">
-                  <img src="img/kelompok2.jpg" alt="" class="img-fluid">
+                  <img src="img/kelompokne.jpg" alt="" class="img-fluid">
                 </div>
               </div>
               <div class="col-sm-12 col-md-6">
@@ -850,7 +779,19 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
           <nav class="nav-footer">
             <ul class="list-inline">
               <li class="list-inline-item">
-                <a href="#">Home</a>
+                <a href="index.php">Beranda</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="registrasi.php">Daftar Member</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="buku.php">Buku</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="bantuan.php">Bantuan</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="../admin/loginadmin.php">Login</a>
               </li>
             </ul>
           </nav>
@@ -886,7 +827,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
           <div class="copyright-footer">
             <p class="copyright color-text-a">
               &copy; Copyright
-              <span class="color-a">K-Negabon</span> All Rights Reserved.
+              <span class="color-a">K-NegabonTeam</span> All Rights Reserved.
             </p>
           </div>
           <div class="credits">

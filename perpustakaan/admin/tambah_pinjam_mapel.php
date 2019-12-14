@@ -4,13 +4,14 @@ if( !isset($_SESSION["login"])){
     header("location: loginadmin.php");
     exit;
 }  
+date_default_timezone_set('Asia/Jakarta');
 require 'functions.php';
 if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
     $kode_judul = $_POST["kode_judul"];
     $kode_kelas = $_POST["id_kode_kelas"];
     $nama_peminjam = $_POST["nama_peminjam"];
-    $waktu_peminjaman = $_POST["waktu_peminjaman"];
+    $waktu_peminjaman = date('H:i, d F Y');
     $banyak_buku = $_POST["banyak_buku"];
     
     //cek stok buku
@@ -20,7 +21,7 @@ if( isset($_POST["submit"])){
     echo "
         <script>
             alert('stok buku habis, proses peminjaman gagal');
-            document.location.href = 'tambah_pinjam_literasi.php';
+            document.location.href = 'tambah_pinjam_mapel.php';
         </script>
     ";
     exit();
@@ -101,7 +102,7 @@ echo Date('l, Y-m-d');
             </div>   
             <div class="form-group col-md-6">
             <label for="waktu_peminjaman"> Waktu Peminjaman : </label>
-              <input type="time" class="form-control" name="waktu_peminjaman" id="waktu_peminjaman">
+              <input type="text" class="form-control" placeholder = "<?php echo date('H:i, d F Y');?>"name="waktu_peminjaman" id="waktu_peminjaman" readonly>
             </div>
             </div>
 
