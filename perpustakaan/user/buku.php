@@ -207,6 +207,12 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
   <!--/ Intro Single End /-->
 
   <!--/ Property Grid Star /-->
+  <style>
+ .img-box-a {
+   width : 350px;
+   height : 450px;
+ }
+ </style>
   <section class="property-grid grid">
     <div class="container">
       <div class="row">
@@ -222,18 +228,17 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
             </form>
           </div>
         </div>
-        <?php $ambil=$conn->query("SELECT * FROM buku_literasi_umum"); ?>
-        <?php while($perbuku=$ambil->fetch_assoc()){ ?>
+        <?php foreach ( $buku_literasi_umum as $row) : ?>
         <div class="col-md-4">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
-              <img src="img/literasi/<?php echo $perbuku['gambar_sampul']; ?>" alt="" class="img-a img-fluid">
+              <img src="img/literasi/<?= $row['gambar_sampul']; ?>" alt="" class="img-a img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
                 <div class="card-header-a">
                   <h2 class="card-title-a">
-                    <a href="#"><?= $perbuku['judul_buku_literasi']; ?></a>
+                    <a href="#"><?= $row['judul_buku_literasi']; ?></a>
                   </h2>
                 </div>
                 <div class="card-body-a">
@@ -246,17 +251,17 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
                   <ul class="card-info d-flex justify-content-around">
                   <li>
                       <h4 class="card-info-title">Kode Buku</h4>
-                      <span><?= $perbuku['kode_buku_literasi']; ?>
+                      <span><?= $row['kode_buku_literasi']; ?>
                       </span>
                     </li>
                     <li>
                       <h4 class="card-info-title">Terbit</h4>
-                      <span><?= $perbuku['tahun_terbit']; ?>
+                      <span><?= $row['tahun_terbit']; ?>
                       </span>
                     </li>
                     <li>
                       <h4 class="card-info-title">Rak</h4>
-                      <span><?= $perbuku['id_rak']; ?>
+                      <span><?= $row['id_rak']; ?>
                       </span>
                     </li>
                   </ul>
@@ -265,7 +270,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
             </div>
           </div>
         </div>
-        <?php } ?>
+        <?php endforeach ; ?>
       </div> 
     </div>
   </section>

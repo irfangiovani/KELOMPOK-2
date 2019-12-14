@@ -5,8 +5,6 @@ require 'functions.php';
 
 $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() LIMIT 4");
 
-
-
  //$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
 
 ?>
@@ -270,6 +268,12 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
   </section>
   <!--/ Services End /-->
  <!--/ tampilkan buku /-->
+ <style>
+ .img-box-a {
+   width : 350px;
+   height : 450px;
+ }
+ </style>
  <section class="section-property section-t8">
     <div class="container">
       <div class="row">
@@ -291,7 +295,6 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
         <div class="carousel-item-b">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
-            
               <img src="img/literasi/<?php echo $row["gambar_sampul"]; ?>" alt="" class="img-a img-fluid">
             </div>
             <div class="card-overlay">
@@ -332,7 +335,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
         <div class="col-md-4">
           <div class="card-box-d">
             <div class="card-img-d">
-              <img src="img/baca.jpg" alt="" class="img-d img-fluid">
+              <img src="img/baca2.jpg" alt="" class="img-d img-fluid">
             </div>
             <div class="card-overlay card-overlay-hover">
               <div class="card-header-d">
@@ -391,7 +394,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
         <div class="col-md-4">
           <div class="card-box-d">
             <div class="card-img-d">
-              <img src="img/buku baca.jpg" alt="" class="img-d img-fluid">
+              <img src="img/buku baca2.jpg" alt="" class="img-d img-fluid">
             </div>
             <div class="card-overlay card-overlay-hover">
               <div class="card-header-d">
@@ -578,7 +581,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
         <div class="carousel-item-c">
           <div class="card-box-b card-shadow news-box">
             <div class="img-box-b">
-              <img src="img/ruangan.jpg" alt="" class="img-b img-fluid">
+              <img src="img/ruangan1.jpg" alt="" class="img-b img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-header-b">
@@ -644,7 +647,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
             <div class="row">
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-img">
-                  <img src="img/testimonial-1.jpg" alt="" class="img-fluid">
+                  <img src="img/kelompokno.jpg" alt="" class="img-fluid">
                 </div>
               </div>
               <div class="col-sm-12 col-md-6">
@@ -671,7 +674,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
             <div class="row">
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-img">
-                  <img src="img/kelompok2.jpg" alt="" class="img-fluid">
+                  <img src="img/kelompokne.jpg" alt="" class="img-fluid">
                 </div>
               </div>
               <div class="col-sm-12 col-md-6">
