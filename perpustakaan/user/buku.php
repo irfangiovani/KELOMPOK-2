@@ -189,6 +189,18 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
             <span class="color-text-a">Literasi, Mapel, Tahunan</span>
           </div>
         </div>
+        <div class="col-md-12 col-lg-4">
+          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="index.php">Beranda</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Buku
+              </li>
+            </ol>
+          </nav>
+        </div>
       </div>
     </div>
   </section>
@@ -337,7 +349,19 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
           <nav class="nav-footer">
             <ul class="list-inline">
               <li class="list-inline-item">
-                <a href="index.php">Home</a>
+                <a href="index.php">Beranda</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="registrasi.php">Daftar Member</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="buku.php">Buku</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="bantuan.php">Bantuan</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="../admin/loginadmin.php">Login</a>
               </li>
             </ul>
           </nav>
@@ -373,7 +397,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
           <div class="copyright-footer">
             <p class="copyright color-text-a">
               &copy; Copyright
-              <span class="color-a">EstateAgency</span> All Rights Reserved.
+              <span class="color-a">K-NegabonTeam</span> All Rights Reserved.
             </p>
           </div>
           <div class="credits">
@@ -383,7 +407,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
               Licensing information: https://bootstrapmade.com/license/
               Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=EstateAgency
             -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Designed by <a href="https://bootstrapmade.com/">Dev.TeamK-Negabon</a>
           </div>
         </div>
       </div>

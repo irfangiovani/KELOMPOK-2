@@ -850,7 +850,19 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
           <nav class="nav-footer">
             <ul class="list-inline">
               <li class="list-inline-item">
-                <a href="#">Home</a>
+                <a href="index.php">Beranda</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="registrasi.php">Daftar Member</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="buku.php">Buku</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="bantuan.php">Bantuan</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="../admin/loginadmin.php">Login</a>
               </li>
             </ul>
           </nav>
@@ -886,7 +898,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
           <div class="copyright-footer">
             <p class="copyright color-text-a">
               &copy; Copyright
-              <span class="color-a">K-Negabon</span> All Rights Reserved.
+              <span class="color-a">K-NegabonTeam</span> All Rights Reserved.
             </p>
           </div>
           <div class="credits">
