@@ -152,6 +152,13 @@ function kurangi_stok_mapel($conn, $kode_judul)
     mysqli_query($conn, $q);
 }
 
+function tambah_stok_mapel($conn, $id_judul_buku_mapel)
+{
+    $banyak_buku_kembali = $_POST["buku_dipinjam"];
+    $q = "UPDATE buku_mapel_kelas SET stok = stok + $banyak_buku_kembali WHERE id_judul_buku_mapel = '$id_judul_buku_mapel'";
+    mysqli_query($conn, $q);
+}
+
 
 
 function cek_stok($conn,$id_judul_buku_tahunan )
@@ -175,6 +182,8 @@ function tambah_stok($conn, $id_judul_buku_tahunan)
     $q = "UPDATE buku_tahunan_siswa SET stok = stok + 1 WHERE id_judul_buku_tahunan = '$id_judul_buku_tahunan'";
     mysqli_query($conn, $q);
 }
+
+
 function hitung_denda($tgl_kembali, $tanggal_hrs_kembali)
 {
     if (strtotime( $tgl_kembali ) > strtotime($tanggal_hrs_kembali)) {
