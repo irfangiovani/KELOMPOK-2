@@ -78,13 +78,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
 
   <!--/ Nav Star /-->
   <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top bg-primary">
-    <div class="container">
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
-        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+    <div class="container bg-warning">
       <a class="navbar-brand text-brand" href="index.html"><span class="color-b">K-NEGABON </span>Library</a>
       <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse"
         data-target="#navbarTogglerDemo01" aria-expanded="false">
@@ -92,14 +86,14 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
       </button>
       <div class="navbar-collapse collapse justify-content-center"  id="navbarDefault">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="index.php">Beranda</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="registrasi.php">Daftar Member</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="buku.php">Buku</a> 
+            <a class="nav-link" href="buku.php">Buku Mapel</a> 
           </li>
           <li class="nav-item">
             <a class="nav-link" href="bantuan.php">Bantuan</a>
@@ -109,9 +103,9 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
           </li>
         </ul>
       </div>
-      <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse"
+      <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block  " data-toggle="collapse"
         data-target="#navbarTogglerDemo01" aria-expanded="false">
-        <span class="fa fa-search" aria-hidden="true"> Cek Peminjaman Siswa</span>
+        <span class="fa fa-search" aria-hidden="true">Cek Peminjaman</span>
       </button>
     </div>
   </nav>
