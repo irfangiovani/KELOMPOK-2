@@ -7,7 +7,7 @@ if( !isset($_SESSION["login"])){
 require 'functions.php';
 if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
-    $nama_peminjam = $_POST["id_nis"];
+    $nama_peminjam = $_POST["buah"];
     $kode_buku = $_POST["id_kode_literasi"];
     $tgl_pinjam = Date('Y-m-d');
     $tgl_kembali =Date('Y-m-d', time()+604800);
@@ -26,7 +26,7 @@ if( isset($_POST["submit"])){
     echo "
         <script>
             alert('gagal menambahkan data');
-            document.location.href = 'peminjaman_literasi.php';
+            document.location.href = 'tambah_pinjam_literasi.php';
         </script>
     ";
   }
@@ -44,6 +44,49 @@ echo Date('l, Y-m-d');
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
     <title>Tambah Peminjaman Literasi</title>
+    <style>
+            body {
+            	font-family: 'Roboto', Arial, Sans-serif;
+            	font-size: 15px;
+            	font-weight: 400;
+            }
+            input[type=text] {
+                border: 2px solid #bdbdbd;
+                font-family: 'Roboto', Arial, Sans-serif;
+            	font-size: 15px;
+            	font-weight: 400;
+                padding: .5em .75em;
+                width: 300px;
+            }
+            input[type=text]:focus {
+                border: 2px solid #757575;
+            	outline: none;
+            }
+            .autocomplete-suggestions {
+                border: 1px solid #999;
+                background: #FFF;
+                overflow: auto;
+            }
+            .autocomplete-suggestion {
+                padding: 2px 5px;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+            .autocomplete-selected {
+                background: #F0F0F0;
+            }
+            .autocomplete-suggestions strong {
+                font-weight: normal;
+                color: #3399FF;
+            }
+            .autocomplete-group {
+                padding: 2px 5px;
+            }
+            .autocomplete-group strong {
+                display: block;
+                border-bottom: 1px solid #000;
+            }
+        </style>
 </head>
 <body>
     <div class="container">
@@ -54,16 +97,8 @@ echo Date('l, Y-m-d');
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="id_kode_nis"> Nama Siswa : </label> 
-            <select class="form-control" name="id_nis" id="id_nis" required >
-              <option value="">- Pilih Siswa -</option>
-                  <?php
-                    $sql_member = mysqli_query($conn, "SELECT * FROM member_perpus") or die (mysqli_query($conn));
-                    while ($data_member = mysqli_fetch_array($sql_member)){
-                      echo '<option value="'.$data_member['nis'].'">' .$data_member['nama_siswa']. '</option>'; 
-                    }
-                    
-                  ?>
-            </select>
+          <input type="text" id="buah" name="buah" placeholder="Nama Siswa" value="">
+		      <div id="box_pencarian"></div>
         </div>
       </div>
       <div class="form-row">
@@ -108,6 +143,26 @@ echo Date('l, Y-m-d');
     </form>
     </div>
     </div>
+
+     <!-- Memanggil jQuery.js -->
+     <script src="js/autocomplete/jquery-3.2.1.min.js"></script>
+
+<!-- Memanggil Autocomplete.js -->
+<script src="js/autocomplete/jquery.autocomplete.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        // Selector input yang akan menampilkan autocomplete.
+        $( "#buah" ).autocomplete({
+            serviceUrl: "source.php",   // Kode php untuk prosesing data.
+            dataType: "JSON",           // Tipe data JSON.
+            onSelect: function (suggestion) {
+                $( "#buah" ).val("" + suggestion.buah);
+            }
+        });
+    })
+</script>
 
 
 
