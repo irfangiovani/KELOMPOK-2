@@ -209,12 +209,11 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
               <div class="card-title-c align-self-center">
                 <h2 class="title-c">Mapel</h2>
               </div>
-            </div>
+            </div> 
             <div class="card-body-c">
               <p class="content-c">
-                Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa,
-                convallis a pellentesque
-                nec, egestas non nisi.
+                Buku mapel merupakan buku acuan wajib yang digunakan sekolah berisikan materi pembelajaran, waktu pinjam dalam 
+                buku mapel setiap 2 jam selama jadwal mata pelajaran berlangsung. 
               </p>
             </div>
           </div>
@@ -231,9 +230,8 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
             </div>
             <div class="card-body-c">
               <p class="content-c">
-                Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit. Mauris blandit
-                aliquet elit, eget tincidunt
-                nibh pulvinar a.
+                Buku Tahunan merupakan buku pelajaran dalam bidang studi tertentu, yang merupakan buku standar.
+                Waktu pinjam selama 1 tahun dan dikembalikan ketika memasuki ajaran baru.
               </p>
             </div>
           </div>
@@ -250,9 +248,8 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
             </div>
             <div class="card-body-c">
               <p class="content-c">
-                Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa,
-                convallis a pellentesque
-                nec, egestas non nisi.
+               Buku literasi merupakan buku yang digunakan untuk upaya menumbuhkan budi pekerti siswa bertujuan 
+               agar siswa memiliki budaya membaca dan menulis serta menumbuhkan minat baca.
               </p>
             </div>
           </div>
