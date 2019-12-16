@@ -212,22 +212,14 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
    width : 350px;
    height : 450px;
  }
+ .img-box-a img {
+   width : 100%;
+   height : 100%;
+ }
  </style>
   <section class="property-grid grid">
     <div class="container">
       <div class="row">
-        <div class="col-sm-12">
-          <div class="grid-option">
-            <form>
-              <select class="custom-select">
-                <option selected>Semua</option>
-                <option value="1">Literasi</option>
-                <option value="2">Mapel</option>
-                <option   <a class="nav-link" href="tahunan.php">Tahunan </a></option>
-              </select>
-            </form>
-          </div>
-        </div>
         <?php foreach ( $buku_literasi_umum as $row) : ?>
         <div class="col-md-4">
           <div class="card-box-a card-shadow">
@@ -242,7 +234,6 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
                   </h2>
                 </div>
                 <div class="card-body-a">
-                  
                   <a href="property-single.html" class="link-a">Lihat Detail Buku
                     <span class="ion-ios-arrow-forward"></span>
                   </a>

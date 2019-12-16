@@ -181,7 +181,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
   <!--/ Carousel Star /-->
   <div class="intro intro-carousel">
     <div id="carousel" class="owl-carousel owl-theme">
-      <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/slider2.jpg)">
+      <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/gallery/slider1.jpg)">
         <div class="overlay overlay-a"></div>
         <div class="intro-content display-table">
           <div class="table-cell">
@@ -189,13 +189,13 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
               <div class="row">
                 <div class="col-lg-8">
                   <div class="intro-body">
-                    <p class="intro-title-top">Selamat Datang, User
-                      <br></p>
+                    <p class="intro-title-top">Bondowoso, Jatim
+                      <br>68216</p>
                     <h1 class="intro-title mb-4">
-                      <span class="color-b"> </span>
-                      <br></h1>
+                      <span class="color-b">ING </span>NGARSA SUNG
+                      <br>TULADHA</h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a"></span></a>
+                      <a href="#"><span class="price-a">SMKN 3 BONDOWOSO</span></a>
                     </p>
                   </div>
                 </div>
@@ -204,21 +204,21 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
           </div>
         </div>
       </div>
-      <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/slider4.jpg)">
+      <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/gallery/slider2.jpg)">
         <div class="overlay overlay-a"></div>
         <div class="intro-content display-table">
           <div class="table-cell">
             <div class="container">
               <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-10">
                   <div class="intro-body">
-                    <p class="intro-title-top">Selamat Datang, User
-                      <br></p>
+                    <p class="intro-title-top">Bondowoso, Jatim
+                      <br>68216</p>
                     <h1 class="intro-title mb-4">
-                      <span class="color-b"> </span>
-                      <br></h1>
+                      <span class="color-b">ING </span>MADYA MANGUN
+                      <br>KARSA</h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a"></span></a>
+                      <a href="#"><span class="price-a">SMKN 3 BONDOWOSO</span></a>
                     </p>
                   </div>
                 </div>
@@ -227,21 +227,21 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
           </div>
         </div>
       </div>
-      <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/slider5.jpg)">
+      <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/gallery/slider5.jpg)">
         <div class="overlay overlay-a"></div>
         <div class="intro-content display-table">
           <div class="table-cell">
             <div class="container">
               <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-10">
                   <div class="intro-body">
-                    <p class="intro-title-top">Selamat Datang, User
-                      <br></p>
+                    <p class="intro-title-top">Bondowoso, Jatim
+                      <br>68216</p>
                     <h1 class="intro-title mb-4">
-                      <span class="color-b"></span>
-                      <br></h1>
+                      <span class="color-b">TUT WURI </span>HANDAYANI
+                      </h1><br><br><br>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a"></span></a>
+                      <a href="#"><span class="price-a">SMKN 3 BONDOWOSO</span></a>
                     </p>
                   </div>
                 </div>
@@ -334,6 +334,10 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
    width : 350px;
    height : 450px;
  }
+  .img-box-a img {
+   width : 100%;
+   height : 100%;
+ }
  </style>
  <section class="section-property section-t8">
     <div class="container">
@@ -341,7 +345,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
         <div class="col-md-12">
           <div class="title-wrap d-flex justify-content-between">
             <div class="title-box">
-              <h2 class="title-a">Buku-Buku</h2>
+              <h2 class="title-a">Buku</h2>
             </div>
             <div class="title-link">
             <a href="buku.php">Semua Buku
@@ -365,6 +369,25 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
                   <?php echo $row["judul_buku_literasi"];?>
                   </h2>
                 </div>
+                <div class="card-footer-a text-center">
+                  <ul class="card-info d-flex justify-content-around">
+                  <li>
+                      <h4 class="card-info-title">Kode Buku</h4>
+                      <span><?= $row['kode_buku_literasi']; ?>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Terbit</h4>
+                      <span><?= $row['tahun_terbit']; ?>
+                      </span>
+                    </li>
+                    <li>
+                      <h4 class="card-info-title">Rak</h4>
+                      <span><?= $row['id_rak']; ?>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -382,7 +405,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
         <div class="col-md-12">
           <div class="title-wrap d-flex justify-content-between">
             <div class="title-box">
-              <h2 class="title-a">Galeri</h2>
+              <h2 class="title-a">Pengunjung</h2>
             </div>
             <div class="title-link">
               <a href="agents-grid.html">All Agents
@@ -396,7 +419,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
         <div class="col-md-4">
           <div class="card-box-d">
             <div class="card-img-d">
-              <img src="img/baca2.jpg" alt="" class="img-d img-fluid">
+              <img src="img/gallery/pengunjung4.jpg" alt="" class="img-d img-fluid">
             </div>
             <div class="card-overlay card-overlay-hover">
               <div class="card-header-d">
@@ -455,7 +478,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
         <div class="col-md-4">
           <div class="card-box-d">
             <div class="card-img-d">
-              <img src="img/buku baca2.jpg" alt="" class="img-d img-fluid">
+              <img src="img/pengunjung3.jpg" alt="" class="img-d img-fluid">
             </div>
             <div class="card-overlay card-overlay-hover">
               <div class="card-header-d">
@@ -514,7 +537,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
         <div class="col-md-4">
           <div class="card-box-d">
             <div class="card-img-d">
-              <img src="img/membaca-buku.jpg" alt="" class="img-d img-fluid">
+              <img src="img/pengunjung2.jpg" alt="" class="img-d img-fluid">
             </div>
             <div class="card-overlay card-overlay-hover">
               <div class="card-header-d">
@@ -582,7 +605,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
         <div class="col-md-12">
           <div class="title-wrap d-flex justify-content-between">
             <div class="title-box">
-              <h2 class="title-a">Galeri</h2>
+              <h2 class="title-a">Perpustakaan</h2>
             </div>
             <div class="title-link">
               <a href="blog-grid.html">All News
@@ -596,7 +619,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
         <div class="carousel-item-c">
           <div class="card-box-b card-shadow news-box">
             <div class="img-box-b">
-              <img src="img/ruangan2.jpg" alt="" class="img-b img-fluid">
+              <img src="img/gallery/slider6.jpg" alt="" class="img-b img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-header-b">
@@ -619,7 +642,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
         <div class="carousel-item-c">
           <div class="card-box-b card-shadow news-box">
             <div class="img-box-b">
-              <img src="img/ruangan3.jpg" alt="" class="img-b img-fluid">
+              <img src="img/gallery/slider9.jpg" alt="" class="img-b img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-header-b">
@@ -642,7 +665,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
         <div class="carousel-item-c">
           <div class="card-box-b card-shadow news-box">
             <div class="img-box-b">
-              <img src="img/ruangan1.jpg" alt="" class="img-b img-fluid">
+              <img src="img/gallery/slider7.jpg" alt="" class="img-b img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-header-b">
@@ -665,7 +688,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
         <div class="carousel-item-c">
           <div class="card-box-b card-shadow news-box">
             <div class="img-box-b">
-              <img src="img/slider5.jpg" alt="" class="img-b img-fluid">
+              <img src="img/gallery/slider2.jpg" alt="" class="img-b img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-header-b">
@@ -708,7 +731,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
             <div class="row">
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-img">
-                  <img src="img/kelompokno.jpg" alt="" class="img-fluid">
+                  <img src="img/kelompokne.jpg" alt="" class="img-fluid">
                 </div>
               </div>
               <div class="col-sm-12 col-md-6">
@@ -735,7 +758,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY RAND() LI
             <div class="row">
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-img">
-                  <img src="img/kelompokne.jpg" alt="" class="img-fluid">
+                  <img src="img/kelompokno.jpg" alt="" class="img-fluid">
                 </div>
               </div>
               <div class="col-sm-12 col-md-6">
