@@ -688,13 +688,9 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
             <div class="row">
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-img">
-<<<<<<< HEAD
-                  <img src="img/kelompokne.jpg" alt="" class="img-fluid">
-=======
                 <video width="550px" height="400px" controls>
 	              	<source src="img/vidio.mp4" type="video/mp4">
 	              </video>
->>>>>>> f26ad842f5b8eb9c05a8221f31ff73ca7a064bdd
                 </div>
               </div>
               <div class="col-sm-12 col-md-6">
