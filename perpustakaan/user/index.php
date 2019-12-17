@@ -650,7 +650,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
         <div class="col-md-12">
           <div class="title-wrap d-flex justify-content-between">
             <div class="title-box">
-              <h2 class="title-a">Developer</h2>
+              <h2 class="title-a">Profile</h2>
             </div>
           </div>
         </div>
@@ -670,9 +670,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                 </div>
                 <div class="testimonials-content">
                   <p class="testimonial-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, cupiditate ea nam praesentium
-                    debitis hic ber quibusdam
-                    voluptatibus officia expedita corpori.
+                    Developer terdiri dari 1. irfan giovani 2. yudi iriyanto 3. ilham robi s 4. Azizah Wina S 5. Muhammad Ansori
                   </p>
                 </div>
                 <div class="testimonial-author-box">
