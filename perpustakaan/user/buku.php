@@ -16,7 +16,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
+  <link href="img/logosmk3.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
