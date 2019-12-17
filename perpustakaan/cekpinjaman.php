@@ -2,7 +2,7 @@
 if (isset($_GET['cek'])) {
 	
 
-$nis=$_GET['nis'];
+$nis=$_GET['nis']; 
 $nama=$_GET['nama'];
 require 'koneksi.php';
 $query = "SELECT * FROM peminjaman_buku_literasi WHERE nis='$nis'";

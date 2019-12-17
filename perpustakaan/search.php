@@ -11,7 +11,7 @@ if((isset($_POST['submit'])) AND ($_POST['pencarian'] <> ""))
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
   <title>SMKN 3 BONDOWOSO</title>
   <meta charset="UTF-8">
