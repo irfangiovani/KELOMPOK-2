@@ -702,21 +702,6 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                   SMK Negeri 3 Bondowoso sebagai lembaga pendidikan yang dapat diakui sebagai pengembang generasi yang profesional dan berbasis skill dan kompetensi serta dapat bersaing dalam Pasar Kerja Global. Dari sisi kelembagaan secara periodisasi, SMK Negeri 3 didirikan di Bondowoso oleh Bupati Bondoowso dengan nomor SK Pendirian : 617 tahun 2003 pada tanggal SK : 06 Oktober 2003
                   </p>
                 </div>
-                <style>
-                .testimonial-author-box{
-                  float: left;
-                }
-                </style>
-                <div class="gallery">
-                  <div class="testimonial-author-box">
-                    <img src="img/mini-testimonial-1.jpg" alt="" class="testimonial-avatar">
-                    <h5 class="testimonial-author">PAH</h5>
-                  </div>
-                  <div class="testimonial-author-box">
-                    <img src="img/mini-testimonial-1.jpg" alt="" class="testimonial-avatar">
-                    <h5 class="testimonial-author">PAH</h5>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
