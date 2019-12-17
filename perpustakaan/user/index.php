@@ -661,7 +661,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
             <div class="row">
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-img">
-                  <img src="img/kelompokne.jpg" alt="" class="img-fluid">
+                  <img src="img/kelompokku.jpg" alt="" class="img-fluid">
                 </div>
               </div>
               <div class="col-sm-12 col-md-6">
@@ -699,10 +699,6 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                   <p class="testimonial-text">
                   SMK Negeri 3 Bondowoso sebagai lembaga pendidikan yang dapat diakui sebagai pengembang generasi yang profesional dan berbasis skill dan kompetensi serta dapat bersaing dalam Pasar Kerja Global. Dari sisi kelembagaan secara periodisasi, SMK Negeri 3 didirikan di Bondowoso oleh Bupati Bondoowso dengan nomor SK Pendirian : 617 tahun 2003 pada tanggal SK : 06 Oktober 2003
                   </p>
-                </div>
-                <div class="testimonial-author-box">
-                  <img src="img/mini-testimonial-1.jpg" alt="" class="testimonial-avatar">
-                  <h5 class="testimonial-author">PAH</h5>
                 </div>
               </div>
             </div>
