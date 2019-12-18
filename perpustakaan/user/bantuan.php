@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>EstateAgency Bootstrap Template</title>
+  <title>Bantuan</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -110,7 +110,7 @@
               <style>
                 .gambar {
                   width: 1090px;
-                  height: 600px;
+                  height: 700px;
                 }
               </style>
               <img class="gambar" src="img/alurpendaftar.jpg">
