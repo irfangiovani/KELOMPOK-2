@@ -110,7 +110,7 @@
               <style>
                 .gambar {
                   width: 1090px;
-                  height: 600px;
+                  height: 700px;
                 }
               </style>
               <img class="gambar" src="img/alurpendaftar.jpg">
