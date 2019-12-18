@@ -650,7 +650,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
         <div class="col-md-12">
           <div class="title-wrap d-flex justify-content-between">
             <div class="title-box">
-              <h2 class="title-a">Developer</h2>
+              <h2 class="title-a">Profile</h2>
             </div>
           </div>
         </div>
@@ -661,23 +661,48 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
             <div class="row">
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-img">
-                  <img src="img/kelompokne.jpg" alt="" class="img-fluid">
+                  <img src="img/kelompokku.jpg" alt="" class="img-fluid">
                 </div>
               </div>
+              <style>
+                  .testimonial-box {
+                    float: left;
+                    margin: 14px;
+                  }
+                </style>
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-ico">
                   <span class="ion-ios-quote"></span>
                 </div>
                 <div class="testimonials-content">
                   <p class="testimonial-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, cupiditate ea nam praesentium
-                    debitis hic ber quibusdam
-                    voluptatibus officia expedita corpori.
+                    Developer terdiri dari : <br>
+                    1. Irfan Giovani 
+                    2. Yudi Iriyanto 
+                    3. Ilham Robby Sanjaya 
+                    4. Azizah Wina Sriwinarsih
+                    5. Muhammad Ansori
                   </p>
                 </div>
-                <div class="testimonial-author-box">
-                  <img src="img/mini-testimonial-1.jpg" alt="" class="testimonial-avatar">
-                  <h5 class="testimonial-author">Albert & Erika</h5>
+                <div class="testimonial-box">
+                  <img src="img/team/img-2.jpg" alt="" class="testimonial-avatar"><br>
+                  <h5 class="text-center">IRFAN</h5>
+                </div>
+                <div class="testimonial-box">
+                  <img src="img/team/img-1.jpg" alt="" class="testimonial-avatar">
+                  <h5 class="text-center">YUDI</h5>
+                </div>
+                <div class="testimonial-box">
+                  <img src="img/team/img-4.jpg" alt="" class="testimonial-avatar">
+                  <h5 class="text-center">ILHAM</h5>
+                </div>
+                <div class="testimonial-box">
+                  <img src="img/team/img-5.jpg" alt="" class="testimonial-avatar">
+                  <h5 class="text-center">WINA</h5>
+                </div>
+                <div class="testimonial-box">
+                  <img src="img/team/img-3.jpg" alt="" class="testimonial-avatar">
+                  <h5 class="text-center">ANSORI</h5>
                 </div>
               </div>
             </div>
@@ -688,7 +713,9 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
             <div class="row">
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-img">
-                  <img src="img/kelompokno.jpg" alt="" class="img-fluid">
+                <video width="550px" height="400px" controls>
+	              	<source src="img/vidio.mp4" type="video/mp4">
+	              </video>
                 </div>
               </div>
               <div class="col-sm-12 col-md-6">
@@ -697,14 +724,8 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                 </div>
                 <div class="testimonials-content">
                   <p class="testimonial-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, cupiditate ea nam praesentium
-                    debitis hic ber quibusdam
-                    voluptatibus officia expedita corpori.
+                  SMK Negeri 3 Bondowoso sebagai lembaga pendidikan yang dapat diakui sebagai pengembang generasi yang profesional dan berbasis skill dan kompetensi serta dapat bersaing dalam Pasar Kerja Global. Dari sisi kelembagaan secara periodisasi, SMK Negeri 3 didirikan di Bondowoso oleh Bupati Bondoowso dengan nomor SK Pendirian : 617 tahun 2003 pada tanggal SK : 06 Oktober 2003
                   </p>
-                </div>
-                <div class="testimonial-author-box">
-                  <img src="img/mini-testimonial-1.jpg" alt="" class="testimonial-avatar">
-                  <h5 class="testimonial-author">PAH</h5>
                 </div>
               </div>
             </div>

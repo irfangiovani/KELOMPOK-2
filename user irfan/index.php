@@ -772,7 +772,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
             <div class="row">
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-img">
-                  <img src="img/testimonial-2.jpg" alt="" class="img-fluid">
+                  <img src="img/vidiomp4" alt="" class="video/mp4">
                 </div>
               </div>
               <div class="col-sm-12 col-md-6">
@@ -923,7 +923,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://www.instagram.com/ilhamrobby24/">
                   <i class="fa fa-instagram" aria-hidden="true"></i>
                 </a>
               </li>
