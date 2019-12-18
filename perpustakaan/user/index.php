@@ -664,18 +664,45 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                   <img src="img/kelompokku.jpg" alt="" class="img-fluid">
                 </div>
               </div>
+              <style>
+                  .testimonial-box {
+                    float: left;
+                    margin: 14px;
+                  }
+                </style>
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-ico">
                   <span class="ion-ios-quote"></span>
                 </div>
                 <div class="testimonials-content">
                   <p class="testimonial-text">
-                    Developer terdiri dari 1. irfan giovani 2. yudi iriyanto 3. ilham robi s 4. Azizah Wina S 5. Muhammad Ansori
+                    Developer terdiri dari : <br>
+                    1. Irfan Giovani 
+                    2. Yudi Iriyanto 
+                    3. Ilham Robby Sanjaya 
+                    4. Azizah Wina Sriwinarsih
+                    5. Muhammad Ansori
                   </p>
                 </div>
-                <div class="testimonial-author-box">
-                  <img src="img/mini-testimonial-1.jpg" alt="" class="testimonial-avatar">
-                  <h5 class="testimonial-author">Albert & Erika</h5>
+                <div class="testimonial-box">
+                  <img src="img/team/img-2.jpg" alt="" class="testimonial-avatar"><br>
+                  <h5 class="text-center">IRFAN</h5>
+                </div>
+                <div class="testimonial-box">
+                  <img src="img/team/img-1.jpg" alt="" class="testimonial-avatar">
+                  <h5 class="text-center">YUDI</h5>
+                </div>
+                <div class="testimonial-box">
+                  <img src="img/team/img-4.jpg" alt="" class="testimonial-avatar">
+                  <h5 class="text-center">ILHAM</h5>
+                </div>
+                <div class="testimonial-box">
+                  <img src="img/team/img-5.jpg" alt="" class="testimonial-avatar">
+                  <h5 class="text-center">WINA</h5>
+                </div>
+                <div class="testimonial-box">
+                  <img src="img/team/img-3.jpg" alt="" class="testimonial-avatar">
+                  <h5 class="text-center">ANSORI</h5>
                 </div>
               </div>
             </div>
