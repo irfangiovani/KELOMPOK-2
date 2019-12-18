@@ -25,12 +25,11 @@ date_default_timezone_set('Asia/Jakarta');
     //post ke tabel pengembalian buku mapel
     $id_pinjam_mapel = $_POST["id_pinjam_mapel"];
     $nama_pengembali = $_POST["nama_pengembali"];
-    $waktu_kembali = $_POST["waktu_pengembalian"]; 
-    $banyak_buku_kembali = $_POST["buku_kembali"];
+    $waktu_kembali = date('H:i, d F Y'); 
     $buku_kurang = $_POST["buku_kurang"];
 
-    $tambah2 = mysqli_query($conn, "INSERT INTO pengembalian_buku_mapel VALUES (NULL, '$id_pinjam_mapel', '$nama_pengembali', '$waktu_kembali','$banyak_buku_kembali', '$buku_kurang')");
-     if($tambah2 == true ){
+    $tambah2 = mysqli_query($conn, "INSERT INTO pengembalian_buku_mapel VALUES (NULL, '$id_pinjam_mapel', '$nama_pengembali', '$waktu_kembali', '$buku_kurang')");
+     if($tambah2  == true ){
       echo "
           <script>
               alert('Proses Pengembalian Buku Berhasil');
@@ -55,11 +54,11 @@ date_default_timezone_set('Asia/Jakarta');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
-    <title>Konfirmasi pengembalian tahunan</title>
+    <title>Konfirmasi pengembalian mapel</title>
 </head>
 <body>
     <div class="container">
-    <h2 class="alert alert-info text-center mt-3">Konfirmasi Pengembalian Buku Tahunan</h2>
+    <h2 class="alert alert-info text-center mt-3">Konfirmasi Pengembalian Buku Mapel</h2>
     <div class="pull-right">
     <form action="" method="post" enctype="multipart/form-data">
       <div class="form-row">

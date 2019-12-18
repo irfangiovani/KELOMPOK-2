@@ -60,6 +60,7 @@ if( isset($_POST["submit"])){
 
     <!-- Main css -->
     <link rel="stylesheet" href="cssregis/style.css">
+    
 </head>
 <body>
 
@@ -209,7 +210,8 @@ if( isset($_POST["submit"])){
                         <form method="POST" class="register-form" id="register-form">
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="nis" id="nis" placeholder="NIS"/>
+                                <input type="text" name="nis" id="buah" placeholder="NIS" value=""/>
+                                <div id="box_pencarian"></div>
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
@@ -379,6 +381,25 @@ if( isset($_POST["submit"])){
     </div>
   </footer>
   <!--/ Footer End /-->
+
+  <!-- Memanggil jQuery.js -->
+  <script src="../admin/js/autocomplete/jquery-3.2.1.min.js"></script>
+
+<!-- Memanggil Autocomplete.js -->
+<script src="../admin/js/autocomplete/jquery.autocomplete.min.js"></script>
+<script type="text/javascript">
+            $(document).ready(function() {
+
+                // Selector input yang akan menampilkan autocomplete.
+                $( "#buah" ).autocomplete({
+                    serviceUrl: "source.php",   // Kode php untuk prosesing data.
+                    dataType: "JSON",           // Tipe data JSON.
+                    onSelect: function (suggestion) {
+                        $( "#buah" ).val("" + suggestion.buah);
+                    }
+                });
+            })
+        </script>
 
         
     <!-- JS -->
