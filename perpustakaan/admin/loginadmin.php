@@ -91,14 +91,11 @@ require 'functions.php';
 						</button>
 					</div>
 					<div class="text-center p-t-12">
-						<span class="txt1">
-							Forgot
-						</span>
-						<a class="txt2" href="#">
-							Username / Password?
+						<a class="txt2" href="../user/index.php">
+							<h6>Beranda</h6>
 						</a>
 					</div>
-
+					
 					<div class="text-center p-t-136">
 						<a class="txt2" href="registeradmin.php">
 							Create your Account

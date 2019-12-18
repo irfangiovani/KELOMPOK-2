@@ -12,7 +12,7 @@ if( isset($_POST["submit"])){
     $status = "tidak aktif";
 
     //query insert data
-    mysqli_query($conn, "INSERT INTO member_perpus VALUES ('$nis', '$nama','$kelas','$jurusan', '$no_telp',  '$alamat','$status')");
+    mysqli_query($conn, "INSERT INTO member_perpus VALUES ('$nis', '$nama','$kelas','$jurusan', '$no_telp',  '$alamat', '$status')");
 
     
 
@@ -27,7 +27,6 @@ if( isset($_POST["submit"])){
     }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,99 +63,8 @@ if( isset($_POST["submit"])){
 </head>
 <body>
 
-<div class="click-closed"></div>
-  <!--/ Form Search Star /-->
-  <div class="box-collapse">
-    <div class="title-box-d">
-      <h3 class="title-d">Search Property</h3>
-    </div>
-    <span class="close-box-collapse right-boxed ion-ios-close"></span>
-    <div class="box-collapse-wrap form">
-      <form class="form-a">
-        <div class="row">
-          <div class="col-md-12 mb-2">
-            <div class="form-group">
-              <label for="Type">Keyword</label>
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="Type">Type</label>
-              <select class="form-control form-control-lg form-control-a" id="Type">
-                <option>All Type</option>
-                <option>For Rent</option>
-                <option>For Sale</option>
-                <option>Open House</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="city">City</label>
-              <select class="form-control form-control-lg form-control-a" id="city">
-                <option>All City</option>
-                <option>Alabama</option>
-                <option>Arizona</option>
-                <option>California</option>
-                <option>Colorado</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="bedrooms">Bedrooms</label>
-              <select class="form-control form-control-lg form-control-a" id="bedrooms">
-                <option>Any</option>
-                <option>01</option>
-                <option>02</option>
-                <option>03</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="garages">Garages</label>
-              <select class="form-control form-control-lg form-control-a" id="garages">
-                <option>Any</option>
-                <option>01</option>
-                <option>02</option>
-                <option>03</option>
-                <option>04</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="bathrooms">Bathrooms</label>
-              <select class="form-control form-control-lg form-control-a" id="bathrooms">
-                <option>Any</option>
-                <option>01</option>
-                <option>02</option>
-                <option>03</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group">
-              <label for="price">Min Price</label>
-              <select class="form-control form-control-lg form-control-a" id="price">
-                <option>Unlimite</option>
-                <option>$50,000</option>
-                <option>$100,000</option>
-                <option>$150,000</option>
-                <option>$200,000</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <button type="submit" class="btn btn-b">Search Property</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-  <!--/ Form Search End /-->
+
+
 
   <!--/ Nav Star /-->
   <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
@@ -178,7 +86,7 @@ if( isset($_POST["submit"])){
             <a class="nav-link" href="index.php">Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="registrasi.php">Daftar Member</a>
+            <a class="nav-link" href="registrasi.php">Daftar</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="buku.php">Buku</a> 
@@ -191,10 +99,6 @@ if( isset($_POST["submit"])){
           </li>
         </ul>
       </div>
-      <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse"
-        data-target="#navbarTogglerDemo01" aria-expanded="false">
-        <span class="fa fa-search" aria-hidden="true"></span>
-      </button>
     </div>
   </nav>
   <!--/ Nav End /-->
@@ -209,37 +113,36 @@ if( isset($_POST["submit"])){
                         <h2 class="form-title">Daftar Member</h2>
                         <form method="POST" class="register-form" id="register-form">
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="nis" id="buah" placeholder="NIS" value=""/>
-                                <div id="box_pencarian"></div>
+                              <label for="nis"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="nis" id="nis" placeholder="NIS"/>
                             </div>
                             <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <label for="nama"><i class="zmdi zmdi-email"></i></label>
                                 <input type="text" name="nama" id="nama" placeholder="Nama"/>
                             </div>
                             <div class="form-group">
-                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <label for="kelas"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="text" name="kelas" id="kelas" placeholder="Kelas"/>
                             </div>
                             <div class="form-group">
-                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <label for="jurusan"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input type="text" name="jurusan" id="jurusan" placeholder="Jurusan"/>
                             </div>
                             <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <label for="no_telpn"><i class="zmdi zmdi-email"></i></label>
                                 <input type="text" name="no_telp" id="no_telp" placeholder="No Telpon"/>
                             </div>
                             <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <label for="alamat"><i class="zmdi zmdi-email"></i></label>
                                 <input type="text" name="alamat" id="alamat" placeholder="Alamat"/>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                             </div>
-                            <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
-                            </div> 
+                            <div class="p-t-20">
+                            <button class="btn btn--radius btn--green" type="submit" name="submit">SIMPAN</button>
+                        </div>
                         </form>
                     </div>
                     <div class="signup-image">
