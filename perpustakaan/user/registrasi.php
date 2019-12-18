@@ -114,31 +114,31 @@ if( isset($_POST["submit"])){
                         <h2 class="form-title">Daftar Member</h2>
                         <form method="POST" class="register-form" id="register-form">
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <label for="nis"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="nis" id="nis" placeholder="NIS"/>
                             </div>
                             <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <label for="nama"><i class="zmdi zmdi-email"></i></label>
                                 <input type="text" name="nama" id="nama" placeholder="Nama"/>
                             </div>
                             <div class="form-group">
-                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <label for="kelas"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="text" name="kelas" id="kelas" placeholder="Kelas"/>
                             </div>
                             <div class="form-group">
-                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <label for="jurusan"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input type="text" name="jurusan" id="jurusan" placeholder="Jurusan"/>
                             </div>
                             <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <label for="no_telpn"><i class="zmdi zmdi-email"></i></label>
                                 <input type="text" name="no_telp" id="no_telp" placeholder="No Telpon"/>
                             </div>
                             <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <label for="alamat"><i class="zmdi zmdi-email"></i></label>
                                 <input type="text" name="alamat" id="alamat" placeholder="Alamat"/>
                             </div>
                             <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <label for="status"><i class="zmdi zmdi-email"></i></label>
                                 <input type="text" name="status" id="status" placeholder="Status"/>
                             </div>
                             <div class="form-group">
