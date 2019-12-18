@@ -12,7 +12,7 @@ if( isset($_POST["submit"])){
     $status = "tidak aktif";
 
     //query insert data
-    mysqli_query($conn, "INSERT INTO member_perpus VALUES ('$nis', '$nama','$kelas','$jurusan', '$no_telp',  '$alamat','$status')");
+    mysqli_query($conn, "INSERT INTO member_perpus VALUES ('$nis', '$nama','$kelas','$jurusan', '$no_telp',  '$alamat', '$status')");
 
     
 
@@ -134,10 +134,6 @@ if( isset($_POST["submit"])){
                             <div class="form-group">
                                 <label for="alamat"><i class="zmdi zmdi-email"></i></label>
                                 <input type="text" name="alamat" id="alamat" placeholder="Alamat"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="status"><i class="zmdi zmdi-email"></i></label>
-                                <input type="text" name="status" id="status" placeholder="Status"/>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
