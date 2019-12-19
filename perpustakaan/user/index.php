@@ -43,7 +43,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
     License: https://bootstrapmade.com/license/
   ======================================================= -->
 </head>
-
+ 
 <body>
   <div class="click-closed"></div>
   <!--/ Form Search Star /-->
@@ -68,7 +68,9 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
             </div>
           </div>
           <div class="col-md-12">
-            <button type="submit" class="btn btn-b">Cari</button>
+
+            <button type="submit" class="btn btn-b"><a href="siswa_cek_pinjam.php">Cari </a></button>
+           
           </div>
         </div>
       </form>
