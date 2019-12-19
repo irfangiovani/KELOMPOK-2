@@ -337,11 +337,6 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
             <div class="title-box">
               <h2 class="title-a">Pengunjung</h2>
             </div>
-            <div class="title-link">
-              <a href="agents-grid.html">All Agents
-                <span class="ion-ios-arrow-forward"></span>
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -536,11 +531,6 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
           <div class="title-wrap d-flex justify-content-between">
             <div class="title-box">
               <h2 class="title-a">Perpustakaan</h2>
-            </div>
-            <div class="title-link">
-              <a href="blog-grid.html">All News
-                <span class="ion-ios-arrow-forward"></span>
-              </a>
             </div>
           </div>
         </div>
