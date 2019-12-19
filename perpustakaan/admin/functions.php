@@ -22,14 +22,7 @@ function cariliterasi($keywordliterasi){
     return query($query);
 }
 
-//cari peminjaman literasi berdasarkan tangggal
-function caripeminjamanliterasi($keywordliterasi){
-    $query = "SELECT * FROM peminjaman_buku_literasi
-            WHERE
-            tanggal_peminjaman LIKE '%$keywordliterasi%' 
-            ";
-    return query($query);
-}
+
 //halaman register.php
 function registrasiliterasi($dataliterasi) {
     global $conn;
@@ -159,6 +152,13 @@ function kurangi_stok_mapel($conn, $kode_judul)
     mysqli_query($conn, $q);
 }
 
+function tambah_stok_mapel($conn, $id_judul_buku_mapel)
+{
+    $banyak_buku_kembali = $_POST["buku_dipinjam"];
+    $q = "UPDATE buku_mapel_kelas SET stok = stok + $banyak_buku_kembali WHERE id_judul_buku_mapel = '$id_judul_buku_mapel'";
+    mysqli_query($conn, $q);
+}
+
 
 
 function cek_stok($conn,$id_judul_buku_tahunan )
@@ -182,6 +182,8 @@ function tambah_stok($conn, $id_judul_buku_tahunan)
     $q = "UPDATE buku_tahunan_siswa SET stok = stok + 1 WHERE id_judul_buku_tahunan = '$id_judul_buku_tahunan'";
     mysqli_query($conn, $q);
 }
+
+
 function hitung_denda($tgl_kembali, $tanggal_hrs_kembali)
 {
     if (strtotime( $tgl_kembali ) > strtotime($tanggal_hrs_kembali)) {
@@ -254,15 +256,6 @@ return $hasil_tgl;
 }
 
 
-// untuk mapel
-function carimapel($keywordmapel){
-    $query = "SELECT * FROM buku_mapel_kelas
-            WHERE
-            judul_buku_mapel LIKE '%$keywordmapel%' 
-            ";
-    return query($query);
-}
-
 function tambahmapel($datamapel) {
 	global $conn;
 
@@ -334,15 +327,7 @@ function uploadmapel() {
 
 }
 
-// untuk tahunan
-// pencarian untuk tambah tahunan
-function caritahunan($keywordtahunan){
-    $query = "SELECT * FROM buku_tahunan_siswa
-            WHERE
-            judul_buku_tahunan LIKE '%$keywordtahunan%' 
-            ";
-    return query($query);
-}
+
 
 // tambah data tahunan
 function tambahtahunan($datatahunan) {

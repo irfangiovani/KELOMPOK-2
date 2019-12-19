@@ -211,7 +211,7 @@ if( isset($_POST["cariliterasi"])) {
                                     ";
                             }
                             ?></td>
-                            <td><a href="proses_pengembalian_literasi.php?id=<?php echo $row ['id_pinjam_buku_tahunan']; ?>" class="btn btn-warning" title="ubah data" >kembali</a></td>
+                            <td><a href="proses_pengembalian_literasi.php?id=<?php echo $row ['id_pinjam_buku_literasi']; ?>" class="btn btn-warning" title="ubah data" >kembali</a></td>
                         </tr>
                       <?php $i++; ?>
                       <?php endforeach; ?>

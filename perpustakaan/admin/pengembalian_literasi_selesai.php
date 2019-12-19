@@ -26,6 +26,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi a RIGHT JO
   <link href="css/prettyPhoto.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  <link href="js/dataTables/dataTables.bootstrap.css" rel="stylesheet">
 
   <!-- Theme skin -->
   <link id="t-colors" href="color/default.css" rel="stylesheet" />
@@ -165,7 +166,8 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi a RIGHT JO
 <div class="offside-3 col-lg-7">
     <form action="" method="post">
       <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover ">
+    <table class="table table-striped table-bordered table-hover " id="tabel">
+    <thead>
         <tr>
 			<th>no</th>
             <th>ID Pinjam Literasi</th>
@@ -177,6 +179,8 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi a RIGHT JO
             <th>Denda</th>
             <th>Notifikasi</th>
         </tr>
+        </head>
+        <tbody>
 		<?php $i = 1; ?> 
         <?php
             foreach( $peminjaman_literasi as $row) :
@@ -194,6 +198,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi a RIGHT JO
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
+      </tbody>
     </table>
   </div>
     </form>
@@ -292,6 +297,13 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi a RIGHT JO
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
+  <script src="js/dataTables/dataTables.bootstrap.js"></script>
+  <script src="js/dataTables/jquery.dataTables.js"></script>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabel').DataTable();
+        });
+    </script>
 
 </body>
 

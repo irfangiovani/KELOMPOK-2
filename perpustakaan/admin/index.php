@@ -196,9 +196,9 @@ $pustakawan = query("SELECT * FROM pustakawan");
                     <i class="ico icon-dropbox icon-5x"></i>
                   </div>
                   <div class="text">
-                    <h4><strong>Azizah Wina S</strong></h4>
+                    <h4><strong>Kepala Sekolah Perpustakaan</strong></h4>
                     <p>
-                      Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am anumat lib persum sea facilisis.
+                      Memimpin sekolah dalam rangka pendayagunaan sumber daya sekolah secara optimal.
                     </p>
                     <a href="biopustakayudi.php">Learn More</a>
                   </div>
@@ -212,9 +212,9 @@ $pustakawan = query("SELECT * FROM pustakawan");
                     <i class="ico icon-bitbucket icon-5x"></i>
                   </div>
                   <div class="text">
-                    <h4><strong>Yudi Irianto</strong></h4>
+                    <h4><strong>Kepala Perpustakaan</strong></h4>
                     <p>
-                      Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
+                      Bertanggung jawab dalam penyusunan rencana strategis, rencana kerja, dan anggaran di bidang perpustakaan.
                     </p>
                     <a href="#">Learn More</a>
                   </div>
@@ -227,9 +227,9 @@ $pustakawan = query("SELECT * FROM pustakawan");
                     <i class="ico icon-rocket icon-5x"></i>
                   </div>
                   <div class="text">
-                    <h4><strong>Irfan Geovani</strong></h4>
+                    <h4><strong>Adminitrasi Perpustakaan</strong></h4>
                     <p>
-                      Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
+                      Memberikan layanan pengguna perpustakaan seperti sirkulasi peminjaman dan pengembalian.
                     </p>
                     <a href="#">Learn More</a>
                   </div>
@@ -242,9 +242,9 @@ $pustakawan = query("SELECT * FROM pustakawan");
                     <i class="ico icon-cut icon-5x"></i>
                   </div>
                   <div class="text">
-                    <h4><strong>Ilham Robby S</strong></h4>
+                    <h4><strong>Pelayanan Teknisi</strong></h4>
                     <p>
-                      Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
+                     Bertanggung jawab dalam kegiatan pengadaan perpustakaan dan pengolahan perpustakaan.
                     </p>
                     <a href="#">Learn More</a>
                   </div>

@@ -31,7 +31,7 @@ if( isset($_POST["register"]) ){
 	<div class="page-content">
 		<div class="form-v7-content">
 			<div class="form-left">
-				<img src="img/register/regadmin.jpg" alt="form">
+				<img src="img/cipi.jpg" alt="form">
 				<p class="text-1"></p>
 				<p class="text-2">Privaci policy & Term of service</p>
 			</div>

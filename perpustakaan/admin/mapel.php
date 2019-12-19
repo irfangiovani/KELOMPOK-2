@@ -34,6 +34,7 @@ if( isset($_POST["carimapel"]) ) {
   <link href="css/prettyPhoto.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  <link href="js/dataTables/dataTables.bootstrap.css" rel="stylesheet">
 
   <!-- Theme skin -->
   <link id="t-colors" href="color/default.css" rel="stylesheet" />
@@ -171,18 +172,15 @@ if( isset($_POST["carimapel"]) ) {
     <div class="container-fluid">
     <a href="tambah_mapel.php">Tambah Buku Mapel Kelas</a>
     <br><br>
-    <form action="" method="post" class="form-inline">
-    <input class="form-control mr-sm-2" type="search" name="keywordmapel" autofocus placeholder="Search" aria-label="Search" autocomplete="off">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="carimapel">Cari!</button>
-  </form>
 <div class="content">
       <div class="box">
   <div class="offside-3 col-lg-7">
     <form action="" method="post">
       <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover ">
+    <table class="table table-striped table-bordered table-hover " id="tabel">
+        <thead>
         <tr>
-			<th>no</th>
+			      <th>no</th>
             <th>Id Judul Buku Mapel</th>
             <th>Judul Buku</th>
             <th>Penerbit</th>
@@ -192,6 +190,8 @@ if( isset($_POST["carimapel"]) ) {
             <th>Stok</th>
             <th>aksi</th>
         </tr>
+        </thead>
+        <tbody>
 		<?php $i = 1; ?> 
         <?php
             foreach( $buku_mapel_kelas as $row) :
@@ -214,6 +214,7 @@ if( isset($_POST["carimapel"]) ) {
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
+      </tbody>
     </table>
   </div>
     </form>
@@ -313,6 +314,13 @@ if( isset($_POST["carimapel"]) ) {
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
+  <script src="js/dataTables/dataTables.bootstrap.js"></script>
+  <script src="js/dataTables/jquery.dataTables.js"></script>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabel').DataTable();
+        });
+    </script>
 
 </body>
 

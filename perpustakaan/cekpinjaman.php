@@ -9,6 +9,19 @@ if( isset($_POST["cari"])) {
   $buku_literasi_umum = cari($_POST["keyword"]);
 }
 
+<<<<<<< HEAD
+=======
+$nis=$_GET['nis']; 
+$nama=$_GET['nama'];
+require 'koneksi.php';
+$query = "SELECT * FROM peminjaman_buku_literasi WHERE nis='$nis'";
+$cek = mysqli_query($koneksi, $query);
+if (mysqli_num_rows($cek) > 0) {
+	$query2 = "SELECT * FROM member_perpus WHERE nis='$nis' and nama_siswa='$nama'";
+	$cek2 = mysqli_query($koneksi, $query2);
+	if (mysqli_num_rows($cek2) > 0) {
+		
+>>>>>>> 62f2c84230d494227c1de1a6833256f109e7d5d4
 ?>
 <!DOCTYPE html>
 <html lang="en">

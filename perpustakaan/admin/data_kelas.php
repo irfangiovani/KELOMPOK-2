@@ -25,6 +25,7 @@ $data_kelas = query ("SELECT * FROM kelas ");
   <link href="css/prettyPhoto.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  <link href="js/dataTables/dataTables.bootstrap.css" rel="stylesheet">
 
   <!-- Theme skin -->
   <link id="t-colors" href="color/default.css" rel="stylesheet" />
@@ -166,7 +167,8 @@ $data_kelas = query ("SELECT * FROM kelas ");
 <div class="offside-3 col-lg-7">
     <form action="" method="post">
       <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover ">
+    <table class="table table-striped table-bordered table-hover " id="tabel">
+    <thead>
         <tr>
 			<th>no</th>
             <th>Kode Kelas</th>
@@ -175,6 +177,8 @@ $data_kelas = query ("SELECT * FROM kelas ");
              <th>Wali Kelas</th>
              <th>Aksi</th>
         </tr>
+        </thead>
+        <tbody>
 		<?php $i = 1; ?> 
         <?php
             foreach( $data_kelas as $row) :
@@ -193,6 +197,7 @@ $data_kelas = query ("SELECT * FROM kelas ");
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
+      </tbody>
     </table>
   </div>
     </form>
@@ -291,7 +296,13 @@ $data_kelas = query ("SELECT * FROM kelas ");
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
-  <a href="literasi.php" class="btn btn-success">kembali</a>
+  <script src="js/dataTables/dataTables.bootstrap.js"></script>
+  <script src="js/dataTables/jquery.dataTables.js"></script>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabel').DataTable();
+        });
+    </script>
 
   <script src="js/custom.js"></script>
   <script src="js/dataTables/dataTables.bootstrap.js"></script>
