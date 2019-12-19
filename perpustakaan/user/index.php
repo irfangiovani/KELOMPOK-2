@@ -825,28 +825,18 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
           <div class="socials-a">
             <ul class="list-inline">
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://www.facebook.com/SMKN3BONDOWOSO2017/">
                   <i class="fa fa-facebook" aria-hidden="true"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="">
                   <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://www.instagram.com/smkn3bondowoso/">
                   <i class="fa fa-instagram" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-dribbble" aria-hidden="true"></i>
                 </a>
               </li>
             </ul>
