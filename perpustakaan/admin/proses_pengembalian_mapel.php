@@ -27,8 +27,9 @@ date_default_timezone_set('Asia/Jakarta');
     $nama_pengembali = $_POST["nama_pengembali"];
     $waktu_kembali = date('H:i, d F Y'); 
     $buku_kurang = $_POST["buku_kurang"];
+    $denda = $_POST["denda"];
 
-    $tambah2 = mysqli_query($conn, "INSERT INTO pengembalian_buku_mapel VALUES (NULL, '$id_pinjam_mapel', '$nama_pengembali', '$waktu_kembali', '$buku_kurang')");
+    $tambah2 = mysqli_query($conn, "INSERT INTO pengembalian_buku_mapel VALUES (NULL, '$id_pinjam_mapel', '$nama_pengembali', '$waktu_kembali','$banyak_buku_kembali', '$buku_kurang','$denda')");
      if($tambah2  == true ){
       echo "
           <script>
@@ -40,7 +41,7 @@ date_default_timezone_set('Asia/Jakarta');
       echo "
           <script>
               alert('Proses Pengembalian Buku Gagal');
-              
+              document.location.href = 'proses_pengembalian_mapel.php';
           </script>
       ";
     }
@@ -66,25 +67,15 @@ date_default_timezone_set('Asia/Jakarta');
                   <label for="id_pinjam_mapel">ID Pinjam Buku Mapel : </label>
                   <input type="text" class="form-control" value ="<?php echo $data['id_pinjam_buku_mapel'] ?>" name="id_pinjam_mapel" id="id_pinjam_mapel" readonly>
         </div>
-      </div>
-      <div class="form-row">
         <div class="form-group col-md-4">
                   <label for="id_judul_mapel">ID Judul Buku Mapel : </label>
-                  <input type="text" class="form-control" value ="<?php echo $data['id_judul_buku_mapel'] ?>" name="id_judul_mapel" id="id_judul_mapel">
+                  <input type="text" class="form-control" value ="<?php echo $data['id_judul_buku_mapel'] ?>" name="id_judul_mapel" id="id_judul_mapel" readonly>
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
               <label for="kode_kelas"> Kode Kelas : </label>
-              <input type="text" class="form-control" value ="<?php echo $data['kode_kelas'] ?>" name="kode_kelas" id="kode_kelas">
+              <input type="text" class="form-control" value ="<?php echo $data['kode_kelas'] ?>" name="kode_kelas" id="kode_kelas" readonly>
         </div>
-        <div class="form-group col-md-6">
-              <label for="nama_peminjam"> Nama Peminjam : </label>
-              <input type="text" class="form-control" value ="<?php echo $data['nama_peminjam'] ?>" name="nama_peminjam" id="nama_peminjam">
-        </div>
-        <div class="form-group col-md-6">
-              <label for="nama_pengembali"> Nama Pengembali : </label>
-              <input type="text" class="form-control" name="nama_pengembali" id="nama_pengembali">
-        </div>
-      </div> 
+      </div>
       <div class="form-row">
         <div class="form-group col-md-6">
               <label for="waktu_peminjaman"> Waktu Peminjaman : </label>
@@ -97,20 +88,32 @@ date_default_timezone_set('Asia/Jakarta');
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
-              <label for="buku_dipinjam"> Buku Dipinjam Sebanyak : </label>
-              <input type="text" class="form-control" value="<?php echo $data['banyak_buku'] ?>" name="buku_dipinjam" id="buku_dipinjam" >
+              <label for="nama_peminjam"> Nama Peminjam : </label>
+              <input type="text" class="form-control" value ="<?php echo $data['nama_peminjam'] ?>" name="nama_peminjam" id="nama_peminjam" readonly>
         </div>
-      </div>
+        <div class="form-group col-md-6">
+              <label for="nama_pengembali"> Nama Pengembali : </label>
+              <input type="text" class="form-control" name="nama_pengembali" id="nama_pengembali" required>
+        </div>
+      </div> 
       <div class="form-row">
         <div class="form-group col-md-6">
+              <label for="buku_dipinjam"> Buku Dipinjam Sebanyak : </label>
+              <input type="text" class="form-control" value="<?php echo $data['banyak_buku'] ?>" name="buku_dipinjam" id="buku_dipinjam" required>
+        </div>
+        <div class="form-group col-md-6">
               <label for="buku_kembali"> Buku Dikembalikan Sebanyak : </label>
-              <input type="text" class="form-control"  name="buku_kembali" id="buku_kembali" >
+              <input type="text" class="form-control"  name="buku_kembali" id="buku_kembali" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
               <label for="buku_kurang"> Kekurangan Buku Sebanyak : </label>
-              <input type="text" class="form-control"  name="buku_kurang" id="buku_kurang" >
+              <input type="text" class="form-control"  name="buku_kurang" id="buku_kurang" required>
+        </div>
+        <div class="form-group col-md-6">
+              <label for="denda">Denda : </label>
+              <input type="text" class="form-control"  name="denda" id="denda" required >
         </div>
       </div>
       <div class="text-center">

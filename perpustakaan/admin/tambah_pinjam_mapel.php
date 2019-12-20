@@ -20,7 +20,7 @@ if( isset($_POST["submit"])){
     if ($stok_buku < $banyak_buku) {
     echo "
         <script>
-            alert('stok buku habis, proses peminjaman gagal');
+            alert('stok buku tidak mencukupi, proses peminjaman gagal');
             document.location.href = 'tambah_pinjam_mapel.php';
         </script>
     ";
@@ -49,7 +49,7 @@ if( isset($_POST["submit"])){
 }
     
 
-echo Date('l, Y-m-d');
+echo Date('l, d-F-Y');
 
 ?>
  
@@ -98,7 +98,7 @@ echo Date('l, Y-m-d');
             <div class="form-row">
             <div class="form-group col-md-6">
               <label for="nama_peminjam">Nama Peminjam : </label> 
-              <input type="text" class="form-control" placeholder="Masukkan Nama Peminjam" name="nama_peminjam" id="nama_peminjam">
+              <input type="text" class="form-control" placeholder="Masukkan Nama Peminjam" name="nama_peminjam" id="nama_peminjam" required>
             </div>   
             <div class="form-group col-md-6">
             <label for="waktu_peminjaman"> Waktu Peminjaman : </label>
@@ -109,14 +109,14 @@ echo Date('l, Y-m-d');
             <div class="form-row">
             <div class="form-group col-md-6">
               <label for="banyak_buku"> Banyak Buku Dipinjam : </label>
-              <input type="text" class="form-control" placeholder="Banyak Buku Dipinjam" name="banyak_buku" id="banyak_buku">
+              <input type="text" class="form-control" placeholder="Banyak Buku Dipinjam" name="banyak_buku" id="banyak_buku" required>
             </div>
             </div>
 
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
-              <a href="literasi.php" class="btn btn-success">Kembali</a>
+              <a href="peminjaman_mapel.php" class="btn btn-success">Kembali</a>
             </div>
           </div>
         <br><br>
