@@ -178,6 +178,7 @@ $peminjaman_mapel = query ("SELECT a.id_pinjam_buku_mapel, a.nama_peminjam, a.wa
                         <th>Waktu Pinjam</th>
                         <th>Sebanyak</th>
                         <th>Status</th>
+                        <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -194,6 +195,10 @@ $peminjaman_mapel = query ("SELECT a.id_pinjam_buku_mapel, a.nama_peminjam, a.wa
                         <td><?php echo $row["waktu_peminjaman"];?></td>
                         <td><?php echo $row["banyak_buku"];?></td>
                         <td><?php echo $row["notifikasi"];?></td>
+                        <td>
+                            <a href="hapus_peminjaman_mapel.php?id=<?= $row["id_pinjam_buku_mapel"]; ?>
+                            " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');" class="btn btn-default" ><i class="icon-trash" title="hapus data"></i>hapus</a>
+                          </td>
                   </tr>
                   <?php $i++; ?>
                   <?php endforeach; ?>

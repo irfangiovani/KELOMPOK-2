@@ -159,6 +159,16 @@ function tambah_stok_mapel($conn, $id_judul_buku_mapel)
     mysqli_query($conn, $q);
 }
 
+function hapus_stok_mapel($conn, $id_judul_buku_mapel)
+{
+    $ambil = $conn->query("SELECT * FROM peminjaman_buku_mapel WHERE id_pinjam_buku_mapel='$_GET[id]'");
+    $row = $ambil->fetch_assoc();
+    $banyak_buku = $row["banyak_buku"];
+    $q = "UPDATE buku_mapel_kelas SET stok = stok + $banyak_buku WHERE id_judul_buku_mapel = '$id_judul_buku_mapel'";
+    mysqli_query($conn, $q);
+}
+
+
 
 
 function cek_stok($conn,$id_judul_buku_tahunan )

@@ -197,8 +197,6 @@ if( isset($_POST["cariliterasi"])) {
                             <td><?php echo $row["tanggal_hrs_kembali"];?></td>
                             <td><?php echo $row["notifikasi"];?></td>
                             <td>
-                            <a href="ubah_peminjaman_literasi.php?id=<?php echo $row ['id_pinjam_buku_literasi']; ?>"class="btn btn-default" ><i class="icon-edit" title="ubah data" ></i>ubah</a>
-
                             <a href="hapus_peminjaman_literasi.php?id=<?= $row["id_pinjam_buku_literasi"]; ?>
                             " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');" class="btn btn-default" ><i class="icon-trash" title="hapus data"></i>hapus</a>
                           </td>
