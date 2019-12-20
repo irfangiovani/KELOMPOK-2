@@ -98,7 +98,7 @@ $pustakawan = query("SELECT * FROM pustakawan");
                       </ul>
                     </li>
                     <li class="dropdown">
-                      <a href="#">Pemininjaman<i class="icon-angle-down"></i></a>
+                      <a href="#">Peminjaman<i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
                         <li><a href="peminjaman_literasi.php">Buku Literasi Umum</a></li>
                         <li><a href="peminjaman_mapel.php">Buku Mapel Kelas</a></li>

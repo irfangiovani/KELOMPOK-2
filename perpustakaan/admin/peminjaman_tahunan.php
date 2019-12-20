@@ -179,6 +179,7 @@ FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku
             <th>Tanggal Peminjaman</th>
             <th>Tanggal Harus Kembali</th>
             <th>Notifikasi</th>
+            <th>Aksi</th>
         </tr>
     </thead>
     <tbody>
@@ -195,6 +196,10 @@ FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku
             <td><?php echo $row["tanggal_peminjaman"];?></td>
             <td><?php echo $row["tanggal_hrs_kembali"];?></td>
             <td><?php echo $row["notifikasi"];?></td>
+            <td>
+            <a href="hapus_peminjaman_tahunan.php?id=<?= $row["id_pinjam_buku_tahunan"]; ?>
+            "onclick="return confirm('Yakin Ingin Menghapus Data Ini?');" class="btn btn-default" ><i class="icon-trash" title="hapus data"></i>hapus</a>
+            </td>
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
