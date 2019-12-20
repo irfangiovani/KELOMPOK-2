@@ -128,7 +128,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                       <span class="color-b">ING </span>NGARSA SUNG
                       <br>TULADHA</h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">SMKN 3 BONDOWOSO</span></a>
+                      <a href="http://www.smkn3bondowoso.sch.id/"><span class="price-a">SMKN 3 BONDOWOSO</span></a>
                     </p>
                   </div>
                 </div>
@@ -151,7 +151,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                       <span class="color-b">ING </span>MADYA MANGUN
                       <br>KARSA</h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">SMKN 3 BONDOWOSO</span></a>
+                      <a href="http://www.smkn3bondowoso.sch.id/"><span class="price-a">SMKN 3 BONDOWOSO</span></a>
                     </p>
                   </div>
                 </div>
@@ -174,7 +174,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                       <span class="color-b">TUT WURI </span>HANDAYANI
                       </h1><br><br><br>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">SMKN 3 BONDOWOSO</span></a>
+                      <a href="http://www.smkn3bondowoso.sch.id/"><span class="price-a">SMKN 3 BONDOWOSO</span></a>
                     </p>
                   </div>
                 </div>
