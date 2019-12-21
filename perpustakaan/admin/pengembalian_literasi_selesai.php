@@ -160,7 +160,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi a RIGHT JO
 
     <br>
      <div class="container-fluid">
-   
+    <a style="margin-bottom:10px" href="lap_pengembalian_literasi.php" target="_blank" class="btn btn-default pull-right"><span class='icon-print'></span>  Cetak</a>
     <div class="content">
       <div class="box">
 <div class="offside-3 col-lg-7">
