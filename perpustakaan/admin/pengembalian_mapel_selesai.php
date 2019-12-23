@@ -6,8 +6,17 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_mapel = query ("SELECT * FROM peminjaman_buku_mapel a RIGHT JOIN pengembalian_buku_mapel b ON a.id_pinjam_buku_mapel = b.id_pinjam_buku_mapel "); 
+$peminjaman_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_mapel, buku_mapel_kelas.judul_buku_mapel, kelas.jurusan,
+                            kelas.kelas, peminjaman_buku_mapel.nama_peminjam, pengembalian_buku_mapel.nama_pengembali, 
+                            peminjaman_buku_mapel.waktu_peminjaman, pengembalian_buku_mapel.waktu_pengembalian, 
+                            peminjaman_buku_mapel.banyak_buku, pengembalian_buku_mapel.banyak_buku_kembali, 
+                            pengembalian_buku_mapel.buku_kurang, pengembalian_buku_mapel.denda, peminjaman_buku_mapel.notifikasi
 
+                            FROM peminjaman_buku_mapel 
+                            LEFT JOIN buku_mapel_kelas ON buku_mapel_kelas.id_judul_buku_mapel = peminjaman_buku_mapel.id_judul_buku_mapel 
+                            LEFT JOIN kelas ON kelas.kode_kelas = peminjaman_buku_mapel.kode_kelas 
+                            LEFT JOIN pengembalian_buku_mapel ON pengembalian_buku_mapel.id_pinjam_buku_mapel = peminjaman_buku_mapel.id_pinjam_buku_mapel 
+                            ORDER BY pengembalian_buku_mapel.id_kembali_mapel DESC ");
 ?>
 
 <!DOCTYPE html>
@@ -190,8 +199,8 @@ $peminjaman_mapel = query ("SELECT * FROM peminjaman_buku_mapel a RIGHT JOIN pen
         <tr>
 			<td><?=$i; ?></td>
             <td><?php echo $row["id_pinjam_buku_mapel"];?></td>
-            <td><?php echo $row["id_judul_buku_mapel"];?></td>
-            <td><?php echo $row["kode_kelas"];?></td>
+            <td><?php echo $row["judul_buku_mapel"];?></td>
+            <td><?php echo $row["jurusan"];?>  <?php echo $row["kelas"];?></td>
             <td><?php echo $row["nama_peminjam"];?></td>
             <td><?php echo $row["nama_pengembali"];?></td>
             <td><?php echo $row["waktu_peminjaman"]; 

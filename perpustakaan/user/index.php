@@ -2,12 +2,20 @@
 //Koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
 require 'functions.php';
+$nis = $_POST["nis"];
+
+if( isset($_POST["cariliterasi"])) {
+ $data = mysqli_query ("SELECT * FROM peminjaman_buku_literasi WHERE nis = '$nis' ");
+
+mysqli_fetch_array($conn, $data);
+
+}
 
 $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() LIMIT 4");
 
  //$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
-
-?>
+ 
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,28 +56,23 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
   <div class="click-closed"></div>
   <!--/ Form Search Star /-->
   <div class="box-collapse">
-    <div class="title-box-d">
+    <div class="title-box-d">  
       <h3 class="title-d">Cari Peminjaman Siswa</h3>
     </div>
     <span class="close-box-collapse right-boxed ion-ios-close"></span>
     <div class="box-collapse-wrap form">
-      <form class="form-a">
+      <form class="form-a" action ="cari_literasi.php" method="post">
         <div class="row">
           <div class="col-md-12 mb-2">
             <div class="form-group">
-              <label for="Type">Nama Siswa</label>
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Masukkan nama anda">
-            </div>
-          </div>
-          <div class="col-md-12 mb-2">
-            <div class="form-group">
               <label for="Type">Nomor Induk Siswa</label>
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Masukkkan NIS anda">
+              <input type="text" class="form-control form-control-lg form-control-a" name="nis" placeholder="Masukkkan NIS anda">
             </div>
           </div>
           <div class="col-md-12">
 
-            <button type="submit" class="btn btn-b"><a href="siswa_cek_pinjam.php">Cari </a></button>
+            <button type="submit" name = "cari_literasi" class="btn btn-b">cari literasi</button>
+            <button type="submit" class="btn btn-b"><a href="">Cari Tahunan </a></button>
            
           </div>
         </div>
@@ -439,7 +442,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                       <a href="#" class="link-one">
                         <i class="fa fa-twitter" aria-hidden="true"></i>
                       </a>
-                    </li>
+                    </li> 
                     <li class="list-inline-item">
                       <a href="#" class="link-one">
                         <i class="fa fa-instagram" aria-hidden="true"></i>
@@ -810,7 +813,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
           </div>
         </div>
       </div>
-    </div>
+    </div> 
   </section>
   <footer>
     <div class="container">
