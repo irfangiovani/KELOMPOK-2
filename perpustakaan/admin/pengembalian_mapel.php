@@ -169,7 +169,7 @@ $peminjaman_mapel = query ("SELECT a.id_pinjam_buku_mapel, a.nama_peminjam, a.wa
                 <table class="table table-striped table-bordered table-hover" id="tabel">
                 </div>
                   <thead>
-                  <tr>
+                  <tr bgcolor='yellow' align='center'>
                         <th>no</th>
                         <th>ID Pinjam Mapel</th>
                         <th>Judul Buku Mapel</th>

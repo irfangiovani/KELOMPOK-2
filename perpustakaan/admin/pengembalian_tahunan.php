@@ -170,7 +170,7 @@ FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku
             <div class="table-responsive">
               <table class="table table-striped table-bordered table-hover" id="tabel">
                 <thead>
-                  <tr>
+                  <tr bgcolor='yellow' align='center'>
                     <th>no</th>
                     <th>ID Pinjam Tahunan</th>
                     <th>Kode Judul Buku Tahunan</th>
