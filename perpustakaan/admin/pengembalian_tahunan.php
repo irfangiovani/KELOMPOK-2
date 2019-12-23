@@ -16,7 +16,7 @@ FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku
 
 <head>
   <meta charset="utf-8">
-  <title>Remember - Multipurpose bootstrap site template</title>
+  <title>Pengembalian Buku Tahunan Siswa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -144,13 +144,13 @@ FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Peminjaman Buku Tahunan Siswa</h2>
+              <h2>Pengembalian Buku Tahunan Siswa</h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
-              <li><a href="#">Peminjaman</a> <i class="icon-angle-right"></i></li>
+              <li><a href="#">Pengembalian</a> <i class="icon-angle-right"></i></li>
               <li class="active">Buku Tahunan Siswa</li>
             </ul>
           </div>
@@ -165,48 +165,49 @@ FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku
 
     <div class="content">
       <div class="box">
-<div class="offside-3 col-lg-7">
-    <form action="" method="post">
-      <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover" id="tabel">
-    <thead>
-        <tr>
-			      <th>no</th>
-            <th>ID Pinjam Tahunan</th>
-            <th>Kode Judul Buku Tahunan</th>
-            <th>Kode Buku Tahunan</th>
-            <th>NIS Peminjam</th>
-            <th>Tanggal Peminjaman</th>
-            <th>Tanggal Harus Kembali</th>
-            <th>Notifikasi</th>
-            <th>Aksi</th>
-        </tr>
-    </thead>
-    <tbody>
-		<?php $i = 1; ?> 
-        <?php
-            foreach( $peminjaman_tahunan as $row) :
-        ?>
-        <tr>
-			<td><?=$i; ?></td>
-            <td><?php echo $row["id_pinjam_buku_tahunan"]; ?></td>
-            <td><?php echo $row["id_judul_buku_tahunan"];?></td>
-            <td><?php echo $row["kode_buku_tahunan"];?></td>
-            <td><?php echo $row["nis"];?></td>
-            <td><?php echo $row["tanggal_peminjaman"];?></td>
-            <td><?php echo $row["tanggal_hrs_kembali"];?></td>
-            <td><?php echo $row["notifikasi"];?></td>
-            <td><a href="proses_pengembalian_tahunan.php?id=<?php echo $row ['id_pinjam_buku_tahunan']; ?>" class="btn btn-warning" title="ubah data" >kembali</a></td>
-        </tr>
-			<?php $i++; ?>
-			<?php endforeach; ?>
-    </tbody>
-    </table>
-  </div>
-    </form>
-  </div>
-</div>
-</div>
+        <div class="offside-3 col-lg-7">
+          <form action="" method="post">
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered table-hover" id="tabel">
+                <thead>
+                  <tr>
+                    <th>no</th>
+                    <th>ID Pinjam Tahunan</th>
+                    <th>Kode Judul Buku Tahunan</th>
+                    <th>Kode Buku Tahunan</th>
+                    <th>NIS Peminjam</th>
+                    <th>Tanggal Peminjaman</th>
+                    <th>Tanggal Harus Kembali</th>
+                    <th>Notifikasi</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php 
+                  $i = 1; 
+                  foreach( $peminjaman_tahunan as $row) :
+                  ?>
+                  <tr>
+                    <td><?=$i; ?></td>
+                    <td><?php echo $row["id_pinjam_buku_tahunan"]; ?></td>
+                    <td><?php echo $row["id_judul_buku_tahunan"];?></td>
+                    <td><?php echo $row["kode_buku_tahunan"];?></td>
+                    <td><?php echo $row["nis"];?></td>
+                    <td><?php echo $row["tanggal_peminjaman"];?></td>
+                    <td><?php echo $row["tanggal_hrs_kembali"];?></td>
+                    <td><?php echo $row["notifikasi"];?></td>
+                    <td><a href="proses_pengembalian_tahunan.php?id=<?php echo $row ['id_pinjam_buku_tahunan']; ?>" class="btn btn-warning" title="ubah data" >kembali</a></td>
+                  </tr>
+                  <?php 
+                  $i++; 
+                  endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 
 

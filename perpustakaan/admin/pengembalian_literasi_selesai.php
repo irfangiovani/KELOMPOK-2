@@ -158,7 +158,7 @@ $data_pengembalian_literasi = query ("SELECT member_perpus.nama_siswa, buku_lite
               <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
               <li><a href="#">Pengembalian</a> <i class="icon-angle-right"></i></li>
               <li><a href="pengembalian_literasi.php">Buku Literasi Umum></i></li>
-              <li class="active">Data Pengembalian Buku Literasi Umum</li>
+              <li class="active">Data Pengembalian Buku Literasi</li>
             </ul>
           </div>
         </div>
@@ -176,7 +176,7 @@ $data_pengembalian_literasi = query ("SELECT member_perpus.nama_siswa, buku_lite
               <table class="table table-striped table-bordered table-hover " id="tabel">
                 <thead>
                   <tr bgcolor='yellow' align='center'>
-                      <th>no</th>
+                      <th>NO</th>
                       <th>Nama Peminjam</th>
                       <th>Judul Buku Yang Dipinjam</th>
                       <th>Tanggal peminjaman</th>
