@@ -226,19 +226,18 @@ function ubah($data) {
     if( $_FILES['gambar_sampul']['error'] === 4 ) {
         $gambar_sampul = $gambarLama;
     } else {
-        $gambar_sampul = upload();
+        $gambar_sampul = uploadliterasi();
     }
 
     $query = "UPDATE buku_literasi_umum SET
-                kode_buku_literasi = '$kode_buku_literasi',
                 judul_buku_literasi = '$judul_buku_literasi',
                 id_penerbit = '$id_penerbit',
                 tahun_terbit = '$tahun_terbit',
-                id_rak = '$id_rak'
+                id_rak = '$id_rak',
                 id_kategori = '$id_kategori',
                 gambar_sampul = '$gambar_sampul',
                 deskripsi_buku = '$deskripsi_buku'
-              WHERE id = '$id'
+              WHERE kode_buku_literasi = '$kode_buku_literasi'
             ";
     mysqli_query($conn, $query);
 

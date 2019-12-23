@@ -80,7 +80,7 @@
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
             <h1 class="title-single">Alur Peminjaman</h1>
-            <span class="color-text-a">Disini adalah alur peminjaman buku di perpustakaan K-NEGABON ikuti prosedur di bawah ini untuk peminjaman buku di perpustakaan</span>
+            <span class="color-text-a">Disini adalah alur peminjaman buku di perpustakaan K-NEGABON ikuti prosedur di bawah untuk peminjaman buku di perpustakaan ini</span>
           </div>
         </div>
         <div class="col-md-12 col-lg-4">

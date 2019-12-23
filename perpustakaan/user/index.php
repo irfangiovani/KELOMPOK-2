@@ -12,7 +12,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>K-Negabon Library</title>
+  <title>Perpustakaan SMKN 3 Bondowoso</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -196,7 +196,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
         <div class="col-md-12">
           <div class="title-wrap d-flex justify-content-between">
             <div class="title-box">
-              <h2 class="title-a">Buku</h2>
+              <h2 class="title-a">Koleksi Buku</h2>
             </div>
           </div>
         </div>
@@ -677,6 +677,8 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                       <span>Leader</span>
                       <h5 class="text-center">IRFAN</h5>
                     </a>
+
+                    <div class="overlay"></div>
                   </div>
                   <div class="testimonial-box">
                     <a href="#gambar-2">
