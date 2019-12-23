@@ -25,7 +25,8 @@ if (count($result) > 0) {
     foreach($result as $data) {
         $output['suggestions'][] = [
             'value' => $data['nama_siswa'],
-            'buah'  => $data['nis']
+            'buah' => $data['nama_siswa'],
+            'nis'  => $data['nis']
         ];
     }
 
