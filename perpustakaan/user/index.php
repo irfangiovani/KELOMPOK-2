@@ -6,9 +6,9 @@ $nis = $_POST["nis"];
 
 if( isset($_POST["cariliterasi"])) {
  $data = mysqli_query ("SELECT * FROM peminjaman_buku_literasi WHERE nis = '$nis' ");
- <?php
+
 mysqli_fetch_array($conn, $data);
-?>
+
 }
 
 $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() LIMIT 4");
@@ -56,28 +56,22 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
   <div class="click-closed"></div>
   <!--/ Form Search Star /-->
   <div class="box-collapse">
-    <div class="title-box-d">
+    <div class="title-box-d">  
       <h3 class="title-d">Cari Peminjaman Siswa</h3>
     </div>
     <span class="close-box-collapse right-boxed ion-ios-close"></span>
     <div class="box-collapse-wrap form">
-      <form class="form-a" action ="" method="post">
+      <form class="form-a" action ="cari_literasi.php" method="post">
         <div class="row">
           <div class="col-md-12 mb-2">
             <div class="form-group">
-              <label for="Type">Nama Siswa</label>
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Masukkan nama anda">
-            </div>
-          </div>  
-          <div class="col-md-12 mb-2">
-            <div class="form-group">
               <label for="Type">Nomor Induk Siswa</label>
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Masukkkan NIS anda">
+              <input type="text" class="form-control form-control-lg form-control-a" name="nis" placeholder="Masukkkan NIS anda">
             </div>
           </div>
           <div class="col-md-12">
 
-            <button type="submit" name = "cari_literasi" class="btn btn-b">>cari literasi</button>
+            <button type="submit" name = "cari_literasi" class="btn btn-b">cari literasi</button>
             <button type="submit" class="btn btn-b"><a href="">Cari Tahunan </a></button>
            
           </div>
