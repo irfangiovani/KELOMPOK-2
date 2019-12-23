@@ -657,12 +657,6 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                   <img src="img/kelompokku.jpg" alt="" class="img-fluid">
                 </div>
               </div>
-              <style>
-                  .testimonial-box {
-                    float: left;
-                    margin: 14px;
-                  }
-                </style>
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-ico">
                   <span class="ion-ios-quote"></span>
@@ -677,25 +671,42 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                     5. Muhammad Ansori
                   </p>
                 </div>
-                <div class="testimonial-box">
-                  <img src="img/team/img-2.jpg" alt="" class="testimonial-avatar"><br>
-                  <h5 class="text-center">IRFAN</h5>
-                </div>
-                <div class="testimonial-box">
-                  <img src="img/team/img-1.jpg" alt="" class="testimonial-avatar">
-                  <h5 class="text-center">YUDI</h5>
-                </div>
-                <div class="testimonial-box">
-                  <img src="img/team/img-4.jpg" alt="" class="testimonial-avatar">
-                  <h5 class="text-center">ILHAM</h5>
-                </div>
-                <div class="testimonial-box">
-                  <img src="img/team/img-5.jpg" alt="" class="testimonial-avatar">
-                  <h5 class="text-center">WINA</h5>
-                </div>
-                <div class="testimonial-box">
-                  <img src="img/team/img-3.jpg" alt="" class="testimonial-avatar">
-                  <h5 class="text-center">ANSORI</h5>
+                <div class="gallery">
+                  <div class="testimonial-box">
+                    <a href="#gambar-1">
+                      <img src="img/team/irfankotak.jpg" alt="" class="testimonial-avatar">
+                      <span>Leader</span>
+                      <h5 class="text-center">IRFAN</h5>
+                    </a>
+                  </div>
+                  <div class="testimonial-box">
+                    <a href="#gambar-2">
+                      <img src="img/team/riankotak.jpg" alt="" class="testimonial-avatar">
+                      <span>P.Owner</span>
+                      <h5 class="text-center">YUDI</h5>
+                    </a>
+                  </div>
+                  <div class="testimonial-box">
+                    <a href="#gambar-3">
+                    <img src="img/team/ilhamkotak.jpg" alt="" class="testimonial-avatar">
+                    <span>Dev.Team</span>
+                    <h5 class="text-center">ILHAM</h5>
+                    </a>
+                  </div>
+                  <div class="testimonial-box">
+                    <a href="#gambar-4">
+                    <img src="img/team/winakotak2.jpg" alt="" class="testimonial-avatar">
+                    <span>Dev.Team</span>
+                    <h5 class="text-center">WINA</h5>
+                    </a>
+                  </div>
+                  <div class="testimonial-box">
+                    <a href="#gambar-5">
+                    <img src="img/team/ansorikotak.jpg" alt="" class="testimonial-avatar">
+                    <span>Dev.Team</span>
+                    <h5 class="text-center">ANSORI</h5>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
