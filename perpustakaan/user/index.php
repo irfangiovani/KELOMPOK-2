@@ -69,7 +69,8 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
           </div>
           <div class="col-md-12">
 
-            <button type="submit" class="btn btn-b"><a href="siswa_cek_pinjam.php">Cari </a></button>
+            <button type="submit" class="btn btn-b"><a href="siswa_cek_pinjam.php">Cari Literasi </a></button>
+            <button type="submit" class="btn btn-b"><a href="siswa_cek_pinjam.php">Cari Tahunan </a></button>
            
           </div>
         </div>
