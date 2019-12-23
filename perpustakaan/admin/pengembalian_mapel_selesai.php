@@ -6,7 +6,7 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_mapel, buku_mapel_kelas.judul_buku_mapel, kelas.jurusan,
+$data_pengembalian_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_mapel, buku_mapel_kelas.judul_buku_mapel, kelas.jurusan,
                             kelas.kelas, peminjaman_buku_mapel.nama_peminjam, pengembalian_buku_mapel.nama_pengembali, 
                             peminjaman_buku_mapel.waktu_peminjaman, pengembalian_buku_mapel.waktu_pengembalian, 
                             peminjaman_buku_mapel.banyak_buku, pengembalian_buku_mapel.banyak_buku_kembali, 
@@ -194,13 +194,13 @@ $peminjaman_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_mapel, b
         <tbody>
 		<?php $i = 1; ?> 
         <?php
-            foreach( $peminjaman_mapel as $row) :
+            foreach( $data_pengembalian_mapel as $row) :
         ?>
         <tr>
 			<td><?=$i; ?></td>
             <td><?php echo $row["id_pinjam_buku_mapel"];?></td>
             <td><?php echo $row["judul_buku_mapel"];?></td>
-            <td><?php echo $row["jurusan"];?>  <?php echo $row["kelas"];?></td>
+            <td><?php echo $row["jurusan"];?> kelas <?php echo $row["kelas"];?></td>
             <td><?php echo $row["nama_peminjam"];?></td>
             <td><?php echo $row["nama_pengembali"];?></td>
             <td><?php echo $row["waktu_peminjaman"]; 

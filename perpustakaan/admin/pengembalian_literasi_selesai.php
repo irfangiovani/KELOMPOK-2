@@ -6,7 +6,13 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi a RIGHT JOIN pengembalian_buku_literasi b ON a.id_pinjam_buku_literasi = b.id_pinjam_buku_literasi "); 
+$data_pengembalian_literasi = query ("SELECT member_perpus.nama_siswa, buku_literasi_umum.judul_buku_literasi, peminjaman_buku_literasi.tanggal_peminjaman, 
+                                      pengembalian_buku_literasi.tanggal_pengembalian, pengembalian_buku_literasi.terlambat, pengembalian_buku_literasi.denda 
+                                      FROM peminjaman_buku_literasi 
+                                      LEFT JOIN member_perpus ON member_perpus.nis = peminjaman_buku_literasi.nis 
+                                      LEFT JOIN buku_literasi_umum ON buku_literasi_umum.kode_buku_literasi = peminjaman_buku_literasi.kode_buku_literasi 
+                                      LEFT JOIN pengembalian_buku_literasi ON pengembalian_buku_literasi.id_pinjam_buku_literasi = peminjaman_buku_literasi.id_pinjam_buku_literasi 
+                                      WHERE peminjaman_buku_literasi.notifikasi = 'kembali' "); 
 
 ?>
 
@@ -15,7 +21,7 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi a RIGHT JO
 
 <head>
   <meta charset="utf-8">
-  <title>Remember - Multipurpose bootstrap site template</title>
+  <title>Data Pengembalian Literasi Selesai</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -144,67 +150,66 @@ $peminjaman_literasi = query ("SELECT * FROM peminjaman_buku_literasi a RIGHT JO
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Pengembalian Buku Tahunan Siswa</h2>
+              <h2>Data Pengembalian Buku Literasi Umum</h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
               <li><a href="#">Pengembalian</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Buku Literasi Umum</li>
+              <li><a href="pengembalian_literasi.php">Buku Literasi Umum></i></li>
+              <li class="active">Data Pengembalian Buku Literasi Umum</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <br>
-     <div class="container-fluid">
-    <a style="margin-bottom:10px" href="lap_pengembalian_literasi.php" target="_blank" class="btn btn-default pull-right"><span class='icon-print'></span>  Cetak</a>
-    <div class="content">
+      <br>
+      <div class="container-fluid">
+        <a style="margin-bottom:10px" href="lap_pengembalian_literasi.php" target="_blank" class="btn btn-default pull-right"><span class='icon-print'></span>  Cetak</a>
+      <div class="content">
       <div class="box">
-<div class="offside-3 col-lg-7">
-    <form action="" method="post">
-      <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover " id="tabel">
-    <thead>
-        <tr>
-			<th>no</th>
-            <th>ID Pinjam Literasi</th>
-            <th>Kode Buku Literasi</th>
-            <th>NIS Peminjam</th>
-            <th>Tanggal Jatuh Tempo Kembali</th>
-            <th>Tanggal Kembali</th>
-            <th>Terlambat</th>
-            <th>Denda</th>
-            <th>Notifikasi</th>
-        </tr>
-        </head>
-        <tbody>
-		<?php $i = 1; ?> 
-        <?php
-            foreach( $peminjaman_literasi as $row) :
-        ?>
-        <tr>
-			<td><?=$i; ?></td>
-            <td><?php echo $row["id_pinjam_buku_literasi"];?></td>
-            <td><?php echo $row["kode_buku_literasi"];?></td>
-            <td><?php echo $row["nis"];?></td>
-            <td><?php echo $row["tanggal_hrs_kembali"];?></td>
-            <td><?php echo $row["tanggal_pengembalian"];?></td>
-            <td><?php echo $row["terlambat"];?></td>
-            <td><?php echo $row["denda"];?></td>
-            <td><?php echo $row["notifikasi"];?></td>
-        </tr>
-			<?php $i++; ?>
-			<?php endforeach; ?>
-      </tbody>
-    </table>
-  </div>
-    </form>
-  </div>
-</div>
-</div>
+        <div class="offside-3 col-lg-7">
+          <form action="" method="post">
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered table-hover " id="tabel">
+                <thead>
+                  <tr bgcolor='yellow' align='center'>
+                      <th>no</th>
+                      <th>Nama Peminjam</th>
+                      <th>Judul Buku Yang Dipinjam</th>
+                      <th>Tanggal peminjaman</th>
+                      <th>Tanggal Kembali</th>
+                      <th>Terlambat</th>
+                      <th>Denda</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                        $i = 1; 
+                        foreach( $data_pengembalian_literasi as $row) :
+                    ?>
+                  <tr>
+                      <td><?=$i; ?></td>
+                      <td><?php echo $row["nama_siswa"];?></td>
+                      <td><?php echo $row["judul_buku_literasi"];?></td>
+                      <td><?php echo $row["tanggal_peminjaman"];?></td>
+                      <td><?php echo $row["tanggal_pengembalian"];?></td>
+                      <td><?php echo $row["terlambat"];?></td>
+                      <td><?php echo $row["denda"];?></td>
+                  </tr>
+                      <?php 
+                      $i++; 
+                      endforeach; 
+                      ?>
+                </tbody>
+              </table>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 
 
