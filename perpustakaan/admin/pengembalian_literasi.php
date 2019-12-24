@@ -19,7 +19,7 @@ if( isset($_POST["cariliterasi"])) {
 
 <head>
   <meta charset="utf-8">
-  <title>Remember - Multipurpose bootstrap site template</title>
+  <title>Pengembalian literasi </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -148,13 +148,13 @@ if( isset($_POST["cariliterasi"])) {
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Peminjaman Buku Literasi Umum</h2>
+              <h2>Pengembalian Buku Literasi Umum</h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
-              <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
-              <li><a href="#">Peminjaman</a> <i class="icon-angle-right"></i></li>
+              <li><a href="index.php">Beranda</a> <i class="icon-angle-right"></i></li>
+              <li><a href="#">Pengembalian</a> <i class="icon-angle-right"></i></li>
               <li class="active">Buku Literasi Umum</li>
             </ul>
           </div>
@@ -172,7 +172,7 @@ if( isset($_POST["cariliterasi"])) {
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered table-hover " id="tabel">
                     <thead>
-                        <tr>
+                        <tr bgcolor='yellow' align='center'>
                             <th>no</th>
                             <th>ID Pinjam Literasi</th>
                             <th>Judul Buku Literasi</th>
@@ -218,8 +218,8 @@ if( isset($_POST["cariliterasi"])) {
                       </tbody>
                     </table>
                   </div>
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>

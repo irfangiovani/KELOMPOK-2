@@ -6,7 +6,7 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_mapel, buku_mapel_kelas.judul_buku_mapel, kelas.jurusan,
+$data_pengembalian_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_mapel, buku_mapel_kelas.judul_buku_mapel, kelas.jurusan,
                             kelas.kelas, peminjaman_buku_mapel.nama_peminjam, pengembalian_buku_mapel.nama_pengembali, 
                             peminjaman_buku_mapel.waktu_peminjaman, pengembalian_buku_mapel.waktu_pengembalian, 
                             peminjaman_buku_mapel.banyak_buku, pengembalian_buku_mapel.banyak_buku_kembali, 
@@ -24,7 +24,7 @@ $peminjaman_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_mapel, b
 
 <head>
   <meta charset="utf-8">
-  <title>Remember - Multipurpose bootstrap site template</title>
+  <title>Pengembalian Mapel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -160,7 +160,8 @@ $peminjaman_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_mapel, b
             <ul class="breadcrumb">
               <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
               <li><a href="#">Pengembalian</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Buku Mapel Kelas</li>
+              <li><a href="pengembalian_mapel.php">Buku Literasi Umum</a> <i class="icon-angle-right"></i></li>
+              <li class="active">Data Pengembalian Buku Mapel</li>
             </ul>
           </div>
         </div>
@@ -172,56 +173,62 @@ $peminjaman_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_mapel, b
    
     <div class="content">
       <div class="box">
-<div class="offside-3 col-lg-7">
-    <form action="" method="post">
-      <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover " id="tabel">
-    <thead>
-        <tr bgcolor='yellow' align='center'>
-			      <th>NO</th>
-            <th>ID Pinjam Mapel</th>
-            <th>Kode Buku Mapel</th>
-            <th>Kode Kelas</th>
-            <th>Nama Peminjam</th>
-            <th>Nama Pengembali</th>
-            <th>Jangka Waktu Peminjaman Sampai Pengembalian</th>
-            <th>Banyak Buku Dipinjam Dan Kembali</th>
-            <th>kekurangan Buku</th>
-            <th>Denda</th>
-            <th>Notifikasi</th>
-        </tr>
-        </head>
-        <tbody>
-		<?php $i = 1; ?> 
-        <?php
-            foreach( $peminjaman_mapel as $row) :
-        ?>
-        <tr>
-			<td><?=$i; ?></td>
-            <td><?php echo $row["id_pinjam_buku_mapel"];?></td>
-            <td><?php echo $row["judul_buku_mapel"];?></td>
-            <td><?php echo $row["jurusan"];?>  <?php echo $row["kelas"];?></td>
-            <td><?php echo $row["nama_peminjam"];?></td>
-            <td><?php echo $row["nama_pengembali"];?></td>
-            <td><?php echo $row["waktu_peminjaman"]; 
-              echo "<font color='green'> Sampai </font>"; ?>
-              <?php echo $row["waktu_pengembalian"];?></td>
-            <td><?php echo $row["banyak_buku"];
-              echo "<font color='green'> kembali </font>"; ?>
-              <?php echo $row["banyak_buku_kembali"];?></td>
-            <td><?php echo $row["buku_kurang"];?></td>
-            <td><?php echo $row["denda"];?></td>
-            <td><?php echo $row["notifikasi"];?></td>
-        </tr>
-			<?php $i++; ?>
-			<?php endforeach; ?>
-      </tbody>
-    </table>
-  </div>
-    </form>
-  </div>
-</div>
-</div>
+        <div class="offside-3 col-lg-7">
+          <form action="" method="post">
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered table-hover " id="tabel">
+                <thead>
+                  <tr bgcolor='yellow' align='center'>
+                    <th>NO</th>
+                    <th>ID Pinjam Mapel</th>
+                    <th>Kode Buku Mapel</th>
+                    <th>Kode Kelas</th>
+                    <th>Nama Peminjam</th>
+                    <th>Nama Pengembali</th>
+                    <th>Jangka Waktu Peminjaman Sampai Pengembalian</th>
+                    <th>Banyak Buku Dipinjam Dan Kembali</th>
+                    <th>kekurangan Buku</th>
+                    <th>Denda</th>
+                    <th>Notifikasi</th>
+                  </tr>
+                </head>
+                <tbody>
+                  <?php 
+                    $i = 1; 
+                    foreach( $data_pengembalian_mapel as $row) :
+                  ?>
+                  <tr>
+			              <td><?=$i; ?></td>
+                    <td><?php echo $row["id_pinjam_buku_mapel"];?></td>
+                    <td><?php echo $row["judul_buku_mapel"];?></td>
+                    <td><?php echo $row["jurusan"];?> kelas <?php echo $row["kelas"];?></td>
+                    <td><?php echo $row["nama_peminjam"];?></td>
+                    <td><?php echo $row["nama_pengembali"];?></td>
+                    <td>
+                      <?php echo $row["waktu_peminjaman"]; 
+                        echo "<font color='green'> Sampai </font>"; ?>
+                      <?php echo $row["waktu_pengembalian"];?>
+                    </td>
+                    <td>
+                      <?php echo $row["banyak_buku"];
+                        echo "<font color='green'> kembali </font>"; ?>
+                      <?php echo $row["banyak_buku_kembali"];?>
+                      </td>
+                    <td><?php echo $row["buku_kurang"];?></td>
+                    <td><?php echo $row["denda"];?></td>
+                    <td><?php echo $row["notifikasi"];?></td>
+                  </tr>
+                  <?php 
+                    $i++; 
+                    endforeach; 
+                  ?>
+                </tbody>
+              </table>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 
 

@@ -7,7 +7,7 @@ if( !isset($_SESSION["login"])){
 require 'functions.php';
 if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
-    $nama_peminjam = $_POST["buah"];
+    $nama_peminjam = $_POST["nis"];
     $kode_buku = $_POST["id_kode_literasi"];
     $tgl_pinjam = Date('Y-m-d');
     $tgl_kembali =Date('Y-m-d', time()+604800);
@@ -96,9 +96,12 @@ echo Date('l, Y-m-d');
      
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="id_kode_nis"> Nama Siswa : </label> 
-          <input type="text" id="buah" name="buah" placeholder="Nama Siswa" value="">
-		      <div id="box_pencarian"></div>
+          <label for="nama_siswa"> Nama Siswa : </label> 
+          <input type="text" id="buah" name="nama_siswa" placeholder="Masukkan Nama" value="">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="nis"> NIS Peminjam : </label> 
+          <input type="text" id="nis" name="nis" placeholder="NIS Otomatis Terisi" value="" readonly>
         </div>
       </div>
       <div class="form-row">
@@ -158,7 +161,7 @@ echo Date('l, Y-m-d');
             serviceUrl: "source.php",   // Kode php untuk prosesing data.
             dataType: "JSON",           // Tipe data JSON.
             onSelect: function (suggestion) {
-                $( "#buah" ).val("" + suggestion.buah);
+                $( "#nis" ).val("" + suggestion.nis);
             }
         });
     })

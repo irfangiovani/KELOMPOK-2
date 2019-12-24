@@ -19,7 +19,7 @@ if( isset($_POST["cariliterasi"])) {
 
 <head>
   <meta charset="utf-8">
-  <title>Remember - Multipurpose bootstrap site template</title>
+  <title>Peminjaman Buku Literasi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -172,7 +172,7 @@ if( isset($_POST["cariliterasi"])) {
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered table-hover " id="tabel">
                     <thead>
-                        <tr>
+                        <tr bgcolor="yellow" align="center">
                             <th>no</th>
                             <th>ID Pinjam Literasi</th>
                             <th>Judul Buku Literasi</th>

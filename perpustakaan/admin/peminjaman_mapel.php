@@ -15,7 +15,7 @@ $peminjaman_mapel = query ("SELECT a.id_pinjam_buku_mapel, a.nama_peminjam, a.wa
 
 <head>
   <meta charset="utf-8">
-  <title>Remember - Multipurpose bootstrap site template</title>
+  <title>Peminjaman Buku Mapel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -169,7 +169,7 @@ $peminjaman_mapel = query ("SELECT a.id_pinjam_buku_mapel, a.nama_peminjam, a.wa
                 <table class="table table-striped table-bordered table-hover" id="tabel">
                 </div>
                   <thead>
-                  <tr>
+                  <tr bgcolor="yellow" align="center">
                         <th>no</th>
                         <th>ID Pinjam Mapel</th>
                         <th>Judul Buku Mapel</th>
