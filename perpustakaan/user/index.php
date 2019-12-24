@@ -288,6 +288,11 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                   <?php echo $row["judul_buku_literasi"];?>
                   </h2>
                 </div>
+                <div class="card-body-a">
+                  <a href="detail_buku.php?id=<?php echo $row ['kode_buku_literasi']; ?>" class="link-a">Lihat Detail Buku
+                    <span class="ion-ios-arrow-forward"></span>
+                  </a>
+                </div>
                 <div class="card-footer-a text-center">
                   <ul class="card-info d-flex justify-content-around">
                   <li>

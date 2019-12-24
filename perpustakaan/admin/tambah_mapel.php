@@ -83,7 +83,6 @@ if( isset($_POST["submit"])){
             </div>
             <div class="form-group">
               <label>Gambar Sampul : </label>
-              <img src="img/mapel/<?= $data['gambar_sampul'] ?>" width="60">
               <input type="file" class="form-control-file" name="gambar_sampul" id="gambar_sampul">
               <small>(Upload File Dengan Ukuran Maksiman 1 MB)</small>
             </div>

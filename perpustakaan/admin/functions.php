@@ -441,16 +441,16 @@ function uploadtahunan() {
 
 }
 
-function ubahtahunan($dataubahtahun) {
+function ubahtahunan($data) {
     global $conn;
     
-    $id_judul_buku_tahunan = htmlspecialchars($dataubahtahun["id_judul_buku_tahunan"]);
-    $judul_buku_tahunan = htmlspecialchars($dataubahtahun["judul_buku_tahunan"]);
-    $id_penerbit = htmlspecialchars($dataubahtahun["id_penerbit"]);
-    $tahun_terbit = htmlspecialchars($dataubahtahun["tahun_terbit"]);
-    $untuk_kelas = htmlspecialchars($dataubahtahun["untuk_kelas"]);
-    $gambarLama = htmlspecialchars($dataubahtahun["gambarLama"]);
-    $stok = htmlspecialchars($dataubahtahun["stok"]);
+    $id_judul_buku_tahunan = htmlspecialchars($data["id_judul_buku_tahunan"]);
+    $judul_buku_tahunan = htmlspecialchars($data["judul_buku_tahunan"]);
+    $id_penerbit = htmlspecialchars($data["id_penerbit"]);
+    $tahun_terbit = htmlspecialchars($data["tahun_terbit"]);
+    $untuk_kelas = htmlspecialchars($data["untuk_kelas"]);
+    $gambarLama = htmlspecialchars($data["gambarLama"]);
+    $stok = htmlspecialchars($data["stok"]);
 
     // cek apakah user pilih gambar baru atau tidak
     if( $_FILES['gambar_sampul']['error'] === 4 ) {
@@ -459,7 +459,7 @@ function ubahtahunan($dataubahtahun) {
         $gambar_sampul = uploadtahunan();
     }
 
-    $query = "UPDATE buku_literasi_umum SET
+    $query = "UPDATE buku_tahunan_siswa SET
                 judul_buku_tahunan = '$judul_buku_tahunan',
                 id_penerbit = '$id_penerbit',
                 tahun_terbit = '$tahun_terbit',
