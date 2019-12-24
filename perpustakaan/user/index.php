@@ -2,14 +2,6 @@
 //Koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
 require 'functions.php';
-$nis = $_POST["nis"];
-
-if( isset($_POST["cariliterasi"])) {
- $data = mysqli_query ("SELECT * FROM peminjaman_buku_literasi WHERE nis = '$nis' ");
-
-mysqli_fetch_array($conn, $data);
-
-}
 
 $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() LIMIT 4");
 
@@ -60,25 +52,17 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
       <h3 class="title-d">Cari Peminjaman Siswa</h3>
     </div>
     <span class="close-box-collapse right-boxed ion-ios-close"></span>
-    <div class="box-collapse-wrap form">
-      <form class="form-a" action ="cari_literasi.php" method="post">
-        <div class="row">
-          <div class="col-md-12 mb-2">
-            <div class="form-group">
-              <label for="Type">Nomor Induk Siswa</label>
-              <input type="text" class="form-control form-control-lg form-control-a" name="nis" placeholder="Masukkkan NIS anda">
-            </div>
-          </div>
-          <div class="col-md-12">
-
-            <button type="submit" name = "cari_literasi" class="btn btn-b">cari literasi</button>
-            <button type="submit" class="btn btn-b"><a href="">Cari Tahunan </a></button>
+    <a class="btn btn-b" href="cari_literasi.php">Cari Literasi</a>
+    <a class="btn btn-b" href="cari_tahunan.php">Cari Tahunan</a>
+         
+           
            
           </div>
         </div>
       </form>
     </div>
   </div>
+ 
   <!--/ Form Search End /-->
 
   <!--/ Nav Star /-->
@@ -371,7 +355,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                 </p>
                 <div class="info-agents color-a">
                   <p>
-                    <strong></strong></p>
+                    <strong></strong></p> 
                   <p>
                     <strong></strong></p>
                 </div>
