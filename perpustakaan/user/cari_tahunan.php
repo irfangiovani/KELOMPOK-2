@@ -49,7 +49,7 @@ require 'functions.php';
     </div>
     <span class="close-box-collapse right-boxed ion-ios-close"></span>
     <div class="box-collapse-wrap form">
-      <form class="form-a" action ="data_cari_literasi.php" method="post">
+      <form class="form-a" action ="data_cari_tahunan.php" method="post">
         <div class="row">
           <div class="col-md-12 mb-2">
             <div class="form-group">
@@ -59,7 +59,7 @@ require 'functions.php';
           </div>
           <div class="col-md-12">
 
-          <button <a href ="cari_literasi.php" type="submit" name = "cari_literasi" class="btn btn-b"></a>cari literasi</button>
+          <button <a href ="cari_tahunan.php" type="submit" name = "cari_tahunan" class="btn btn-b"></a>cari tahunan</button>
           </div>
         </div>
       </form>

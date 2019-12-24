@@ -1,3 +1,16 @@
+<?php 
+//Koneksi ke database
+$conn = mysqli_connect("localhost", "root", "", "perpustakaan");
+require 'functions.php';
+$id = $_GET["id"];
+// $data = query("SELECT * FROM buku_literasi_umum WHERE kode_buku_literasi = '$id'")[0];
+
+$buku_literasi_umum = query("SELECT * FROM buku_literasi_umum WHERE kode_buku_literasi = '$id'");
+ //$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -187,9 +200,10 @@
   <section class="intro-single">
     <div class="container">
       <div class="row">
+        <?php foreach ( $buku_literasi_umum as $row) : ?>
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
-            <h1 class="title-single">304 Blaster Up</h1>
+            <h1 class="title-single"><?= $row['judul_buku_literasi']; ?></h1>
             <span class="color-text-a">Chicago, IL 606543</span>
           </div>
         </div>
@@ -293,22 +307,13 @@
               <div class="row">
                 <div class="col-sm-12">
                   <div class="title-box-d">
-                    <h3 class="title-d">Property Description</h3>
+                    <h3 class="title-d">Deskripsi Buku</h3>
                   </div>
                 </div>
               </div>
               <div class="property-description">
                 <p class="description color-text-a">
-                  Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
-                  neque, auctor sit amet
-                  aliquam vel, ullamcorper sit amet ligula. Cras ultricies ligula sed magna dictum porta.
-                  Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt
-                  nibh pulvinar quam id dui posuere blandit.
-                </p>
-                <p class="description color-text-a no-margin">
-                  Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum congue leo eget
-                  malesuada. Quisque velit nisi,
-                  pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada.
+                  <?= $row['deskripsi_buku']; ?>
                 </p>
               </div>
               <div class="row section-t3">
@@ -463,6 +468,7 @@
             </div>
           </div>
         </div>
+        <?php endforeach ; ?>
       </div>
     </div>
   </section>

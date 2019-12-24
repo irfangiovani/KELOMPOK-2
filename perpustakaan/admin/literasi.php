@@ -179,7 +179,7 @@ if( isset($_POST["cariliterasi"])) {
     <table class="table table-striped table-bordered table-hover "id="tabel">
     <thead>
         <tr>
-		      	<th>no</th>
+		      	<th>No</th>
             <th>Kode Buku</th>
             <th>Judul Buku</th>
             <th>Penerbit</th>
@@ -188,7 +188,7 @@ if( isset($_POST["cariliterasi"])) {
             <th>Kategori</th>
             <th>Gambar Sampul</th>
             <th>Deskripsi Buku</th>
-            <th>aksi</th>
+            <th>Aksi</th>
         </tr>
         </thead>
         <tbody>

@@ -1,13 +1,29 @@
+
 <?php
 
 require 'functions.php';
 
+if( isset($_POST['cari_tahunan'])){
+$nis = $_POST["nis"];
+
+
+$peminjaman_tahunan = query ("SELECT a.id_pinjam_buku_tahunan, a.kode_buku_tahunan, a.tanggal_peminjaman, a.tanggal_hrs_kembali, 
+                                        a.notifikasi, b.id_judul_buku_tahunan as id_judul_buku_tahunan,  
+                                        c.nama_siswa as nama
+                                FROM peminjaman_buku_tahunan a 
+                                LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku_tahunan = a.id_judul_buku_tahunan 
+                                LEFT JOIN member_perpus c on c.nis = a.nis 
+                                WHERE a.notifikasi='masa pinjam' 
+                                AND a.nis = '$nis'
+                                ORDER BY a.id_pinjam_buku_tahunan DESC"); 
+  //mysqli_query ("SELECT * FROM peminjaman_buku_literasi WHERE nis = '$nis' ");
+}
+
 ?>
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
   <title>K-Negabon Library</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
@@ -31,45 +47,10 @@ require 'functions.php';
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-    Theme Name: EstateAgency
-    Theme URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
-</head>
- 
 <body>
-<div class="click-closed"></div>
-  <!--/ Form Search Star /-->
-  <div class="box-collapse">
-    <div class="title-box-d">  
-      <h3 class="title-d">Cari Peminjaman Siswa</h3>
-    </div>
-    <span class="close-box-collapse right-boxed ion-ios-close"></span>
-    <div class="box-collapse-wrap form">
-      <form class="form-a" action ="data_cari_literasi.php" method="post">
-        <div class="row">
-          <div class="col-md-12 mb-2">
-            <div class="form-group">
-              <label for="Type">Nomor Induk Siswa</label>
-              <input type="text" class="form-control form-control-lg form-control-a" name="nis" placeholder="Masukkkan NIS anda">
-            </div>
-          </div>
-          <div class="col-md-12">
 
-          <button <a href ="cari_literasi.php" type="submit" name = "cari_literasi" class="btn btn-b"></a>cari literasi</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
- 
-  <!--/ Form Search End /-->
-
-  <!--/ Nav Star /-->
-  <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+<!--/ Nav Star /-->
+<nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
     <div class="container">
       <a class="navbar-brand text-brand" href="index.html"><span class="color-b">K-NEGABON </span>LIBRARY</a>
       <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse"
@@ -95,16 +76,11 @@ require 'functions.php';
           </li>
         </ul>
       </div>
-      <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block  " data-toggle="collapse"
-        data-target="#navbarTogglerDemo01" aria-expanded="false">
-        <span class="search" aria-hidden="true">Cek Peminjaman</span>
-      </button>
-    </div>
   </nav>
   <!--/ Nav End /-->
 
-   <!-- JavaScript Libraries -->
-   <script src="lib/jquery/jquery.min.js"></script>
+<!-- JavaScript Libraries -->
+<script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/jquery/jquery-migrate.min.js"></script>
   <script src="lib/popper/popper.min.js"></script>
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
@@ -117,5 +93,60 @@ require 'functions.php';
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
 
-  </body>
+<section id="inner-headline">
+        <div class="container">
+            <div class="row">
+                <div class="span4">
+                    <div class="inner-heading">
+                    <br>
+                    <h2>Pinjam Literasi</h2>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>  
+
+    <br>
+     <div class="container-fluid">
+    <br><br>
+    <form action="" method="post">
+    <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover" id="tabel">
+    <thead>
+    <tr>
+        <th>no</th>
+            <th>Nama Peminjam</th>
+            <th>Kode Judul Buku Tahunan</th>
+            <th>Kode Buku Tahunan</th>
+            <th>Tanggal Peminjaman</th>
+            <th>Tanggal Harus Kembali</th>
+            <th>Notifikasi</th>
+        </tr>
+        </thead>
+ 
+        <tbody>
+
+        <?php $i = 1;    
+        
+            foreach( $peminjaman_tahunan as $row) :
+        ?>
+        <tr>
+			<td><?=$i; ?></td>
+            <td><?php echo $row["nama"];?></td>
+            <td><?php echo $row["id_judul_buku_tahunan"];?></td>
+            <td><?php echo $row["kode_buku_tahunan"];?></td>
+            <td><?php echo $row["tanggal_peminjaman"];?></td>
+            <td><?php echo $row["tanggal_hrs_kembali"];?></td>
+            <td><?php echo $row["notifikasi"];?></td>
+        </tr>
+			<?php $i++; ?>
+			<?php endforeach; ?>
+
+        </tbody>
+        </table>
+    </div>
+    </form>
+  </div>
+    
+</body>
 </html>
