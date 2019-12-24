@@ -8,9 +8,9 @@ if( !isset($_SESSION["login"])){
   $id = $_GET["id"];
   $data = query("SELECT * FROM buku_literasi_umum WHERE kode_buku_literasi = '$id'")[0];
 
-  if( isset($_POST["edit"]) ) {
+  if( isset($_POST["submit"]) ) {
 
-  if( ubah($_POST) > 0 ) {
+  if( ubahliterasi($_POST) > 0 ) {
     echo "
         <script>
             alert('data berhasil diubah!');
@@ -89,7 +89,7 @@ if( !isset($_SESSION["login"])){
             </div>
 
             <div class="text-center">
-              <button type="submit" class="btn btn-primary" name="edit">Edit Data!</button>
+              <button type="submit" class="btn btn-primary" name="submit">Edit Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
               <a href="literasi.php" class="btn btn-success">Kembali</a>
             </div>

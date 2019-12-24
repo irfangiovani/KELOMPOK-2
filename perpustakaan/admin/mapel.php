@@ -206,7 +206,7 @@ if( isset($_POST["carimapel"]) ) {
             <td><img src="img/mapel/<?php echo $row["gambar_sampul"]; ?>" width="50"></td>
             <td><?php echo $row["stok"];?></td>
             <td>
-              <a href="" class="btn btn-warning" title="ubah data" >ubah</a>
+              <a href="ubah_mapel.php" class="btn btn-warning" title="ubah data" >ubah</a>
 
               <a href="hapus_mapel.php?id=<?= $row["id_judul_buku_mapel"]; ?>
               " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger" title="hapus data">hapus</a>
