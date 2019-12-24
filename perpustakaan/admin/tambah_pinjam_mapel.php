@@ -8,8 +8,8 @@ date_default_timezone_set('Asia/Jakarta');
 require 'functions.php';
 if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
-    $kode_judul = $_POST["kode_judul"];
-    $kode_kelas = $_POST["id_kode_kelas"];
+    $kode_judul = $_POST["kode_buku"];
+    $kode_kelas = $_POST["kode_kelas"];
     $nama_peminjam = $_POST["nama_peminjam"];
     $waktu_peminjaman = date('H:i, d F Y');
     $banyak_buku = $_POST["banyak_buku"];
@@ -60,41 +60,34 @@ echo Date('l, d-F-Y');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css/autocomplete.css">
     <title>Tambah Peminjaman Mapel Kelas</title>
 </head>
 <body>
     <div class="container">
     <h2 class="alert alert-info text-center mt-3">Tambah Data Peminjaman Buku mapel</h2>
-    <div class="pull-right">
-    <form action="" method="post" enctype="multipart/form-data">
-      
-    <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="kode_judul">Kode Judul Buku Mapel : </label> 
-              <select class="form-control" name="kode_judul" id="kode_judul" required >
-                    <option value="">- Kode Judul Buku -</option>
-                    <?php
-                    $sql_kode = mysqli_query($conn, "SELECT * FROM buku_mapel_kelas") or die (mysqli_query($conn));
-                    while ($data_kode = mysqli_fetch_array($sql_kode)){
-                      echo '<option value="'.$data_kode['id_judul_buku_mapel'].'">'.$data_kode['judul_buku_mapel'].' '.$data_kode['untuk_kelas'].'</option>';
-                    }
-                    ?>
-                </select>
+      <div class="pull-right">
+        <form action="" method="post" enctype="multipart/form-data">
+          <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="judul_buku"> Judul Buku Mapel : </label> 
+                <input type="text" class="form-control" id="judul_buku" name="judul_buku" placeholder="Masukkan Nama" value="" require>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="kode_buku"> ID Judul Buku Mapel : </label> 
+                <input type="text" class="form-control" id="kode_buku" name="kode_buku" placeholder="Kode Buku Otomatis Terisi" value="" readonly>
+              </div>
             </div>
-            <div class="form-group col-md-6">
-              <label for="id_kode_kelas">Kode Kelas : </label> 
-                <select class="form-control" name="id_kode_kelas" id="id_kode_kelas" required >
-                  <option value="">- Pilih Kode Kelas -</option>
-                  <?php
-                    $sql_kode = mysqli_query($conn, "SELECT * FROM kelas") or die (mysqli_query($conn));
-                    while ($data_kode = mysqli_fetch_array($sql_kode)){
-                      echo '<option value="'.$data_kode['kode_kelas'].'">' .$data_kode['kode_kelas']. '</option>'; 
-                    }
-                    ?>
-                </select>
-            </div>
-            </div>
-           
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="kelas"> Nama Kelas : </label> 
+                <input type="text" class="form-control" id="kelas" name="kelas" placeholder="Masukkan Nama Kelas" value="" require>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="kode_kelas"> Kode Kelas : </label> 
+                <input type="text" class="form-control" id="kode_kelas" name="kode_kelas" placeholder="Kode Kelas Otomatis Terisi" value="" readonly>
+              </div>
+            </div>     
             <div class="form-row">
             <div class="form-group col-md-6">
               <label for="nama_peminjam">Nama Peminjam : </label> 
@@ -105,14 +98,12 @@ echo Date('l, d-F-Y');
               <input type="text" class="form-control" placeholder = "<?php echo date('H:i, d F Y');?>"name="waktu_peminjaman" id="waktu_peminjaman" readonly>
             </div>
             </div>
-
             <div class="form-row">
             <div class="form-group col-md-6">
               <label for="banyak_buku"> Banyak Buku Dipinjam : </label>
               <input type="text" class="form-control" placeholder="Banyak Buku Dipinjam" name="banyak_buku" id="banyak_buku" required>
             </div>
             </div>
-
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
@@ -126,8 +117,38 @@ echo Date('l, d-F-Y');
     </div>
     </div>
 
+     <!-- Memanggil jQuery.js -->
+     <script src="js/autocomplete/jquery-3.2.1.min.js"></script>
 
+<!-- Memanggil Autocomplete.js -->
+<script src="js/autocomplete/jquery.autocomplete.min.js"></script>
 
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+          // Selector input yang akan menampilkan autocomplete.
+          $( "#judul_buku" ).autocomplete({
+              serviceUrl: "source_judul_mapel.php",   // Kode php untuk prosesing data.
+              dataType: "JSON",           // Tipe data JSON.
+              onSelect: function (suggestion) {
+                  $( "#kode_buku" ).val("" + suggestion.kode_buku);
+              }
+          });
+      })
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+          // Selector input yang akan menampilkan autocomplete.
+          $( "#kelas" ).autocomplete({
+              serviceUrl: "source_kelas.php",   // Kode php untuk prosesing data.
+              dataType: "JSON",           // Tipe data JSON.
+              onSelect: function (suggestion) {
+                  $( "#kode_kelas" ).val("" + suggestion.kode_kelas);
+              }
+          });
+      })
+    </script>
                 
 </body>
 </html>
