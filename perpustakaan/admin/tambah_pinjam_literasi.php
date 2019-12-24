@@ -4,6 +4,7 @@ if( !isset($_SESSION["login"])){
     header("location: loginadmin.php");
     exit;
 }
+date_default_timezone_set('Asia/Jakarta');
 require 'functions.php';
 if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
@@ -65,7 +66,7 @@ echo Date('l, Y-m-d');
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="judul_buku"> Judul Buku Literasi : </label> 
-          <input type="text" class="form-control" id="judul_buku" name="judul_buku" placeholder="Masukkan Nama" value="">
+          <input type="text" class="form-control" id="judul_buku" name="judul_buku" placeholder="Masukkan Judul" value="">
         </div>
         <div class="form-group col-md-6">
           <label for="kode_buku"> Kode Buku Literasi : </label> 

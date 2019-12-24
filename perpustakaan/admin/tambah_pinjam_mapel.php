@@ -65,20 +65,10 @@ echo Date('l, d-F-Y');
 </head>
 <body>
     <div class="container">
-    <h2 class="alert alert-info text-center mt-3">Tambah Data Peminjaman Buku mapel</h2>
+    <h2 class="alert alert-info text-center mt-3">Tambah Data Peminjaman Buku Mapel Kelas</h2>
       <div class="pull-right">
         <form action="" method="post" enctype="multipart/form-data">
           <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="judul_buku"> Judul Buku Mapel : </label> 
-                <input type="text" class="form-control" id="judul_buku" name="judul_buku" placeholder="Masukkan Nama" value="" require>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="kode_buku"> ID Judul Buku Mapel : </label> 
-                <input type="text" class="form-control" id="kode_buku" name="kode_buku" placeholder="Kode Buku Otomatis Terisi" value="" readonly>
-              </div>
-            </div>
-            <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="kelas"> Nama Kelas : </label> 
                 <input type="text" class="form-control" id="kelas" name="kelas" placeholder="Masukkan Nama Kelas" value="" require>
@@ -87,7 +77,17 @@ echo Date('l, d-F-Y');
                 <label for="kode_kelas"> Kode Kelas : </label> 
                 <input type="text" class="form-control" id="kode_kelas" name="kode_kelas" placeholder="Kode Kelas Otomatis Terisi" value="" readonly>
               </div>
-            </div>     
+          </div> 
+          <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="judul_buku"> Judul Buku Mapel : </label> 
+                <input type="text" class="form-control" id="judul_buku" name="judul_buku" placeholder="Masukkan Judul Buku Mapel" value="" require>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="kode_buku"> ID Judul Buku Mapel : </label> 
+                <input type="text" class="form-control" id="kode_buku" name="kode_buku" placeholder="ID Judul Otomatis Terisi" value="" readonly>
+              </div>
+            </div>    
             <div class="form-row">
             <div class="form-group col-md-6">
               <label for="nama_peminjam">Nama Peminjam : </label> 

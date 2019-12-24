@@ -83,7 +83,7 @@ echo Date('l, Y-m-d');
         </div>
         <div class="form-group col-md-6">
             <label for="kode_buku"> ID Judul Buku Tahunan : </label> 
-            <input type="text" class="form-control" id="kode_buku" name="kode_buku" placeholder="Kode Buku Otomatis Terisi" value="" readonly>
+            <input type="text" class="form-control" id="kode_buku" name="kode_buku" placeholder="ID judul Otomatis Terisi" value="" readonly>
         </div>
         </div>
         <div class="form-row">
