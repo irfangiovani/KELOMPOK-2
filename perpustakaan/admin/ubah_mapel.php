@@ -54,7 +54,7 @@ if( !isset($_SESSION["login"])){
 
                 <div class="form-group col-md-4">
                   <label for="id_penerbit">Penerbit : </label> <a href="penerbit.php" class="btn btn-warning" title="tambah_penerbit">Tambah Penerbit</a>
-                  <input type="text" class="form-control" value ="<?php echo $data['penerbit'] ?>" name="penerbit" id="penerbit">
+                  <input type="text" class="form-control" value ="<?php echo $data['id_penerbit'] ?>" name="id_penerbit" id="id_penerbit">
                 </div>
             </div>
             <div class="form-group text-center">
@@ -78,7 +78,7 @@ if( !isset($_SESSION["login"])){
               <small>(Upload File Dengan Ukuran Maksiman 1 MB)</small>
             </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
+              <button type="submit" class="btn btn-primary" name="submit">Ubah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
               <a href="mapel.php" class="btn btn-success">Kembali</a>
             </div>

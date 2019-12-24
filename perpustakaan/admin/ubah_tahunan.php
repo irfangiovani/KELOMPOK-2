@@ -6,7 +6,7 @@ if( !isset($_SESSION["login"])){
 }
   include 'functions.php';
   $id = $_GET["id"];
-  $dataubahtahun = query("SELECT * FROM buku_tahunan_siswa WHERE id_judul_buku_tahunan = '$id'")[0];
+  $data = query("SELECT * FROM buku_tahunan_siswa WHERE id_judul_buku_tahunan = '$id'")[0];
 
   if( isset($_POST["submit"]) ) {
 
@@ -45,43 +45,43 @@ if( !isset($_SESSION["login"])){
         <div class="form-row">
                 <div class="form-group col-md-4">
                   <label for="id_judul_buku_tahunan">Id Judul Buku Tahunan : </label>
-                  <input type="hidden" class="form-control"  name="id_judul_buku_tahunan" value ="<?php echo $dataubahtahun['id_judul_buku_tahunan']; ?>" id="id_judul_buku_tahunan">
-                  <input type="hidden" class="form-control"  name="gambarLama" value ="<?php echo $dataubahtahun['gambar_sampul']; ?>" id="id_judul_buku_tahunan">
+                  <input type="hidden" class="form-control"  name="id_judul_buku_tahunan" value ="<?php echo $data['id_judul_buku_tahunan']; ?>" id="id_judul_buku_tahunan">
+                  <input type="hidden" class="form-control"  name="gambarLama" value ="<?php echo $data['gambar_sampul']; ?>" id="id_judul_buku_tahunan">
                 </div>
                 <div class="form-group col-md-4">
                   <label for="untuk_kelas">Untuk Kelas : </label>
-                  <input type="text" class="form-control" value ="<?php echo $dataubahtahun['untuk_kelas'] ?>" placeholder="Masukkan Kelas..." name="untuk_kelas" id="untuk_kelas">
+                  <input type="text" class="form-control" value ="<?php echo $data['untuk_kelas'] ?>" placeholder="Masukkan Kelas..." name="untuk_kelas" id="untuk_kelas">
                 </div>
 
                 <div class="form-group col-md-4">
                   <label for="id_penerbit">Penerbit : </label> <a href="penerbit.php" class="btn btn-warning" title="tambah_penerbit">Tambah Penerbit</a>
-                  <input type="text"  class="form-control" value ="<?php echo $dataubahtahun['id_penerbit'] ?>" name="id_penerbit" id="id_penerbit">
+                  <input type="text"  class="form-control" value ="<?php echo $data['id_penerbit'] ?>" name="id_penerbit" id="id_penerbit">
                 </div>
             </div>
             <div class="form-group text-center">
                   <label for="judul_buku_tahunan">Judul Buku Tahunan : </label>
-                  <input type="text" class="form-control" value ="<?php echo $dataubahtahun['judul_buku_tahunan'] ?>" placeholder="Masukkan Judul Buku..." name="judul_buku_tahunan" id="judul_buku_tahunan">
+                  <input type="text" class="form-control" value ="<?php echo $data['judul_buku_tahunan'] ?>" placeholder="Masukkan Judul Buku..." name="judul_buku_tahunan" id="judul_buku_tahunan">
             </div>
             <div class="form-row">
             <div class="form-group col-md-6">
               <label for="tahun_terbit">Tahun Terbit : </label>
-              <input type="text" class="form-control" value ="<?php echo $dataubahtahun['tahun_terbit'] ?>" placeholder="Masukkan Kode Buku..." name="tahun_terbit" id="tahun_terbit">
+              <input type="text" class="form-control" value ="<?php echo $data['tahun_terbit'] ?>" placeholder="Masukkan Kode Buku..." name="tahun_terbit" id="tahun_terbit">
             </div>
             <div class="form-group col-md-6">
               <label for="stok">Stok : </label>
-              <input type="text" class="form-control" value ="<?php echo $dataubahtahun['stok'] ?>" placeholder="Masukkan Stok Buku..." name="stok" id="stok">
+              <input type="text" class="form-control" value ="<?php echo $data['stok'] ?>" placeholder="Masukkan Stok Buku..." name="stok" id="stok">
             </div>
             </div>
             <div class="form-group">
-              <label for="gambar_sampul">Gambar Sampul : <?php echo $dataubahtahun['gambar_sampul'] ?></label><br>
-              <img src="img/literasi/<?= $dataubahtahun['gambar_sampul'] ?>" width="60">
+              <label for="gambar_sampul">Gambar Sampul : <?php echo $data['gambar_sampul'] ?></label><br>
+              <img src="img/literasi/<?= $data['gambar_sampul'] ?>" width="60">
               <input type="file" name="gambar_sampul" class="form-control-file" id="gambar_sampul">
               <small>(Upload File Dengan Ukuran Maksiman 1 MB)</small>
             </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
+              <button type="submit" class="btn btn-primary" name="submit">UBAH!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
-              <a href="tahunan.php" class="btn btn-success">Kembali</a>
+              <a href="tahunan.php" class="btn btn-success">KEMBALI</a>
             </div>
 
         </form>

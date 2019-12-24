@@ -89,7 +89,7 @@ if( !isset($_SESSION["login"])){
             </div>
 
             <div class="text-center">
-              <button type="submit" class="btn btn-primary" name="submit">Edit Data!</button>
+              <button type="submit" class="btn btn-primary" name="submit">Ubah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
               <a href="literasi.php" class="btn btn-success">Kembali</a>
             </div>
