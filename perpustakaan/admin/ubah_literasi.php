@@ -6,7 +6,10 @@ if( !isset($_SESSION["login"])){
 }
   include 'functions.php';
   $id = $_GET["id"];
-  $data = query("SELECT * FROM buku_literasi_umum WHERE kode_buku_literasi = '$id'")[0];
+  $data = query("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, 
+a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak 
+FROM buku_literasi_umum a WHERE b.id_kategori = a.id_kategori AND c.id_penerbit = a.id_penerbit AND d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC;")[0];
+  
 
   if( isset($_POST["submit"]) ) {
 
@@ -50,7 +53,15 @@ if( !isset($_SESSION["login"])){
             </div>
                 <div class="form-group col-md-6">
                   <label for="kategori">Kategori : </label> <a href="kategori.php" class="btn btn-warning" title="tambah_kategori" >Tambah Kategori</a>
-                  <input type="text" class="form-control" value ="<?php echo $data['id_kategori'] ?>" name="id_kategori" id="id_kategori">
+                  <select class="form-control" name="id_kategori" id="id_kategori" required >
+                  <option name="id_kategori" id="id_kategori" value="<?php echo $data['id_kategori'] ?>"><?php echo $data['id_kategori'] ?></option>
+                    <?php
+                    $sql_kategori = mysqli_query($conn, "SELECT * FROM kategori") or die (mysqli_query($conn));
+                    while ($data_kategori = mysqli_fetch_array($sql_kategori)){
+                      echo '<option value="'.$data_kategori['id_kategori'].'">' .$data_kategori['nama_kategori']. '</option>'; 
+                    }
+                    ?>
+                    </select>
                 </div>
            </div>
 
@@ -61,18 +72,34 @@ if( !isset($_SESSION["login"])){
 
             <div class="form-row">
                 <div class="form-group col-md-4">
-                  <label for="penerbit">Penerbit : </label>
-                  <input type="text"  class="form-control"value ="<?php echo $data['id_penerbit'] ?>" name="id_penerbit" id="id_penerbit">
+                  <label for="penerbit">Penerbit : </label> <a href="penerbit.php" class="btn btn-warning" title="tambah_penerbit">Tambah Penerbit</a>
+                  <select class="form-control" name="id_penerbit" id="id_penerbit" required >
+                  <option value="<?php echo $data['id_penerbit'] ?>"><?php echo $data['id_penerbit'] ?></option>
+                    <?php
+                    $sql_penerbit = mysqli_query($conn, "SELECT * FROM penerbit") or die (mysqli_query($conn));
+                    while ($data_penerbit = mysqli_fetch_array($sql_penerbit)){
+                      echo '<option value="'.$data_penerbit['id_penerbit'].'">' .$data_penerbit['nama_penerbit']. '</option>'; 
+                    }
+                    ?>
+                </select>
                 </div>
 
                 <div class="form-group col-md-4">
-                  <label for="tahun_terbit">Tahun Terbit : </label>
+                  <label for="tahun_terbit">Tahun Terbit : </label>  
                   <input type="text" class="form-control" value ="<?php echo $data['tahun_terbit'] ?>" name="tahun_terbit" id="tahun_terbit">
                 </div>
 
                 <div class="form-group col-md-4">
-                  <label for="no_rak">No Rak : </label>
-                  <input type="text"  class="form-control" value ="<?php echo $data['id_rak'] ?>" name="id_rak" id="id_rak">
+                  <label for="no_rak">No Rak : </label> <a href="rak.php" class="btn btn-warning" title="tambah_rak">Tambah Rak</a>
+                  <select class="form-control" name="id_rak" id="id_rak" required > 
+                  <option value="<?php echo $data['id_penerbit'] ?>"><?php echo $data['id_penerbit'] ?></option>
+                    <?php
+                    $sql_rak = mysqli_query($conn, "SELECT * FROM rak") or die (mysqli_query($conn));
+                    while ($data_rak = mysqli_fetch_array($sql_rak)){
+                      echo '<option value="'.$data_rak['id_rak'].'">'. $data_rak['no_rak']. '</option>'; 
+                    }
+                    ?>
+                </select>
                 </div>
             </div>
 
