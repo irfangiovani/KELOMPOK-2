@@ -1,6 +1,7 @@
 <?php
 $conn = mysqli_connect ("localhost" , "root","", "perpustakaan");
 //cek tombol submit ditekan atau tidak
+require '../admin/functions.php';
 if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
     $nis = $_POST["nis"];
@@ -12,19 +13,26 @@ if( isset($_POST["submit"])){
     $status = "tidak aktif";
 
     //query insert data
-    mysqli_query($conn, "INSERT INTO member_perpus VALUES ('$nis', '$nama','$kelas','$jurusan', '$no_telp',  '$alamat', '$status')");
-
-    
-
-    // cek keberhasilan tambah data
-    if( mysqli_affected_rows($conn) > 0 ) {
-        echo "berhasil";
+    $tambah = mysqli_query($conn, "UPDATE member_perpus 
+                                  SET nis='$nis', nama_siswa='$nama',kelas='$kelas', jurusan='$jurusan', no_telp = '$no_telp', alamat = '$alamat', status ='tidak aktif'
+                                  WHERE nis = '$nis'");
+    if($tambah){
+      echo "
+          <script>
+              alert('Berhasil Melakukan Registrasi, Selajutnya Tunggu persetujuan Admin');
+              document.location.href = 'registrasi.php';
+          </script>
+      ";
     } else {
-        echo "gagal!";
-        echo "<br>";
-        echo mysqli_error($conn);
+      echo "
+          <script>
+              alert('Gagal Melakukan Registrasi');
+              document.location.href = 'registrasi.php';
+          </script>
+      ";
     }
     }
+    $data= mysqli_query("SELECT * FROM member_perpus WHERE nis ='$nis'");
 
 ?>
 <!DOCTYPE html>
@@ -44,7 +52,6 @@ if( isset($_POST["submit"])){
 
   <!-- Bootstrap CSS File -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Libraries CSS Files -->
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="lib/animate/animate.min.css" rel="stylesheet">
@@ -59,13 +66,40 @@ if( isset($_POST["submit"])){
 
     <!-- Main css -->
     <link rel="stylesheet" href="cssregis/style.css">
+    <style>
+.autocomplete-suggestions {
+    border: 1px solid #999;
+    background: #FFF;
+    overflow: auto;
+}
+
+.autocomplete-suggestion {
+    padding: 2px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.autocomplete-selected {
+    background: #F0F0F0;
+}
+
+.autocomplete-suggestions strong {
+    font-weight: normal;
+    color: #3399FF;
+}
+
+.autocomplete-group {
+    padding: 2px 5px;
+}
+
+.autocomplete-group strong {
+    display: block;
+    border-bottom: 1px solid #000;
+}
+      </style>
     
 </head>
 <body>
-
-
-
-
   <!--/ Nav Star /-->
   <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
     <div class="container">
@@ -111,34 +145,38 @@ if( isset($_POST["submit"])){
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Daftar Member</h2>
-                        <form method="POST" class="register-form" id="register-form">
+                        <form action ="" method="post" class="register-form">
                             <div class="form-group">
-                              <label for="nis"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="nis" id="nis" placeholder="NIS"/>
+                              <label for="nama"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="nama"id="buah" placeholder="Nama" required/>
                             </div>
                             <div class="form-group">
-                                <label for="nama"><i class="zmdi zmdi-email"></i></label>
-                                <input type="text" name="nama" id="nama" placeholder="Nama"/>
+                                <label for="nis"><i class="zmdi zmdi-key"></i></label>
+                                <input type="text" name="nis" id="nis" placeholder="NIS Terisi Otomatis" readonly/>
                             </div>
                             <div class="form-group">
-                                <label for="kelas"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="text" name="kelas" id="kelas" placeholder="Kelas"/>
+                                <label for="kelas"><i class="zmdi zmdi-graduation-cap"></i></label>
+                                <select class="form-control" name="kelas" id="kelas" required >
+                                <option value="">- pilih Kelas -</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="jurusan"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="text" name="jurusan" id="jurusan" placeholder="Jurusan"/>
+                                <label for="jurusan"><i class="zmdi zmdi-edit"></i></label>
+                                <input type="text" name="jurusan" id="jurusan" placeholder="Jurusan" required/>
                             </div>
                             <div class="form-group">
-                                <label for="no_telpn"><i class="zmdi zmdi-email"></i></label>
-                                <input type="text" name="no_telp" id="no_telp" placeholder="No Telpon"/>
+                                <label for="no_telpn"><i class="zmdi zmdi-phone"></i></label>
+                                <input type="text" name="no_telp" id="no_telp" placeholder="No Telpon" required/>
                             </div>
                             <div class="form-group">
-                                <label for="alamat"><i class="zmdi zmdi-email"></i></label>
-                                <input type="text" name="alamat" id="alamat" placeholder="Alamat"/>
+                                <label for="alamat"><i class="zmdi zmdi-home"></i></label>
+                                <input type="text" name="alamat" id="alamat" placeholder="Alamat" required/>
                             </div>
                             <div class="form-group">
-                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>Cek Nama Anda Jika Ada, Nama Anda Belum Terdaftar Silahkan Registrasi Data Dengan Tepat<a href="#" class="term-service"></a></label>
                             </div>
                             <div class="p-t-20">
                             <button class="btn btn--radius btn--green" type="submit" name="submit">SIMPAN</button>
@@ -290,23 +328,37 @@ if( isset($_POST["submit"])){
 
 <!-- Memanggil Autocomplete.js -->
 <script src="../admin/js/autocomplete/jquery.autocomplete.min.js"></script>
-<script type="text/javascript">
-            $(document).ready(function() {
 
-                // Selector input yang akan menampilkan autocomplete.
-                $( "#buah" ).autocomplete({
-                    serviceUrl: "source.php",   // Kode php untuk prosesing data.
-                    dataType: "JSON",           // Tipe data JSON.
-                    onSelect: function (suggestion) {
-                        $( "#buah" ).val("" + suggestion.buah);
-                    }
-                });
-            })
-        </script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        // Selector input yang akan menampilkan autocomplete.
+        $( "#buah" ).autocomplete({
+            serviceUrl: "source_member_pasif.php",   // Kode php untuk prosesing data.
+            dataType: "JSON",           // Tipe data JSON.
+            onSelect: function (suggestion) {
+                $( "#nis" ).val("" + suggestion.nis);
+            }
+        });
+    })
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        // Selector input yang akan menampilkan autocomplete.
+        $( "#jurusan" ).autocomplete({
+            serviceUrl: "source_jurusan.php",   // Kode php untuk prosesing data.
+            dataType: "JSON",           // Tipe data JSON.
+            onSelect: function (suggestion) {
+                $( "#jurusan" ).val("" + suggestion.jurusan);
+            }
+        });
+    })
+</script>
 
         
     <!-- JS -->
-    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="jsregis/main.js"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
+

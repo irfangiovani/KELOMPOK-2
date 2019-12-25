@@ -2057,7 +2057,7 @@ footer .credits {
   transform: scale(1) rotate(360deg);
 }
 
-.gallery .testimonial-box .overlay {
+/* .gallery .testimonial-box .overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -2065,4 +2065,4 @@ footer .credits {
   right: 0;
   background: rgba(0, 0, 0, .8);
   z-index: 99999999;
-}
+} */

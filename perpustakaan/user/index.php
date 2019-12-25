@@ -669,8 +669,8 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                       <span>Leader</span>
                       <h5 class="text-center">IRFAN</h5>
                     </a>
-
-                    <div class="overlay"></div>
+<!-- 
+                    <div class="overlay"></div> -->
                   </div>
                   <div class="testimonial-box">
                     <a href="#gambar-2">
@@ -835,7 +835,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="">
+                <a href="https://twitter.com/IrfanGiovani1">
                   <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
               </li>

@@ -12,10 +12,10 @@ $database = "perpustakaan";     // Nama database
 $conn = new mysqli($host, $username, $password, $database);
 
 // Deklarasi variable keyword buah.
-$buah = $_GET["query"];
+$judul_buku = $_GET["query"];
 
 // Query ke database.
-$query  = $conn->query("SELECT * FROM member_perpus WHERE nama_siswa LIKE '%$buah%' ORDER BY nis DESC");
+$query  = $conn->query("SELECT * FROM buku_mapel_kelas WHERE judul_buku_mapel LIKE '%$judul_buku%' ORDER BY id_judul_buku_mapel DESC");
 
 // Fetch hasil query.
 $result = $query->fetch_All(MYSQLI_ASSOC);
@@ -24,9 +24,9 @@ $result = $query->fetch_All(MYSQLI_ASSOC);
 if (count($result) > 0) {
     foreach($result as $data) {
         $output['suggestions'][] = [
-            'value' => $data['nama_siswa'],
-            'buah' => $data['nama_siswa'],
-            'nis'  => $data['nis']
+            'value' => $data['judul_buku_mapel'],
+            'judul_buku'  => $data['judul_buku_mapel'],
+            'kode_buku'  => $data['id_judul_buku_mapel']
         ];
     }
 
@@ -37,7 +37,7 @@ if (count($result) > 0) {
 } else {
     $output['suggestions'][] = [
         'value' => 'tidak ada data',
-        'buah'  => ''
+        'judul_buku'  => ''
     ];
 
     // Encode ke JSON.

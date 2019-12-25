@@ -30,7 +30,7 @@ if( isset($_GET['acc'])=='approve'){
 
 <head>
   <meta charset="utf-8">
-  <title>Remember - Multipurpose bootstrap site template</title>
+  <title>Data Member</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -166,52 +166,54 @@ if( isset($_GET['acc'])=='approve'){
       </div>
     </section>
 
-    <br>
+      <br>
      <div class="container-fluid">
-    <br><br>
-    <form action="" method="post">
-    <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover" id="tabel">
-    <thead>
-        <tr>
-			      <th>no</th>
-            <th>Nomor Induk Siswa (NIS)</th>
-            <th>Nama Siswa</th>
-            <th>Kelas</th>
-            <th>Jurusan</th>
-            <th>No Telepon</th>
-            <th>Alamat</th>
-            <th>Status</th>
-            <th>Aksi</th>
-        </tr>
-        </thead>
-        <tbody>
-		<?php $i = 1; ?> 
-        <?php
-            foreach( $data_member as $row) :
-        ?>
-        <tr>
-			<td><?=$i; ?></td>
-            <td><?php echo $row["nis"]; ?></td>
-            <td><?php echo $row["nama_siswa"];?></td>
-            <td><?php echo $row["kelas"];?></td>
-            <td><?php echo $row["jurusan"];?></td>
-            <td><?php echo $row["no_telp"];?></td>
-            <td><?php echo $row["alamat"];?></td>
-            <td><?php echo $row["status"];?></td>
-            <td>
-            <a href="data_member.php?acc=approve&nis=<?= $row ['nis']; ?>" class="btn icon-check" title="aktif member" >aktif</a>
-            <a href="hapus_member.php?id=<?= $row["nis"]; ?>
-              " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger" title="hapus data">hapus</a>
-            </td>
-        </tr>
-			<?php $i++; ?>
-			<?php endforeach; ?>
-      </tbody>
-    </table>
-    </div>
-    </form>
-  </div>
+      <div class="col-lg-12">
+        <a href="tambah_data_member.php">Tambah Data Member</a>
+          <br><br>
+            <form action="" method="post">
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover" id="tabel">
+                  <thead>
+                      <tr bgcolor='yellow' align='center'>
+                          <th>no</th>
+                          <th>Nomor Induk Siswa (NIS)</th>
+                          <th>Nama Siswa</th>
+                          <th>Kelas</th>
+                          <th>Jurusan</th>
+                          <th>No Telepon</th>
+                          <th>Alamat</th>
+                          <th>Status</th>
+                          <th>Aksi</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <?php $i = 1; 
+                      foreach( $data_member as $row) :
+                      ?>
+                      <tr>
+                          <td><?=$i; ?></td>
+                          <td><?php echo $row["nis"]; ?></td>
+                          <td><?php echo $row["nama_siswa"];?></td>
+                          <td><?php echo $row["kelas"];?></td>
+                          <td><?php echo $row["jurusan"];?></td>
+                          <td><?php echo $row["no_telp"];?></td>
+                          <td><?php echo $row["alamat"];?></td>
+                          <td><?php echo $row["status"];?></td>
+                          <td>
+                          <a href="data_member.php?acc=approve&nis=<?= $row ['nis']; ?>" class="btn icon-check" title="aktif member" >aktif</a>
+                          <a href="hapus_member.php?id=<?= $row["nis"]; ?>
+                          " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger" title="hapus data">hapus</a>
+                          </td>
+                      </tr>
+                      <?php $i++; 
+                      endforeach; ?>
+                    </tbody>
+                  </table>
+                </div>
+              </form>
+            </div>
+          </div>
 
 
     
