@@ -54,7 +54,15 @@ if( !isset($_SESSION["login"])){
 
                 <div class="form-group col-md-4">
                   <label for="id_penerbit">Penerbit : </label> <a href="penerbit.php" class="btn btn-warning" title="tambah_penerbit">Tambah Penerbit</a>
-                  <input type="text" class="form-control" value ="<?php echo $data['id_penerbit'] ?>" name="id_penerbit" id="id_penerbit">
+                  <select class="form-control" name="id_penerbit" id="id_penerbit" required >
+                  <option value="<?php echo $data['id_penerbit'] ?>"><?php echo $data['id_penerbit'] ?></option>
+                    <?php
+                    $sql_penerbit = mysqli_query($conn, "SELECT * FROM penerbit") or die (mysqli_query($conn));
+                    while ($data_penerbit = mysqli_fetch_array($sql_penerbit)){
+                      echo '<option value="'.$data_penerbit['id_penerbit'].'">' .$data_penerbit['nama_penerbit']. '</option>'; 
+                    }
+                    ?>
+                </select>
                 </div>
             </div>
             <div class="form-group text-center">
