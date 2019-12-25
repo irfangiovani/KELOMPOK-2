@@ -7,9 +7,9 @@ if( !isset($_SESSION["login"])){
 require 'functions.php';
 if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
-    $kode_judul = $_POST["id_judul_tahunan"];
+    $kode_judul = $_POST["kode_buku"];
     $kode_buku = $_POST["kode_buku_tahunan"];
-    $nama_peminjam = $_POST["id_nis"];
+    $nis_peminjam = $_POST["nis"];
     $tgl_pinjam = Date('Y-m-d');
     $tgl_kembali =Date('Y-m-d', time()+31536000);
     
@@ -27,7 +27,7 @@ if( isset($_POST["submit"])){
     }
    
     //query insert data
-    $tambah = mysqli_query($conn, "INSERT INTO peminjaman_buku_tahunan VALUES (NULL, '$kode_judul', '$kode_buku', '$nama_peminjam', '$tgl_pinjam', '$tgl_kembali', 'masa pinjam')");
+    $tambah = mysqli_query($conn, "INSERT INTO peminjaman_buku_tahunan VALUES (NULL, '$kode_judul', '$kode_buku', '$nis_peminjam', '$tgl_pinjam', '$tgl_kembali', 'masa pinjam')");
     if($tambah == true){
 
     kurangi_stok($conn, $kode_judul);
@@ -58,6 +58,7 @@ echo Date('l, Y-m-d');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css/autocomplete.css">
     <title>Tambah Peminjaman Tahunan</title>
 </head>
 <body>
@@ -65,36 +66,31 @@ echo Date('l, Y-m-d');
     <h2 class="alert alert-info text-center mt-3">Tambah Data Peminjaman Buku Tahunan Siswa</h2>
     <div class="pull-right">
     <form action="" method="post" enctype="multipart/form-data">
-      <div class="form-row">
+    <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="id_kode_nis"> NIS : </label> 
-            <select class="form-control" name="id_nis" id="id_nis" required >
-              <option value="">- Pilih NIS -</option>
-                  <?php
-                    $sql_member = mysqli_query($conn, "SELECT * FROM member_perpus") or die (mysqli_query($conn));
-                    while ($data_member = mysqli_fetch_array($sql_member)){
-                      echo '<option value="'.$data_member['nis'].'">' .$data_member['nama_siswa']. '</option>'; 
-                    }
-                  ?>
-            </select>
+          <label for="nama_siswa"> Nama Siswa : </label> 
+          <input type="text" class="form-control" id="buah" name="nama_siswa" placeholder="Masukkan Nama" value="">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="nis"> NIS Siswa : </label> 
+          <input type="text" class="form-control" id="nis" name="nis" placeholder="NIS Otomatis Terisi" value="" readonly>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="id_judul_tahunan"> Judul Buku Tahunan : </label>
-            <select class="form-control" name="id_judul_tahunan" id="id_judul_tahunan" required >
-              <option value="">- Pilih Judul Buku Tahunan -</option>
-                  <?php
-                    $sql_kode = mysqli_query($conn, "SELECT * FROM buku_tahunan_siswa") or die (mysqli_query($conn));
-                    while ($data_kode = mysqli_fetch_array($sql_kode)){
-                      echo '<option value="'.$data_kode['id_judul_buku_tahunan'].'">'.$data_kode['judul_buku_tahunan'].' '.$data_kode['untuk_kelas'].'</option>';
-                    }
-                  ?> 
-            </select>
+          <label for="judul_buku"> Judul Buku Tahunan : </label> 
+          <input type="text" class="form-control" id="judul_buku" name="judul_buku" placeholder="Masukkan Judul Buku Tahunan" value="" require>
         </div>
         <div class="form-group col-md-6">
-              <label for="kode_buku_tahunan"> Kode Buku Tahunan : </label>
-              <input type="text" class="form-control" placeholder="kode buku tahunan" name="kode_buku_tahunan" id="kode_buku_tahunan">
+            <label for="kode_buku"> ID Judul Buku Tahunan : </label> 
+            <input type="text" class="form-control" id="kode_buku" name="kode_buku" placeholder="ID judul Otomatis Terisi" value="" readonly>
+        </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+                <label for="kode_buku_tahunan"> Kode Buku Tahunan : </label>
+                <input type="text" class="form-control" placeholder="kode buku tahunan" name="kode_buku_tahunan" id="kode_buku_tahunan">
+          </div>
         </div>
       </div> 
       <div class="form-row">
@@ -121,6 +117,39 @@ echo Date('l, Y-m-d');
     </form>
     </div>
     </div>
+     <!-- Memanggil jQuery.js -->
+     <script src="js/autocomplete/jquery-3.2.1.min.js"></script>
+
+<!-- Memanggil Autocomplete.js -->
+<script src="js/autocomplete/jquery.autocomplete.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        // Selector input yang akan menampilkan autocomplete.
+        $( "#buah" ).autocomplete({
+            serviceUrl: "source.php",   // Kode php untuk prosesing data.
+            dataType: "JSON",           // Tipe data JSON.
+            onSelect: function (suggestion) {
+                $( "#nis" ).val("" + suggestion.nis);
+            }
+        });
+    })
+</script>
+<script type="text/javascript">
+      $(document).ready(function() {
+
+          // Selector input yang akan menampilkan autocomplete.
+          $( "#judul_buku" ).autocomplete({
+              serviceUrl: "source_judul_tahunan.php",   // Kode php untuk prosesing data.
+              dataType: "JSON",           // Tipe data JSON.
+              onSelect: function (suggestion) {
+                  $( "#kode_buku" ).val("" + suggestion.kode_buku);
+              }
+          });
+      })
+    </script>
+
 
 
 

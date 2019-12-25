@@ -162,10 +162,11 @@ if( isset($_POST["cariliterasi"])) {
         </div>
       </div>
     </section>
-    <br><br>
+    <br>
      <div class="container-fluid">
      <div class="col-lg-12">
         <a href="tambah_pinjam_literasi.php">Tambah Data Peminjaman Literasi</a>
+          <br><br>
           <div class="content">
             <div class="box">
               <div class="col-lg-6">
