@@ -57,33 +57,8 @@ $data_pengembalian_literasi = query ("SELECT member_perpus.nama_siswa, buku_lite
   <div id="wrapper">
     <!-- start header -->
     <header>
-      <div class="top">
-        <div class="container">
-          <div class="row">
-            <div class="span6">
-              <ul class="topmenu">
-                <li><a href="#">Home</a> &#47;</li>
-                <li><a href="#">Terms</a> &#47;</li>
-                <li><a href="#">Privacy policy</a></li>
-              </ul>
-            </div>
-            <div class="span6">
-
-              <ul class="social-network">
-                <li><a href="#" data-placement="bottom" title="Facebook"><i class="icon-circled icon-bglight icon-facebook"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Twitter"><i class="icon-circled icon-bglight icon-twitter"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Linkedin"><i class="icon-circled icon-linkedin icon-bglight"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Pinterest"><i class="icon-circled icon-pinterest  icon-bglight"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Google +"><i class="icon-circled icon-google-plus icon-bglight"></i></a></li>
-              </ul>
-
-            </div>
-          </div>
-        </div>
-      </div>
+    <?php include 'tag_header.php';  ?>
       <div class="container">
-
-
         <div class="row nomargin">
           <div class="span4">
             <div class="logo">
@@ -164,10 +139,18 @@ $data_pengembalian_literasi = query ("SELECT member_perpus.nama_siswa, buku_lite
         </div>
       </div>
     </section>
+    <br>
+    <form action="laporan_pengembalian_literasi.php" method="post">
+      <ul width="50"><input required type="radio" name="cek" value="1" style="cursor: pointer;"> Semua Data</ul>
+      <ul width="50"><input required type="radio" name="cek" value="2" style="cursor: pointer;">Tanggal
+      <input type="date" name="tgl_awal" value="<?= date("Y/m/d") ?>" style="height: 20px;"> Sampai <span class="right"><input type="date" value="<?= date("Y/m/d") ?>" name="tgl_akhir" style="height: 20px;"></span>
+      </ul>
+      <ul class="text-left"><input type="submit" name="tampilkan" class="btn btn-primary" value="Tampilkan"></ul>
+    </form>
+                    
 
       <br>
       <div class="container-fluid">
-        <a style="margin-bottom:10px" href="lap_pengembalian_literasi.php" target="_blank" class="btn btn-default pull-right"><span class='icon-print'></span>  Cetak</a>
       <div class="content">
       <div class="box">
         <div class="offside-3 col-lg-7">
@@ -215,73 +198,7 @@ $data_pengembalian_literasi = query ("SELECT member_perpus.nama_siswa, buku_lite
 
     
     <footer>
-      <div class="container">
-        <div class="row">
-          <div class="span4">
-            <div class="widget">
-              <div class="footer_logo">
-                <h3><a href="index.html"><i class="icon-tint"></i> Remember</a></h3>
-              </div>
-              <address>
-							  <strong>Remember company Inc.</strong><br>
-  							Somestreet KW 101, Park Village W.01<br>
-  							Jakarta 13426 Indonesia
-  						</address>
-              <p>
-                <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-                <i class="icon-envelope-alt"></i> email@domainname.com
-              </p>
-            </div>
-          </div>
-          <div class="span4">
-            <div class="widget">
-              <h5 class="widgetheading">Browse pages</h5>
-              <ul class="link-list">
-                <li><a href="#">Our company</a></li>
-                <li><a href="#">Terms and conditions</a></li>
-                <li><a href="#">Privacy policy</a></li>
-                <li><a href="#">Press release</a></li>
-                <li><a href="#">What we have done</a></li>
-                <li><a href="#">Our support forum</a></li>
-              </ul>
-
-            </div>
-          </div>
-          <div class="span4">
-            <div class="widget">
-              <h5 class="widgetheading">From flickr</h5>
-              <div class="flickr_badge">
-                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
-              </div>
-              <div class="clear"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="sub-footer">
-        <div class="container">
-          <div class="row">
-            <div class="span6">
-              <div class="copyright">
-                <p><span>&copy; Remember Inc. All right reserved</span></p>
-              </div>
-
-            </div>
-
-            <div class="span6">
-              <div class="credits">
-                <!--
-                  All the links in the footer should remain intact.
-                  You can delete the links only if you purchased the pro version.
-                  Licensing information: https://bootstrapmade.com/license/
-                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Remember
-                -->
-                Created by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <?php include 'footer_admin.php';  ?>
     </footer>
   </div>
   <a href="#" class="scrollup"><i class="icon-angle-up icon-rounded icon-bglight icon-2x"></i></a>
