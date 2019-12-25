@@ -6,9 +6,7 @@ if( !isset($_SESSION["login"])){
 }
   include 'functions.php';
   $id = $_GET["id"];
-  $data = query("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, 
-a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak 
-FROM buku_literasi_umum a WHERE b.id_kategori = a.id_kategori AND c.id_penerbit = a.id_penerbit AND d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC;")[0];
+  $data = query("SELECT * FROM buku_literasi_umum WHERE Kode_buku_literasi = '$id'")[0];
   
 
   if( isset($_POST["submit"]) ) {
