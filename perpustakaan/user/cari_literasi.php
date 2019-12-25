@@ -7,6 +7,12 @@ require 'functions.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<section class="contact">
+    <tittle>Peminjaman</tittle>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</section>
+
   <meta charset="utf-8">
   <title>K-Negabon Library</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -103,6 +109,43 @@ require 'functions.php';
   </nav>
   <!--/ Nav End /-->
 
+  <section class="contact">
+              <style>
+                body {
+                  background: url(img/win.jpg) no-repeat center fixed;
+                  -webkit-backgroun-size: cover;
+                  -moz-background-size: cover;
+                  -o-background: cover;
+                  background-size: cover;
+                }
+                .aa {
+                  width: 600px;
+                  height: 400px;
+                  background-color: rgba(0,0,0,0.3);
+                  margin: 0 auto;
+                  margin-top: 40px;
+                  padding-top: 3px;
+                  padding-left: 90px;
+                  border-radius: 25px;
+                  -webkit-border-radius: 30px;
+                  -o-border-radius: 20px;
+                  -moz-border-radius: 20px;
+                  color: darkred;
+                }
+              </style>
+  </section>
+   
+  <section class="contact">
+   <div class="aa">
+     <br> <br> <br> <br> <br>
+     <h2>Cek Peminjaman</h2><br>
+     <form action ="data_cari_literasi.php" method="post">
+        <input type="text" placeholder="Nomor Induk Siswa"><br><br>
+        <button <a href ="cari_literasi.php" type="submit" name = "cari_literasi" class="btn btn-b"></a>cari literasi</button>
+    </form>   
+  </section>
+   
+
    <!-- JavaScript Libraries -->
    <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/jquery/jquery-migrate.min.js"></script>
@@ -119,3 +162,6 @@ require 'functions.php';
 
   </body>
 </html>
+
+
+
