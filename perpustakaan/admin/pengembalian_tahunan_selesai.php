@@ -6,7 +6,13 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan a RIGHT JOIN pengembalian_buku_tahunan b ON a.id_pinjam_buku_tahunan = b.id_pinjam_buku_tahunan "); 
+$data_pengembalian_tahunan = query ("SELECT member_perpus.nama_siswa, buku_tahunan_siswa.judul_buku_tahunan, peminjaman_buku_tahunan.tanggal_peminjaman, 
+                                    pengembalian_buku_tahunan.tanggal_pengembalian, pengembalian_buku_tahunan.terlambat, pengembalian_buku_tahunan.denda 
+                                    FROM peminjaman_buku_tahunan
+                                    LEFT JOIN member_perpus ON member_perpus.nis = peminjaman_buku_tahunan.nis 
+                                    LEFT JOIN buku_tahunan_siswa ON buku_tahunan_siswa.id_judul_buku_tahunan = peminjaman_buku_tahunan.id_judul_buku_tahunan 
+                                    LEFT JOIN pengembalian_buku_tahunan ON pengembalian_buku_tahunan.id_pinjam_buku_tahunan = peminjaman_buku_tahunan.id_pinjam_buku_tahunan 
+                                    WHERE peminjaman_buku_tahunan.notifikasi = 'kembali' "); 
 
 ?>
 
@@ -15,7 +21,7 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan a RIGHT JOIN
 
 <head>
   <meta charset="utf-8">
-  <title>Remember - Multipurpose bootstrap site template</title>
+  <title>Data Pengembalian Buku Tahunan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -144,14 +150,15 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan a RIGHT JOIN
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Pengembalian Buku Tahunan Siswa</h2>
+              <h2>Data Pengembalian Buku Tahunan Siswa</h2>
             </div>
           </div>
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
               <li><a href="#">Pengembalian</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Buku Literasi Umum</li>
+              <li><a href="pengembalian_tahunan.php">Buku Tahunan Siswa</a> <i class="icon-angle-right"></i></li>
+              <li class="active">Data Pengembalian Buku Tahunan</li>
             </ul>
           </div>
         </div>
@@ -159,54 +166,50 @@ $peminjaman_tahunan = query ("SELECT * FROM peminjaman_buku_tahunan a RIGHT JOIN
     </section>
 
     <br>
-     <div class="container-fluid">
-    <div class="content">
-      <div class="box">
-<div class="offside-3 col-lg-7">
-    <form action="" method="post">
-      <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover " id="tabel">
-    <thead>
-        <tr>
-			      <th>no</th>
-            <th>ID Judul Buku Tahunan</th>
-            <th>Kode Buku Tahunan</th>
-            <th>NIS Peminjam</th>
-            <th>Tanggal Peminjaman</th>
-            <th>Tanggal Jatuh Tempo Kembali</th>
-            <th>Notifikasi</th>
-            <th>Tanggal Kembali</th>
-            <th>Terlambat</th>
-            <th>Denda</th>
-        </tr>
-        </thead>
-        <tbody>
-		<?php $i = 1; ?> 
-        <?php
-            foreach( $peminjaman_tahunan as $row) :
-        ?>
-        <tr>
-			<td><?=$i; ?></td>
-            <td><?php echo $row["id_judul_buku_tahunan"];?></td>
-            <td><?php echo $row["kode_buku_tahunan"];?></td>
-            <td><?php echo $row["nis"];?></td>
-            <td><?php echo $row["tanggal_peminjaman"];?></td>
-            <td><?php echo $row["tanggal_hrs_kembali"];?></td>
-            <td><?php echo $row["notifikasi"];?></td>
-            <td><?php echo $row["tanggal_pengembalian"];?></td>
-            <td><?php echo $row["terlambat"];?></td>
-            <td><?php echo $row["denda"];?></td>
-        </tr>
-			<?php $i++; ?>
-			<?php endforeach; ?>
-      </tbody>
-    </table>
-  </div>
-    </form>
-  </div>
-</div>
-</div>
-  </div>
+    <div class="container-fluid">
+      <div class="content">
+        <div class="box">
+          <div class="offside-3 col-lg-7">
+            <form action="" method="post">
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover " id="tabel">
+                  <thead>
+                    <tr bgcolor='yellow' align='center'>
+                      <th>NO</th>
+                      <th>Nama Peminjam</th>
+                      <th>Judul Buku Yang Dipinjam</th>
+                      <th>Tanggal Peminjaman</th>
+                      <th>Tanggal Kembali</th>
+                      <th>Terlambat</th>                      
+                      <th>Denda</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php 
+                    $i = 1; 
+                    foreach( $data_pengembalian_tahunan as $row) :
+                    ?>
+                    <tr>
+                      <td><?=$i; ?></td>
+                      <td><?php echo $row["nama_siswa"];?></td>
+                      <td><?php echo $row["judul_buku_tahunan"];?></td>
+                      <td><?php echo $row["tanggal_peminjaman"];?></td>
+                      <td><?php echo $row["tanggal_pengembalian"];?></td>
+                      <td><?php echo $row["terlambat"];?></td>
+                      <td><?php echo $row["denda"];?></td>
+                    </tr>
+                    <?php 
+                    $i++; 
+                    endforeach; 
+                    ?>
+                  </tbody>
+                </table>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     

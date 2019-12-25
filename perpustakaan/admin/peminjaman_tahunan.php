@@ -16,7 +16,7 @@ FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku
 
 <head>
   <meta charset="utf-8">
-  <title>Remember - Multipurpose bootstrap site template</title>
+  <title>Peminjaman Buku Tahunan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -159,52 +159,57 @@ FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku
     </section>
 
     <br>
-     <div class="container-fluid">
-    <a href="tambah_pinjam_tahunan.php">Tambah Data Peminjaman Tahunan</a>
-    <br><br>
-
-    <div class="content">
-      <div class="box">
-<div class="offside-3 col-lg-7">
-    <form action="" method="post">
-      <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover" id="tabel">
-    <thead>
-        <tr>
-			      <th>no</th>
-            <th>ID Pinjam Tahunan</th>
-            <th>Kode Judul Buku Tahunan</th>
-            <th>Kode Buku Tahunan</th>
-            <th>NIS Peminjam</th>
-            <th>Tanggal Peminjaman</th>
-            <th>Tanggal Harus Kembali</th>
-            <th>Notifikasi</th>
-        </tr>
-    </thead>
-    <tbody>
-		<?php $i = 1; ?> 
-        <?php
-            foreach( $peminjaman_tahunan as $row) :
-        ?>
-        <tr>
-			<td><?=$i; ?></td>
-            <td><?php echo $row["id_pinjam_buku_tahunan"]; ?></td>
-            <td><?php echo $row["id_judul_buku_tahunan"];?></td>
-            <td><?php echo $row["kode_buku_tahunan"];?></td>
-            <td><?php echo $row["nis"];?></td>
-            <td><?php echo $row["tanggal_peminjaman"];?></td>
-            <td><?php echo $row["tanggal_hrs_kembali"];?></td>
-            <td><?php echo $row["notifikasi"];?></td>
-        </tr>
-			<?php $i++; ?>
-			<?php endforeach; ?>
-    </tbody>
-    </table>
-  </div>
-    </form>
-  </div>
-</div>
-</div>
+    <div class="container-fluid">
+      <a href="tambah_pinjam_tahunan.php">Tambah Data Peminjaman Tahunan</a>
+      <br><br>
+      <div class="content">
+        <div class="box">
+          <div class="offside-3 col-lg-7">
+            <form action="" method="post">
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover" id="tabel">
+                  <thead>
+                    <tr bgcolor="yellow" align="center">
+                      <th>no</th>
+                      <th>ID Pinjam Tahunan</th>
+                      <th>Kode Judul Buku Tahunan</th>
+                      <th>Kode Buku Tahunan</th>
+                      <th>NIS Peminjam</th>
+                      <th>Tanggal Peminjaman</th>
+                      <th>Tanggal Harus Kembali</th>
+                      <th>Notifikasi</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php 
+                    $i = 1; 
+                    foreach( $peminjaman_tahunan as $row) :
+                    ?>
+                    <tr>
+                      <td><?=$i; ?></td>
+                      <td><?php echo $row["id_pinjam_buku_tahunan"]; ?></td>
+                      <td><?php echo $row["id_judul_buku_tahunan"];?></td>
+                      <td><?php echo $row["kode_buku_tahunan"];?></td>
+                      <td><?php echo $row["nis"];?></td>
+                      <td><?php echo $row["tanggal_peminjaman"];?></td>
+                      <td><?php echo $row["tanggal_hrs_kembali"];?></td>
+                      <td><?php echo $row["notifikasi"];?></td>
+                      <td>
+                      <a href="hapus_peminjaman_tahunan.php?id=<?= $row["id_pinjam_buku_tahunan"]; ?>
+                      "onclick="return confirm('Yakin Ingin Menghapus Data Ini?');" class="btn btn-default" ><i class="icon-trash" title="hapus data"></i>hapus</a>
+                      </td>
+                    </tr>
+                  <?php $i++; 
+                  endforeach; 
+                  ?>
+                </tbody>
+              </table>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 
 

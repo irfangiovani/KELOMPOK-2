@@ -159,6 +159,16 @@ function tambah_stok_mapel($conn, $id_judul_buku_mapel)
     mysqli_query($conn, $q);
 }
 
+function hapus_stok_mapel($conn, $id_judul_buku_mapel)
+{
+    $ambil = $conn->query("SELECT * FROM peminjaman_buku_mapel WHERE id_pinjam_buku_mapel='$_GET[id]'");
+    $row = $ambil->fetch_assoc();
+    $banyak_buku = $row["banyak_buku"];
+    $q = "UPDATE buku_mapel_kelas SET stok = stok + $banyak_buku WHERE id_judul_buku_mapel = '$id_judul_buku_mapel'";
+    mysqli_query($conn, $q);
+}
+
+
 
 
 function cek_stok($conn,$id_judul_buku_tahunan )
@@ -200,7 +210,7 @@ function hitung_denda($tgl_kembali, $tanggal_hrs_kembali)
 
     return $denda;
 }
-function ubah($data) {
+function ubahliterasi($data) {
     global $conn;
     
     $kode_buku_literasi = htmlspecialchars($data["kode_buku_literasi"]);
@@ -216,19 +226,18 @@ function ubah($data) {
     if( $_FILES['gambar_sampul']['error'] === 4 ) {
         $gambar_sampul = $gambarLama;
     } else {
-        $gambar_sampul = upload();
+        $gambar_sampul = uploadliterasi();
     }
 
     $query = "UPDATE buku_literasi_umum SET
-                kode_buku_literasi = '$kode_buku_literasi',
                 judul_buku_literasi = '$judul_buku_literasi',
                 id_penerbit = '$id_penerbit',
                 tahun_terbit = '$tahun_terbit',
-                id_rak = '$id_rak'
+                id_rak = '$id_rak',
                 id_kategori = '$id_kategori',
                 gambar_sampul = '$gambar_sampul',
                 deskripsi_buku = '$deskripsi_buku'
-              WHERE id = '$id'
+              WHERE kode_buku_literasi = '$kode_buku_literasi'
             ";
     mysqli_query($conn, $query);
 
@@ -327,7 +336,37 @@ function uploadmapel() {
 
 }
 
+function ubahmapel($data) {
+    global $conn;
 
+    $id_judul_buku_mapel = htmlspecialchars($data["id_judul_buku_mapel"]);
+    $judul_buku_mapel = htmlspecialchars($data["judul_buku_mapel"]);
+    $id_penerbit = htmlspecialchars($data["id_penerbit"]);
+    $tahun_terbit = htmlspecialchars($data["tahun_terbit"]);
+    $untuk_kelas = htmlspecialchars($data["untuk_kelas"]);
+    $gambarLama = htmlspecialchars($data["gambarLama"]);
+    $stok = htmlspecialchars($data["stok"]);
+
+    // cek apakah user pilih gambar baru atau tidak
+    if( $_FILES['gambar_sampul']['error'] === 4 ) {
+        $gambar_sampul = $gambarLama;
+    } else {
+        $gambar_sampul = uploadmapel();
+    }
+
+    $query = "UPDATE buku_mapel_kelas SET
+                judul_buku_mapel = '$judul_buku_mapel',
+                id_penerbit = '$id_penerbit',
+                tahun_terbit = '$tahun_terbit',
+                untuk_kelas = '$untuk_kelas',
+                gambar_sampul = '$gambar_sampul',
+                stok = '$stok'
+              WHERE id_judul_buku_mapel = '$id_judul_buku_mapel'
+            ";
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}
 
 // tambah data tahunan
 function tambahtahunan($datatahunan) {
@@ -400,6 +439,38 @@ function uploadtahunan() {
 
     return $namaFileBaru;
 
+}
+
+function ubahtahunan($data) {
+    global $conn;
+    
+    $id_judul_buku_tahunan = htmlspecialchars($data["id_judul_buku_tahunan"]);
+    $judul_buku_tahunan = htmlspecialchars($data["judul_buku_tahunan"]);
+    $id_penerbit = htmlspecialchars($data["id_penerbit"]);
+    $tahun_terbit = htmlspecialchars($data["tahun_terbit"]);
+    $untuk_kelas = htmlspecialchars($data["untuk_kelas"]);
+    $gambarLama = htmlspecialchars($data["gambarLama"]);
+    $stok = htmlspecialchars($data["stok"]);
+
+    // cek apakah user pilih gambar baru atau tidak
+    if( $_FILES['gambar_sampul']['error'] === 4 ) {
+        $gambar_sampul = $gambarLama;
+    } else {
+        $gambar_sampul = uploadtahunan();
+    }
+
+    $query = "UPDATE buku_tahunan_siswa SET
+                judul_buku_tahunan = '$judul_buku_tahunan',
+                id_penerbit = '$id_penerbit',
+                tahun_terbit = '$tahun_terbit',
+                untuk_kelas = '$untuk_kelas',
+                gambar_sampul = '$gambar_sampul',
+                stok = '$stok'
+              WHERE id_judul_buku_tahunan = '$id_judul_buku_tahunan'
+            ";
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
 }
 
 function terlambattahunan($tgl_dateline, $tgl_kembali ){

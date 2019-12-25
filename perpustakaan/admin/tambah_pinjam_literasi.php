@@ -4,11 +4,12 @@ if( !isset($_SESSION["login"])){
     header("location: loginadmin.php");
     exit;
 }
+date_default_timezone_set('Asia/Jakarta');
 require 'functions.php';
 if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
-    $nama_peminjam = $_POST["buah"];
-    $kode_buku = $_POST["id_kode_literasi"];
+    $nama_peminjam = $_POST["nis"];
+    $kode_buku = $_POST["kode_buku"];
     $tgl_pinjam = Date('Y-m-d');
     $tgl_kembali =Date('Y-m-d', time()+604800);
       
@@ -43,78 +44,35 @@ echo Date('l, Y-m-d');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css/autocomplete.css">
     <title>Tambah Peminjaman Literasi</title>
-    <style>
-            body {
-            	font-family: 'Roboto', Arial, Sans-serif;
-            	font-size: 15px;
-            	font-weight: 400;
-            }
-            input[type=text] {
-                border: 2px solid #bdbdbd;
-                font-family: 'Roboto', Arial, Sans-serif;
-            	font-size: 15px;
-            	font-weight: 400;
-                padding: .5em .75em;
-                width: 300px;
-            }
-            input[type=text]:focus {
-                border: 2px solid #757575;
-            	outline: none;
-            }
-            .autocomplete-suggestions {
-                border: 1px solid #999;
-                background: #FFF;
-                overflow: auto;
-            }
-            .autocomplete-suggestion {
-                padding: 2px 5px;
-                white-space: nowrap;
-                overflow: hidden;
-            }
-            .autocomplete-selected {
-                background: #F0F0F0;
-            }
-            .autocomplete-suggestions strong {
-                font-weight: normal;
-                color: #3399FF;
-            }
-            .autocomplete-group {
-                padding: 2px 5px;
-            }
-            .autocomplete-group strong {
-                display: block;
-                border-bottom: 1px solid #000;
-            }
-        </style>
+   
 </head>
 <body>
     <div class="container">
     <h2 class="alert alert-info text-center mt-3">Tambah Data Peminjaman Buku Literasi Umum</h2>
     <div class="pull-right">
     <form action="" method="post" enctype="multipart/form-data">
-     
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="id_kode_nis"> Nama Siswa : </label> 
-          <input type="text" id="buah" name="buah" placeholder="Nama Siswa" value="">
-		      <div id="box_pencarian"></div>
+          <label for="nama_siswa"> Nama Siswa : </label> 
+          <input type="text" class="form-control" id="buah" name="nama_siswa" placeholder="Masukkan Nama" value="">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="nis"> NIS Siswa : </label> 
+          <input type="text" class="form-control" id="nis" name="nis" placeholder="NIS Otomatis Terisi" value="" readonly>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="id_kode_buku_literasi"> Judul Buku Literasi : </label>
-            <select class="form-control" name="id_kode_literasi" id="id_kode_literasi" required >
-              <option value="">- Pilih Judul Kode Literasi -</option>
-                  <?php
-                    $sql_kode = mysqli_query($conn, "SELECT * FROM buku_literasi_umum") or die (mysqli_query($conn));
-                    while ($data_kode = mysqli_fetch_array($sql_kode)){
-                      echo '<option value="'.$data_kode['kode_buku_literasi'].'">' .$data_kode['judul_buku_literasi']. '</option>'; 
-                    }
-                  ?>
-            </select>
+          <label for="judul_buku"> Judul Buku Literasi : </label> 
+          <input type="text" class="form-control" id="judul_buku" name="judul_buku" placeholder="Masukkan Judul" value="">
         </div>
-      </div> 
+        <div class="form-group col-md-6">
+          <label for="kode_buku"> Kode Buku Literasi : </label> 
+          <input type="text" class="form-control" id="kode_buku" name="kode_buku" placeholder="Kode Buku Otomatis Terisi" value="" readonly>
+        </div>
+      </div>
       <div class="form-row">
         <div class="form-group col-md-6">
               <label for="tanggal_peminjaman"> Tanggal Peminjaman : </label>
@@ -158,11 +116,26 @@ echo Date('l, Y-m-d');
             serviceUrl: "source.php",   // Kode php untuk prosesing data.
             dataType: "JSON",           // Tipe data JSON.
             onSelect: function (suggestion) {
-                $( "#buah" ).val("" + suggestion.buah);
+                $( "#nis" ).val("" + suggestion.nis);
             }
         });
     })
 </script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        // Selector input yang akan menampilkan autocomplete.
+        $( "#judul_buku" ).autocomplete({
+            serviceUrl: "source_judul_literasi.php",   // Kode php untuk prosesing data.
+            dataType: "JSON",           // Tipe data JSON.
+            onSelect: function (suggestion) {
+                $( "#kode_buku" ).val("" + suggestion.kode_buku);
+            }
+        });
+    })
+</script>
+
 
 
 

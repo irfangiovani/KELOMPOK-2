@@ -45,7 +45,7 @@ if( isset($_POST["submit"])){
     <form action="" method="post" enctype="multipart/form-data">
         <div class="form-row">
                 <div class="form-group col-md-4">
-                  <label for="id_judul_buku_tahunan">Id Judul Buku Mapel : </label>
+                  <label for="id_judul_buku_tahunan">Id Judul Buku Tahunan : </label>
                   <input type="text" class="form-control" placeholder="Masukkan Id Judul..." name="id_judul_buku_tahunan" id="id_judul_buku_tahunan" required>
                 </div>
                 <div class="form-group col-md-4">
@@ -67,7 +67,7 @@ if( isset($_POST["submit"])){
                 </div>
             </div>
             <div class="form-group text-center">
-                  <label for="judul_buku_tahunan">Judul Buku Mapel : </label>
+                  <label for="judul_buku_tahunan">Judul Buku Tahunan : </label>
                   <input type="text" class="form-control" placeholder="Masukkan Judul Buku..." name="judul_buku_tahunan" id="judul_buku_tahunan">
             </div>
             <div class="form-row">

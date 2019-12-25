@@ -10,7 +10,7 @@ if( !isset($_SESSION["login"])){
 
   if( isset($_POST["submit"]) ) {
 
-  if( ubah($_POST) > 0 ) {
+  if( ubahliterasi($_POST) > 0 ) {
     echo "
         <script>
             alert('data berhasil diubah!');
@@ -39,10 +39,9 @@ if( !isset($_SESSION["login"])){
 </head>
 <body>
     <div class="container">
-    <h2 class="alert alert-success text-center mt-3">Ubah Buku Literasi Umum</h1>
+    <h2 class="alert alert-success text-center mt-3">Ubah Buku Literasi Umum</h2>
     
     <form action="" method="post" enctype="multipart/form-data">
-    
            <div class="form-row">
             <div class="form-group col-md-6">
               <label for="kode_buku_literasi">Kode Buku Literasi : </label>
@@ -52,19 +51,18 @@ if( !isset($_SESSION["login"])){
                 <div class="form-group col-md-6">
                   <label for="kategori">Kategori : </label> <a href="kategori.php" class="btn btn-warning" title="tambah_kategori" >Tambah Kategori</a>
                   <input type="text" class="form-control" value ="<?php echo $data['id_kategori'] ?>" name="id_kategori" id="id_kategori">
-                 
                 </div>
            </div>
 
             <div class="form-group text-center">
                   <label for="judul_buku_literasi">Judul Buku Literasi : </label>
-                  <input type="text" class="form-control" value ="<?php echo $data['judul_buku_literasi'] ?>" name="judul_buku_literasi" id="judul_buku_literasi">
+                  <input type="text"  class="form-control" value ="<?php echo $data['judul_buku_literasi'] ?>" name="judul_buku_literasi" id="judul_buku_literasi">
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-4">
                   <label for="penerbit">Penerbit : </label>
-                  <input type="text" class="form-control"value ="<?php echo $data['id_penerbit'] ?>" name="id_penerbit" id="id_penerbit">
+                  <input type="text"  class="form-control"value ="<?php echo $data['id_penerbit'] ?>" name="id_penerbit" id="id_penerbit">
                 </div>
 
                 <div class="form-group col-md-4">
@@ -74,56 +72,30 @@ if( !isset($_SESSION["login"])){
 
                 <div class="form-group col-md-4">
                   <label for="no_rak">No Rak : </label>
-                  <input type="text" class="form-control" value ="<?php echo $data['id_rak'] ?>" name="id_rak" id="id_rak">
+                  <input type="text"  class="form-control" value ="<?php echo $data['id_rak'] ?>" name="id_rak" id="id_rak">
                 </div>
             </div>
 
             <div class="form-group text-center">
               <label for="deskripsi_buku">Deskripsi Buku : </label>
-              <textarea type="text" value ="<?php echo $data['deskripsi_buku'] ?>" name="deskripsi_buku" id="deskripsi_buku" class="form-control" rows="5" > <?php echo $data['deskripsi_buku'] ?></textarea>
+              <textarea type="text"  value ="<?php echo $data['deskripsi_buku'] ?>" name="deskripsi_buku" id="deskripsi_buku" class="form-control" rows="5" > <?php echo $data['deskripsi_buku'] ?></textarea>
             </div>
 
             <div class="form-group">
               <label for="gambar_sampul">Gambar Sampul : <?php echo $data['gambar_sampul'] ?></label><br>
-              <img src="img/literasi/<?= $data['gambar_sampul']; ?>" width="60\">
-              <input type="file" class="form-control-file" id="gambar_sampul">
+              <img src="img/literasi/<?= $data['gambar_sampul'] ?>" width="60">
+              <input type="file" name="gambar_sampul" class="form-control-file" id="gambar_sampul">
               <small>(Upload File Dengan Ukuran Maksiman 1 MB)</small>
             </div>
 
             <div class="text-center">
-              <button type="submit" class="btn btn-primary" name="edit">Edit Data!</button>
+              <button type="submit" class="btn btn-primary" name="submit">Ubah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
               <a href="literasi.php" class="btn btn-success">Kembali</a>
             </div>
         <br><br>
+    </form>
     </div>
-    <?php
-    if( isset($_POST["edit"])){
-    // ambil data dari tiap elemen dalam form
-    $kode_buku_literasi = $_POST["kode_buku_literasi"];
-    $judul_buku_literasi = $_POST["judul_buku_literasi"];
-    $id_penerbit = $_POST["id_penerbit"];
-    $tahun_terbit = $_POST["tahun_terbit"];
-    $id_rak = $_POST["id_rak"];
-    $id_kategori = $_POST["id_kategori"];
-    $gambar_sampul = $_POST["gambar_sampul"];
-    $deskripsi_buku = $_POST["deskripsi_buku"];
-    $tambah = mysqli_query($conn, "UPDATE buku_literasi_umum SET kode_buku_literasi='$kode_buku_literasi', judul_buku_literasi='$judul_buku_literasi', 
-    id_penerbit='$id_penerbit', tahun_terbit='$tahun_terbit', id_rak='$id_rak', id_kategori='$id_kategori', gambar_sampul='$gambar_sampul', deskripsi_buku='$deskripsi_buku' WHERE kode_buku_literasi = '$id'");
-
-    if($tambah){
-      ?>
-      <script type="text/javascript">
-        alert('Edit Data Berhasil');
-        document.location.href="literasi.php";
-      </script>
-      <?php
-    }else {
-      echo "gagal mengedit data!!!";
-    }
-
-    }
-    ?>
-       
+    
 </body>
 </html>

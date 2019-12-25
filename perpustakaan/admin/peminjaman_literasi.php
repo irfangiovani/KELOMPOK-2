@@ -19,7 +19,7 @@ if( isset($_POST["cariliterasi"])) {
 
 <head>
   <meta charset="utf-8">
-  <title>Remember - Multipurpose bootstrap site template</title>
+  <title>Peminjaman Buku Literasi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -162,17 +162,18 @@ if( isset($_POST["cariliterasi"])) {
         </div>
       </div>
     </section>
-    <br><br>
+    <br>
      <div class="container-fluid">
      <div class="col-lg-12">
         <a href="tambah_pinjam_literasi.php">Tambah Data Peminjaman Literasi</a>
+          <br><br>
           <div class="content">
             <div class="box">
               <div class="col-lg-6">
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered table-hover " id="tabel">
                     <thead>
-                        <tr>
+                        <tr bgcolor="yellow" align="center">
                             <th>no</th>
                             <th>ID Pinjam Literasi</th>
                             <th>Judul Buku Literasi</th>
@@ -197,8 +198,6 @@ if( isset($_POST["cariliterasi"])) {
                             <td><?php echo $row["tanggal_hrs_kembali"];?></td>
                             <td><?php echo $row["notifikasi"];?></td>
                             <td>
-                            <a href="ubah_peminjaman_literasi.php?id=<?php echo $row ['id_pinjam_buku_literasi']; ?>"class="btn btn-default" ><i class="icon-edit" title="ubah data" ></i>ubah</a>
-
                             <a href="hapus_peminjaman_literasi.php?id=<?= $row["id_pinjam_buku_literasi"]; ?>
                             " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');" class="btn btn-default" ><i class="icon-trash" title="hapus data"></i>hapus</a>
                           </td>

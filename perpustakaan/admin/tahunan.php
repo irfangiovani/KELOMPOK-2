@@ -179,15 +179,15 @@ if( isset($_POST["caritahunan"]) ) {
     <table class="table table-striped table-bordered table-hover " id="tabel">
     <thead>
         <tr>
-            <th>no</th>
+            <th>No</th>
             <th>Id Judul Buku Tahunan</th>
             <th>Judul Buku</th>
             <th>Penerbit</th>
             <th>Tahun Terbit</th>
-            <th>Kel</th>
+            <th>Kelas</th>
             <th>Gambar Sampul</th>
             <th>Stok</th>
-            <th>aksi</th>
+            <th>Aksi</th>
         </tr>
         </thead>
         <tbody>
@@ -205,7 +205,7 @@ if( isset($_POST["caritahunan"]) ) {
             <td><img src="img/tahunan/<?php echo $row["gambar_sampul"]; ?>" width="50"></td>
             <td><?php echo $row["stok"];?></td>
             <td>
-              <a href="" class="btn btn-warning" title="ubah data" >ubah</a>
+              <a href="ubah_tahunan.php?id=<?php echo $row ['id_judul_buku_tahunan']; ?>" class="btn btn-warning" title="ubah data" >ubah</a>
 
               <a href="hapus_tahunan.php?id=<?= $row["id_judul_buku_tahunan"]; ?>
               " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger" title="hapus data">hapus</a>

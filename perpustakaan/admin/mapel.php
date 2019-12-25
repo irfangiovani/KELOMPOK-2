@@ -180,7 +180,7 @@ if( isset($_POST["carimapel"]) ) {
     <table class="table table-striped table-bordered table-hover " id="tabel">
         <thead>
         <tr>
-			      <th>no</th>
+			      <th>No</th>
             <th>Id Judul Buku Mapel</th>
             <th>Judul Buku</th>
             <th>Penerbit</th>
@@ -188,7 +188,7 @@ if( isset($_POST["carimapel"]) ) {
             <th>Kelas</th>
             <th>Gambar Sampul</th>
             <th>Stok</th>
-            <th>aksi</th>
+            <th>Aksi</th>
         </tr>
         </thead>
         <tbody>
@@ -206,7 +206,7 @@ if( isset($_POST["carimapel"]) ) {
             <td><img src="img/mapel/<?php echo $row["gambar_sampul"]; ?>" width="50"></td>
             <td><?php echo $row["stok"];?></td>
             <td>
-              <a href="" class="btn btn-warning" title="ubah data" >ubah</a>
+              <a href="ubah_mapel.php?id=<?php echo $row ['id_judul_buku_mapel']; ?>" class="btn btn-warning" title="ubah data" >ubah</a>
 
               <a href="hapus_mapel.php?id=<?= $row["id_judul_buku_mapel"]; ?>
               " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger" title="hapus data">hapus</a>

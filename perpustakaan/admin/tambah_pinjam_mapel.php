@@ -8,8 +8,8 @@ date_default_timezone_set('Asia/Jakarta');
 require 'functions.php';
 if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
-    $kode_judul = $_POST["kode_judul"];
-    $kode_kelas = $_POST["id_kode_kelas"];
+    $kode_judul = $_POST["kode_buku"];
+    $kode_kelas = $_POST["kode_kelas"];
     $nama_peminjam = $_POST["nama_peminjam"];
     $waktu_peminjaman = date('H:i, d F Y');
     $banyak_buku = $_POST["banyak_buku"];
@@ -20,7 +20,7 @@ if( isset($_POST["submit"])){
     if ($stok_buku < $banyak_buku) {
     echo "
         <script>
-            alert('stok buku habis, proses peminjaman gagal');
+            alert('stok buku tidak mencukupi, proses peminjaman gagal');
             document.location.href = 'tambah_pinjam_mapel.php';
         </script>
     ";
@@ -49,7 +49,7 @@ if( isset($_POST["submit"])){
 }
     
 
-echo Date('l, Y-m-d');
+echo Date('l, d-F-Y');
 
 ?>
  
@@ -60,63 +60,54 @@ echo Date('l, Y-m-d');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css/autocomplete.css">
     <title>Tambah Peminjaman Mapel Kelas</title>
 </head>
 <body>
     <div class="container">
-    <h2 class="alert alert-info text-center mt-3">Tambah Data Peminjaman Buku mapel</h2>
-    <div class="pull-right">
-    <form action="" method="post" enctype="multipart/form-data">
-      
-    <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="kode_judul">Kode Judul Buku Mapel : </label> 
-              <select class="form-control" name="kode_judul" id="kode_judul" required >
-                    <option value="">- Kode Judul Buku -</option>
-                    <?php
-                    $sql_kode = mysqli_query($conn, "SELECT * FROM buku_mapel_kelas") or die (mysqli_query($conn));
-                    while ($data_kode = mysqli_fetch_array($sql_kode)){
-                      echo '<option value="'.$data_kode['id_judul_buku_mapel'].'">'.$data_kode['judul_buku_mapel'].' '.$data_kode['untuk_kelas'].'</option>';
-                    }
-                    ?>
-                </select>
-            </div>
-            <div class="form-group col-md-6">
-              <label for="id_kode_kelas">Kode Kelas : </label> 
-                <select class="form-control" name="id_kode_kelas" id="id_kode_kelas" required >
-                  <option value="">- Pilih Kode Kelas -</option>
-                  <?php
-                    $sql_kode = mysqli_query($conn, "SELECT * FROM kelas") or die (mysqli_query($conn));
-                    while ($data_kode = mysqli_fetch_array($sql_kode)){
-                      echo '<option value="'.$data_kode['kode_kelas'].'">' .$data_kode['kode_kelas']. '</option>'; 
-                    }
-                    ?>
-                </select>
-            </div>
-            </div>
-           
+    <h2 class="alert alert-info text-center mt-3">Tambah Data Peminjaman Buku Mapel Kelas</h2>
+      <div class="pull-right">
+        <form action="" method="post" enctype="multipart/form-data">
+          <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="kelas"> Nama Kelas : </label> 
+                <input type="text" class="form-control" id="kelas" name="kelas" placeholder="Masukkan Nama Kelas" value="" require>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="kode_kelas"> Kode Kelas : </label> 
+                <input type="text" class="form-control" id="kode_kelas" name="kode_kelas" placeholder="Kode Kelas Otomatis Terisi" value="" readonly>
+              </div>
+          </div> 
+          <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="judul_buku"> Judul Buku Mapel : </label> 
+                <input type="text" class="form-control" id="judul_buku" name="judul_buku" placeholder="Masukkan Judul Buku Mapel" value="" require>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="kode_buku"> ID Judul Buku Mapel : </label> 
+                <input type="text" class="form-control" id="kode_buku" name="kode_buku" placeholder="ID Judul Otomatis Terisi" value="" readonly>
+              </div>
+            </div>    
             <div class="form-row">
             <div class="form-group col-md-6">
               <label for="nama_peminjam">Nama Peminjam : </label> 
-              <input type="text" class="form-control" placeholder="Masukkan Nama Peminjam" name="nama_peminjam" id="nama_peminjam">
+              <input type="text" class="form-control" placeholder="Masukkan Nama Peminjam" name="nama_peminjam" id="nama_peminjam" required>
             </div>   
             <div class="form-group col-md-6">
             <label for="waktu_peminjaman"> Waktu Peminjaman : </label>
               <input type="text" class="form-control" placeholder = "<?php echo date('H:i, d F Y');?>"name="waktu_peminjaman" id="waktu_peminjaman" readonly>
             </div>
             </div>
-
             <div class="form-row">
             <div class="form-group col-md-6">
               <label for="banyak_buku"> Banyak Buku Dipinjam : </label>
-              <input type="text" class="form-control" placeholder="Banyak Buku Dipinjam" name="banyak_buku" id="banyak_buku">
+              <input type="text" class="form-control" placeholder="Banyak Buku Dipinjam" name="banyak_buku" id="banyak_buku" required>
             </div>
             </div>
-
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
-              <a href="literasi.php" class="btn btn-success">Kembali</a>
+              <a href="peminjaman_mapel.php" class="btn btn-success">Kembali</a>
             </div>
           </div>
         <br><br>
@@ -126,8 +117,38 @@ echo Date('l, Y-m-d');
     </div>
     </div>
 
+     <!-- Memanggil jQuery.js -->
+     <script src="js/autocomplete/jquery-3.2.1.min.js"></script>
 
+<!-- Memanggil Autocomplete.js -->
+<script src="js/autocomplete/jquery.autocomplete.min.js"></script>
 
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+          // Selector input yang akan menampilkan autocomplete.
+          $( "#judul_buku" ).autocomplete({
+              serviceUrl: "source_judul_mapel.php",   // Kode php untuk prosesing data.
+              dataType: "JSON",           // Tipe data JSON.
+              onSelect: function (suggestion) {
+                  $( "#kode_buku" ).val("" + suggestion.kode_buku);
+              }
+          });
+      })
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+          // Selector input yang akan menampilkan autocomplete.
+          $( "#kelas" ).autocomplete({
+              serviceUrl: "source_kelas.php",   // Kode php untuk prosesing data.
+              dataType: "JSON",           // Tipe data JSON.
+              onSelect: function (suggestion) {
+                  $( "#kode_kelas" ).val("" + suggestion.kode_kelas);
+              }
+          });
+      })
+    </script>
                 
 </body>
 </html>

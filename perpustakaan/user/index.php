@@ -6,13 +6,13 @@ require 'functions.php';
 $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() LIMIT 4");
 
  //$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
-
-?>
+ 
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>K-Negabon Library</title>
+  <title>Perpustakaan SMKN 3 Bondowoso</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -22,7 +22,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+  <link href="css/font.css" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -43,37 +43,26 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
     License: https://bootstrapmade.com/license/
   ======================================================= -->
 </head>
-
+ 
 <body>
   <div class="click-closed"></div>
   <!--/ Form Search Star /-->
   <div class="box-collapse">
-    <div class="title-box-d">
+    <div class="title-box-d">  
       <h3 class="title-d">Cari Peminjaman Siswa</h3>
     </div>
     <span class="close-box-collapse right-boxed ion-ios-close"></span>
-    <div class="box-collapse-wrap form">
-      <form class="form-a">
-        <div class="row">
-          <div class="col-md-12 mb-2">
-            <div class="form-group">
-              <label for="Type">Nama Siswa</label>
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Masukkan nama anda">
-            </div>
-          </div>
-          <div class="col-md-12 mb-2">
-            <div class="form-group">
-              <label for="Type">Nomor Induk Siswa</label>
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Masukkkan NIS anda">
-            </div>
-          </div>
-          <div class="col-md-12">
-            <button type="submit" class="btn btn-b">Cari</button>
+    <a class="btn btn-b" href="cari_literasi.php">Cari Literasi</a>
+    <a class="btn btn-b" href="cari_tahunan.php">Cari Tahunan</a>
+         
+           
+           
           </div>
         </div>
       </form>
     </div>
   </div>
+ 
   <!--/ Form Search End /-->
 
   <!--/ Nav Star /-->
@@ -105,7 +94,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
       </div>
       <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block  " data-toggle="collapse"
         data-target="#navbarTogglerDemo01" aria-expanded="false">
-        <span class="fa fa-search" aria-hidden="true">Cek Peminjaman</span>
+        <span class="search" aria-hidden="true">Cek Peminjaman</span>
       </button>
     </div>
   </nav>
@@ -128,7 +117,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                       <span class="color-b">ING </span>NGARSA SUNG
                       <br>TULADHA</h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">SMKN 3 BONDOWOSO</span></a>
+                      <a href="http://www.smkn3bondowoso.sch.id/"><span class="price-a">SMKN 3 BONDOWOSO</span></a>
                     </p>
                   </div>
                 </div>
@@ -151,7 +140,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                       <span class="color-b">ING </span>MADYA MANGUN
                       <br>KARSA</h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">SMKN 3 BONDOWOSO</span></a>
+                      <a href="http://www.smkn3bondowoso.sch.id/"><span class="price-a">SMKN 3 BONDOWOSO</span></a>
                     </p>
                   </div>
                 </div>
@@ -174,7 +163,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                       <span class="color-b">TUT WURI </span>HANDAYANI
                       </h1><br><br><br>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">SMKN 3 BONDOWOSO</span></a>
+                      <a href="http://www.smkn3bondowoso.sch.id/"><span class="price-a">SMKN 3 BONDOWOSO</span></a>
                     </p>
                   </div>
                 </div>
@@ -194,7 +183,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
         <div class="col-md-12">
           <div class="title-wrap d-flex justify-content-between">
             <div class="title-box">
-              <h2 class="title-a">Buku</h2>
+              <h2 class="title-a">Koleksi Buku</h2>
             </div>
           </div>
         </div>
@@ -290,7 +279,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
         <div class="carousel-item-b">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
-              <img src="img/literasi/<?php echo $row["gambar_sampul"]; ?>" alt="" class="img-a img-fluid">
+              <img src="../admin/img/literasi/<?php echo $row["gambar_sampul"]; ?>" alt="" class="img-a img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
@@ -298,6 +287,11 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                   <h2 class="card-title-a">
                   <?php echo $row["judul_buku_literasi"];?>
                   </h2>
+                </div>
+                <div class="card-body-a">
+                  <a href="detail_buku.php?id=<?php echo $row ['kode_buku_literasi']; ?>" class="link-a">Lihat Detail Buku
+                    <span class="ion-ios-arrow-forward"></span>
+                  </a>
                 </div>
                 <div class="card-footer-a text-center">
                   <ul class="card-info d-flex justify-content-around">
@@ -361,7 +355,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                 </p>
                 <div class="info-agents color-a">
                   <p>
-                    <strong></strong></p>
+                    <strong></strong></p> 
                   <p>
                     <strong></strong></p>
                 </div>
@@ -437,7 +431,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                       <a href="#" class="link-one">
                         <i class="fa fa-twitter" aria-hidden="true"></i>
                       </a>
-                    </li>
+                    </li> 
                     <li class="list-inline-item">
                       <a href="#" class="link-one">
                         <i class="fa fa-instagram" aria-hidden="true"></i>
@@ -654,12 +648,6 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                   <img src="img/kelompokku.jpg" alt="" class="img-fluid">
                 </div>
               </div>
-              <style>
-                  .testimonial-box {
-                    float: left;
-                    margin: 14px;
-                  }
-                </style>
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-ico">
                   <span class="ion-ios-quote"></span>
@@ -674,25 +662,44 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
                     5. Muhammad Ansori
                   </p>
                 </div>
-                <div class="testimonial-box">
-                  <img src="img/team/img-2.jpg" alt="" class="testimonial-avatar"><br>
-                  <h5 class="text-center">IRFAN</h5>
-                </div>
-                <div class="testimonial-box">
-                  <img src="img/team/img-1.jpg" alt="" class="testimonial-avatar">
-                  <h5 class="text-center">YUDI</h5>
-                </div>
-                <div class="testimonial-box">
-                  <img src="img/team/img-4.jpg" alt="" class="testimonial-avatar">
-                  <h5 class="text-center">ILHAM</h5>
-                </div>
-                <div class="testimonial-box">
-                  <img src="img/team/img-5.jpg" alt="" class="testimonial-avatar">
-                  <h5 class="text-center">WINA</h5>
-                </div>
-                <div class="testimonial-box">
-                  <img src="img/team/img-3.jpg" alt="" class="testimonial-avatar">
-                  <h5 class="text-center">ANSORI</h5>
+                <div class="gallery">
+                  <div class="testimonial-box">
+                    <a href="#gambar-1">
+                      <img src="img/team/irfankotak.jpg" alt="" class="testimonial-avatar">
+                      <span>Leader</span>
+                      <h5 class="text-center">IRFAN</h5>
+                    </a>
+
+                    <div class="overlay"></div>
+                  </div>
+                  <div class="testimonial-box">
+                    <a href="#gambar-2">
+                      <img src="img/team/riankotak.jpg" alt="" class="testimonial-avatar">
+                      <span>P.Owner</span>
+                      <h5 class="text-center">YUDI</h5>
+                    </a>
+                  </div>
+                  <div class="testimonial-box">
+                    <a href="#gambar-3">
+                    <img src="img/team/ilhamkotak.jpg" alt="" class="testimonial-avatar">
+                    <span>Dev.Team</span>
+                    <h5 class="text-center">ILHAM</h5>
+                    </a>
+                  </div>
+                  <div class="testimonial-box">
+                    <a href="#gambar-4">
+                    <img src="img/team/winakotak2.jpg" alt="" class="testimonial-avatar">
+                    <span>Dev.Team</span>
+                    <h5 class="text-center">WINA</h5>
+                    </a>
+                  </div>
+                  <div class="testimonial-box">
+                    <a href="#gambar-5">
+                    <img src="img/team/ansorikotak.jpg" alt="" class="testimonial-avatar">
+                    <span>Dev.Team</span>
+                    <h5 class="text-center">ANSORI</h5>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -795,7 +802,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
           </div>
         </div>
       </div>
-    </div>
+    </div> 
   </section>
   <footer>
     <div class="container">
