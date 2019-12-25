@@ -164,10 +164,18 @@ $data_pengembalian_literasi = query ("SELECT member_perpus.nama_siswa, buku_lite
         </div>
       </div>
     </section>
+    <br>
+    <form action="laporan_pengembalian_literasi.php" method="post">
+      <ul width="50"><input required type="radio" name="cek" value="1" style="cursor: pointer;"> Semua Data</ul>
+      <ul width="50"><input required type="radio" name="cek" value="2" style="cursor: pointer;">Tanggal
+      <input type="date" name="tgl_awal" value="<?= date("Y/m/d") ?>" style="height: 20px;"> Sampai <span class="right"><input type="date" value="<?= date("Y/m/d") ?>" name="tgl_akhir" style="height: 20px;"></span>
+      </ul>
+      <ul class="text-left"><input type="submit" name="tampilkan" class="btn btn-primary" value="Tampilkan"></ul>
+    </form>
+                    
 
       <br>
       <div class="container-fluid">
-        <a style="margin-bottom:10px" href="lap_pengembalian_literasi.php" target="_blank" class="btn btn-default pull-right"><span class='icon-print'></span>  Cetak</a>
       <div class="content">
       <div class="box">
         <div class="offside-3 col-lg-7">
