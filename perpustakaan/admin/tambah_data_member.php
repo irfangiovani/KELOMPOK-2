@@ -72,4 +72,6 @@ echo Date('l, Y-m-d');
     </div>
     </div>       
 </body>
+</html>                
+</body>
 </html>

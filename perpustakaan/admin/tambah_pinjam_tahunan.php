@@ -128,7 +128,7 @@ echo Date('l, Y-m-d');
 
         // Selector input yang akan menampilkan autocomplete.
         $( "#buah" ).autocomplete({
-            serviceUrl: "source.php",   // Kode php untuk prosesing data.
+            serviceUrl: "source_member_aktif.php",   // Kode php untuk prosesing data.
             dataType: "JSON",           // Tipe data JSON.
             onSelect: function (suggestion) {
                 $( "#nis" ).val("" + suggestion.nis);
