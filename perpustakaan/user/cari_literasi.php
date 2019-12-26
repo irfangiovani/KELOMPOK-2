@@ -82,28 +82,28 @@ require 'functions.php';
     </div>
   </nav>
   <!--/ Nav End /-->
-
+                      
   <section class="contact">
               <style>
                 body {
-                  background: url(img/win.jpg) no-repeat center fixed;
+                  background: url(img/ground.jpg) no-repeat center fixed;
                   -webkit-backgroun-size: cover;
                   -moz-background-size: cover;
                   -o-background: cover;
                   background-size: cover;
                 }
                 .aa {
-                  width: 600px;
+                  width: 700px;
                   height: 400px;
                   background-color: rgba(0,0,0,0.3);
                   margin: 0 auto;
-                  margin-top: 40px;
-                  padding-top: 3px;
-                  padding-left: 90px;
-                  border-radius: 25px;
-                  -webkit-border-radius: 30px;
-                  -o-border-radius: 20px;
-                  -moz-border-radius: 20px;
+                  margin-top: 90px;
+                  padding-top: 5px;
+                  padding-left: 100px;
+                  border-radius: 30px;
+                  -webkit-border-radius: 60px;
+                  -o-border-radius: 40px;
+                  -moz-border-radius: 40px;
                   color: darkred;
                 }
               </style>

@@ -62,7 +62,7 @@ if( isset($_POST["carimapel"]) ) {
     <?php include 'tag_header.php';  ?>
       <div class="container">
         <div class="row nomargin">
-          <div class="span3">
+          <div class="span4">
             <div class="logo">
               <h1><a href="index.html"><i class="icon-tint"></i> K-Negabon Library</a></h1>
             </div>
