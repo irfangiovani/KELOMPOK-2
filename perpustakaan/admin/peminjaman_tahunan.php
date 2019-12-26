@@ -52,7 +52,6 @@ FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku
     <!-- start header -->
     <header>
     <?php include 'tag_header.php';  ?>
-      </div>
       <div class="container">
         <div class="row nomargin">
           <div class="span4">
