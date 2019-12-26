@@ -743,7 +743,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
               <h3 class="w-title-a text-brand">School Address </h3>
             </div>
             <div class="w-body-a">
-              <p class="w-text-a color-text-a">
+              <p class="w-text-a color-text-a fa fa-home">
               Jl. Santawi No.96 A, Tamansari Indah, Kec. Bondowoso
               Kabupaten Bondowoso, Jawa Timur 68216 Indonesia.
               </p>
@@ -751,9 +751,9 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
             <div class="w-footer-a">
               <ul class="list-unstyled">
                 <li class="color-a">
-                  <span class="color-text-a">Phone .</span> (123)454-441</li>
+                  <span class="color-text-a fa fa-phone"> Phone :</span> (123)454-441</li>
                 <li class="color-a">
-                  <span class="color-text-a">Email .</span> anitadwisalasari@gmail.com</li>
+                  <span class="color-text-a fa fa-envelope-o"> Email .</span> anitadwisalasari@gmail.com</li>
               </ul>
             </div>
           </div>
@@ -767,9 +767,9 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
               <div class="w-body-a">
                 <ul class="list-unstyled">
                 <li class="color-a">
-                  <span class="color-text-a">Phone .</span> +62 853-3075-0875</li>
+                  <span class="color-text-a fa fa-phone"> Phone :</span> <br> +62 853-3075-0875</li>
                 <li class="color-a">
-                  <span class="color-text-a">Email .</span> teamprogresslibrarybondowoso@gmail.com</li>
+                  <span class="color-text-a fa fa-envelope-o"> Email :</span>teamprogresslibrarybondowoso@gmail.com</li>
                 </ul>
               </div>
             </div>
@@ -783,19 +783,19 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum ORDER BY  RAND() L
             <div class="w-body-a">
               <ul class="list-unstyled">
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Yudi Irianto</a>
+                  <i class="fa fa-angle-right fa fa-male"></i> <a href="#"> Yudi Irianto</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Irfan giovani</a>
+                  <i class="fa fa-angle-right fa fa-male"></i> <a href="#"> Irfan giovani</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Ilham Robby Sanjaya</a>
+                  <i class="fa fa-angle-right fa fa-male"></i> <a href="#"> Ilham Robby Sanjaya</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Azizah Wina Sriwinarsih</a>
+                  <i class="fa fa-angle-right fa fa-female"></i> <a href="#"> Azizah Wina Sriwinarsih</a>
                 </li>
                 <li class="item-list-a">
-                  <i class="fa fa-angle-right"></i> <a href="#">Muhammad Ansori</a>
+                  <i class="fa fa-angle-right fa fa-male"></i> <a href="#"> Muhammad Ansori</a>
                 </li>
               </ul>
             </div>
