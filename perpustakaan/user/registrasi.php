@@ -32,7 +32,7 @@ if( isset($_POST["submit"])){
       ";
     }
     }
-    $data= mysqli_query("SELECT * FROM member_perpus WHERE nis ='$nis'");
+ 
 
 ?>
 <!DOCTYPE html>
@@ -119,8 +119,8 @@ if( isset($_POST["submit"])){
           <li class="nav-item">
             <a class="nav-link" href="index.php">Beranda</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="registrasi.php">Daftar</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="registrasi.php">Daftar Member</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="buku.php">Buku</a> 
