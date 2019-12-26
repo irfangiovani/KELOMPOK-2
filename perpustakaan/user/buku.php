@@ -92,7 +92,7 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
             <a class="nav-link" href="registrasi.php">Daftar Member</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="buku.php">Buku</a> 
+            <a class="nav-link" href="buku.php">Buku Mapel</a> 
           </li>
           <li class="nav-item">
             <a class="nav-link" href="bantuan.php">Bantuan</a>

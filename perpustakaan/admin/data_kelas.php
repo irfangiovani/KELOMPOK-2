@@ -6,7 +6,7 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$data_kelas = query ("SELECT * FROM kelas "); 
+$data_kelas = query ("SELECT * FROM kelas ");
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ $data_kelas = query ("SELECT * FROM kelas ");
 
 <head>
   <meta charset="utf-8">
-  <title>Remember - Multipurpose bootstrap site template</title>
+  <title>Data Kelas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -50,33 +50,8 @@ $data_kelas = query ("SELECT * FROM kelas ");
   <div id="wrapper">
     <!-- start header -->
     <header>
-      <div class="top">
-        <div class="container">
-          <div class="row">
-            <div class="span6">
-              <ul class="topmenu">
-                <li><a href="#">Home</a> &#47;</li>
-                <li><a href="#">Terms</a> &#47;</li>
-                <li><a href="#">Privacy policy</a></li>
-              </ul>
-            </div>
-            <div class="span6">
-
-              <ul class="social-network">
-                <li><a href="#" data-placement="bottom" title="Facebook"><i class="icon-circled icon-bglight icon-facebook"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Twitter"><i class="icon-circled icon-bglight icon-twitter"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Linkedin"><i class="icon-circled icon-linkedin icon-bglight"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Pinterest"><i class="icon-circled icon-pinterest  icon-bglight"></i></a></li>
-                <li><a href="#" data-placement="bottom" title="Google +"><i class="icon-circled icon-google-plus icon-bglight"></i></a></li>
-              </ul>
-
-            </div>
-          </div>
-        </div>
-      </div>
+    <?php include 'tag_header.php';  ?>
       <div class="container">
-
-
         <div class="row nomargin">
           <div class="span4">
             <div class="logo">
@@ -146,136 +121,58 @@ $data_kelas = query ("SELECT * FROM kelas ");
               <h2>Data Kelas</h2>
             </div>
           </div>
-          <div class="span8">
-            <ul class="breadcrumb">
-              <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
-              <li><a href="#">Data</a> <i class="icon-angle-right"></i></li>
-              <li class="active">Kelas</li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
 
-    <br>
+      <br>
      <div class="container-fluid">
-    <a href="tambah_data_kelas.php">Tambah Data Kelas</a>
-    <br><br>
-
-    <div class="content">
-      <div class="box">
-<div class="offside-3 col-lg-7">
-    <form action="" method="post">
-      <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover " id="tabel">
-    <thead>
-        <tr>
-			<th>no</th>
-            <th>Kode Kelas</th>
-            <th>Jurusan</th>
-            <th>Kelas</th>
-             <th>Wali Kelas</th>
-             <th>Aksi</th>
-        </tr>
-        </thead>
-        <tbody>
-		<?php $i = 1; ?> 
-        <?php
-            foreach( $data_kelas as $row) :
-        ?>
-        <tr>
-			      <td><?=$i; ?></td>
-            <td><?php echo $row["kode_kelas"]; ?></td>
-            <td><?php echo $row["jurusan"];?></td>
-            <td><?php echo $row["kelas"];?></td>
-            <td><?php echo $row["wali_kelas"];?></td>
-            <td>
-            <a href="ubah_kelas.php?id=<?php echo $row ["kode_kelas"]; ?>"class="btn btn-default" ><i class="icon-edit" title="ubah data" ></i>ubah</a>
-            <a href="hapus_kelas.php?id=<?= $row["kode_kelas"]; ?>
-            " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');" class="btn btn-default" ><i class="icon-trash" title="hapus data"></i>hapus</a>
-            </td>
-        </tr>
-			<?php $i++; ?>
-			<?php endforeach; ?>
-      </tbody>
-    </table>
-  </div>
-    </form>
-  </div>
-</div>
-</div>
-  </div>
+      <div class="col-lg-12">
+        <a href="tambah_data_kelas.php">Tambah Data Kelas</a>
+          <br><br>
+            <form action="" method="post">
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover" id="tabel">
+                <thead>
+                      <tr bgcolor='yellow' align='center'>
+                          <th>no</th>
+                          <th>Kode Kelas</th>
+                          <th>Jurusan</th>
+                          <th>Kelas</th>
+                          <th>Wali Kelas</th>
+                          <th>Aksi</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <?php $i = 1; ?> 
+                      <?php
+                      foreach( $data_kelas as $row) :
+                      ?>
+                      <tr>
+                          <td><?=$i; ?></td>
+                          <td><?php echo $row["kode_kelas"]; ?></td>
+                          <td><?php echo $row["jurusan"];?></td>
+                          <td><?php echo $row["kelas"];?></td>
+                          <td><?php echo $row["wali_kelas"];?></td>
+                          <td>
+                          <a href="ubah_kelas.php?id=<?php echo $row ["kode_kelas"]; ?>"class="btn btn-default" ><i class="icon-edit" title="ubah data" ></i>ubah</a>
+                          <a href="hapus_kelas.php?id=<?= $row["kode_kelas"]; ?>
+                          " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');" class="btn btn-default" ><i class="icon-trash" title="hapus data"></i>hapus</a>
+                          </td>
+                      </tr>
+                    <?php $i++; ?>
+                    <?php endforeach; ?>
+                    </tbody>
+                  </table>
+                </div>
+              </form>
+            </div>
+          </div>
 
 
     
     <footer>
-      <div class="container">
-        <div class="row">
-          <div class="span4">
-            <div class="widget">
-              <div class="footer_logo">
-                <h3><a href="index.html"><i class="icon-tint"></i> Remember</a></h3>
-              </div>
-              <address>
-							  <strong>Remember company Inc.</strong><br>
-  							Somestreet KW 101, Park Village W.01<br>
-  							Jakarta 13426 Indonesia
-  						</address>
-              <p>
-                <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-                <i class="icon-envelope-alt"></i> email@domainname.com
-              </p>
-            </div>
-          </div>
-          <div class="span4">
-            <div class="widget">
-              <h5 class="widgetheading">Browse pages</h5>
-              <ul class="link-list">
-                <li><a href="#">Our company</a></li>
-                <li><a href="#">Terms and conditions</a></li>
-                <li><a href="#">Privacy policy</a></li>
-                <li><a href="#">Press release</a></li>
-                <li><a href="#">What we have done</a></li>
-                <li><a href="#">Our support forum</a></li>
-              </ul>
-
-            </div>
-          </div>
-          <div class="span4">
-            <div class="widget">
-              <h5 class="widgetheading">From flickr</h5>
-              <div class="flickr_badge">
-                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
-              </div>
-              <div class="clear"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="sub-footer">
-        <div class="container">
-          <div class="row">
-            <div class="span6">
-              <div class="copyright">
-                <p><span>&copy; Remember Inc. All right reserved</span></p>
-              </div>
-
-            </div>
-
-            <div class="span6">
-              <div class="credits">
-                <!--
-                  All the links in the footer should remain intact.
-                  You can delete the links only if you purchased the pro version.
-                  Licensing information: https://bootstrapmade.com/license/
-                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Remember
-                -->
-                Created by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <?php include 'footer_admin.php';  ?>
     </footer>
   </div>
   <a href="#" class="scrollup"><i class="icon-angle-up icon-rounded icon-bglight icon-2x"></i></a>
@@ -293,7 +190,6 @@ $data_kelas = query ("SELECT * FROM kelas ");
   <script src="js/portfolio/jquery.quicksand.js"></script>
   <script src="js/portfolio/setting.js"></script>
   <script src="js/animate.js"></script>
-
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
   <script src="js/dataTables/dataTables.bootstrap.js"></script>
@@ -303,15 +199,8 @@ $data_kelas = query ("SELECT * FROM kelas ");
             $('#tabel').DataTable();
         });
     </script>
+  
 
-  <script src="js/custom.js"></script>
-  <script src="js/dataTables/dataTables.bootstrap.js"></script>
-  <script src="js/dataTables/jquery.dataTables.js"></script>
-  <script type="text/javascript">
-        $(document).ready(function () {
-            $('#tabel').DataTable();
-        });
-    </script>
 </body>
 
 </html>
