@@ -6,7 +6,8 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$siswa = query ("SELECT * FROM pengunjung_siswa"); 
+$siswa = query ("SELECT pengunjung_siswa.nama_siswa, kelas.kelas, kelas.jurusan, pengunjung_siswa.tanggal_absensi, pengunjung_siswa.keperluan 
+FROM pengunjung_siswa LEFT JOIN kelas ON kelas.kode_kelas = pengunjung_siswa.kode_kelas"); 
 ?>
 
 <!DOCTYPE html>
@@ -132,7 +133,7 @@ $siswa = query ("SELECT * FROM pengunjung_siswa");
       <form action="laporan_pengunjung_siswa.php" method="post">
       <ul width="50"><input required type="radio" name="cek" value="1" style="cursor: pointer;"> Semua Data</ul>
       <ul width="50"><input required type="radio" name="cek" value="2" style="cursor: pointer;">Tanggal
-      <input type="date" name="tgl_awal" value="<?= date("l,d/m/Y") ?>" style="height: 20px;"> Sampai <span class="right"><input type="date" value="<?= date("l,d/m/Y") ?>" name="tgl_akhir" style="height: 20px;"></span>
+      <input type="date" name="tgl_awal" value="<?= date("Y/m/d") ?>" style="height: 20px;"> Sampai <span class="right"><input type="date" value="<?= date("Y/m/d") ?>" name="tgl_akhir" style="height: 20px;"></span>
       </ul>
       <ul class="text-left"><input type="submit" name="tampilkan" class="btn btn-primary" value="Tampilkan"></ul>
     </form>
@@ -154,7 +155,7 @@ $siswa = query ("SELECT * FROM pengunjung_siswa");
 			      <th>no</th>
             <th>tanggal_absensi</th>
             <th>Nama Siswa</th>
-            <th>Kode Kelas</th>
+            <th>Kelas</th>
              <th>Keperluan</th>
         </tr>
 		<?php $i = 1; ?> 
@@ -165,7 +166,10 @@ $siswa = query ("SELECT * FROM pengunjung_siswa");
 			      <td><?=$i; ?></td>
             <td><?php echo $row["tanggal_absensi"];?></td>
             <td><?php echo $row["nama_siswa"];?></td>
-            <td><?php echo $row["kode_kelas"];?></td>
+            <td><?php echo $row["kelas"];
+                     echo"  ". $row["jurusan"];
+                ?>
+            </td>
             <td><?php echo $row["keperluan"];?></td>
             
         </tr>

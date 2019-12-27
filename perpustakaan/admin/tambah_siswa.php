@@ -46,7 +46,7 @@ if( isset($_POST["submit"]) ) {
             <div class="form-row">
             <div class="form-group col-md-6">
               <label for="tanggal_absensi">Tanggal Absensi : </label> 
-              <input type="text" class="form-control" placeholder = "<?php  echo Date('d-m-Y');?>" name="tanggal_absensi" readonly>
+              <input type="text" class="form-control" placeholder = "<?php  echo Date('Y-m-d');?>" name="tanggal_absensi" readonly>
             </div>   
             <div class="form-group col-md-6">
             <label for="nama_siswa"> Nama siswa : </label>

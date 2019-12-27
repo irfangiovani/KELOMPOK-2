@@ -517,7 +517,7 @@ function tambahsiswa($datasiswa) {
     global $conn;
 
     // ambil data dari tiap elemen dalam form
-    $tanggal_absensi =  Date('d-m-Y');
+    $tanggal_absensi =  Date('Y-m-d');
     $nama_siswa = htmlspecialchars($datasiswa["nama_siswa"]);
     $kode_kelas = htmlspecialchars($datasiswa["kode_kelas"]);
     $keperluan = htmlspecialchars($datasiswa["keperluan"]);
