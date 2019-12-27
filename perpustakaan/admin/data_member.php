@@ -154,8 +154,7 @@ if( isset($_GET['acc'])=='approve'){
                           <th>no</th>
                           <th>Nomor Induk Siswa (NIS)</th>
                           <th>Nama Siswa</th>
-                          <th>Kelas</th>
-                          <th>Jurusan</th>
+                          <th>Nama Kelas</th>
                           <th>No Telepon</th>
                           <th>Alamat</th>
                           <th>Status</th>
@@ -170,7 +169,6 @@ if( isset($_GET['acc'])=='approve'){
                           <td><?=$i; ?></td>
                           <td><?php echo $row["nis"]; ?></td>
                           <td><?php echo $row["nama_siswa"];?></td>
-                          <td><?php echo $row["kelas"];?></td>
                           <td><?php echo $row["jurusan"];?></td>
                           <td><?php echo $row["no_telp"];?></td>
                           <td><?php echo $row["alamat"];?></td>

@@ -6,7 +6,6 @@ if( isset($_POST["submit"])){
     // ambil data dari tiap elemen dalam form
     $nis = $_POST["nis"];
     $nama = $_POST["nama"];
-    $kelas = $_POST["kelas"];
     $jurusan = $_POST["jurusan"];
     $no_telp = $_POST["no_telp"];
     $alamat = $_POST["alamat"];
@@ -14,7 +13,7 @@ if( isset($_POST["submit"])){
 
     //query insert data
     $tambah = mysqli_query($conn, "UPDATE member_perpus 
-                                  SET nis='$nis', nama_siswa='$nama',kelas='$kelas', jurusan='$jurusan', no_telp = '$no_telp', alamat = '$alamat', status ='tidak aktif'
+                                  SET nis='$nis', nama_siswa='$nama', jurusan='$jurusan', no_telp = '$no_telp', alamat = '$alamat', status ='tidak aktif'
                                   WHERE nis = '$nis'");
     if($tambah){
       echo "
@@ -66,38 +65,8 @@ if( isset($_POST["submit"])){
 
     <!-- Main css -->
     <link rel="stylesheet" href="cssregis/style.css">
-    <style>
-.autocomplete-suggestions {
-    border: 1px solid #999;
-    background: #FFF;
-    overflow: auto;
-}
-
-.autocomplete-suggestion {
-    padding: 2px 5px;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.autocomplete-selected {
-    background: #F0F0F0;
-}
-
-.autocomplete-suggestions strong {
-    font-weight: normal;
-    color: #3399FF;
-}
-
-.autocomplete-group {
-    padding: 2px 5px;
-}
-
-.autocomplete-group strong {
-    display: block;
-    border-bottom: 1px solid #000;
-}
-      </style>
-    
+    <!-- desain autocomplete css -->
+    <link rel="stylesheet" href="css/autocomplet_registrasi.css">
 </head>
 <body>
   <!--/ Nav Star /-->
@@ -155,25 +124,16 @@ if( isset($_POST["submit"])){
                                 <input type="text" name="nis" id="nis" placeholder="NIS Terisi Otomatis" readonly/>
                             </div>
                             <div class="form-group">
-                                <label for="kelas"><i class="zmdi zmdi-graduation-cap"></i></label>
-                                <select class="form-control" name="kelas" id="kelas" required >
-                                <option value="">- pilih Kelas -</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
                                 <label for="jurusan"><i class="zmdi zmdi-edit"></i></label>
-                                <input type="text" name="jurusan" id="jurusan" placeholder="Jurusan" required/>
+                                <input type="text" name="jurusan" id="jurusan" placeholder="Nama Kelas" required/>
                             </div>
                             <div class="form-group">
                                 <label for="no_telpn"><i class="zmdi zmdi-phone"></i></label>
-                                <input type="text" name="no_telp" id="no_telp" placeholder="No Telpon" required/>
+                                <input type="text" name="no_telp" id="no_telp" placeholder="No Telpon"  autocomplete="off" required/>
                             </div>
                             <div class="form-group">
                                 <label for="alamat"><i class="zmdi zmdi-home"></i></label>
-                                <input type="text" name="alamat" id="alamat" placeholder="Alamat" required/>
+                                <input type="text" name="alamat" id="alamat" placeholder="Alamat"  autocomplete="off" required/>
                             </div>
                             <div class="form-group">
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>Cek Nama Anda Jika Ada, Nama Anda Belum Terdaftar Silahkan Registrasi Data Dengan Tepat<a href="#" class="term-service"></a></label>

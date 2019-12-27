@@ -71,7 +71,7 @@ if( isset($_POST["submit"]) ) {
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
-              <a href="literasi.php" class="btn btn-success">Kembali</a>
+              <a href="tamupen.php" class="btn btn-success">Kembali</a>
             </div>
           </div>
         <br><br>

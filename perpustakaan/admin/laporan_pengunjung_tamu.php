@@ -9,13 +9,11 @@ if (isset($_POST['tampilkan'])) {
 	$tgl_akhir = $_POST['tgl_akhir'];
 
 	if ($cek == 1) {
-		$query1= "SELECT pengunjung_siswa.nama_siswa,  kelas.jurusan, pengunjung_siswa.tanggal_absensi, pengunjung_siswa.keperluan 
-        FROM pengunjung_siswa LEFT JOIN kelas ON kelas.kode_kelas = pengunjung_siswa.kode_kelas";
+		$query1= "SELECT * FROM tamu";
 	}
 	if($cek==2){
-        $query1= " SELECT pengunjung_siswa.nama_siswa, kelas.jurusan, pengunjung_siswa.tanggal_absensi, pengunjung_siswa.keperluan 
-        FROM pengunjung_siswa LEFT JOIN kelas ON kelas.kode_kelas = pengunjung_siswa.kode_kelas
-        WHERE pengunjung_siswa.tanggal_absensi>='$tgl_awal' AND pengunjung_siswa.tanggal_absensi <='$tgl_akhir' ";
+        $query1= "SELECT * FROM tamu
+        WHERE tamu.tanggal_kedatangan>='$tgl_awal' AND tamu.tanggal_kedatangan<='$tgl_akhir' ";
 
 	}
 }
@@ -50,19 +48,19 @@ $pdf->Cell(5,0.7,"Di cetak pada : ".date("D-d/m/Y"),0,0,'C');
 $pdf->ln(1);
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(1, 0.8, 'NO', 1, 0, 'C');
-$pdf->Cell(5, 0.8, 'Nama siswa', 1, 0, 'C');
-$pdf->Cell(8, 0.8, 'Nama Kelas', 1, 0, 'C');
-$pdf->Cell(4, 0.8, 'Tanggal kunjungan', 1, 0, 'C');
+$pdf->Cell(5, 0.8, 'Nama Tamu', 1, 0, 'C');
+$pdf->Cell(8, 0.8, 'Delegasi', 1, 0, 'C');
+$pdf->Cell(4, 0.8, 'Tanggal kedatangan', 1, 0, 'C');
 $pdf->Cell(8, 0.8, 'Keperluan', 1, 1, 'C');
 $pdf->SetFont('Arial','',10);
 $no=1;
 $query=mysqli_query($conn, $query1);
 while($lihat=mysqli_fetch_array($query)){
 	$pdf->Cell(1, 0.8, $no , 1, 0, 'C');
-	$pdf->Cell(5, 0.8, $lihat['nama_siswa'] , 1, 0, 'C');
-    $pdf->Cell(8, 0.8, $lihat['jurusan'],1, 0, 'C');
-	$pdf->Cell(4, 0.8, $lihat['tanggal_absensi'], 1, 0,'C');
-	$pdf->Cell(8, 0.8, $lihat['keperluan'],1, 1, 'C');
+	$pdf->Cell(5, 0.8, $lihat['nama_tamu'] , 1, 0, 'C');
+    $pdf->Cell(8, 0.8, $lihat['delegasi'],1, 0, 'C');
+	$pdf->Cell(4, 0.8, $lihat['tanggal_kedatangan'], 1, 0,'C');
+	$pdf->Cell(8, 0.8, $lihat['kepentingan'],1, 1, 'C');
 
 	$no++;
 }

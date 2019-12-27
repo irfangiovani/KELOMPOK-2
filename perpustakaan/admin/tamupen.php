@@ -129,6 +129,13 @@ $tamupen = query ("SELECT * FROM tamu ");
           </div>
         </div>
       </div>
+      <form action="laporan_pengunjung_tamu.php" method="post">
+      <ul width="50"><input required type="radio" name="cek" value="1" style="cursor: pointer;"> Semua Data</ul>
+      <ul width="50"><input required type="radio" name="cek" value="2" style="cursor: pointer;">Tanggal
+      <input type="date" name="tgl_awal" value="<?= date("Y/m/d") ?>" style="height: 20px;"> Sampai <span class="right"><input type="date" value="<?= date("Y/m/d") ?>" name="tgl_akhir" style="height: 20px;"></span>
+      </ul>
+      <ul class="text-left"><input type="submit" name="tampilkan" class="btn btn-primary" value="Tampilkan"></ul>
+    </form>
     </section>
 
     <br>

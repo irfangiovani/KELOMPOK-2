@@ -6,7 +6,7 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$siswa = query ("SELECT pengunjung_siswa.nama_siswa, kelas.kelas, kelas.jurusan, pengunjung_siswa.tanggal_absensi, pengunjung_siswa.keperluan 
+$siswa = query ("SELECT pengunjung_siswa.nama_siswa, kelas.jurusan, pengunjung_siswa.tanggal_absensi, pengunjung_siswa.keperluan 
 FROM pengunjung_siswa LEFT JOIN kelas ON kelas.kode_kelas = pengunjung_siswa.kode_kelas"); 
 ?>
 
@@ -151,12 +151,13 @@ FROM pengunjung_siswa LEFT JOIN kelas ON kelas.kode_kelas = pengunjung_siswa.kod
     <form action="" method="post">
       <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover ">
-        <tr>
+        <tr bgcolor="yellow" align="center">
 			      <th>no</th>
-            <th>tanggal_absensi</th>
             <th>Nama Siswa</th>
-            <th>Kelas</th>
+            <th>Nama Kelas</th>
+            <th>tanggal Kunjungan</th>
              <th>Keperluan</th>
+             <th>Aksi</th>
         </tr>
 		<?php $i = 1; ?> 
         <?php
@@ -164,14 +165,10 @@ FROM pengunjung_siswa LEFT JOIN kelas ON kelas.kode_kelas = pengunjung_siswa.kod
         ?>
         <tr>
 			      <td><?=$i; ?></td>
-            <td><?php echo $row["tanggal_absensi"];?></td>
             <td><?php echo $row["nama_siswa"];?></td>
-            <td><?php echo $row["kelas"];
-                     echo"  ". $row["jurusan"];
-                ?>
-            </td>
+            <td><?php echo $row["jurusan"];?></td>
+            <td><?php echo $row["tanggal_absensi"];?></td>
             <td><?php echo $row["keperluan"];?></td>
-            
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>

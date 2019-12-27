@@ -35,6 +35,8 @@ if( isset($_POST["submit"]) ) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
+     <!-- desain autocomplete css -->
+     <link rel="stylesheet" href="../user/css/autocomplet_registrasi.css">
     <title>Tambah Data siswa</title>
 </head>
 <body>
@@ -42,37 +44,33 @@ if( isset($_POST["submit"]) ) {
     <h2 class="alert alert-info text-center mt-3">Tambah Data siswa</h2>
     <div class="pull-right">
     <form action="" method="post" enctype="multipart/form-data">
-     
             <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="tanggal_absensi">Tanggal Absensi : </label> 
-              <input type="text" class="form-control" placeholder = "<?php  echo Date('Y-m-d');?>" name="tanggal_absensi" readonly>
-            </div>   
-            <div class="form-group col-md-6">
-            <label for="nama_siswa"> Nama siswa : </label>
-            <input type="text" class="form-control" placeholder="Masukkan Nama Siswa" name="nama_siswa" id="nama_siswa">
+              <div class="form-group col-md-6">
+                <label for="tanggal_absensi">Tanggal Absensi : </label> 
+                  <input type="text" class="form-control" placeholder = "<?php  echo Date('Y-m-d');?>" name="tanggal_absensi" readonly>
+              </div> 
+              </div>
+              <div class="form-row">  
+              <div class="form-group col-md-6">
+                <label for="nama_siswa"> Nama siswa : </label>
+                <input type="text" class="form-control" placeholder="Masukkan Nama Siswa" name="nama_siswa" id="nama_siswa"
+                       autocomplete="off" require>
+              </div>
             </div>
-            </div>
-
             <div class="form-row">
-            <div class="form-group col-md-6">
-            <label for="id_kode_kelas">Kode Kelas : </label> 
-                <select class="form-control" name="kode_kelas" id="kode_kelas" required >
-                  <option value="">- Pilih Kode Kelas -</option>
-                  <?php
-                    $sql_kode = mysqli_query($conn, "SELECT * FROM peminjaman_buku_mapel") or die (mysqli_query($conn));
-                    while ($data_kode = mysqli_fetch_array($sql_kode)){
-                      echo '<option value="'.$data_kode['kode_kelas'].'">' .$data_kode['kode_kelas']. '</option>'; 
-                    }
-                    ?>
-                </select>
-            </div>
-            </div>
-
+              <div class="form-group col-md-6">
+                <label for="kelas"> Nama Kelas : </label> 
+                <input type="text" class="form-control" id="kelas" name="kelas" placeholder="Masukkan Nama Kelas" value="" require>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="kode_kelas"> Kode Kelas : </label> 
+                <input type="text" class="form-control" id="kode_kelas" name="kode_kelas" placeholder="Kode Kelas Otomatis Terisi" value="" readonly>
+              </div>
+          </div> 
             <div class="form-row">
             <div class="form-group col-md-6">
               <label for="keperluan">Keperluan : </label> 
-              <input type="text" class="form-control" placeholder="Masukkan Keperluan" name="keperluan" id="keperluan">
+              <input type="text" class="form-control" placeholder="Masukkan Keperluan" name="keperluan" id="keperluan" autocomplete= "off" require>
             </div>
             </div>
 
@@ -80,18 +78,30 @@ if( isset($_POST["submit"]) ) {
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
-              <a href="literasi.php" class="btn btn-success">Kembali</a>
+              <a href="siswa.php" class="btn btn-success">Kembali</a>
             </div>
           </div>
-          
-        <br><br>
-         
-      
+        <br><br>  
     </form>
     </div>
     </div>
+     <!-- Memanggil jQuery.js -->
+     <script src="js/autocomplete/jquery-3.2.1.min.js"></script>
+    <!-- Memanggil Autocomplete.js -->
+    <script src="js/autocomplete/jquery.autocomplete.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
 
-
+          // Selector input yang akan menampilkan autocomplete.
+          $( "#kelas" ).autocomplete({
+              serviceUrl: "source_kelas.php",   // Kode php untuk prosesing data.
+              dataType: "JSON",           // Tipe data JSON.
+              onSelect: function (suggestion) {
+                  $( "#kode_kelas" ).val("" + suggestion.kode_kelas);
+              }
+          });
+      })
+    </script>
                 
 </body>
 </html>
