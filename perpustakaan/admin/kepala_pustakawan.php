@@ -1,13 +1,3 @@
-<?php
-session_start();
- if( !isset($_SESSION["login"])){
-     header("location: loginadmin.php");
-     exit;
- }
- require 'functions.php';
-$pustakawan = query("SELECT * FROM pustakawan");
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,16 +31,18 @@ $pustakawan = query("SELECT * FROM pustakawan");
     Author: BootstrapMade.com
     Author URL: https://bootstrapmade.com
   ======================================================= -->
-</head>
 
+  
+</head>  
 <body>
-  <div id="wrapper">
+
+<div id="wrapper">
     <!-- start header -->
     <header>
     <?php include 'tag_header.php';  ?>
       <div class="container">
         <div class="row nomargin">
-          <div class="span4">
+          <div class="span3">
             <div class="logo">
                 <h1><a class="navbar-brand" href="index.html">
                     <img src="ico/logosmk3.jpg"/> SMKN 3 BONDOWOSO</a></h1>
@@ -113,54 +105,22 @@ $pustakawan = query("SELECT * FROM pustakawan");
     </header>
     <!-- end header -->
 
-    <!-- section intro -->
-    <section id="intro">
-      <div class="intro-content">
-        <h2>Welcome To K-Negabon Library</h2>
-        <h3>PERPUSTAKAAN SMK NEGERI 3 BONDOWOSO</h3>
-      </div>
-    </section>
-    <br><br>
-    <div class="offside-3 col-lg-7">
-    <form action="" method="post">
-      <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover ">
+	<!--/ Contact Star /-->
+	<section class="contact">
+	<div class="contact-map box">
+            <div id="map" class="contact-map">
+              <style>
+                .gambar {
+                  width: 2090px;
+                  height: 700px;
+                }
+              </style>
+              <img class="gambar" src="img/kepala_perpus.jpg">
+            </div>
+	</section>
 
-        <tr>
-            <th>NO</th>
-		      	<th>NIP</th>
-            <th>Nama</th>
-            <th>Username</th>
-            <th>Aksi</th>
-        </tr>
-		<?php $i = 1; ?> 
-        <?php
-            foreach( $pustakawan as $row) :
-        ?>
-        <tr>
-			      <td><?=$i; ?></td>
-            <td><?php echo $row["nip"]; ?></td>
-            <td><?php echo $row["nama_pustakawan"];?></td>
-            <td><?php echo $row["username"];?></td>
-            <td>
-              <a href="ubah_pustakawan.php?id=<?php echo $row ['nip']; ?>" class="btn btn-warning" title="ubah data" >ubah</a>
-
-              <a href="hapus_pustakawan.php?id=<?= $row["nip"]; ?>
-              " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger" title="hapus data">hapus</a>
-            </td>
-        </tr>
-			<?php $i++; ?>
-			<?php endforeach; ?>
-    </table>
-    </div>
-    </form>
-  </div>
-    <!-- /section intro -->
-
-    <section id="content">
+	<section id="content">
       <div class="container">
-
-
         <div class="row">
           <div class="span12">
             <div class="row">
@@ -228,32 +188,7 @@ $pustakawan = query("SELECT * FROM pustakawan");
             </div>
           </div>
         </div>
-    </section>
-
-  
-    <footer>
-      <?php include'footer_admin.php';   ?>
-    </footer>
-  </div>
-  <a href="#" class="scrollup"><i class="icon-angle-up icon-rounded icon-bglight icon-2x"></i></a>
-
-  <!-- javascript
-    ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="js/jquery.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/modernizr.custom.js"></script>
-  <script src="js/toucheffects.js"></script>
-  <script src="js/google-code-prettify/prettify.js"></script>
-  <script src="js/jquery.prettyPhoto.js"></script>
-  <script src="js/portfolio/jquery.quicksand.js"></script>
-  <script src="js/portfolio/setting.js"></script>
-  <script src="js/animate.js"></script>
-
-  <!-- Template Custom JavaScript File -->
-  <script src="js/custom.js"></script>
+    </section>  
 
 </body>
-
 </html>

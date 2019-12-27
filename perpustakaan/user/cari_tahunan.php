@@ -96,7 +96,7 @@ require 'functions.php';
                   width: 700px;
                   height: 400px;
                   background-color: rgba(0,0,0,0.3);
-                  margin: 0 auto;
+                  margin: 0 auto;  
                   margin-top: 150px;
                   padding-top: -8px;
                   padding-left: 80px;
