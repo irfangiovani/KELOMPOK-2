@@ -119,9 +119,9 @@ $pustakawan = query("SELECT * FROM pustakawan");
         <h2>Welcome To K-Negabon Library</h2>
         <h3>PERPUSTAKAAN SMK NEGERI 3 BONDOWOSO</h3>
       </div>
-    </section>
+    </section>                                          
     <br><br>
-    <div class="offside-3 col-lg-7">
+    <div class="offside-3 col-lg-7">         
     <form action="" method="post">
       <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover ">
@@ -168,14 +168,14 @@ $pustakawan = query("SELECT * FROM pustakawan");
                 <div class="box aligncenter">
                   <div class="icon">
                     <span class="badge badge-info badge-circled">1</span>
-                    <i class="ico icon-dropbox icon-5x"></i>
+                    <image class="gambar" src="img/sekolah.png"></i>
                   </div>
                   <div class="text">
                     <h4><strong>Kepala Sekolah Perpustakaan</strong></h4>
                     <p>
                       Memimpin sekolah dalam rangka pendayagunaan sumber daya sekolah secara optimal.
                     </p>
-                    <a href="biopustakayudi.php">Learn More</a>
+                    <a href="sekolah_pustakawan.php">Learn More</a>
                   </div>
                 </div>
               </div>
@@ -184,14 +184,14 @@ $pustakawan = query("SELECT * FROM pustakawan");
                 <div class="box aligncenter">
                   <div class="icon">
                     <span class="badge badge-success badge-circled">2</span>
-                    <i class="ico icon-bitbucket icon-5x"></i>
+                    <image class="gambar" src="img/sekres.png"></i>
                   </div>
                   <div class="text">
                     <h4><strong>Kepala Perpustakaan</strong></h4>
                     <p>
                       Bertanggung jawab dalam penyusunan rencana strategis, rencana kerja, dan anggaran di bidang perpustakaan.
                     </p>
-                    <a href="#">Learn More</a>
+                    <a href="kepala_pustakawan.php">Learn More</a>
                   </div>
                 </div>
               </div>
@@ -199,14 +199,14 @@ $pustakawan = query("SELECT * FROM pustakawan");
                 <div class="box aligncenter">
                   <div class="icon">
                     <span class="badge badge-warning badge-circled">3</span>
-                    <i class="ico icon-rocket icon-5x"></i>
+                    <image class="gambar" src="img/trasi.png"></i>
                   </div>
                   <div class="text">
                     <h4><strong>Adminitrasi Perpustakaan</strong></h4>
                     <p>
                       Memberikan layanan pengguna perpustakaan seperti sirkulasi peminjaman dan pengembalian.
                     </p>
-                    <a href="#">Learn More</a>
+                    <a href="administrasi.php">Learn More</a>
                   </div>
                 </div>
               </div>
@@ -214,14 +214,14 @@ $pustakawan = query("SELECT * FROM pustakawan");
                 <div class="box aligncenter">
                   <div class="icon">
                     <span class="badge badge-important badge-circled">4</span>
-                    <i class="ico icon-cut icon-5x"></i>
+                    <image class="gambar" src="img/teknis12.png"></i>
                   </div>
                   <div class="text">
                     <h4><strong>Pelayanan Teknisi</strong></h4>
                     <p>
                      Bertanggung jawab dalam kegiatan pengadaan perpustakaan dan pengolahan perpustakaan.
                     </p>
-                    <a href="#">Learn More</a>
+                    <a href="pelayan_teknis.php">Learn More</a>
                   </div>
                 </div>
               </div>

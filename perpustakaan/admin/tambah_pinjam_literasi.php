@@ -63,7 +63,7 @@ echo Date('l, Y-m-d');
           <input type="text" class="form-control" id="nis" name="nis" placeholder="NIS Otomatis Terisi" value="" readonly>
         </div>
       </div>
-      <div class="form-row">
+      <div class="form-row">    
         <div class="form-group col-md-6">
           <label for="judul_buku"> Judul Buku Literasi : </label> 
           <input type="text" class="form-control" id="judul_buku" name="judul_buku" placeholder="Masukkan Judul" value="">

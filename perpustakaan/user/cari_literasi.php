@@ -86,7 +86,7 @@ require 'functions.php';
   <section class="contact">
               <style>
                 body {
-                  background: url(img/ground.jpg) no-repeat center fixed;
+                  background: url(img/horizon.jpg) no-repeat center fixed;
                   -webkit-backgroun-size: cover;
                   -moz-background-size: cover;
                   -o-background: cover;
