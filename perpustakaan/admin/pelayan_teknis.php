@@ -166,7 +166,7 @@
                     <p>
                       Memberikan layanan pengguna perpustakaan seperti sirkulasi peminjaman dan pengembalian.
                     </p>
-                    <a href="#">Learn More</a>
+                    <a href="administrasi.php">Learn More</a>
                   </div>
                 </div>
               </div>
@@ -181,7 +181,7 @@
                     <p>
                      Bertanggung jawab dalam kegiatan pengadaan perpustakaan dan pengolahan perpustakaan.
                     </p>
-                    <a href="pelayan_teknis">Learn More</a>
+                    <a href="pelayan_teknis.php">Learn More</a>
                   </div>
                 </div>
               </div>

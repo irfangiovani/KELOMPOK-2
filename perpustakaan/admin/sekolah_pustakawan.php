@@ -166,7 +166,7 @@
                     <p>
                       Memberikan layanan pengguna perpustakaan seperti sirkulasi peminjaman dan pengembalian.
                     </p>
-                    <a href="#">Learn More</a>
+                    <a href="administrasi.php">Learn More</a>
                   </div>
                 </div>
               </div>

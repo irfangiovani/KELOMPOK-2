@@ -115,7 +115,7 @@
                   height: 700px;
                 }
               </style>
-              <img class="gambar" src="img/kepala_perpus.jpg">
+              <img class="gambar" src="img/petugas_administrasi.jpg">
             </div>
 	</section>
 
