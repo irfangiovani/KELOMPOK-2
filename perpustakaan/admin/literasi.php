@@ -143,8 +143,7 @@ if( isset($_POST["cariliterasi"])) {
 
     <br>
     <div class="container-fluid">
-    <a href="tambah_literasi.php">Tambah Buku Literasi Umum</a>
-
+    <a href="tambah_literasi.php" class="btn btn-primary">Tambah Buku Literasi Umum</a>
     <br><br>
 
   <div class="offside-3 col-lg-7">

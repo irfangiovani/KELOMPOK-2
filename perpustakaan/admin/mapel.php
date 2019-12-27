@@ -144,7 +144,7 @@ if( isset($_POST["carimapel"]) ) {
 
     <br>
     <div class="container-fluid">
-    <a href="tambah_mapel.php">Tambah Buku Mapel Kelas</a>
+    <a href="tambah_mapel.php" class="btn btn-danger">Tambah Buku Mapel Kelas</a>
     <br><br>
 <div class="content">
       <div class="box">

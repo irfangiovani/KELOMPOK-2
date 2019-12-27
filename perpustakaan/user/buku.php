@@ -2,8 +2,8 @@
 //Koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
 require 'functions.php';
-$buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
- //$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
+$buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
+ $buku_mapel_kelas = query ("SELECT b.gambar_sampul, b.judul_buku_mapel, b.stok, k.jurusan, k.kelas, p.nama_peminjam, p.waktu_peminjaman, p.banyak_buku FROM peminjaman_buku_mapel p LEFT JOIN buku_mapel_kelas b ON b.id_judul_buku_mapel = p.id_judul_buku_mapel LEFT JOIN kelas k ON k.kode_kelas = p.kode_kelas ORDER BY p.id_pinjam_buku_mapel DESC"); 
 
 ?>
 <?php require'head.php'; ?>
@@ -117,17 +117,17 @@ $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
   <section class="property-grid grid">
     <div class="container">
       <div class="row">
-        <?php foreach ( $buku_literasi_umum as $row) : ?>
+        <?php foreach ( $buku_mapel_kelas as $row) : ?>
         <div class="col-md-4">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
-              <img src="../admin/img/literasi/<?= $row['gambar_sampul']; ?>" alt="" class="img-a img-fluid">
+              <img src="../admin/img/mapel/<?= $row['gambar_sampul']; ?>" alt="" class="img-a img-fluid">
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
                 <div class="card-header-a">
                   <h2 class="card-title-a">
-                    <a href="#"><?= $row['judul_buku_literasi']; ?></a>
+                    <a href="#"><?= $row['judul_buku_mapel']; ?></a>
                   </h2>
                 </div>
                 <div class="card-body-a">
