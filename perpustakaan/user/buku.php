@@ -3,7 +3,6 @@
 $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
 require 'functions.php';
 $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
- $buku_mapel_kelas = query ("SELECT b.gambar_sampul, b.judul_buku_mapel, b.stok, k.jurusan, k.kelas, p.nama_peminjam, p.waktu_peminjaman, p.banyak_buku FROM peminjaman_buku_mapel p LEFT JOIN buku_mapel_kelas b ON b.id_judul_buku_mapel = p.id_judul_buku_mapel LEFT JOIN kelas k ON k.kode_kelas = p.kode_kelas ORDER BY p.id_pinjam_buku_mapel DESC"); 
 
 ?>
 <?php require'head.php'; ?>
@@ -125,15 +124,17 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
             </div>
             <div class="card-overlay">
               <div class="card-overlay-a-content">
-                <div class="card-header-a">
+                <div class="card-header-a text-center">
                   <h2 class="card-title-a">
                     <a href="#"><?= $row['judul_buku_mapel']; ?></a>
                   </h2>
                 </div>
                 <div class="card-body-a">
-                  <a href="property-single.html" class="link-a">Lihat Detail Buku
-                    <span class="ion-ios-arrow-forward"></span>
-                  </a>
+                  <div class="price-box d-flex">
+                  <a href="property-single.html" class="link-a">
+                    <span class="price-a fa fa-group"> Lihat Detail Peminjam Buku</span>
+                  </a>  
+                  </div>
                 </div>
                 <div class="card-footer-a text-center">
                   <ul class="card-info d-flex justify-content-around">

@@ -56,7 +56,6 @@ if( isset($_POST["cariliterasi"])) {
   <div id="wrapper">
     <!-- start header -->
     <header>
-      <div class="top">
       <?php include 'tag_header.php';  ?>
       <div class="container">
         <div class="row nomargin">
