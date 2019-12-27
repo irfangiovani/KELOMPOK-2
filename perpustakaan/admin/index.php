@@ -50,7 +50,7 @@ $pustakawan = query("SELECT * FROM pustakawan");
     <?php include 'tag_header.php';  ?>
       <div class="container">
         <div class="row nomargin">
-          <div class="span3">
+          <div class="span4">
             <div class="logo">
                 <h1><a class="navbar-brand" href="index.html">
                     <img src="ico/logosmk3.jpg"/> SMKN 3 BONDOWOSO</a></h1>

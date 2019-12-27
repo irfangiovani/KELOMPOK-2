@@ -8,7 +8,6 @@ if( !isset($_SESSION["login"])){
   $id = $_GET["id"];
   $data = query("SELECT * FROM buku_literasi_umum WHERE Kode_buku_literasi = '$id'")[0];
   
-
   if( isset($_POST["submit"]) ) {
 
   if( ubahliterasi($_POST) > 0 ) {
