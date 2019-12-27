@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head>   
   <meta charset="utf-8">
   <title>Perpustakaan SMKN 3 Bondowoso</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -128,7 +128,7 @@
                 <div class="box aligncenter">
                   <div class="icon">
                     <span class="badge badge-info badge-circled">1</span>
-                    <i class="ico icon-dropbox icon-5x"></i>
+                    <image class="gambar" src="img/sekolah.png"></i>
                   </div>
                   <div class="text">
                     <h4><strong>Kepala Sekolah Perpustakaan</strong></h4>
@@ -144,7 +144,7 @@
                 <div class="box aligncenter">
                   <div class="icon">
                     <span class="badge badge-success badge-circled">2</span>
-                    <i class="ico icon-bitbucket icon-5x"></i>
+                    <<image class="gambar" src="img/sekres.png"></i>
                   </div>
                   <div class="text">
                     <h4><strong>Kepala Perpustakaan</strong></h4>
@@ -159,7 +159,7 @@
                 <div class="box aligncenter">
                   <div class="icon">
                     <span class="badge badge-warning badge-circled">3</span>
-                    <i class="ico icon-rocket icon-5x"></i>
+                    <image class="gambar" src="img/trasi.png"></i>
                   </div>
                   <div class="text">
                     <h4><strong>Adminitrasi Perpustakaan</strong></h4>
@@ -174,7 +174,7 @@
                 <div class="box aligncenter">
                   <div class="icon">
                     <span class="badge badge-important badge-circled">4</span>
-                    <i class="ico icon-cut icon-5x"></i>
+                    <image class="gambar" src="img/teknis12.png"></i>
                   </div>
                   <div class="text">
                     <h4><strong>Pelayanan Teknisi</strong></h4>

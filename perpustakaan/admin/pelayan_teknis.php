@@ -120,7 +120,7 @@
 	</section>
 
 	<section id="content">
-      <div class="container">
+      <div class="container">  
         <div class="row">
           <div class="span12">
             <div class="row">
@@ -128,7 +128,7 @@
                 <div class="box aligncenter">
                   <div class="icon">
                     <span class="badge badge-info badge-circled">1</span>
-                    <i class="ico icon-dropbox icon-5x"></i>
+                    <image class="gambar" src="img/sekolah.png"></i>
                   </div>
                   <div class="text">
                     <h4><strong>Kepala Sekolah Perpustakaan</strong></h4>
@@ -159,7 +159,7 @@
                 <div class="box aligncenter">
                   <div class="icon">
                     <span class="badge badge-warning badge-circled">3</span>
-                    <image class="gambar" src="img/admin.png"></i> 
+                    <<image class="gambar" src="img/trasi.png"></i> 
                   </div>
                   <div class="text">
                     <h4><strong>Adminitrasi Perpustakaan</strong></h4>
