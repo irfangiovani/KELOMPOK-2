@@ -175,7 +175,7 @@ $pustakawan = query("SELECT * FROM pustakawan");
                     <p>
                       Memimpin sekolah dalam rangka pendayagunaan sumber daya sekolah secara optimal.
                     </p>
-                    <a href="biopustakayudi.php">Learn More</a>
+                    <a href="sekolah_pustakawan.php">Learn More</a>
                   </div>
                 </div>
               </div>
