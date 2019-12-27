@@ -6,8 +6,8 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$data_pengembalian_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_mapel, buku_mapel_kelas.judul_buku_mapel, kelas.jurusan,
-                            kelas.kelas, peminjaman_buku_mapel.nama_peminjam, pengembalian_buku_mapel.nama_pengembali, 
+$data_pengembalian_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_mapel, buku_mapel_kelas.judul_buku_mapel,buku_mapel_kelas.untuk_kelas,
+                            kelas.jurusan,kelas.kelas, peminjaman_buku_mapel.nama_peminjam, pengembalian_buku_mapel.nama_pengembali, 
                             peminjaman_buku_mapel.waktu_peminjaman, pengembalian_buku_mapel.waktu_pengembalian, 
                             peminjaman_buku_mapel.banyak_buku, pengembalian_buku_mapel.banyak_buku_kembali, 
                             pengembalian_buku_mapel.buku_kurang, pengembalian_buku_mapel.denda, peminjaman_buku_mapel.notifikasi
@@ -16,6 +16,7 @@ $data_pengembalian_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_m
                             LEFT JOIN buku_mapel_kelas ON buku_mapel_kelas.id_judul_buku_mapel = peminjaman_buku_mapel.id_judul_buku_mapel 
                             LEFT JOIN kelas ON kelas.kode_kelas = peminjaman_buku_mapel.kode_kelas 
                             LEFT JOIN pengembalian_buku_mapel ON pengembalian_buku_mapel.id_pinjam_buku_mapel = peminjaman_buku_mapel.id_pinjam_buku_mapel 
+                            WHERE peminjaman_buku_mapel.notifikasi = 'kembali'
                             ORDER BY pengembalian_buku_mapel.id_kembali_mapel DESC ");
 ?>
 
@@ -155,7 +156,6 @@ $data_pengembalian_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_m
                 <thead>
                   <tr bgcolor='yellow' align='center'>
                     <th>NO</th>
-                    <th>ID Pinjam Mapel</th>
                     <th>Kode Buku Mapel</th>
                     <th>Kode Kelas</th>
                     <th>Nama Peminjam</th>
@@ -174,20 +174,22 @@ $data_pengembalian_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_m
                   ?>
                   <tr>
 			              <td><?=$i; ?></td>
-                    <td><?php echo $row["id_pinjam_buku_mapel"];?></td>
-                    <td><?php echo $row["judul_buku_mapel"];?></td>
+                    <td><?php echo $row["judul_buku_mapel"];
+                              echo " kelas "; 
+                              echo $row["untuk_kelas"];
+                    ?></td>
                     <td><?php echo $row["jurusan"];?> kelas <?php echo $row["kelas"];?></td>
                     <td><?php echo $row["nama_peminjam"];?></td>
                     <td><?php echo $row["nama_pengembali"];?></td>
                     <td>
                       <?php echo $row["waktu_peminjaman"]; 
-                        echo "<font color='green'> Sampai </font>"; ?>
-                      <?php echo $row["waktu_pengembalian"];?>
+                            echo "<font color='green'> Sampai </font>"; 
+                            echo $row["waktu_pengembalian"];?>
                     </td>
                     <td>
                       <?php echo $row["banyak_buku"];
-                        echo "<font color='green'> kembali </font>"; ?>
-                      <?php echo $row["banyak_buku_kembali"];?>
+                        echo "<font color='green'> kembali </font>"; 
+                        echo $row["banyak_buku_kembali"];?>
                       </td>
                     <td><?php echo $row["buku_kurang"];?></td>
                     <td><?php echo $row["denda"];?></td>

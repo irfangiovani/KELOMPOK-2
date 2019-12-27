@@ -15,8 +15,14 @@ if (file_exists("img/literasi/$fotoproduk"))
 	unlink("img/literasi/$fotoproduk");
 }
 
-$conn->query("DELETE FROM buku_literasi_umum WHERE kode_buku_literasi= '$_GET[id]'");
+if ($conn->query("DELETE FROM buku_literasi_umum WHERE kode_buku_literasi= '$_GET[id]'")){
 
-echo "<script>alert('produk terhapus');</script>";
+echo "<script>alert('Buku Literasi Umum Terhapus');</script>";
 echo "<script>location='literasi.php';</script>";
+
+}else{
+	echo "<script>alert('Gagal Menghapus, Karena Buku Masih Dipinjam');</script>";
+echo "<script>location='literasi.php';</script>";
+
+}
  ?>

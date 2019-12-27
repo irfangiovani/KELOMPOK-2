@@ -6,7 +6,7 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$peminjaman_literasi = query ("SELECT a.id_pinjam_buku_literasi, a.tanggal_peminjaman, a.tanggal_hrs_kembali, a.notifikasi, b.judul_buku_literasi as kode_buku_literasi,  c.nama_siswa as nis
+$peminjaman_literasi = query ("SELECT a.id_pinjam_buku_literasi, a.tanggal_peminjaman, a.tanggal_hrs_kembali, a.notifikasi, b.judul_buku_literasi as kode_buku_literasi, c.nama_siswa as nis
 FROM peminjaman_buku_literasi a LEFT JOIN buku_literasi_umum b on b.kode_buku_literasi = a.kode_buku_literasi LEFT JOIN member_perpus c on c.nis = a.nis WHERE a.notifikasi='masa pinjam' ORDER BY a.id_pinjam_buku_literasi DESC"); 
 
 if( isset($_POST["cariliterasi"])) {
