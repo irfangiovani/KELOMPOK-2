@@ -77,10 +77,6 @@ $query=mysqli_query($conn, $query1);
 $totale = mysqli_query($conn, $total);
 $hasil = mysqli_fetch_array($totale);
 while($lihat=mysqli_fetch_array($query)){
-	// $kd_barang = $lihat['id_pinjam_buku_literasi'];
-	// $sala = "SELECT * FROM peminjaman_buku_literasi WHERE id_pinjam_buku_literasi='$kd_barang'";
-	// $sele = mysqli_query($conn, $sala);
-	// $hasilnya = mysqli_fetch_array($sele);
 	$pdf->Cell(1, 0.8, $no , 1, 0, 'C');
 	$pdf->Cell(4, 0.8, $lihat['nama_siswa'] , 1, 0, 'C');
 	$pdf->Cell(9, 0.8, $lihat['judul_buku_literasi'],1, 0, 'C');

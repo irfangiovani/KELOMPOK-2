@@ -1,6 +1,7 @@
 <?php
 // koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
+date_default_timezone_set('Asia/Jakarta');
 
 function query($query) {
     global $conn;
@@ -516,7 +517,7 @@ function tambahsiswa($datasiswa) {
     global $conn;
 
     // ambil data dari tiap elemen dalam form
-    $tanggal_absensi =  Date('l, d-m-Y');
+    $tanggal_absensi =  Date('d-m-Y');
     $nama_siswa = htmlspecialchars($datasiswa["nama_siswa"]);
     $kode_kelas = htmlspecialchars($datasiswa["kode_kelas"]);
     $keperluan = htmlspecialchars($datasiswa["keperluan"]);

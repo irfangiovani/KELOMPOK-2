@@ -14,7 +14,7 @@ $siswa = query ("SELECT * FROM pengunjung_siswa");
 
 <head>
   <meta charset="utf-8">
-  <title>Remember - Multipurpose bootstrap site template</title>
+  <title>Data Pengunjung Siswa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Your page description here" />
   <meta name="author" content="" />
@@ -129,7 +129,15 @@ $siswa = query ("SELECT * FROM pengunjung_siswa");
           </div>
         </div>
       </div>
+      <form action="laporan_pengunjung_siswa.php" method="post">
+      <ul width="50"><input required type="radio" name="cek" value="1" style="cursor: pointer;"> Semua Data</ul>
+      <ul width="50"><input required type="radio" name="cek" value="2" style="cursor: pointer;">Tanggal
+      <input type="date" name="tgl_awal" value="<?= date("l,d/m/Y") ?>" style="height: 20px;"> Sampai <span class="right"><input type="date" value="<?= date("l,d/m/Y") ?>" name="tgl_akhir" style="height: 20px;"></span>
+      </ul>
+      <ul class="text-left"><input type="submit" name="tampilkan" class="btn btn-primary" value="Tampilkan"></ul>
+    </form>
     </section>
+
 
     <br>
      <div class="container-fluid">
