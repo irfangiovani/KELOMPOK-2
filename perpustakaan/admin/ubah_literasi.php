@@ -32,7 +32,7 @@ if( !isset($_SESSION["login"])){
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
