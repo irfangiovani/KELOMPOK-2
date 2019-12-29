@@ -131,7 +131,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                 </div>
                 <div class="card-body-a">
                   <div class="price-box d-flex">
-                  <a href="property-single.html" class="link-a">
+                  <a href="detail_peminjaman.php?id=<?php echo $row ['id_judul_buku_mapel']; ?>" class="link-a">
                     <span class="price-a fa fa-group"> Lihat Detail Peminjam Buku</span>
                   </a>  
                   </div>
