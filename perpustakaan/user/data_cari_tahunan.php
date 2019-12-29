@@ -123,7 +123,6 @@ $peminjaman_tahunan = query ("SELECT a.id_pinjam_buku_tahunan, a.kode_buku_tahun
             <th>Notifikasi</th>
         </tr>
         </thead>
- 
         <tbody>
 
         <?php $i = 1;    
@@ -132,7 +131,6 @@ $peminjaman_tahunan = query ("SELECT a.id_pinjam_buku_tahunan, a.kode_buku_tahun
         ?>
         <tr>
 			<td><?=$i; ?></td>
-            <td><?php echo $row["nama"];?></td>
             <td><?php echo $row["id_judul_buku_tahunan"];?></td>
             <td><?php echo $row["kode_buku_tahunan"];?></td>
             <td><?php echo $row["tanggal_peminjaman"];?></td>
@@ -141,9 +139,10 @@ $peminjaman_tahunan = query ("SELECT a.id_pinjam_buku_tahunan, a.kode_buku_tahun
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
-
-        </tbody>
+      </tbody>
         </table>
+        <?php echo"nama : ".$row["nama"];
+        ?></td>    
     </div>
     </form>
   </div>
