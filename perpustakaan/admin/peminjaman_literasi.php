@@ -174,7 +174,7 @@ if( isset($_POST["cariliterasi"])) {
                             <td><?php echo $row["notifikasi"];?></td>
                             <td>
                             <a href="hapus_peminjaman_literasi.php?id=<?= $row["id_pinjam_buku_literasi"]; ?>
-                            " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');" class="btn btn-default" ><i class="icon-trash" title="hapus data"></i>hapus</a>
+                            " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');" class="btn btn-danger icon-edit" ><i class="icon-trash" title="hapus data"></i>hapus</a>
                           </td>
                         </tr>
                       <?php $i++; ?>

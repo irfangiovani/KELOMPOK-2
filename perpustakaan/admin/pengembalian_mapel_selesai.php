@@ -16,7 +16,7 @@ $data_pengembalian_mapel = query ("SELECT pengembalian_buku_mapel.id_kembali_map
                             LEFT JOIN buku_mapel_kelas ON buku_mapel_kelas.id_judul_buku_mapel = peminjaman_buku_mapel.id_judul_buku_mapel 
                             LEFT JOIN kelas ON kelas.kode_kelas = peminjaman_buku_mapel.kode_kelas 
                             LEFT JOIN pengembalian_buku_mapel ON pengembalian_buku_mapel.id_pinjam_buku_mapel = peminjaman_buku_mapel.id_pinjam_buku_mapel 
-                            WHERE peminjaman_buku_mapel.notifikasi = 'kembali'
+                            WHERE peminjaman_buku_mapel.notifikasi = 'kembali' AND pengembalian_buku_mapel.buku_kurang > 0
                             ORDER BY pengembalian_buku_mapel.id_kembali_mapel DESC ");
 ?>
 

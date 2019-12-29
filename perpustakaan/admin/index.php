@@ -1,13 +1,3 @@
-<?php
-session_start();
- if( !isset($_SESSION["login"])){
-     header("location: loginadmin.php");
-     exit;
- }
- require 'functions.php';
-$pustakawan = query("SELECT * FROM pustakawan");
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,8 +42,7 @@ $pustakawan = query("SELECT * FROM pustakawan");
         <div class="row nomargin">
           <div class="span4">
             <div class="logo">
-                <h1><a class="navbar-brand" href="index.html">
-                    <img src="ico/logosmk3.jpg"/> SMKN 3 BONDOWOSO</a></h1>
+            <h1><i class="icon-tint"></i> K-Negabon Library</a></h1>
             </div>
           </div>
           <div class="span8">
@@ -120,47 +109,12 @@ $pustakawan = query("SELECT * FROM pustakawan");
         <h3>PERPUSTAKAAN SMK NEGERI 3 BONDOWOSO</h3>
       </div>
     </section>                                          
-    <br><br>
-    <div class="offside-3 col-lg-7">         
-    <form action="" method="post">
-      <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover ">
-
-        <tr>
-            <th>NO</th>
-		      	<th>NIP</th>
-            <th>Nama</th>
-            <th>Username</th>
-            <th>Aksi</th>
-        </tr>
-		<?php $i = 1; ?> 
-        <?php
-            foreach( $pustakawan as $row) :
-        ?>
-        <tr>
-			      <td><?=$i; ?></td>
-            <td><?php echo $row["nip"]; ?></td>
-            <td><?php echo $row["nama_pustakawan"];?></td>
-            <td><?php echo $row["username"];?></td>
-            <td>
-              <a href="ubah_pustakawan.php?id=<?php echo $row ['nip']; ?>" class="btn btn-warning" title="ubah data" >ubah</a>
-
-              <a href="hapus_pustakawan.php?id=<?= $row["nip"]; ?>
-              " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger" title="hapus data">hapus</a>
-            </td>
-        </tr>
-			<?php $i++; ?>
-			<?php endforeach; ?>
-    </table>
-    </div>
-    </form>
   </div>
+    
     <!-- /section intro -->
 
     <section id="content">
       <div class="container">
-
-
         <div class="row">
           <div class="span12">
             <div class="row">

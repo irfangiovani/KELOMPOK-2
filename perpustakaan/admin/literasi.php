@@ -179,10 +179,10 @@ if( isset($_POST["cariliterasi"])) {
             <td><img src="img/literasi/<?php echo $row["gambar_sampul"]; ?>" width="50"></td>
             <td><?php echo $row["deskripsi_buku"];?></td>
             <td>
-              <a href="ubah_literasi.php?id=<?php echo $row ['kode_buku_literasi']; ?>" class="btn btn-warning" title="ubah data" >ubah</a>
+              <a href="ubah_literasi.php?id=<?php echo $row ['kode_buku_literasi']; ?>" class="btn btn-warning icon-edit" title="ubah data" >ubah</a>
 
               <a href="hapus_literasi.php?id=<?= $row["kode_buku_literasi"]; ?>
-              " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger" title="hapus data">hapus</a>
+              " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger icon-trash" title="hapus data">hapus</a>
             </td>
         </tr>
 			<?php $i++; ?>

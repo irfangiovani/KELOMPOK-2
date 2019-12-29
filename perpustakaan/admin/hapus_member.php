@@ -11,8 +11,12 @@ $ambil = $conn->query("SELECT * FROM member_perpus WHERE nis='$_GET[id]'");
 $row = $ambil->fetch_assoc();
 
 
-$conn->query("DELETE FROM member_perpus WHERE nis= '$_GET[id]'");
+if($conn->query("DELETE FROM member_perpus WHERE nis= '$_GET[id]'")){
 
 echo "<script>alert('produk terhapus');</script>";
 echo "<script>location='data_member.php';</script>";
+}else{
+echo "<script>alert('produk gagal terhapus, karena masih melakukan peminjaman buku ');</script>";
+echo "<script>location='data_member.php';</script>";
+}
  ?>
