@@ -24,3 +24,13 @@ Tema : Perpustakaan SMKN 3 Bondowoso
 		-memperbaiki tampilan buku di user
 		-memperbaiki tampilan admin yang belum sesuai
 		-memperbaiki fitur daftar member
+5. Azizah Wina Srwinarsih :
+		- membuat form siswa, serta menambahkan data siswa, dan juga menampilkan data siswa yang berhasil ditambahkan 
+		- membuat form tamu, serta menambahkan data tamu, dan juga menampilkan data tamu yang berhasil ditambahkan
+		- membuat inputan cek peminjam tahunan nama dan nis serta dan menampilkan buku apa saja yg dipinjam oleh 1 siswa
+		- membuat inputan cek peminjam literasa dg nama dan nism serta menampilkan buku apa saja yg dipinjam oleh 1 siswa
+		- membuat desain alur pendaftaran pada menu navbar bantuan (user)
+		- membuat form peminjaman buku tahunan, buku literasi, buku mapel dan memasukan data ke dalam database
+		- membuat form pengembalian buku tahunan, buku literasi, buku mapel dan memasukan data ke dalam database
+		
+	
