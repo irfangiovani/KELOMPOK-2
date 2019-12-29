@@ -6,13 +6,13 @@ require 'functions.php';
 if( isset($_POST['cari_literasi'])){
 $nis = $_POST["nis"];
 
-
+   
 $peminjaman_literasi = query ("SELECT a.nis,a.id_pinjam_buku_literasi, a.tanggal_peminjaman, a.tanggal_hrs_kembali,
                                         a.notifikasi, b.judul_buku_literasi as kode_buku_literasi, 
                                         c.nama_siswa as nama
                                       FROM peminjaman_buku_literasi a 
                                       LEFT JOIN buku_literasi_umum b on b.kode_buku_literasi = a.kode_buku_literasi
-                                      LEFT JOIN member_perpus c on c.nis = a.nis
+                                      LEFT JOIN member_perpus c on c.nis = a.nis 
                                       WHERE a.notifikasi='masa pinjam'
                                       AND a.nis = '$nis'
                                       ORDER BY a.id_pinjam_buku_literasi DESC"); 
@@ -112,18 +112,18 @@ $peminjaman_literasi = query ("SELECT a.nis,a.id_pinjam_buku_literasi, a.tanggal
     <form action="" method="post">
     <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover" id="tabel">
+    
     <thead>
         <tr>
             <th>no</th>
             <th>Judul Buku Literasi</th>
-            <th>Peminjam</th>
             <th>Tanggal Peminjaman</th>
             <th>Tanggal Harus Kembali</th>
             <th>Status</th>
         </tr>
         </thead>
  
-        <tbody>
+        <tbody>  
                         <?php $i = 1; ?> 
                         <?php
                             foreach($peminjaman_literasi as $row) :
@@ -131,7 +131,6 @@ $peminjaman_literasi = query ("SELECT a.nis,a.id_pinjam_buku_literasi, a.tanggal
                         <tr>
                             <td><?=$i; ?></td>
                             <td><?php echo $row["kode_buku_literasi"];?></td>
-                            <td><?php echo $row["nis"];?></td>
                             <td><?php echo $row["tanggal_peminjaman"];?></td>
                             <td><?php echo $row["tanggal_hrs_kembali"];?></td>
                             <td><?php echo $row["notifikasi"];?></td>
@@ -140,6 +139,10 @@ $peminjaman_literasi = query ("SELECT a.nis,a.id_pinjam_buku_literasi, a.tanggal
                       <?php endforeach; ?>
                       </tbody>
         </table>
+        <?php echo"nama :  ".$row["nama"];
+              echo "<br/>";
+              echo "nis:  ".$row["nis"];   
+        ?></td>                     
     </div>
     </form>
   </div>
