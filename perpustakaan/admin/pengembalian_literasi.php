@@ -202,7 +202,7 @@ if( isset($_POST["cariliterasi"])) {
 
     
     <footer>
-    <?php include 'tag_header.php';  ?>
+    <?php include 'footer_admin.php';  ?>
     </footer>
   </div>
   <a href="#" class="scrollup"><i class="icon-angle-up icon-rounded icon-bglight icon-2x"></i></a>

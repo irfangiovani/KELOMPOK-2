@@ -46,26 +46,19 @@ if( isset($_POST['submit']) ) {
         <div class="form-row">
             <div class="form-group col-md-6">
               <label for="kode_kelas">Kode_kelas : </label>
-              <input type="text" class="form-control" placeholder ="masukkan kode kelas" name="kode_kelas" id="kode_kelas" required>
+              <input type="text" class="form-control" placeholder ="masukkan kode kelas" name="kode_kelas" id="kode_kelas" autocomplete="off" required>
             </div>
         </div>
             <div class="form-row">
             <div class="form-group col-md-6">
               <label for="jurusan">Jurusan : </label> 
-              <input type="text" class="form-control" placeholder="Masukkan jurusan" name="jurusan" id="jurusan" required>
+              <input type="text" class="form-control" placeholder="Masukkan jurusan" name="jurusan" id="jurusan" autocomplete="off" required>
             </div>   
             </div>
-            <div class="form-row">
-            <div class="form-group col-md-6">
-            <label for="kelas"> Kelas : </label>
-            <input type="text" class="form-control" placeholder="Masukkan tingkat kelas" name="kelas" id="kelas" required>
-            </div>
-            </div>
-               
-            <div class="form-row">
+        <div class="form-row">
         <div class="form-group col-md-6">
               <label for="wali_kelas">Wali Kelas : </label>
-              <input type="text" class="form-control" placeholder ="masukkan nama wali kelas"name="wali_kelas" id="wali_kelas" required>
+              <input type="text" class="form-control" placeholder ="masukkan nama wali kelas"name="wali_kelas" id="wali_kelas" autocomplete="off" required>
         </div>
       </div>
 

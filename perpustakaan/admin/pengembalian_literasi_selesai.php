@@ -130,9 +130,9 @@ $data_pengembalian_literasi = query ("SELECT member_perpus.nama_siswa, buku_lite
           </div>
           <div class="span8">
             <ul class="breadcrumb">
-              <li><a href="index.html">Beranda</a> <i class="icon-angle-right"></i></li>
-              <li><a href="#">Pengembalian</a> <i class="icon-angle-right"></i></li>
-              <li><a href="pengembalian_literasi.php">Buku Literasi Umum></i></li>
+              <li><a href="index.html">Beranda</a> <a class="icon-angle-right"></a></li>
+              <li><a href="#">Pengembalian</a> <a class="icon-angle-right"></a></li>
+              <li><a href="pengembalian_literasi.php">Buku Literasi Umum></a></li>
               <li class="active">Data Pengembalian Buku Literasi</li>
             </ul>
           </div>
@@ -145,6 +145,7 @@ $data_pengembalian_literasi = query ("SELECT member_perpus.nama_siswa, buku_lite
       </ul>
       <ul class="text-left"><input type="submit" name="tampilkan" class="btn btn-primary" value="Tampilkan"></ul>
     </form>
+     
     </section>
     <br>       
 

@@ -155,10 +155,17 @@ function kurangi_stok_mapel($conn, $kode_judul)
 
 function tambah_stok_mapel($conn, $id_judul_buku_mapel)
 {
-    $banyak_buku_kembali = $_POST["buku_dipinjam"];
+    $banyak_buku_kembali = $_POST["buku_kembali"];
     $q = "UPDATE buku_mapel_kelas SET stok = stok + $banyak_buku_kembali WHERE id_judul_buku_mapel = '$id_judul_buku_mapel'";
     mysqli_query($conn, $q);
 }
+
+// function tambah_stok_mapel_kurang($conn, $id_judul_buku_mapel)
+// {
+//     $buku_diganti = $_POST["buku_diganti"];
+//     $q = "UPDATE buku_mapel_kelas SET stok = stok + $buku_diganti WHERE id_judul_buku_mapel = '$id_judul_buku_mapel'";
+//     mysqli_query($conn, $q);
+// }
 
 function hapus_stok_mapel($conn, $id_judul_buku_mapel)
 {
@@ -501,7 +508,7 @@ function tambahtamu($datatamu) {
     $nama_tamu = htmlspecialchars($datatamu["nama_tamu"]);
     $delegasi = htmlspecialchars($datatamu["delegasi"]);
     $kepentingan = htmlspecialchars($datatamu["kepentingan"]);
-    $Tanggal_Kedatangan = Date('l, d-m-Y');
+    $Tanggal_Kedatangan = Date('Y-m-d');
 
     $query = "INSERT INTO tamu 
               VALUES
@@ -536,10 +543,9 @@ function tambahkelas($data){
     global $conn;
     $kode_kelas = htmlspecialchars($data["kode_kelas"]);
     $jurusan = htmlspecialchars($data["jurusan"]);
-    $kelas = htmlspecialchars($data["kelas"]);
     $wali_kelas = htmlspecialchars($data["wali_kelas"]);
 
-    $query = "INSERT INTO kelas (kode_kelas, jurusan, kelas, wali_kelas) VALUES ('$kode_kelas', '$jurusan', '$kelas', '$wali_kelas') ";
+    $query = "INSERT INTO kelas (kode_kelas, jurusan, wali_kelas) VALUES ('$kode_kelas', '$jurusan', '$wali_kelas') ";
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
@@ -556,13 +562,11 @@ function ubahkelas($data){
     global $conn;
     $kode_kelas = htmlspecialchars($data["kode_kelas"]);
     $jurusan = htmlspecialchars($data["jurusan"]);
-    $kelas = htmlspecialchars($data["kelas"]);
     $wali_kelas = htmlspecialchars($data["wali_kelas"]);
 
     $query = "UPDATE  kelas SET
                     kode_kelas = '$kode_kelas',
                     jurusan = '$jurusan',
-                    kelas = '$kelas',
                     wali_kelas ='$wali_kelas'
                 WHERE kode_kelas = '$_GET[id]'";
     mysqli_query($conn, $query);

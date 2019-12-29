@@ -91,7 +91,7 @@ echo Date('l, d-F-Y');
             <div class="form-row">
             <div class="form-group col-md-6">
               <label for="nama_peminjam">Nama Peminjam : </label> 
-              <input type="text" class="form-control" placeholder="Masukkan Nama Peminjam" name="nama_peminjam" id="nama_peminjam" required>
+              <input type="text" class="form-control" placeholder="Masukkan Nama Peminjam" name="nama_peminjam" id="nama_peminjam" autocomplete="off" required>
             </div>   
             <div class="form-group col-md-6">
             <label for="waktu_peminjaman"> Waktu Peminjaman : </label>
@@ -101,7 +101,7 @@ echo Date('l, d-F-Y');
             <div class="form-row">
             <div class="form-group col-md-6">
               <label for="banyak_buku"> Banyak Buku Dipinjam : </label>
-              <input type="text" class="form-control" placeholder="Banyak Buku Dipinjam" name="banyak_buku" id="banyak_buku" required>
+              <input type="text" class="form-control" placeholder="Banyak Buku Dipinjam" name="banyak_buku" id="banyak_buku" autocomplete = "off" required>
             </div>
             </div>
             <div class="text-center">

@@ -137,8 +137,7 @@ $data_kelas = query ("SELECT * FROM kelas ");
                       <tr bgcolor='yellow' align='center'>
                           <th>no</th>
                           <th>Kode Kelas</th>
-                          <th>Jurusan</th>
-                          <th>Kelas</th>
+                          <th>Nama Kelas</th>
                           <th>Wali Kelas</th>
                           <th>Aksi</th>
                       </tr>
@@ -152,7 +151,6 @@ $data_kelas = query ("SELECT * FROM kelas ");
                           <td><?=$i; ?></td>
                           <td><?php echo $row["kode_kelas"]; ?></td>
                           <td><?php echo $row["jurusan"];?></td>
-                          <td><?php echo $row["kelas"];?></td>
                           <td><?php echo $row["wali_kelas"];?></td>
                           <td>
                           <a href="ubah_kelas.php?id=<?php echo $row ["kode_kelas"]; ?>"class="btn btn-default" ><i class="icon-edit" title="ubah data" ></i>ubah</a>

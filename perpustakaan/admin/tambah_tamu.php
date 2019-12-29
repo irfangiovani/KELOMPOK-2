@@ -64,7 +64,7 @@ if( isset($_POST["submit"]) ) {
             <div class="form-row">
         <div class="form-group col-md-6">
               <label for="Tanggal_Kedatangan">Tanggal_Kedatangan : </label>
-              <input type="text" class="form-control" placeholder = "<?php  echo Date('l, d-m-Y');?>" name="Tanggal_Kedatangan" readonly>
+              <input type="text" class="form-control" placeholder = "<?php  echo Date('Y-m-d');?>" name="Tanggal_Kedatangan" readonly>
         </div>
       </div>
 

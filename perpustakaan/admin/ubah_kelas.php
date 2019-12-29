@@ -52,13 +52,6 @@ if (isset($_POST['edit'])) {
             </div>   
             </div>
             <div class="form-row">
-            <div class="form-group col-md-6">
-            <label for="kelas"> Kelas : </label>
-            <input type="text" class="form-control"value="<?= $data_kelas["kelas"]; ?>" name="kelas" id="kelas" required>
-            </div>
-            </div>
-               
-            <div class="form-row">
         <div class="form-group col-md-6">
               <label for="wali_kelas">Wali Kelas : </label>
               <input type="text" class="form-control" value="<?= $data_kelas["wali_kelas"]; ?>" name="wali_kelas" id="wali_kelas" required>

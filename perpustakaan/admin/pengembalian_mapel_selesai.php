@@ -6,11 +6,11 @@ if( !isset($_SESSION["login"])){
 }
 
 require 'functions.php';
-$data_pengembalian_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_mapel, buku_mapel_kelas.judul_buku_mapel,buku_mapel_kelas.untuk_kelas,
-                            kelas.jurusan,kelas.kelas, peminjaman_buku_mapel.nama_peminjam, pengembalian_buku_mapel.nama_pengembali, 
+$data_pengembalian_mapel = query ("SELECT pengembalian_buku_mapel.id_kembali_mapel, peminjaman_buku_mapel.id_pinjam_buku_mapel, buku_mapel_kelas.judul_buku_mapel,buku_mapel_kelas.untuk_kelas,
+                            kelas.jurusan, peminjaman_buku_mapel.nama_peminjam, pengembalian_buku_mapel.nama_pengembali, 
                             peminjaman_buku_mapel.waktu_peminjaman, pengembalian_buku_mapel.waktu_pengembalian, 
                             peminjaman_buku_mapel.banyak_buku, pengembalian_buku_mapel.banyak_buku_kembali, 
-                            pengembalian_buku_mapel.buku_kurang, pengembalian_buku_mapel.denda, peminjaman_buku_mapel.notifikasi
+                            pengembalian_buku_mapel.buku_kurang, peminjaman_buku_mapel.notifikasi
 
                             FROM peminjaman_buku_mapel 
                             LEFT JOIN buku_mapel_kelas ON buku_mapel_kelas.id_judul_buku_mapel = peminjaman_buku_mapel.id_judul_buku_mapel 
@@ -157,14 +157,13 @@ $data_pengembalian_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_m
                   <tr bgcolor='yellow' align='center'>
                     <th>NO</th>
                     <th>Kode Buku Mapel</th>
-                    <th>Kode Kelas</th>
+                    <th>Nama Kelas</th>
                     <th>Nama Peminjam</th>
                     <th>Nama Pengembali</th>
                     <th>Jangka Waktu Peminjaman Sampai Pengembalian</th>
                     <th>Banyak Buku Dipinjam Dan Kembali</th>
                     <th>kekurangan Buku</th>
-                    <th>Denda</th>
-                    <th>Notifikasi</th>
+                    <th>Aksi</th>
                   </tr>
                 </head>
                 <tbody>
@@ -178,7 +177,7 @@ $data_pengembalian_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_m
                               echo " kelas "; 
                               echo $row["untuk_kelas"];
                     ?></td>
-                    <td><?php echo $row["jurusan"];?> kelas <?php echo $row["kelas"];?></td>
+                    <td><?php echo $row["jurusan"];?></td>
                     <td><?php echo $row["nama_peminjam"];?></td>
                     <td><?php echo $row["nama_pengembali"];?></td>
                     <td>
@@ -192,8 +191,9 @@ $data_pengembalian_mapel = query ("SELECT peminjaman_buku_mapel.id_pinjam_buku_m
                         echo $row["banyak_buku_kembali"];?>
                       </td>
                     <td><?php echo $row["buku_kurang"];?></td>
-                    <td><?php echo $row["denda"];?></td>
-                    <td><?php echo $row["notifikasi"];?></td>
+                    <td>
+                    <a href="ubah_pengembalian_mapel.php?id=<?php echo $row ['id_kembali_mapel']; ?>" class="btn btn-default icon-edit" title="ubah data" >ubah</a>
+                          </td>
                   </tr>
                   <?php 
                     $i++; 
