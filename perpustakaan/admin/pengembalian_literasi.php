@@ -139,7 +139,7 @@ if( isset($_POST["cariliterasi"])) {
     <br><br>
      <div class="container-fluid">
      <div class="col-lg-12">
-     <a href="pengembalian_literasi_selesai.php" class="btn btn-success">Data Pengembalian Literasi</a>
+     <a href="pengembalian_literasi_selesai.php" class="btn btn-success icon-folder-open-alt">Data Pengembalian Literasi</a>
      <br><br>
           <div class="content">
             <div class="box">

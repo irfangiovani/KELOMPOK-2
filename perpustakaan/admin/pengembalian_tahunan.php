@@ -135,7 +135,7 @@ FROM peminjaman_buku_tahunan a LEFT JOIN buku_tahunan_siswa b on b.id_judul_buku
 
     <br>
      <div class="container-fluid">
-     <a href="pengembalian_tahunan_selesai.php" class="btn btn-success">Data Pengembalian Tahunan</a>
+     <a href="pengembalian_tahunan_selesai.php"  class="btn btn-success icon-folder-open-alt">Data Pengembalian Tahunan</a>
      <br><br>
 
     <div class="content">

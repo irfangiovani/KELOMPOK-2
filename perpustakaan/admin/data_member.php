@@ -144,7 +144,7 @@ if( isset($_GET['acc'])=='approve'){
       <br>
      <div class="container-fluid">
       <div class="col-lg-12">
-        <a href="tambah_data_member.php">Tambah Data Member</a>
+        <a href="tambah_data_member.php" class="btn btn-info icon-plus">Tambah Data Member</a>
           <br><br>
             <form action="" method="post">
               <div class="table-responsive">
@@ -174,9 +174,9 @@ if( isset($_GET['acc'])=='approve'){
                           <td><?php echo $row["alamat"];?></td>
                           <td><?php echo $row["status"];?></td>
                           <td>
-                          <a href="data_member.php?acc=approve&nis=<?= $row ['nis']; ?>" class="btn icon-check" title="aktif member" >aktif</a>
+                          <a href="data_member.php?acc=approve&nis=<?= $row ['nis']; ?>" class="btn btn-warning icon-check" title="aktif member" >aktif</a>
                           <a href="hapus_member.php?id=<?= $row["nis"]; ?>
-                          " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger" title="hapus data">hapus</a>
+                          " onclick="return confirm('Yakin Ingin Menghapus Data Ini?');"  class="btn btn-danger icon-trash" title="hapus data">hapus</a>
                           </td>
                       </tr>
                       <?php $i++; 

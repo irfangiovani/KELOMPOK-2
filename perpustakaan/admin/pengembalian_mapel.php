@@ -134,7 +134,7 @@ $peminjaman_mapel = query ("SELECT a.id_pinjam_buku_mapel, a.nama_peminjam, a.wa
 
     <br>
      <div class="container-fluid">
-     <a href="pengembalian_mapel_selesai.php" class="btn btn-success">Data Pengembalian Mapel</a>
+     <a href="pengembalian_mapel_selesai.php"  class="btn btn-success icon-folder-open-alt">Data Pengembalian Mapel</a>
     <br><br>
 
       <div class="content">

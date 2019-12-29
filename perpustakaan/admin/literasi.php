@@ -139,11 +139,10 @@ if( isset($_POST["cariliterasi"])) {
         </div>
       </div>
     </section>
-    <a href="index.php" class="btn btn-warning pull-right"><i class="icon-arrow-left"></i> kembali</a>
 
     <br>
     <div class="container-fluid">
-    <a href="tambah_literasi.php" class="btn btn-primary">Tambah Buku Literasi Umum</a>
+    <a href="tambah_literasi.php" class="btn btn-info icon-plus">Tambah Buku Literasi Umum</a>
     <br><br>
 
   <div class="offside-3 col-lg-7">

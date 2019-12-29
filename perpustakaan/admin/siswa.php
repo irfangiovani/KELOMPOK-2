@@ -29,6 +29,7 @@ FROM pengunjung_siswa LEFT JOIN kelas ON kelas.kode_kelas = pengunjung_siswa.kod
 
   <!-- Theme skin -->
   <link id="t-colors" href="color/default.css" rel="stylesheet" />
+  <link href="js/dataTables/dataTables.bootstrap.css" rel="stylesheet">
 
   <!-- Fav and touch icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
@@ -142,7 +143,7 @@ FROM pengunjung_siswa LEFT JOIN kelas ON kelas.kode_kelas = pengunjung_siswa.kod
 
     <br>
      <div class="container-fluid">
-    <a href="tambah_siswa.php">Tambah Data Pengunjung Siswa</a>
+    <a href="tambah_siswa.php" class="btn btn-info icon-plus">Tambah Data Pengunjung Siswa</a>
     <br><br>
 
     <div class="content">
@@ -150,15 +151,17 @@ FROM pengunjung_siswa LEFT JOIN kelas ON kelas.kode_kelas = pengunjung_siswa.kod
 <div class="offside-3 col-lg-7">
     <form action="" method="post">
       <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover ">
-        <tr bgcolor="yellow" align="center">
+    <table class="table table-striped table-bordered table-hover " id="tabel">
+        <thead>
+        <tr bgcolor='yellow' align='center'>
 			      <th>no</th>
             <th>Nama Siswa</th>
             <th>Nama Kelas</th>
             <th>tanggal Kunjungan</th>
              <th>Keperluan</th>
-             <th>Aksi</th>
         </tr>
+        </thead>
+        <tbody>
 		<?php $i = 1; ?> 
         <?php
             foreach( $siswa as $row) :
@@ -172,6 +175,7 @@ FROM pengunjung_siswa LEFT JOIN kelas ON kelas.kode_kelas = pengunjung_siswa.kod
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
+      </tbody>
     </table>
   </div>
     </form>
@@ -204,6 +208,13 @@ FROM pengunjung_siswa LEFT JOIN kelas ON kelas.kode_kelas = pengunjung_siswa.kod
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
+  <script src="js/dataTables/dataTables.bootstrap.js"></script>
+  <script src="js/dataTables/jquery.dataTables.js"></script>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabel').DataTable();
+        });
+    </script>
 
 </body>
 

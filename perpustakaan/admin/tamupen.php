@@ -28,6 +28,7 @@ $tamupen = query ("SELECT * FROM tamu ");
 
   <!-- Theme skin -->
   <link id="t-colors" href="color/default.css" rel="stylesheet" />
+  <link href="js/dataTables/dataTables.bootstrap.css" rel="stylesheet">
 
   <!-- Fav and touch icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
@@ -140,7 +141,7 @@ $tamupen = query ("SELECT * FROM tamu ");
 
     <br>
      <div class="container-fluid">
-    <a href="tambah_tamu.php">Tambah Data Tamu</a>
+    <a href="tambah_tamu.php" class="btn btn-info icon-plus">Tambah Data Tamu</a>
     <br><br>
 
     <div class="content">
@@ -148,8 +149,9 @@ $tamupen = query ("SELECT * FROM tamu ");
 <div class="offside-3 col-lg-7">
     <form action="" method="post">
       <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover ">
-        <tr>
+    <table class="table table-striped table-bordered table-hover" id="tabel">
+    <thead>
+        <tr bgcolor='yellow' align='center'>
 			      <th>no</th>
             <th>ID Tamu</th>
             <th>Nama Tamu</th>
@@ -157,6 +159,8 @@ $tamupen = query ("SELECT * FROM tamu ");
              <th>Kepentingan</th>
              <th>Tanggal Kedatangan</th>
         </tr>
+        </thead>
+        <tbody>
 		<?php $i = 1; ?> 
         <?php
             foreach( $tamupen as $row) :
@@ -171,6 +175,7 @@ $tamupen = query ("SELECT * FROM tamu ");
         </tr>
 			<?php $i++; ?>
 			<?php endforeach; ?>
+      </tbody>
     </table>
   </div>
     </form>
@@ -203,6 +208,13 @@ $tamupen = query ("SELECT * FROM tamu ");
 
   <!-- Template Custom JavaScript File -->
   <script src="js/custom.js"></script>
+  <script src="js/dataTables/dataTables.bootstrap.js"></script>
+  <script src="js/dataTables/jquery.dataTables.js"></script>
+  <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tabel').DataTable();
+        });
+    </script>
 
 </body>
 
