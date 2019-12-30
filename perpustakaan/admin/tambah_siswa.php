@@ -19,8 +19,10 @@ if( isset($_POST["submit"]) ) {
       ";
     } else {  
       echo "
-            <script>
-              alert('data gagal ditambahkan!');
+      <script>
+      alert('data gagal ditambahkan!');
+      document.location.href = 'tambah_siswa.php';
+    </script>
               
       ";
     }
@@ -46,7 +48,7 @@ if( isset($_POST["submit"]) ) {
     <form action="" method="post" enctype="multipart/form-data">
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="tanggal_absensi">Tanggal Absensi : </label> 
+                <label for="tanggal_absensi">Tanggal Kehadiran : </label> 
                   <input type="text" class="form-control" placeholder = "<?php  echo Date('Y-m-d');?>" name="tanggal_absensi" readonly>
               </div> 
               </div>
@@ -54,13 +56,13 @@ if( isset($_POST["submit"]) ) {
               <div class="form-group col-md-6">
                 <label for="nama_siswa"> Nama siswa : </label>
                 <input type="text" class="form-control" placeholder="Masukkan Nama Siswa" name="nama_siswa" id="nama_siswa"
-                       autocomplete="off" require>
+                       autocomplete="off" required>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="kelas"> Nama Kelas : </label> 
-                <input type="text" class="form-control" id="kelas" name="kelas" placeholder="Masukkan Nama Kelas" value="" require>
+                <input type="text" class="form-control" id="kelas" name="kelas" placeholder="Masukkan Nama Kelas" value="" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="kode_kelas"> Kode Kelas : </label> 
@@ -70,7 +72,7 @@ if( isset($_POST["submit"]) ) {
             <div class="form-row">
             <div class="form-group col-md-6">
               <label for="keperluan">Keperluan : </label> 
-              <input type="text" class="form-control" placeholder="Masukkan Keperluan" name="keperluan" id="keperluan" autocomplete= "off" require>
+              <input type="text" class="form-control" placeholder="Masukkan Keperluan" name="keperluan" id="keperluan" autocomplete= "off" required>
             </div>
             </div>
 

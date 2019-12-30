@@ -47,7 +47,7 @@ if( isset($_POST["submit"]) ) {
            <div class="form-row">
             <div class="form-group col-md-6">
               <label for="kode_buku_literasi">Kode Buku Literasi : </label>
-              <input type="text" class="form-control" placeholder="Masukkan Kode Buku..." name="kode_buku_literasi" id="kode_buku_literasi">
+              <input type="text" class="form-control" placeholder="Masukkan Kode Buku..." name="kode_buku_literasi" id="kode_buku_literasi" autocomplete="off" required>
             </div>
             <div class="form-group col-md-6">
               <label for="id_kategori">Kategori : </label> <a href="kategori.php" class="btn btn-warning" title="tambah_kategori" >Tambah Kategori</a>
@@ -64,7 +64,7 @@ if( isset($_POST["submit"]) ) {
             </div>
             <div class="form-group text-center">
                   <label for="judul_buku_literasi">Judul Buku Literasi : </label>
-                  <input type="text" class="form-control" placeholder="Masukkan Judul Buku..." name="judul_buku_literasi" id="judul_buku_literasi">
+                  <input type="text" class="form-control" placeholder="Masukkan Judul Buku..." name="judul_buku_literasi" id="judul_buku_literasi" autocomplete="off" required>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
@@ -82,7 +82,7 @@ if( isset($_POST["submit"]) ) {
 
                 <div class="form-group col-md-4">
                   <label for="tahun_terbit">Tahun Terbit : </label>
-                  <input type="text" class="form-control" placeholder="Masukkan Tahun Terbit..." name="tahun_terbit" id="tahun_terbit">
+                  <input type="text" class="form-control" placeholder="Masukkan Tahun Terbit..." name="tahun_terbit" id="tahun_terbit" autocomplete="off" required>
                 </div>
 
                 <div class="form-group col-md-4">
