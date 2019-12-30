@@ -7,7 +7,7 @@ if (isset($_POST['tampilkan'])) {
 	$cek = $_POST['cek'];
 	$tgl_awal = $_POST['tgl_awal'];
 	$tgl_akhir = $_POST['tgl_akhir'];
-
+   
 	if ($cek == 1) {
 		$query1= "SELECT pengunjung_siswa.nama_siswa,  kelas.jurusan, pengunjung_siswa.tanggal_absensi, pengunjung_siswa.keperluan 
         FROM pengunjung_siswa LEFT JOIN kelas ON kelas.kode_kelas = pengunjung_siswa.kode_kelas";

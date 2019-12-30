@@ -6,7 +6,7 @@ require 'functions.php';
  
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
 
 <section class="contact">
     <title> Peminjaman </title>
