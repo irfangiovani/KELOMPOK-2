@@ -69,7 +69,7 @@ require 'functions.php';
             <a class="nav-link" href="registrasi.php">Daftar Member</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="buku.php">Buku</a> 
+            <a class="nav-link" href="buku.php">Buku Mapel</a> 
           </li>
           <li class="nav-item">
             <a class="nav-link" href="bantuan.php">Bantuan</a>
@@ -114,7 +114,7 @@ require 'functions.php';
      <br> <br> <br> <br> <br>
      <h2>Cek Peminjaman</h2><br>
      <form action ="data_cari_tahunan.php" method="post">
-        <input type="text" name="nis"placeholder="Nomor Induk Siswa"><br><br>
+        <input type="text" name="nis"placeholder="Nomor Induk Siswa" autocomplete="off" required><br><br>
         <button <a href ="cari_tahunan.php" type="submit" name = "cari_tahunan" class="btn btn-b"></a>cari tahunan</button>
     </form>   
   </section>
