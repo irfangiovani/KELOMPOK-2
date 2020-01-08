@@ -6,7 +6,7 @@ require 'functions.php';
  
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
 
 <section class="contact">
     <title> Peminjaman </title>
@@ -114,8 +114,8 @@ require 'functions.php';
      <br> <br> <br> <br> <br>
      <h2>Cek Peminjaman</h2><br>
      <form action ="data_cari_literasi.php" method="post">
-        <input type="text" name="nis"placeholder="Nomor Induk Siswa"><br><br>
-        <button <a href ="cari_literasi.php" type="submit" name = "cari_literasi" class="btn btn-b"></a>cari literasi</button>
+        <input type="text" name="nis"placeholder="Nomor Induk Siswa" autocomplete="off" required><br><br>
+        <button <a href ="cari_literasi.php" type="submit" name = "cari_literasi" class="btn btn-b" ></a>cari literasi</button>
     </form>   
   </section>
    

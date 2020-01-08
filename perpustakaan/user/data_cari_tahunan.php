@@ -103,7 +103,7 @@ $peminjaman_tahunan = query ("SELECT a.id_pinjam_buku_tahunan, a.kode_buku_tahun
                     </div>
                     </div>
                 </div>
-            </div>
+            </div>  
         </section>  
 
     <br>
@@ -119,7 +119,6 @@ $peminjaman_tahunan = query ("SELECT a.id_pinjam_buku_tahunan, a.kode_buku_tahun
             <th>Kode Judul Buku Tahunan</th>
             <th>Kode Buku Tahunan</th>
             <th>Tanggal Peminjaman</th>
-            <th>Tanggal Harus Kembali</th>
             <th>Notifikasi</th>
         </tr>
         </thead>
@@ -141,8 +140,7 @@ $peminjaman_tahunan = query ("SELECT a.id_pinjam_buku_tahunan, a.kode_buku_tahun
 			<?php endforeach; ?>
       </tbody>
         </table>
-        <?php echo"nama : ".$row["nama"];
-        ?></td>    
+      
     </div>
     </form>
   </div>

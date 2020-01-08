@@ -17,7 +17,7 @@ if( isset($_POST["submit"]) ) {
               document.location.href = 'siswa.php';
             </script>
       ";
-    } else {
+    } else {  
       echo "
       <script>
       alert('data gagal ditambahkan!');
@@ -76,7 +76,7 @@ if( isset($_POST["submit"]) ) {
             </div>
             </div>
 
-
+   
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>
               <button type="reset" class="btn btn-danger">RESET</button>
@@ -86,7 +86,7 @@ if( isset($_POST["submit"]) ) {
         <br><br>  
     </form>
     </div>
-    </div>
+    </div>   
      <!-- Memanggil jQuery.js -->
      <script src="js/autocomplete/jquery-3.2.1.min.js"></script>
     <!-- Memanggil Autocomplete.js -->
