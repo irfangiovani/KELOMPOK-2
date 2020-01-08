@@ -5,8 +5,13 @@ require 'functions.php';
 $id = $_GET["id"];
 // $data = query("SELECT * FROM buku_literasi_umum WHERE kode_buku_literasi = '$id'")[0];
 
-$buku_mapel_kelas = query("SELECT buku_mapel_kelas.id_judul_buku_mapel, buku_mapel_kelas.gambar_sampul, buku_mapel_kelas.judul_buku_mapel, buku_mapel_kelas.stok, peminjaman_buku_mapel.id_judul_buku_mapel, peminjaman_buku_mapel.kode_kelas, peminjaman_buku_mapel.nama_peminjam, peminjaman_buku_mapel.waktu_peminjaman, peminjaman_buku_mapel.banyak_buku, peminjaman_buku_mapel.notifikasi, kelas.jurusan, kelas.kode_kelas FROM peminjaman_buku_mapel LEFT JOIN buku_mapel_kelas ON buku_mapel_kelas.id_judul_buku_mapel=peminjaman_buku_mapel.id_judul_buku_mapel LEFT JOIN kelas ON kelas.kode_kelas=peminjaman_buku_mapel.kode_kelas WHERE peminjaman_buku_mapel.notifikasi='masa pinjam' ORDER BY peminjaman_buku_mapel.id_pinjam_buku_mapel ASC ='$id'");
- //$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
+$buku_mapel_kelas = query("SELECT buku_mapel_kelas.gambar_sampul, buku_mapel_kelas.judul_buku_mapel, 
+                                  peminjaman_buku_mapel.nama_peminjam, peminjaman_buku_mapel.waktu_peminjaman, 
+                                  peminjaman_buku_mapel.banyak_buku, peminjaman_buku_mapel.notifikasi
+                           FROM buku_mapel_kelas 
+                           LEFT JOIN peminjaman_buku_mapel ON buku_mapel_kelas.id_judul_buku_mapel = peminjaman_buku_mapel.id_judul_buku_mapel 
+                           WHERE id_judul_buku_mapel ='$id'");
+//  $buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC "); 
 
 ?>
 
@@ -77,7 +82,7 @@ $buku_mapel_kelas = query("SELECT buku_mapel_kelas.id_judul_buku_mapel, buku_map
         <div class="col-md-12 col-lg-8">
           <div class="title-single-box">
             <h1 class="title-single"><?= $row['judul_buku_mapel']; ?></h1>
-            <span class="color-text-a">Kode Buku = <?= $row['kode_buku_literasi'] ?> </span>
+            <span class="color-text-a">Kode Buku = <?= $row['id_judul_buku_mapel'] ?> </span>
           </div>
         </div>
         <div class="col-md-12 col-lg-4">
@@ -87,7 +92,7 @@ $buku_mapel_kelas = query("SELECT buku_mapel_kelas.id_judul_buku_mapel, buku_map
                 <a href="index.php">Beranda</a>
               </li>
               <li class="breadcrumb-item active" aria-current="page">
-                <?= $row['judul_buku_literasi']; ?>
+                <?= $row['judul_buku_mapel']; ?>
               </li>
             </ol>
           </nav>
@@ -120,7 +125,7 @@ $buku_mapel_kelas = query("SELECT buku_mapel_kelas.id_judul_buku_mapel, buku_map
                     <span class="fa fa-book"></span>
                   </div>
                   <div class="card-title-c align-self-center">
-                    <h5 class="title-c"><?= $row['kode_buku_literasi'] ?></h5>
+                    <h5 class="title-c"><?= $row['id_judul_buku_mapel'] ?></h5>
                   </div>
                 </div>
               </div>

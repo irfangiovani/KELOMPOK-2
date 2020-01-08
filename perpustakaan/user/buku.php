@@ -2,7 +2,7 @@
 //Koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "perpustakaan");
 require 'functions.php';
-$buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
+$peminjaman_buku_mapel = query(" SELECT buku_mapel_kelas.gambar_sampul, buku_mapel_kelas.judul_buku_mapel, peminjaman_buku_mapel.nama_peminjam, peminjaman_buku_mapel.waktu_peminjaman, peminjaman_buku_mapel.banyak_buku, peminjaman_buku_mapel.notifikasi FROM buku_mapel_kelas LEFT JOIN peminjaman_buku_mapel ON buku_mapel_kelas.id_judul_buku_mapel = peminjaman_buku_mapel.id_judul_buku_mapel");
 
 ?>
 <?php require'head.php'; ?>
@@ -116,7 +116,7 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
   <section class="property-grid grid">
     <div class="container">
       <div class="row">
-        <?php foreach ( $buku_mapel_kelas as $row) : ?>
+        <?php foreach ( $peminjaman_buku_mapel as $row) : ?>
         <div class="col-md-4">
           <div class="card-box-a card-shadow">
             <div class="img-box-a">
@@ -140,17 +140,17 @@ $buku_mapel_kelas = query("SELECT * FROM buku_mapel_kelas");
                   <ul class="card-info d-flex justify-content-around">
                   <li>
                       <h4 class="card-info-title">Kode Buku</h4>
-                      <span><?= $row['kode_buku_literasi']; ?>
+                      <span><?= $row['id_judul_buku_mapel']; ?>
                       </span>
                     </li>
                     <li>
                       <h4 class="card-info-title">Terbit</h4>
-                      <span><?= $row['tahun_terbit']; ?>
+                      <span><?= $row['nama_peminjam']; ?>
                       </span>
                     </li>
                     <li>
                       <h4 class="card-info-title">Rak</h4>
-                      <span><?= $row['id_rak']; ?>
+                      <span><?= $row['banyak_buku']; ?>
                       </span>
                     </li>
                   </ul>
