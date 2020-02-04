@@ -34,7 +34,7 @@
                 <li class="color-a">
                   <span class="color-text-a fa fa-phone"> Phone :</span> <br> +62 853-3075-0875</li>
                 <li class="color-a">
-                  <span class="color-text-a fa fa-envelope-o"> Email :</span>K-negabonlibrarybondowoso@gmail.com</li>
+                  <span class="color-text-a fa fa-envelope-o"> Email :</span>K-negabonlibrary@gmail.com</li>
                 </ul>
               </div>
             </div>

@@ -13,10 +13,24 @@ if( isset($_POST["submit"])){
     $tgl_pinjam = Date('Y-m-d');
     $tgl_kembali =Date('Y-m-d', time()+604800);
       
-   
+    //cek stok buku
+    $stok_buku = cek_stok_literasi($conn, $kode_buku);
+
+    if ($stok_buku < 1) {
+    echo "
+        <script>
+            alert('stok buku habis, proses peminjaman gagal');
+            document.location.href = 'tambah_pinjam_tahunan.php';
+        </script>
+    ";
+    exit();
+    }
+
     //query insert data
     $tambah = mysqli_query($conn, "INSERT INTO peminjaman_buku_literasi VALUES (NULL, '$kode_buku', '$nama_peminjam', '$tgl_pinjam', '$tgl_kembali', 'masa pinjam')");
-    if($tambah){
+    if($tambah == true){
+
+      kurangi_stok_literasi($conn, $kode_buku);
     echo "
         <script>
             alert('data berhasil ditambahkan');

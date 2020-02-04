@@ -69,6 +69,7 @@ function tambahliterasi($dataliterasi) {
     $judul_buku_literasi = htmlspecialchars($dataliterasi["judul_buku_literasi"]);
     $id_penerbit = htmlspecialchars($dataliterasi["id_penerbit"]);
     $tahun_terbit = htmlspecialchars($dataliterasi["tahun_terbit"]);
+    $stok = htmlspecialchars($dataliterasi["stok"]);
     $id_rak = htmlspecialchars($dataliterasi["id_rak"]);
     $id_kategori = htmlspecialchars($dataliterasi["id_kategori"]);
  
@@ -82,7 +83,7 @@ function tambahliterasi($dataliterasi) {
 
     $query = "INSERT INTO buku_literasi_umum 
               VALUES
-              ('$kode_buku_literasi', '$judul_buku_literasi', '$id_penerbit', '$tahun_terbit', '$id_rak', '$id_kategori', '$gambar_sampul', '$deskripsi_buku')
+              ('$kode_buku_literasi', '$judul_buku_literasi', '$id_penerbit', '$tahun_terbit', '$id_rak', '$id_kategori', '$stok', '$gambar_sampul', '$deskripsi_buku')
               ";
 
     mysqli_query($conn, $query);
@@ -177,6 +178,27 @@ function hapus_stok_mapel($conn, $id_judul_buku_mapel)
 }
 
 
+function cek_stok_literasi($conn,$kode_buku_literasi)
+{
+    $q = "SELECT stok FROM buku_literasi_umum WHERE kode_buku_literasi = '$kode_buku_literasi'";
+    $hasil = mysqli_query($conn, $q);
+    $hasil = mysqli_fetch_assoc($hasil);
+    $stok = $hasil['stok'];
+
+    return $stok;
+}
+
+function kurangi_stok_literasi($conn, $kode_buku_literasi)
+{
+    $q = "UPDATE buku_literasi_umum SET stok = stok - 1 WHERE kode_buku_literasi = '$kode_buku_literasi'";
+    mysqli_query($conn, $q);
+}
+
+function tambah_stok_literasi($conn, $kode_buku_literasi)
+{
+    $q = "UPDATE buku_literasi_umum SET stok = stok + 1 WHERE kode_buku_literasi = '$kode_buku_literasi'";
+    mysqli_query($conn, $q);
+}
 
 
 function cek_stok($conn,$id_judul_buku_tahunan )
@@ -225,6 +247,7 @@ function ubahliterasi($data) {
     $judul_buku_literasi = htmlspecialchars($data["judul_buku_literasi"]);
     $id_penerbit = htmlspecialchars($data["id_penerbit"]);
     $tahun_terbit = htmlspecialchars($data["tahun_terbit"]);
+    $stok = htmlspecialchars($data["stok"]);
     $id_rak = htmlspecialchars($data["id_rak"]);
     $id_kategori = htmlspecialchars($data["id_kategori"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
@@ -243,6 +266,7 @@ function ubahliterasi($data) {
                 tahun_terbit = '$tahun_terbit',
                 id_rak = '$id_rak',
                 id_kategori = '$id_kategori',
+                stok ='$stok',
                 gambar_sampul = '$gambar_sampul',
                 deskripsi_buku = '$deskripsi_buku'
               WHERE kode_buku_literasi = '$kode_buku_literasi'

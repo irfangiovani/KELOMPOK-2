@@ -6,6 +6,19 @@ if( !isset($_SESSION["login"])){
 }
 require 'functions.php';
 
+
+// $query = "SELECT max(kode_buku_literasi) as maxKode FROM buku_literasi_umum";
+// $hasil = mysqli_query($conn,$query);
+// $data = mysqli_fetch_array($hasil);
+// $kodeBarang = $data['maxKode'];
+
+// $noUrut = (int) substr($kodeBarang, 3, 3);
+// $noUrut++;
+
+// $char = "BRG";
+// $kodeBarang = $char . sprintf("%03s", $noUrut);
+// echo $kodeBarang;
+
 //cek tombol submit ditekan atau tidak
 if( isset($_POST["submit"]) ) {
  
@@ -47,7 +60,8 @@ if( isset($_POST["submit"]) ) {
            <div class="form-row">
             <div class="form-group col-md-6">
               <label for="kode_buku_literasi">Kode Buku Literasi : </label>
-              <input type="text" class="form-control" placeholder="Masukkan Kode Buku..." name="kode_buku_literasi" id="kode_buku_literasi" autocomplete="off" required>
+              <input type="text" class="form-control" name="kode_buku_literasi" id="kode_buku_literasi" autocomplete="off" required>
+             
             </div>
             <div class="form-group col-md-6">
               <label for="id_kategori">Kategori : </label> <a href="kategori.php" class="btn btn-warning" title="tambah_kategori" >Tambah Kategori</a>
@@ -83,6 +97,10 @@ if( isset($_POST["submit"]) ) {
                 <div class="form-group col-md-4">
                   <label for="tahun_terbit">Tahun Terbit : </label>
                   <input type="text" class="form-control" placeholder="Masukkan Tahun Terbit..." name="tahun_terbit" id="tahun_terbit" autocomplete="off" required>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="stok">Stok : </label>
+                  <input type="text" class="form-control" placeholder="Masukkan banyak stok" name="stok" id="stok" autocomplete="off" required>
                 </div>
 
                 <div class="form-group col-md-4">

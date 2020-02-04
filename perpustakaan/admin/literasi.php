@@ -8,7 +8,7 @@ require 'functions.php';
 $buku_literasi_umum = query("SELECT * FROM buku_literasi_umum");
 
 
-$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak 
+$buku_literasi_umum = query ("SELECT a.kode_buku_literasi, a.judul_buku_literasi, a.tahun_terbit, a.stok, a.gambar_sampul, a.deskripsi_buku, b.nama_kategori as id_kategori, c.nama_penerbit as id_penerbit, d.no_rak as id_rak 
 FROM buku_literasi_umum a LEFT JOIN kategori b on b.id_kategori = a.id_kategori LEFT JOIN penerbit c on c.id_penerbit = a.id_penerbit LEFT JOIN rak d on d.id_rak = a.id_rak ORDER BY a.kode_buku_literasi ASC"); 
 
 //tombol cari ditekan
@@ -158,6 +158,7 @@ if( isset($_POST["cariliterasi"])) {
             <th>Tahun Terbit</th>
             <th>No Rak</th>
             <th>Kategori</th>
+            <th>Stok</th>
             <th>Gambar Sampul</th>
             <th>Deskripsi Buku</th>
             <th>Aksi</th>
@@ -176,6 +177,7 @@ if( isset($_POST["cariliterasi"])) {
             <td><?php echo $row["tahun_terbit"];?></td>
             <td><?php echo $row["id_rak"];?></td>
             <td><?php echo $row["id_kategori"];?></td>
+            <td><?php echo $row["stok"];?></td>
             <td><img src="img/literasi/<?php echo $row["gambar_sampul"]; ?>" width="50"></td>
             <td><?php echo $row["deskripsi_buku"];?></td>
             <td>

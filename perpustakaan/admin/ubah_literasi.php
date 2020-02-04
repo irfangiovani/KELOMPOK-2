@@ -85,6 +85,10 @@ if( !isset($_SESSION["login"])){
                   <label for="tahun_terbit">Tahun Terbit : </label>  
                   <input type="text" class="form-control" value ="<?php echo $data['tahun_terbit'] ?>" name="tahun_terbit" id="tahun_terbit">
                 </div>
+                <div class="form-group col-md-4">
+                  <label for="stok">Stok : </label>  
+                  <input type="text" class="form-control" value ="<?php echo $data['stok'] ?>" name="stok" id="stok">
+                </div>
 
                 <div class="form-group col-md-4">
                   <label for="no_rak">No Rak : </label> <a href="rak.php" class="btn btn-warning" title="tambah_rak">Tambah Rak</a>
