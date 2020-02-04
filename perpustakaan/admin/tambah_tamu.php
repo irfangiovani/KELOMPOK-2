@@ -3,7 +3,7 @@ session_start();
 if( !isset($_SESSION["login"])){
     header("location: loginadmin.php");
     exit;
-}
+}  
 require 'functions.php';
 
 //cek tombol submit ditekan atau tidak
