@@ -517,7 +517,7 @@ $selisih = strtotime($tgl_kembali_pecah)-strtotime($tgl_dateline_pecah);
 
 $selisih = $selisih/86400;
 
-if ($selisih>=1) {
+if ($selisih>=1) {   
     $hasil_tgl = floor($selisih);
 } else {
     $hasil_tgl = 0;
@@ -538,16 +538,16 @@ function tambahtamu($datatamu) {
               VALUES
               (null, '$nama_tamu', '$delegasi', '$kepentingan', '$Tanggal_Kedatangan')
               ";
-
+   
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
 }
 
-function tambahsiswa($datasiswa) {
+function tambahsiswa($datasiswa) {     
     global $conn;
 
-    // ambil data dari tiap elemen dalam form
+    // ambil data dari tiap elemen dalam form    
     $tanggal_absensi =  Date('Y-m-d');
     $nama_siswa = htmlspecialchars($datasiswa["nama_siswa"]);
     $kode_kelas = htmlspecialchars($datasiswa["kode_kelas"]);
