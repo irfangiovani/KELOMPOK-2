@@ -2,7 +2,7 @@
 session_start();
 if( !isset($_SESSION["login"])){
     header("location: loginadmin.php");
-    exit;
+    exit; 
 }
 require 'functions.php';
 if( isset($_POST["submit"])){
@@ -54,7 +54,7 @@ echo Date('l, Y-m-d');
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>  
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="css/css/bootstrap.min.css">
@@ -63,13 +63,13 @@ echo Date('l, Y-m-d');
 </head>
 <body>
     <div class="container">
-    <h2 class="alert alert-info text-center mt-3">Tambah Data Peminjaman Buku Tahunan Siswa</h2>
+    <h2 class="alert alert-warning text-center mt-3">Tambah Data Peminjaman Buku Tahunan Siswa</h2>
     <div class="pull-right">
     <form action="" method="post" enctype="multipart/form-data">
     <div class="form-row">
         <div class="form-group col-md-6">
           <label for="nama_siswa"> Nama Siswa : </label> 
-          <input type="text" class="form-control" id="buah" name="nama_siswa" placeholder="Masukkan Nama" value="">
+          <input type="text" class="form-control" id="buah" name="nama_siswa" placeholder="Masukkan Nama" value="" autocomplete="off" required>
         </div>
         <div class="form-group col-md-6">
           <label for="nis"> NIS Siswa : </label> 

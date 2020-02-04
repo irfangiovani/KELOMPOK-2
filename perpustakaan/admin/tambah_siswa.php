@@ -28,7 +28,7 @@ if( isset($_POST["submit"]) ) {
     }
 
 }
-?>
+?>  
    
  
 <!DOCTYPE html>
@@ -46,13 +46,11 @@ if( isset($_POST["submit"]) ) {
     <h2 class="alert alert-info text-center mt-3">Tambah Data siswa</h2>
     <div class="pull-right">
     <form action="" method="post" enctype="multipart/form-data">
-            <div class="form-row">
+            <div class="form-row"> 
               <div class="form-group col-md-6">
                 <label for="tanggal_absensi">Tanggal Kehadiran : </label> 
-                  <input type="text" class="form-control" placeholder = "<?php  echo Date('Y-m-d');?>" name="tanggal_absensi" readonly>
+                <input type="text" class="form-control" placeholder = "<?php  echo Date('Y-m-d');?>" name="tanggal_absensi" readonly>
               </div> 
-              </div>
-              <div class="form-row">  
               <div class="form-group col-md-6">
                 <label for="nama_siswa"> Nama siswa : </label>
                 <input type="text" class="form-control" placeholder="Masukkan Nama Siswa" name="nama_siswa" id="nama_siswa"
@@ -69,13 +67,11 @@ if( isset($_POST["submit"]) ) {
                 <input type="text" class="form-control" id="kode_kelas" name="kode_kelas" placeholder="Kode Kelas Otomatis Terisi" value="" readonly>
               </div>
           </div> 
-            <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="keperluan">Keperluan : </label> 
-              <input type="text" class="form-control" placeholder="Masukkan Keperluan" name="keperluan" id="keperluan" autocomplete= "off" required>
+            <div class="form-group text-center">
+              <label for="deskripsi_buku">Keperluan : </label>
+              <textarea type="text" name="keperluan" id="keperluan" class="form-control" rows="5"></textarea>
             </div>
-            </div>
-
+   
    
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>

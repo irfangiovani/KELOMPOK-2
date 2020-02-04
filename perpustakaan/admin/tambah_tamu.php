@@ -40,33 +40,31 @@ if( isset($_POST["submit"]) ) {
 </head>
 <body>
     <div class="container">
-    <h2 class="alert alert-info text-center mt-3">Tambah Data Tamu</h2>
+    <h2 class="alert alert-danger text-center mt-3">Tambah Data Tamu</h2>
     <div class="pull-right">
     <form action="" method="post" enctype="multipart/form-data">
      
-            <div class="form-group text-center">
+            <div class="form-group text">
                   <label for="nama_tamu">Nama Tamu : </label>
                   <input type="text" class="form-control" placeholder="Masukkan Nama Tamu" name="nama_tamu" id="nama_tamu">
             </div>
             </div>
-             
-            <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="delegasi">Delegasi : </label> 
-              <input type="text" class="form-control" placeholder="Masukkan Delegasi." name="delegasi" id="delegasi">
-            </div>   
-            <div class="form-group col-md-6">
-            <label for="kepentingan"> Kepentingan : </label>
-            <input type="text" class="form-control" placeholder="Masukkan Kepeentingan" name="kepentingan" id="kepentingan">
+    
+            <div class="form-group text">
+                  <label for="nama_tamu">Delegasi : </label>
+                  <input type="text" class="form-control" placeholder="Masukkan Delegasi" name="delegasi" id="delegasi">
             </div>
-            </div>
+
+            <div class="form-group text">
+              <label for="deskripsi_buku">Kepentingan : </label>
+              <textarea type="text" name="kepentingan" id="kepentingan" class="form-control"  placeholder="Masukkan Kepentingan" rows="5"></textarea>
+            </div> 
                
-            <div class="form-row">
-        <div class="form-group col-md-6">
+             <div class="form-group text">
               <label for="Tanggal_Kedatangan">Tanggal_Kedatangan : </label>
               <input type="text" class="form-control" placeholder = "<?php  echo Date('Y-m-d');?>" name="Tanggal_Kedatangan" readonly>
-        </div>
-      </div>
+             </div>
+            </div>
 
             <div class="text-center">
               <button type="submit" class="btn btn-primary" name="submit">Tambah Data!</button>

@@ -153,12 +153,11 @@ $tamupen = query ("SELECT * FROM tamu ");
     <thead>
         <tr bgcolor='yellow' align='center'>
 			      <th>no</th>
-            <th>ID Tamu</th>
             <th>Nama Tamu</th>
             <th>Delegasi</th>
              <th>Kepentingan</th>
              <th>Tanggal Kedatangan</th>
-        </tr>
+        </tr>  
         </thead>
         <tbody>
 		<?php $i = 1; ?> 
@@ -167,7 +166,6 @@ $tamupen = query ("SELECT * FROM tamu ");
         ?>
         <tr>
 			      <td><?=$i; ?></td>
-            <td><?php echo $row["id_tamu"]; ?></td>
             <td><?php echo $row["nama_tamu"];?></td>
             <td><?php echo $row["delegasi"];?></td>
             <td><?php echo $row["kepentingan"];?></td>
